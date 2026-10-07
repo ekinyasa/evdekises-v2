@@ -9,34 +9,33 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- MASTER HEADER -->
+  <!-- MASTER SITE HEADER -->
   <header class="site-header" id="siteHeader">
-    <div class="header-inner">
-      <div class="header-brand">
-        <span class="master-brand">Nilüfer Ormanlı</span>
-        <span class="brand-divider">/</span>
-        <span class="program-title">Evdeki Ses</span>
-      </div>
+    <div class="header-pill">
+      <!-- 1. Identity Wordmark (Center in State 1 -> Left in State 2) -->
+      <a href="#hero" class="header-identity" aria-label="Nilüfer Ormanlı">
+        <span class="header-logo-text">NİLÜFER ORMANLI</span>
+      </a>
 
-      <div class="header-meta">
-        <span class="meta-item">4 Kasım 2026</span>
-        <span class="meta-sep">·</span>
-        <span class="meta-item">Kontenjan 10</span>
-      </div>
+      <!-- 2. Center Navigation Links (Revealed in State 2) -->
+      <nav class="header-nav" aria-label="Ana Gezinti">
+        <a href="#method" class="nav-link">Yaklaşım</a>
+        <a href="#inside-world" class="nav-link">6 Hafta</a>
+        <a href="#program" class="nav-link">Program</a>
+        <a href="#nilufer" class="nav-link">Nilüfer</a>
+        <a href="#karar" class="nav-link">Bilgiler</a>
+      </nav>
 
-      <div class="header-actions">
-        <a href="#karar" class="btn-header">
-          <span class="btn-text-full">EVDEKİ SES’E KATIL</span>
-          <span class="btn-text-mobile">KATIL</span>
-          <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+      <!-- 3. Right Action CTA (Revealed in State 2) -->
+      <div class="header-action">
+        <a href="#karar" class="btn-header-cta">
+          <span>EVDEKİ SES’E KATIL</span>
         </a>
       </div>
     </div>
@@ -44,136 +43,146 @@
 
   <main>
     <!-- ═══════════════════════════════════════════════════════════
-         SCENE A: HERO / “BİR GÜN”
-         Environment: Deep atmospheric water / Nilüfer's portrait
+         SCENE A: HERO / “BİR GÜN” (Framed White Canvas)
+         Simplified Opening: Brand Identity → 2-line Question → Handwritten List → Primary CTA
          ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-hero" id="hero">
-      <div class="hero-canvas">
-        <div class="hero-image-wrap">
-          <img 
-            src="assets/evdeki-ses-hero.jpg" 
-            alt="Nilüfer Ormanlı — Evdeki Ses" 
-            class="hero-photo"
-            fetchpriority="high"
-          />
-          <div class="hero-gradient-overlay"></div>
+    <div class="hero-frame-wrapper">
+      <section class="scene-hero" id="hero">
+        <div class="hero-canvas">
+          <div class="hero-image-wrap">
+            <img 
+              src="assets/evdeki-ses-hero.jpg" 
+              alt="Nilüfer Ormanlı — Evdeki Ses" 
+              class="hero-photo"
+              fetchpriority="high"
+            />
+            <div class="hero-gradient-overlay"></div>
+          </div>
         </div>
-      </div>
 
-      <div class="hero-container">
-        <div class="hero-content">
+        <div class="hero-container">
           <div class="hero-layout-grid">
-            <!-- Left: Dominant Question & Rhythmic Progression -->
-            <div class="hero-lead-side">
+            
+            <!-- LEFT: The Recognition & Question Field -->
+            <div class="hero-left-field">
               <h1 class="hero-title">
-                <span class="title-sub">EVDEKİ SES</span>
-                <span class="title-main">Ne zamandır <span class="serif-italic">“bir gün”</span> diyorsun?</span>
+                <span class="hero-title-line-1">Ne zamandır</span>
+                <span class="hero-title-line-2">
+                  <span class="serif-italic">“bir gün”</span>
+                  <span class="hero-title-sans">diyorsun?</span>
+                </span>
               </h1>
 
-              <div class="bir-gun-stack">
-                <div class="bir-gun-item">
-                  <span class="item-dash">—</span>
-                  <span class="item-text">Bir gün yazacağım.</span>
-                </div>
-                <div class="bir-gun-item">
-                  <span class="item-dash">—</span>
-                  <span class="item-text">Bir gün o atölyeyi açacağım.</span>
-                </div>
-                <div class="bir-gun-item">
-                  <span class="item-dash">—</span>
-                  <span class="item-text">Bir gün şarkılarımı çıkaracağım.</span>
-                </div>
-                <div class="bir-gun-item">
-                  <span class="item-dash">—</span>
-                  <span class="item-text">Bir gün kendi işimi kuracağım.</span>
-                </div>
+              <div class="hero-handwritten-wrap">
+                <img 
+                  src="assets/birgun.svg" 
+                  alt="Bir gün yazacağım. Bir gün o atölyeyi açacağım. Bir gün şarkılarımı çıkaracağım. Bir gün kendi işimi kuracağım." 
+                  class="hero-handwritten-img"
+                  width="522"
+                  height="215"
+                />
               </div>
             </div>
 
-            <!-- Right: Pure Spatial Editorial Prose -->
-            <div class="hero-prose-side">
-              <div class="hero-manifesto-flow">
-                <div class="manifesto-lead-group">
-                  <p class="lead-truth">“Bir gün” dediğin şey hayatında yok değil.</p>
-                  <p class="body-evidence">
-                    Defterlerinde izleri var. Telefonunda ses kayıtları var. Bir dosya açtın, birkaç sayfa yazdın. Bir eğitim aldın. Sonra bir tane daha. Arkadaşlarına anlattın.
-                  </p>
-                </div>
-
-                <div class="manifesto-pivot-group">
-                  <p class="pivot-line-1">Hazırlığı var. Niyeti var. Malzemesi var. Ama kendisi yok.</p>
-                  <p class="pivot-line-2">Hâlâ içerideki kadar gerçek değil.</p>
-                  <p class="pivot-line-action">Artık onunla bir şey yap.</p>
-                </div>
-
-                <div class="manifesto-definition-group">
-                  <p class="program-core-def">
-                    <strong>Evdeki Ses</strong>, içinde uzun zamandır taşıdığı bir şeyi hayata geçirmek isteyen kadınlar için altı haftalık canlı bir grup programı.
-                  </p>
-                  <p class="program-core-sub">
-                    Yapmak istediğin bir şeyi seçiyor, onunla çalışıyor ve program bitmeden ona biçim verip dünyayla buluşturuyorsun.
-                  </p>
-                </div>
-
-                <div class="hero-cta-group">
-                  <a href="#karar" class="btn-primary">
-                    <span>EVDEKİ SES’E KATIL</span>
-                    <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                      <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </a>
-                </div>
-
+            <!-- RIGHT / POSTER FIELD: Program Identity & Independent Action -->
+            <div class="hero-poster-field">
+              <div class="hero-poster-title-wrap">
+                <div class="hero-poster-title">EVDEKİ SES</div>
               </div>
+
+              <div class="hero-poster-action-wrap">
+                <a href="#karar" class="btn-primary hero-poster-cta">
+                  <span>EVDEKİ SES’E KATIL</span>
+                  <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         NEW POST-HERO WHITE NARRATIVE CONTINUATION SECTION
+         Exact source copy moved from hero right side
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-hero-continuation" id="giris-anlatisi">
+      <div class="continuation-container">
+        
+        <div class="continuation-grid">
+          <!-- Left Beat: The Grounded Truth & Evidence -->
+          <div class="continuation-lead-col">
+            <p class="continuation-lead-truth">“Bir gün” dediğin şey hayatında yok değil.</p>
+            <p class="continuation-body-evidence">
+              Defterlerinde izleri var. Telefonunda ses kayıtları var. Bir dosya açtın, birkaç sayfa yazdın. Bir eğitim aldın. Sonra bir tane daha. Arkadaşlarına anlattın.
+            </p>
+          </div>
+
+          <!-- Right Beat: The Pivot & Definition -->
+          <div class="continuation-detail-col">
+            <div class="continuation-pivot-block">
+              <p class="continuation-pivot-1">Hazırlığı var. Niyeti var. Malzemesi var. Ama kendisi yok.</p>
+              <p class="continuation-pivot-2">Hâlâ içerideki kadar gerçek değil.</p>
+              <p class="continuation-pivot-action">Artık onunla bir şey yap.</p>
+            </div>
+
+            <div class="continuation-definition-block">
+              <p class="continuation-def-core">
+                <strong>Evdeki Ses</strong>, içinde uzun zamandır taşıdığı bir şeyi hayata geçirmek isteyen kadınlar için altı haftalık canlı bir grup programı.
+              </p>
+              <p class="continuation-def-sub">
+                Yapmak istediğin bir şeyi seçiyor, onunla çalışıyor ve program bitmeden ona biçim verip dünyayla buluşturuyorsun.
+              </p>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
          SCENE B: RECOGNITION / COMPETING INTERNAL VOICES
-         Environment: Dark acoustic field
+         Environment: Deep dark acoustic field
          ═══════════════════════════════════════════════════════════ -->
     <section class="scene-recognition" id="recognition">
-      <div class="container">
+      
+      <!-- Right photographic presence -->
+      <div class="recognition-photo-wrap" aria-hidden="true">
+        <img 
+          src="assets/section3image.avif" 
+          alt="" 
+          class="recognition-photo"
+          loading="eager"
+        />
+        <div class="recognition-photo-vignette"></div>
+      </div>
+
+      <!-- Spatial content frame -->
+      <div class="recognition-stage-container">
         
-        <div class="recognition-entry">
-          <h2 class="recognition-lead">Belki başladın.</h2>
-          <div class="drift-sequence">
-            <p class="drift-step">Sonra başka bir fikir geldi.</p>
-            <p class="drift-step">Adını değiştirdin.</p>
-            <p class="drift-step">Biraz daha araştırdın.</p>
-          </div>
-          <p class="drift-interrupt">Tam ilerlerken başka sesler araya girdi:</p>
+        <!-- Upper-Left / Upper-Middle Narrative Setup -->
+        <div class="recognition-narrative-flow">
+          <p class="rec-line rec-line-1">Belki başladın.</p>
+          <p class="rec-line rec-line-2">Sonra başka bir fikir geldi. Adını değiştirdin.</p>
+          <p class="rec-line rec-line-3">Biraz daha araştırdın.. Tam ilerlerken başka sesler araya girdi:</p>
         </div>
 
-        <!-- Spatial Acoustic Voices Field -->
-        <div class="voices-spatial-field" aria-label="Araya giren sesler">
-          <div class="voice-drift voice-pos-1">
-            <span class="voice-quote">“</span>
-            <span class="voice-phrase">Bu iyi mi?</span>
-          </div>
-
-          <div class="voice-drift voice-pos-2">
-            <span class="voice-quote">“</span>
-            <span class="voice-phrase">Bunu kim ister?</span>
-          </div>
-
-          <div class="voice-drift voice-pos-3">
-            <span class="voice-quote">“</span>
-            <span class="voice-phrase">Böyle mi yapmalıyım?</span>
-          </div>
-
-          <div class="voice-drift voice-pos-4">
-            <span class="voice-quote">“</span>
-            <span class="voice-phrase">Yoksa başka türlü mü?</span>
-          </div>
+        <!-- Descending Diagonal Handwritten Internal Questions -->
+        <div class="recognition-handwritten-field" aria-label="Araya giren sesler">
+          <p class="rec-thought rec-thought-1">Bu iyi mi?</p>
+          <p class="rec-thought rec-thought-2">...bunu kim ister?</p>
+          <p class="rec-thought rec-thought-3">...böyle mi yapmalıyım?</p>
+          <p class="rec-thought rec-thought-4">...yoksa başka türlü mü?</p>
         </div>
 
-        <div class="recognition-distance-moment">
-          <p class="distance-statement">
-            Ve yapmak istediğin şeyle arandaki mesafe <span class="highlight-distance">yeniden açıldı.</span>
+        <!-- Lower-Right Closing Line -->
+        <div class="recognition-closing-moment">
+          <p class="rec-closing-line">
+            Ve yapmak istediğin şeyle<br>
+            arandaki mesafe <span class="rec-closing-highlight">yeniden açıldı.</span>
           </p>
         </div>
 
@@ -185,43 +194,52 @@
          Environment: Deep dark / ochre attention
          ═══════════════════════════════════════════════════════════ -->
     <section class="scene-method" id="method">
-      <div class="container">
+      <div class="method-stage-container">
         
+        <!-- Headline -->
         <div class="method-opening">
           <h2 class="method-headline">
-            Bu kez yalnızca sonuca değil, <span class="serif-italic">olurken ne olduğuna</span> da kulak veriyoruz.
+            Bu kez yalnızca sonuca değil, <span class="serif-italic">olurken ne</span><br>
+            <span class="serif-italic">olduğuna</span> da kulak veriyoruz.
           </h2>
         </div>
 
-        <div class="method-narrative-flow">
-          <div class="method-triad">
-            <div class="method-movement">
-              <p class="movement-text">
-                Seni tekrar tekrar çağıran şeyden başlarsın. Belki üç yıldır dönüp durduğun tek bir cümleden.
-              </p>
-            </div>
-
-            <div class="method-movement">
-              <p class="movement-text">
-                İki yön arasında kaldığında yalnızca hangisinin daha mantıklı olduğuna bakmazsın. Birini anlatırken savunmaya geçtiğini, ötekini anlatırken yeni cümlelerin gelmeye devam ettiğini duyarsın.
-              </p>
-            </div>
-
-            <div class="method-movement">
-              <p class="movement-text">
-                Sürekli başa döndüğün yeri fark edersin. Bir şeyi daha ortaya çıkmadan düzeltmeye başladığın anı da.
-              </p>
-            </div>
-          </div>
-
-          <div class="method-realization">
-            <p class="realization-primary">
-              Bazı sorularla başlarız. Asıl sorular yaptığın şeyin içinde belirir.
-            </p>
-            <p class="realization-secondary">
-              Verdiğin cevap da işi değiştirir.
+        <!-- 3 Cascading Staggered Movements -->
+        <div class="method-cascade-flow">
+          <div class="method-cascade-step step-1">
+            <p class="movement-text">
+              Seni tekrar tekrar çağıran şeyden başlarsın.<br>
+              Belki üç yıldır dönüp durduğun tek bir cümleden.
             </p>
           </div>
+
+          <div class="method-cascade-step step-2">
+            <p class="movement-text">
+              İki yön arasında kaldığında yalnızca hangisinin<br>
+              daha mantıklı olduğuna bakmazsın. Birini<br>
+              anlatırken savunmaya geçtiğini, ötekini<br>
+              anlatırken yeni cümlelerin gelmeye devam<br>
+              ettiğini duyarsın.
+            </p>
+          </div>
+
+          <div class="method-cascade-step step-3">
+            <p class="movement-text">
+              Sürekli başa döndüğün yeri fark edersin. Bir şeyi daha<br>
+              ortaya çıkmadan düzeltmeye başladığın anı da.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom Right Conclusion Moment -->
+        <div class="method-realization">
+          <p class="realization-primary">
+            Bazı sorularla başlarız.<br>
+            Asıl sorular yaptığın şeyin içinde belirir.
+          </p>
+          <p class="realization-secondary">
+            Verdiğin cevap da işi değiştirir.
+          </p>
         </div>
 
       </div>
@@ -234,7 +252,7 @@
     <section class="scene-inside-world" id="inside-world">
       
       <div class="editorial-stage">
-        <div class="editorial-image-holder">
+        <div class="editorial-image-holder" aria-hidden="true">
           <img 
             src="assets/evdeki-ses-editorial.jpg" 
             alt="Evdeki Ses — İçeriden Dünyaya Yol" 
@@ -244,24 +262,34 @@
           <div class="editorial-scrim"></div>
         </div>
 
-        <div class="editorial-stage-content">
-          <div class="container">
-            <p class="threshold-intro">Altı hafta boyunca çalıştığın şey biçim kazanır.</p>
+        <div class="editorial-stage-container">
+          <!-- 1. Top Intro Line -->
+          <div class="threshold-intro-wrap">
+            <p class="threshold-intro">
+              Altı hafta boyunca çalıştığın şey<br>
+              biçim kazanır.
+            </p>
+          </div>
 
-            <div class="forms-stream">
+          <!-- 2. Middle Forms Stream -->
+          <div class="forms-stream-block">
+            <p class="forms-stream-line">
               <span class="form-stream-item">Bir metin.</span>
               <span class="form-stream-item">Bir teklif.</span>
               <span class="form-stream-item">Bir atölye.</span>
               <span class="form-stream-item">Bir eser.</span>
               <span class="form-stream-item">Bir işin ilk çalışan hâli.</span>
-              <span class="form-stream-item form-stream-open">Ya da işinin kendi istediği başka bir biçim.</span>
-            </div>
+            </p>
+            <p class="forms-stream-open">
+              Ya da işinin kendi istediğin başka bir biçim.
+            </p>
+          </div>
 
-            <div class="release-monument">
-              <h2 class="release-headline">
-                Ve yaptığın şey <span class="serif-italic">senden çıkar.</span>
-              </h2>
-            </div>
+          <!-- 3. Bottom Release Monument -->
+          <div class="release-monument">
+            <h2 class="release-headline">
+              <span class="release-headline-sans">Ve yaptığın şey </span><span class="release-headline-italic">senden çıkar.</span>
+            </h2>
           </div>
         </div>
       </div>
@@ -369,184 +397,240 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         PHASE 2 / SECTION 1: SIX-WEEK JOURNEY
-         Environment: LIGHT / WARM BONE / DAYLIGHT THRESHOLD
-         Macro transformation: Progressive, chapter-based time journey
+         PERSISTENT LEFT WEEK INDEX FOR SECTIONS 6–12 (00–06)
          ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-journey" id="journey">
-      <div class="container">
-        
-        <div class="journey-prologue">
-          <h2 class="journey-main-title">
-            Altı hafta. <span class="serif-italic">İçeriden dünyaya bir yol.</span>
-          </h2>
-          <div class="journey-lead-wrap">
-            <p class="journey-lead-single">Evdeki Ses boyunca tek bir şey seçip onunla çalışacaksın.</p>
-            <p class="journey-lead-emphasis">
-              Her hafta ona başka bir yerinden yaklaşacak, onu dinleyecek, deneyecek, seslendirecek, karar verecek ve biçimlendireceksin.
-            </p>
+    <div class="journey-persistent-tracker" id="journeyTracker" aria-hidden="false">
+      <div class="container journey-tracker-container">
+        <div class="journey-tracker-rail">
+          <div class="tracker-sticky-box">
+            <nav class="tracker-nav" aria-label="Haftalık Bölümler">
+              <a href="#hafta-0" class="tracker-link active" data-week="0">
+                <span class="track-label">İçeriden Dünyaya</span>
+                <span class="track-num">00</span>
+              </a>
+              <a href="#hafta-1" class="tracker-link" data-week="1">
+                <span class="track-label">İzi Duymak</span>
+                <span class="track-num">01</span>
+              </a>
+              <a href="#hafta-2" class="tracker-link" data-week="2">
+                <span class="track-label">Aynı Şey, Başka Kılıklarda</span>
+                <span class="track-num">02</span>
+              </a>
+              <a href="#hafta-3" class="tracker-link" data-week="3">
+                <span class="track-label">Kemiklere Şarkı Söylemek</span>
+                <span class="track-num">03</span>
+              </a>
+              <a href="#hafta-4" class="tracker-link" data-week="4">
+                <span class="track-label">Parçaların Birbirini Bulduğu Yer</span>
+                <span class="track-num">04</span>
+              </a>
+              <a href="#hafta-5" class="tracker-link" data-week="5">
+                <span class="track-label">Kapıyı Kapatmak</span>
+                <span class="track-num">05</span>
+              </a>
+              <a href="#hafta-6" class="tracker-link" data-week="6">
+                <span class="track-label">Karaya Çıkmak</span>
+                <span class="track-num">06</span>
+              </a>
+            </nav>
           </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Progressive Journey Architecture -->
-        <div class="journey-progressive-layout">
-          
-          <!-- Sticky Visual Journey Tracker (Desktop) -->
-          <div class="journey-tracker-rail">
-            <div class="tracker-sticky-box">
-              <nav class="tracker-nav" aria-label="Haftalık Bölümler">
-                <a href="#hafta-1" class="tracker-link active" data-week="1">
-                  <span class="track-num">01</span>
-                  <span class="track-label">İzi Duymak</span>
-                </a>
-                <a href="#hafta-2" class="tracker-link" data-week="2">
-                  <span class="track-num">02</span>
-                  <span class="track-label">Aynı Şey, Başka Kılıklarda</span>
-                </a>
-                <a href="#hafta-3" class="tracker-link" data-week="3">
-                  <span class="track-num">03</span>
-                  <span class="track-label">Kemiklere Şarkı Söylemek</span>
-                </a>
-                <a href="#hafta-4" class="tracker-link" data-week="4">
-                  <span class="track-num">04</span>
-                  <span class="track-label">Parçaların Birbirini Bulduğu Yer</span>
-                </a>
-                <a href="#hafta-5" class="tracker-link" data-week="5">
-                  <span class="track-num">05</span>
-                  <span class="track-label">Kapıyı Kapatmak</span>
-                </a>
-                <a href="#hafta-6" class="tracker-link" data-week="6">
-                  <span class="track-num">06</span>
-                  <span class="track-label">Karaya Çıkmak</span>
-                </a>
-              </nav>
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 6: PROLOGUE / İÇERİDEN DÜNYAYA (00)
+         Environment: LIGHT / WARM BONE
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-journey-week scene-journey-prologue" id="hafta-0" data-week-index="0">
+      <div id="journey" class="journey-nav-anchor" aria-hidden="true"></div>
+      <div class="container journey-week-container">
+        <div class="journey-week-spacer" aria-hidden="true"></div>
+        <div class="journey-week-content">
+          <div class="journey-prologue-dedicated">
+            <h2 class="journey-main-title">
+              Altı hafta. <span class="serif-italic">İçeriden dünyaya bir yol.</span>
+            </h2>
+            <div class="journey-lead-wrap">
+              <p class="journey-lead-single">Evdeki Ses boyunca tek bir şey seçip onunla çalışacaksın.</p>
+              <p class="journey-lead-emphasis">
+                Her hafta ona başka bir yerinden yaklaşacak, onu dinleyecek, deneyecek, seslendirecek, karar verecek ve biçimlendireceksin.
+              </p>
             </div>
           </div>
-
-          <!-- The Six Sequential Chapters -->
-          <div class="journey-chapters-stream">
-            
-            <!-- Week 1 -->
-            <article class="week-chapter" id="hafta-1" data-week-index="1">
-              <div class="chapter-header">
-                <span class="chapter-index">1. HAFTA</span>
-                <h3 class="chapter-title">İZİ DUYMAK</h3>
-                <p class="chapter-subtitle">Seni çağıran şeyin peşine düşmek</p>
-              </div>
-              <div class="chapter-body">
-                <p class="chapter-prose">
-                  Uzun zamandır çevresinde dolaştığın şeylerin arasından hangisinin şimdi çalışılmak istediğine bakıyoruz. Ne olacağını kesinleştirmeden izlerini topluyor, seni tekrar tekrar aynı yere getiren şeyi takip ediyor ve peşinden gideceğin izi seçiyorsun. Onu büyük bir projeye dönüştürmeden, küçük ve geri alınabilir bir biçimle dışarı çıkarıyorsun.
-                </p>
-                <div class="chapter-takeaway">
-                  <span class="takeaway-tag">Haftanın sonunda elinde:</span>
-                  <p class="takeaway-text">takip edeceğin canlı bir iz ve onun ilk küçük biçimi.</p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Week 2 -->
-            <article class="week-chapter" id="hafta-2" data-week-index="2">
-              <div class="chapter-header">
-                <span class="chapter-index">2. HAFTA</span>
-                <h3 class="chapter-title">AYNI ŞEY, BAŞKA KILIKLARDA</h3>
-                <p class="chapter-subtitle">İlk parçanı bulmak</p>
-              </div>
-              <div class="chapter-body">
-                <p class="chapter-prose">
-                  Seçtiğin izi yalnızca düşünerek anlamaya çalışmıyorsun. Bir cümleyi sesle, bir imgeyi hareketle, bazen bir nesneyle yokluyor ve verdiği cevapları dinliyorsun. Biçim değiştikçe bazı nitelikler geri gelmeye devam ediyor: bir ritim, bir yön, bir atmosfer. Sen henüz adını koymamışken kendini belli eden bir karakter. Bunlarla ilk parçanı yapıyorsun. Artık yalnızca zihninde duran bir fikir değil.
-                </p>
-                <div class="chapter-takeaway">
-                  <span class="takeaway-tag">Haftanın sonunda elinde:</span>
-                  <p class="takeaway-text">üzerinde çalışabileceğin ilk somut parça.</p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Week 3 -->
-            <article class="week-chapter" id="hafta-3" data-week-index="3">
-              <div class="chapter-header">
-                <span class="chapter-index">3. HAFTA</span>
-                <h3 class="chapter-title">KEMİKLERE ŞARKI SÖYLEMEK</h3>
-                <p class="chapter-subtitle">Yazdığın şeyi ağzına almak</p>
-              </div>
-              <div class="chapter-body">
-                <p class="chapter-prose">
-                  Bir şeyi yazmakla onu söylemek aynı şey değil. Bu hafta ilk parçanı sesle buluşturuyoruz. Yüksek sesle okuduğunda nefesin nerede değişiyor? Hangi kelime ağzında yabancılaşıyor? Kâğıtta doğru görünen bir cümle, söylendiğinde hâlâ doğru geliyor mu? Buradan işinin merkezinde taşıdığı şeyi duymaya başlıyorsun. Ona bir eksen veriyor ve bu eksenin işi taşıyıp taşımadığını parçanın üzerinde deniyorsun.
-                </p>
-                <div class="chapter-takeaway">
-                  <span class="takeaway-tag">Haftanın sonunda elinde:</span>
-                  <p class="takeaway-text">sesle sınanmış bir eksen ve onunla yeniden kurulmuş bir parça.</p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Week 4 -->
-            <article class="week-chapter" id="hafta-4" data-week-index="4">
-              <div class="chapter-header">
-                <span class="chapter-index">4. HAFTA</span>
-                <h3 class="chapter-title">PARÇALARIN BİRBİRİNİ BULDUĞU YER</h3>
-                <p class="chapter-subtitle">Başı ve sonu olan bir şey</p>
-              </div>
-              <div class="chapter-body">
-                <p class="chapter-prose">
-                  Şimdi parçaların birbiriyle konuşması gerekiyor. İşinin hangi biçimi istediğine karar veriyor, sınırlarını koyuyorsun. Nereye kadar gidecek? Neyi içine almayacak? Bu kararlarla ilk kez baştan sona görülebilen bir bütün kuruyorsun. İşin dünyada kiminle, nerede karşılaşacağını da bu hafta seçiyorsun. Böylece görünürlük son gün verilen bir ödev olmuyor, yaklaştığını bildiğin bir eşik oluyor.
-                </p>
-                <div class="chapter-takeaway">
-                  <span class="takeaway-tag">Haftanın sonunda elinde:</span>
-                  <p class="takeaway-text">başı ve sonu olan ilk bütün.</p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Week 5 -->
-            <article class="week-chapter" id="hafta-5" data-week-index="5">
-              <div class="chapter-header">
-                <span class="chapter-index">5. HAFTA</span>
-                <h3 class="chapter-title">KAPIYI KAPATMAK</h3>
-                <p class="chapter-subtitle">“Şimdilik bu” diyebilmek</p>
-              </div>
-              <div class="chapter-body">
-                <p class="chapter-prose">
-                  Bu hafta yeni ihtimaller açmak yerine elindeki bütünü bitiriyorsun. Nerede gerçekten bir şey eksik, nerede bitirmekten kaçınmak için yeniden açıyorsun? Bunu ayırıyor, son kararlarını veriyor ve işi paylaşılabilir hâle getiriyorsun. Onu kiminle ve nasıl buluşturacağın da netleşiyor.
-                </p>
-                <div class="chapter-takeaway">
-                  <span class="takeaway-tag">Haftanın sonunda elinde:</span>
-                  <p class="takeaway-text">dünyaya çıkmaya hazır, paylaşılabilir ilk tam hâli.</p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Week 6 -->
-            <article class="week-chapter" id="hafta-6" data-week-index="6">
-              <div class="chapter-header">
-                <span class="chapter-index">6. HAFTA</span>
-                <h3 class="chapter-title">KARAYA ÇIKMAK</h3>
-                <p class="chapter-subtitle">Yaptığın şeyin dünyada nefes alması</p>
-              </div>
-              <div class="chapter-body">
-                <p class="chapter-prose">
-                  Gönderiyorsun, yayımlıyorsun, sunuyorsun, kapıyı açıyorsun. İlk kez bilgi yalnızca içeriden değil, temasın içinden de geliyor. Gelen karşılıkla sende olanı birbirinden ayırarak işe yeniden bakıyorsun. Ne değişmek istiyor? Neyi korumak istiyorsun? Buradan sonra hangi hareketi seçiyorsun? Program, işi rafa kaldırdığın yerde değil, temastan sonra yeniden seçtiğin yerde tamamlanıyor.
-                </p>
-                <div class="chapter-takeaway">
-                  <span class="takeaway-tag">Haftanın sonunda elinde:</span>
-                  <p class="takeaway-text">dünyayla karşılaşmış bir iş ve onunla ilgili yeni bir seçim.</p>
-                </div>
-              </div>
-            </article>
-
-          </div>
         </div>
-
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         PHASE 2 / SECTION 2: PROGRAM SYSTEM
-         Environment: RICH CHARCOAL / SLATE-STONE
-         Design around lived rhythm, time, and relational layers
+         SECTION 7: WEEK 1 / İZİ DUYMAK (01)
+         Environment: LIGHT / WARM BONE
          ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-program" id="program">
-      <div class="container">
+    <section class="scene-journey-week" id="hafta-1" data-week-index="1">
+      <div class="container journey-week-container">
+        <div class="journey-week-spacer" aria-hidden="true"></div>
+        <div class="journey-week-content">
+          <article class="week-chapter" data-week-index="1">
+            <div class="chapter-header">
+              <span class="chapter-index">1. HAFTA</span>
+              <h3 class="chapter-title">İZİ DUYMAK</h3>
+              <p class="chapter-subtitle">Seni çağıran şeyin peşine düşmek</p>
+            </div>
+            <div class="chapter-body">
+              <p class="chapter-prose">
+                Uzun zamandır çevresinde dolaştığın şeylerin arasından hangisinin şimdi çalışılmak istediğine bakıyoruz. Ne olacağını kesinleştirmeden izlerini topluyor, seni tekrar tekrar aynı yere getiren şeyi takip ediyor ve peşinden gideceğin izi seçiyorsun. Onu büyük bir projeye dönüştürmeden, küçük ve geri alınabilir bir biçimle dışarı çıkarıyorsun.
+              </p>
+              <div class="chapter-takeaway">
+                <span class="takeaway-tag">Haftanın sonunda elinde:</span>
+                <p class="takeaway-text">takip edeceğin canlı bir iz ve onun ilk küçük biçimi.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 7: WEEK 2 / AYNI ŞEY, BAŞKA KILIKLARDA
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-journey-week" id="hafta-2" data-week-index="2">
+      <div class="container journey-week-container">
+        <div class="journey-week-spacer" aria-hidden="true"></div>
+        <div class="journey-week-content">
+          <article class="week-chapter" data-week-index="2">
+            <div class="chapter-header">
+              <span class="chapter-index">2. HAFTA</span>
+              <h3 class="chapter-title">AYNI ŞEY, BAŞKA KILIKLARDA</h3>
+              <p class="chapter-subtitle">İlk parçanı bulmak</p>
+            </div>
+            <div class="chapter-body">
+              <p class="chapter-prose">
+                Seçtiğin izi yalnızca düşünerek anlamaya çalışmıyorsun. Bir cümleyi sesle, bir imgeyi hareketle, bazen bir nesneyle yokluyor ve verdiği cevapları dinliyorsun. Biçim değiştikçe bazı nitelikler geri gelmeye devam ediyor: bir ritim, bir yön, bir atmosfer. Sen henüz adını koymamışken kendini belli eden bir karakter. Bunlarla ilk parçanı yapıyorsun. Artık yalnızca zihninde duran bir fikir değil.
+              </p>
+              <div class="chapter-takeaway">
+                <span class="takeaway-tag">Haftanın sonunda elinde:</span>
+                <p class="takeaway-text">üzerinde çalışabileceğin ilk somut parça.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 8: WEEK 3 / KEMİKLERE ŞARKI SÖYLEMEK
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-journey-week" id="hafta-3" data-week-index="3">
+      <div class="container journey-week-container">
+        <div class="journey-week-spacer" aria-hidden="true"></div>
+        <div class="journey-week-content">
+          <article class="week-chapter" data-week-index="3">
+            <div class="chapter-header">
+              <span class="chapter-index">3. HAFTA</span>
+              <h3 class="chapter-title">KEMİKLERE ŞARKI SÖYLEMEK</h3>
+              <p class="chapter-subtitle">Yazdığın şeyi ağzına almak</p>
+            </div>
+            <div class="chapter-body">
+              <p class="chapter-prose">
+                Bir şeyi yazmakla onu söylemek aynı şey değil. Bu hafta ilk parçanı sesle buluşturuyoruz. Yüksek sesle okuduğunda nefesin nerede değişiyor? Hangi kelime ağzında yabancılaşıyor? Kâğıtta doğru görünen bir cümle, söylendiğinde hâlâ doğru geliyor mu? Buradan işinin merkezinde taşıdığı şeyi duymaya başlıyorsun. Ona bir eksen veriyor ve bu eksenin işi taşıyıp taşımadığını parçanın üzerinde deniyorsun.
+              </p>
+              <div class="chapter-takeaway">
+                <span class="takeaway-tag">Haftanın sonunda elinde:</span>
+                <p class="takeaway-text">sesle sınanmış bir eksen ve onunla yeniden kurulmuş bir parça.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 9: WEEK 4 / PARÇALARIN BİRBİRİNİ BULDUĞU YER
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-journey-week" id="hafta-4" data-week-index="4">
+      <div class="container journey-week-container">
+        <div class="journey-week-spacer" aria-hidden="true"></div>
+        <div class="journey-week-content">
+          <article class="week-chapter" data-week-index="4">
+            <div class="chapter-header">
+              <span class="chapter-index">4. HAFTA</span>
+              <h3 class="chapter-title">PARÇALARIN BİRBİRİNİ BULDUĞU YER</h3>
+              <p class="chapter-subtitle">Başı ve sonu olan bir şey</p>
+            </div>
+            <div class="chapter-body">
+              <p class="chapter-prose">
+                Şimdi parçaların birbiriyle konuşması gerekiyor. İşinin hangi biçimi istediğine karar veriyor, sınırlarını koyuyorsun. Nereye kadar gidecek? Neyi içine almayacak? Bu kararlarla ilk kez baştan sona görülebilen bir bütün kuruyorsun. İşin dünyada kiminle, nerede karşılaşacağını da bu hafta seçiyorsun. Böylece görünürlük son gün verilen bir ödev olmuyor, yaklaştığını bildiğin bir eşik oluyor.
+              </p>
+              <div class="chapter-takeaway">
+                <span class="takeaway-tag">Haftanın sonunda elinde:</span>
+                <p class="takeaway-text">başı ve sonu olan ilk bütün.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 10: WEEK 5 / KAPIYI KAPATMAK
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-journey-week" id="hafta-5" data-week-index="5">
+      <div class="container journey-week-container">
+        <div class="journey-week-spacer" aria-hidden="true"></div>
+        <div class="journey-week-content">
+          <article class="week-chapter" data-week-index="5">
+            <div class="chapter-header">
+              <span class="chapter-index">5. HAFTA</span>
+              <h3 class="chapter-title">KAPIYI KAPATMAK</h3>
+              <p class="chapter-subtitle">“Şimdilik bu” diyebilmek</p>
+            </div>
+            <div class="chapter-body">
+              <p class="chapter-prose">
+                Bu hafta yeni ihtimaller açmak yerine elindeki bütünü bitiriyorsun. Nerede gerçekten bir şey eksik, nerede bitirmekten kaçınmak için yeniden açıyorsun? Bunu ayırıyor, son kararlarını veriyor ve işi paylaşılabilir hâle getiriyorsun. Onu kiminle ve nasıl buluşturacağın da netleşiyor.
+              </p>
+              <div class="chapter-takeaway">
+                <span class="takeaway-tag">Haftanın sonunda elinde:</span>
+                <p class="takeaway-text">dünyaya çıkmaya hazır, paylaşılabilir ilk tam hâli.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 11: WEEK 6 / KARAYA ÇIKMAK
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-journey-week" id="hafta-6" data-week-index="6">
+      <div class="container journey-week-container">
+        <div class="journey-week-spacer" aria-hidden="true"></div>
+        <div class="journey-week-content">
+          <article class="week-chapter" data-week-index="6">
+            <div class="chapter-header">
+              <span class="chapter-index">6. HAFTA</span>
+              <h3 class="chapter-title">KARAYA ÇIKMAK</h3>
+              <p class="chapter-subtitle">Yaptığın şeyin dünyada nefes alması</p>
+            </div>
+            <div class="chapter-body">
+              <p class="chapter-prose">
+                Gönderiyorsun, yayımlıyorsun, sunuyorsun, kapıyı açıyorsun. İlk kez bilgi yalnızca içeriden değil, temasın içinden de geliyor. Gelen karşılıkla sende olanı birbirinden ayırarak işe yeniden bakıyorsun. Ne değişmek istiyor? Neyi korumak istiyorsun? Buradan sonra hangi hareketi seçiyorsun? Program, işi rafa kaldırdığın yerde değil, temastan sonra yeniden seçtiğin yerde tamamlanıyor.
+              </p>
+              <div class="chapter-takeaway">
+                <span class="takeaway-tag">Haftanın sonunda elinde:</span>
+                <p class="takeaway-text">dünyayla karşılaşmış bir iş ve onunla ilgili yeni bir seçim.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PROGRAM PART 1 (SECTION 12): STRUCTURAL CORE
+         Environment: RICH CHARCOAL / SLATE-STONE
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-program scene-program-1" id="program">
+      <div class="container program-container">
         
         <div class="program-intro-header">
           <h2 class="program-main-title">Programın içinde neler var?</h2>
@@ -555,182 +639,190 @@
           </p>
         </div>
 
-        <!-- Rhythmic Composition of System Elements -->
-        <div class="program-rhythm-flow">
-          
-          <!-- Layer 1: Daily & Weekly Relational Anchor -->
-          <div class="system-section-row">
-            <div class="system-block system-block-featured">
-              <div class="system-block-head">
-                <h3 class="system-title">Haftalık canlı buluşmalar</h3>
+        <div class="program-grid-part-1">
+          <div class="program-col-primary">
+            <div class="program-item">
+              <div class="program-item-head">
+                <h3 class="program-item-title">Haftalık canlı buluşmalar</h3>
               </div>
-              <div class="system-block-body">
-                <p class="system-p">Haftada bir kez 2 saat birlikteyiz.</p>
-                <p class="system-p">
+              <div class="program-item-body">
+                <p class="program-p">Haftada bir kez 2 saat birlikteyiz.</p>
+                <p class="program-p">
                   Haftanın malzemesini buraya getiriyor; sesle, sözle ve yaptığın şeyin kendisiyle çalışıyoruz. Bazı şeyler ancak başka insanların varlığında denendiğinde duyulur.
                 </p>
               </div>
             </div>
 
-            <div class="system-block system-block-highlight">
-              <div class="system-block-head">
-                <h3 class="system-title">Proje Tezgâhı</h3>
+            <div class="program-item">
+              <div class="program-item-head">
+                <h3 class="program-item-title">Günlük Akort</h3>
               </div>
-              <div class="system-block-body">
-                <p class="system-p">
+              <div class="program-item-body">
+                <p class="program-p">
+                  Her gün 8–10 dakikalık rehberli bir ses kaydı. Günün akışı başlamadan ya da işinin başına geçmeden önce, içeride hareket edeni yeniden duyabileceğin küçük bir temas alanı.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="program-col-featured">
+            <div class="program-item program-item-featured">
+              <div class="program-item-head">
+                <h3 class="program-item-title">Proje Tezgâhı</h3>
+              </div>
+              <div class="program-item-body">
+                <p class="program-p">
                   İşin biçim kazanmaya başladığında canlı buluşmaların bir bölümü tezgâha dönüşüyor.
                 </p>
-                <p class="system-p">
+                <p class="program-p">
                   Kameralar açık, mikrofonlar kapalı, herkes kendi işinin başında.
                 </p>
-                <p class="system-statement">
+                <p class="program-statement">
                   Tek başına ertelediğin işi, başkalarının da çalıştığı bir odada yapıyorsun.
                 </p>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Layer 2: Daily Touchpoint & Personal Studio -->
-          <div class="system-section-triad">
-            
-            <div class="system-block">
-              <div class="system-block-head">
-                <h3 class="system-title">Günlük Akort</h3>
-              </div>
-              <div class="system-block-body">
-                <p class="system-p">
-                  Her gün 8–10 dakikalık rehberli bir ses kaydı. Günün akışı başlamadan ya da işinin başına geçmeden önce, içeride hareket edeni yeniden duyabileceğin küçük bir temas alanı.
-                </p>
-              </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PROGRAM PART 2 (SECTION 13): PRACTICES, STUDY & EMBODIED WORK
+         Environment: RICH CHARCOAL / SLATE-STONE
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-program scene-program-2" id="program-pratikler">
+      <div class="container program-container">
+        
+        <div class="program-grid-part-2-top">
+          <div class="program-item">
+            <div class="program-item-head">
+              <h3 class="program-item-title">Haftanın dersi</h3>
             </div>
-
-            <div class="system-block">
-              <div class="system-block-head">
-                <h3 class="system-title">Haftanın dersi</h3>
-              </div>
-              <div class="system-block-body">
-                <p class="system-p">
-                  Her hafta, o haftanın çalışmasını açan kayıtlı bir video ders var. Neye kulak vereceğimizi, neyi araştıracağımızı ve bunun üzerinde çalıştığın şeyle nasıl bir ilişkisi olduğunu burada kuruyoruz.
-                </p>
-              </div>
-            </div>
-
-            <div class="system-block">
-              <div class="system-block-head">
-                <h3 class="system-title">Rehberli pratikler</h3>
-              </div>
-              <div class="system-block-body">
-                <p class="system-p">
-                  Ses, nefes, beden, hareket ve imgeyle çalışan yaklaşık 15 dakikalık rehberli pratikler. Haftanın çalışmasına göre video ya da ses kaydı olarak uygulayabileceğin bu pratikler, meseleyi kendi deneyimin içinde araştırabileceğin bir alan açıyor.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Layer 3: Embodied Materials & Dialogic Mirror -->
-          <div class="system-section-triad">
-            
-            <div class="system-block">
-              <div class="system-block-head">
-                <h3 class="system-title">Workbook ve Yaratıcı Ses Haritası</h3>
-              </div>
-              <div class="system-block-body">
-                <p class="system-p">
-                  Her haftanın sorularını, uygulamalarını, fark ettiklerini ve verdiğin kararları taşıyan çalışma materyalleri.
-                </p>
-                <p class="system-p">
-                  Süreç boyunca burada biriken izler, altı haftanın sonunda Yaratıcı Ses Haritana dönüşüyor. Kendi yaratım sürecine dönüp bakabileceğin; nerede açıldığını, nerede dağıldığını, hangi eşiklerde durduğunu ve yeniden nasıl hareket ettiğini görebileceğin kişisel bir kayıt.
-                </p>
-              </div>
-            </div>
-
-            <div class="system-block">
-              <div class="system-block-head">
-                <h3 class="system-title">Kendi malzemenle çalışma</h3>
-              </div>
-              <div class="system-block-body">
-                <p class="system-p">
-                  Program boyunca seçtiğin şeyin başına tekrar tekrar dönüyorsun. Haftanın dersinde, pratiğinde ve araştırmalarında açılanları kendi malzemen üzerinde deniyor; altı hafta boyunca onun nasıl değiştiğini ve biçim kazandığını görüyorsun.
-                </p>
-                <p class="system-p">
-                  Bunun için haftada en az 45 dakika ayırmanı öneriyoruz. Tek bir çalışma oturumu olabilir ya da haftanın içine bölünebilir. Daha fazla zaman ayırmak istersen bu alan açık.
-                </p>
-              </div>
-            </div>
-
-            <div class="system-block">
-              <div class="system-block-head">
-                <h3 class="system-title">Partner çalışması</h3>
-              </div>
-              <div class="system-block-body">
-                <p class="system-p">
-                  Her hafta eşleştiğin partnerinle yaklaşık 20–25 dakika buluşuyorsun. Yaptığın şeyi onunla paylaşıyor ve onda ne kaldığını duyuyorsun.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Layer 4: Explorations, Assistant & Play Space -->
-          <div class="system-section-row">
-            
-            <div class="system-block">
-              <div class="system-block-head">
-                <h3 class="system-title">Haftanın araştırmaları</h3>
-              </div>
-              <div class="system-block-body">
-                <p class="system-p">
-                  Hafta boyunca yanında taşıyacağın küçük yazılı araştırmalar. Gördüğünü, duyduğunu ve denediğini üzerinde çalıştığın şeye taşıyorsun.
-                </p>
-              </div>
-            </div>
-
-            <div class="system-block">
-              <div class="system-block-head">
-                <h3 class="system-title">Evdeki Ses asistanı</h3>
-              </div>
-              <div class="system-block-body">
-                <p class="system-p">
-                  Canlı buluşmaların arasında kullanabileceğin, programın çalışma biçimiyle kurulmuş kişisel bir yapay zekâ alanı.
-                </p>
-                <p class="system-p">
-                  Haftanın çalışmasına geri dönmek, kendi malzemene yeniden bakmak ve kaldığın yerden işe girmek için kullanıyorsun.
-                </p>
-              </div>
-            </div>
-
-            <div class="system-block">
-              <div class="system-block-head">
-                <h3 class="system-title">Oyun Alanı</h3>
-              </div>
-              <div class="system-block-body">
-                <p class="system-p">
-                  Her hafta isteğe bağlı birkaç davet. Sesle, sözle, hareketle, nesnelerle ya da küçük ritüellerle kendi malzemene başka bir yerden yaklaşabileceğin daha serbest bir alan.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Layer 5: Lived Weekly Rhythm Summary -->
-          <div class="system-synthesis-block">
-            <div class="synthesis-head">
-              <h3 class="synthesis-title">Programın ritmi</h3>
-            </div>
-            <div class="synthesis-content">
-              <p class="synthesis-p">
-                Her gün 8–10 dakikalık Günlük Akort. Haftada bir kez 2 saatlik canlı buluşma. Hafta içinde kendi zamanına yerleştireceğin video ders, rehberli pratik, küçük araştırmalar, workbook ve partner buluşması.
-              </p>
-              <p class="synthesis-p">
-                Bir de üzerinde çalıştığın şeyin başına döndüğün zaman var. Bunun için haftada en az 45 dakika ayırmanı öneriyoruz. Daha fazlası, yaptığın şeyin doğasına ve kendi hayatındaki alana bağlı.
-              </p>
-              <p class="synthesis-statement">
-                Oyun Alanı isteğe bağlı ve bu ritmin dışında.
+            <div class="program-item-body">
+              <p class="program-p">
+                Her hafta, o haftanın çalışmasını açan kayıtlı bir video ders var. Neye kulak vereceğimizi, neyi araştıracağımızı ve bunun üzerinde çalıştığın şeyle nasıl bir ilişkisi olduğunu burada kuruyoruz.
               </p>
             </div>
           </div>
 
+          <div class="program-item">
+            <div class="program-item-head">
+              <h3 class="program-item-title">Rehberli pratikler</h3>
+            </div>
+            <div class="program-item-body">
+              <p class="program-p">
+                Ses, nefes, beden, hareket ve imgeyle çalışan yaklaşık 15 dakikalık rehberli pratikler. Haftanın çalışmasına göre video ya da ses kaydı olarak uygulayabileceğin bu pratikler, meseleyi kendi deneyimin içinde araştırabileceğin bir alan açıyor.
+              </p>
+            </div>
+          </div>
+
+          <div class="program-item">
+            <div class="program-item-head">
+              <h3 class="program-item-title">Haftanın araştırmaları</h3>
+            </div>
+            <div class="program-item-body">
+              <p class="program-p">
+                Hafta boyunca yanında taşıyacağın küçük yazılı araştırmalar. Gördüğünü, duyduğunu ve denediğini üzerinde çalıştığın şeye taşıyorsun.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-grid-part-2-bottom">
+          <div class="program-item">
+            <div class="program-item-head">
+              <h3 class="program-item-title">Workbook ve Yaratıcı Ses Haritası</h3>
+            </div>
+            <div class="program-item-body">
+              <p class="program-p">
+                Her haftanın sorularını, uygulamalarını, fark ettiklerini ve verdiğin kararları taşıyan çalışma materyalleri.
+              </p>
+              <p class="program-p">
+                Süreç boyunca burada biriken izler, altı haftanın sonunda Yaratıcı Ses Haritana dönüşüyor. Kendi yaratım sürecine dönüp bakabileceğin; nerede açıldığını, nerede dağıldığını, hangi eşiklerde durduğunu ve yeniden nasıl hareket ettiğini görebileceğin kişisel bir kayıt.
+              </p>
+            </div>
+          </div>
+
+          <div class="program-item">
+            <div class="program-item-head">
+              <h3 class="program-item-title">Kendi malzemenle çalışma</h3>
+            </div>
+            <div class="program-item-body">
+              <p class="program-p">
+                Program boyunca seçtiğin şeyin başına tekrar tekrar dönüyorsun. Haftanın dersinde, pratiğinde ve araştırmalarında açılanları kendi malzemen üzerinde deniyor; altı hafta boyunca onun nasıl değiştiğini ve biçim kazandığını görüyorsun.
+              </p>
+              <p class="program-p">
+                Bunun için haftada en az 45 dakika ayırmanı öneriyoruz. Tek bir çalışma oturumu olabilir ya da haftanın içine bölünebilir. Daha fazla zaman ayırmak istersen bu alan açık.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PROGRAM PART 3 (SECTION 14): PARTNERS, TOOLS & LIVING RHYTHM
+         Environment: RICH CHARCOAL / SLATE-STONE
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-program scene-program-3" id="program-ritim">
+      <div class="container program-container">
+        
+        <div class="program-grid-part-3-top">
+          <div class="program-item">
+            <div class="program-item-head">
+              <h3 class="program-item-title">Partner çalışması</h3>
+            </div>
+            <div class="program-item-body">
+              <p class="program-p">
+                Her hafta eşleştiğin partnerinle yaklaşık 20–25 dakika buluşuyorsun. Yaptığın şeyi onunla paylaşıyor ve onda ne kaldığını duyuyorsun.
+              </p>
+            </div>
+          </div>
+
+          <div class="program-item">
+            <div class="program-item-head">
+              <h3 class="program-item-title">Evdeki Ses asistanı</h3>
+            </div>
+            <div class="program-item-body">
+              <p class="program-p">
+                Canlı buluşmaların arasında kullanabileceğin, programın çalışma biçimiyle kurulmuş kişisel bir yapay zekâ alanı.
+              </p>
+              <p class="program-p">
+                Haftanın çalışmasına geri dönmek, kendi malzemene yeniden bakmak ve kaldığın yerden işe girmek için kullanıyorsun.
+              </p>
+            </div>
+          </div>
+
+          <div class="program-item">
+            <div class="program-item-head">
+              <h3 class="program-item-title">Oyun Alanı</h3>
+            </div>
+            <div class="program-item-body">
+              <p class="program-p">
+                Her hafta isteğe bağlı birkaç davet. Sesle, sözle, hareketle, nesnelerle ya da küçük ritüellerle kendi malzemene başka bir yerden yaklaşabileceğin daha serbest bir alan.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-synthesis-section">
+          <div class="program-synthesis-head">
+            <h3 class="program-synthesis-title">Programın ritmi</h3>
+          </div>
+          <div class="program-synthesis-content">
+            <p class="program-synthesis-p">
+              Her gün 8–10 dakikalık Günlük Akort. Haftada bir kez 2 saatlik canlı buluşma. Hafta içinde kendi zamanına yerleştireceğin video ders, rehberli pratik, küçük araştırmalar, workbook ve partner buluşması.
+            </p>
+            <p class="program-synthesis-p">
+              Bir de üzerinde çalıştığın şeyin başına döndüğün zaman var. Bunun için haftada en az 45 dakika ayırmanı öneriyoruz. Daha fazlası, yaptığın şeyin doğasına ve kendi hayatındaki alana bağlı.
+            </p>
+            <p class="program-synthesis-statement">
+              Oyun Alanı isteğe bağlı ve bu ritmin dışında.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -925,7 +1017,7 @@
 
         <div class="faq-accordion-wrap">
           
-          <details class="faq-item" open>
+          <details class="faq-item" name="faq" open>
             <summary class="faq-question">
               <span>Ne üzerinde çalışacağımı henüz bilmiyorsam katılabilir miyim?</span>
               <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -939,7 +1031,7 @@
             </div>
           </details>
 
-          <details class="faq-item">
+          <details class="faq-item" name="faq">
             <summary class="faq-question">
               <span>Sanatçı olmam gerekiyor mu?</span>
               <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -953,7 +1045,7 @@
             </div>
           </details>
 
-          <details class="faq-item">
+          <details class="faq-item" name="faq">
             <summary class="faq-question">
               <span>Haftada ne kadar zaman ayırmam gerekiyor?</span>
               <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -967,7 +1059,7 @@
             </div>
           </details>
 
-          <details class="faq-item">
+          <details class="faq-item" name="faq">
             <summary class="faq-question">
               <span>Canlı buluşmalardan birini kaçırırsam ne olur?</span>
               <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -981,7 +1073,7 @@
             </div>
           </details>
 
-          <details class="faq-item">
+          <details class="faq-item" name="faq">
             <summary class="faq-question">
               <span>Altı haftada başladığım şeyi bitirmem gerekiyor mu?</span>
               <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -995,7 +1087,7 @@
             </div>
           </details>
 
-          <details class="faq-item">
+          <details class="faq-item" name="faq">
             <summary class="faq-question">
               <span>Partner çalışması nasıl işliyor?</span>
               <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -1009,7 +1101,7 @@
             </div>
           </details>
 
-          <details class="faq-item">
+          <details class="faq-item" name="faq">
             <summary class="faq-question">
               <span>Sesimi kullanma konusunda deneyimli olmam gerekiyor mu?</span>
               <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -1023,7 +1115,7 @@
             </div>
           </details>
 
-          <details class="faq-item">
+          <details class="faq-item" name="faq">
             <summary class="faq-question">
               <span>Evdeki Ses asistanını kullanmak zorunda mıyım?</span>
               <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
