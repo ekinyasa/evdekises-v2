@@ -7,8 +7,16 @@
 ehthumbs.db
 Thumbs.db
 
-# Generated / transient screenshots
-*.png
+# Root transient QA screenshots & test outputs
+/*.png
+/*.jpg.tmp
+/*.log
+
+# Allow production / reference assets
+!assets/**
+!references/**
 
 # Logs & temp
 *.log
+/tmp/chrome-*
+.npm
