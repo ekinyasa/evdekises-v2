@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const eligibleChatSectionIds = new Set([
     'hafta-0', 'hafta-1', 'hafta-2', 'hafta-3', 'hafta-4', 'hafta-5', 'hafta-6',
-    'program', 'program-pratikler', 'program-destek', 'program-ritim',
+    'program', 'program-pratikler', 'program-c', 'program-d', 'program-ritim',
     'uygunluk',
     'nilufer'
   ]);
