@@ -10,8 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let ticking = false;
   const SCROLL_THRESHOLD = 90;
 
-  // Week sections for theme & tracking
+  // Week & light-themed sections for theme & tracking
   const weekSections = document.querySelectorAll('.scene-journey-week');
+  const lightSurfaceSections = document.querySelectorAll('.scene-journey-week, [data-slide-theme="light"]');
   const journeyTracker = document.getElementById('journeyTracker');
   const trackerLinks = document.querySelectorAll('.tracker-link');
 
@@ -29,14 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const headerMidY = headerRect.top + headerRect.height / 2;
       
       let onLight = false;
-      for (let i = 0; i < weekSections.length; i++) {
-        const section = weekSections[i];
+      for (let i = 0; i < lightSurfaceSections.length; i++) {
+        const section = lightSurfaceSections[i];
         const rect = section.getBoundingClientRect();
         if (rect.top <= headerMidY && rect.bottom >= headerMidY) {
-          const theme = section.getAttribute('data-slide-theme');
-          if (theme === 'light') {
-            onLight = true;
-          }
+          onLight = true;
           break;
         }
       }
@@ -235,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const eligibleChatSectionIds = new Set([
     'hafta-0', 'hafta-1', 'hafta-2', 'hafta-3', 'hafta-4', 'hafta-5', 'hafta-6',
-    'program', 'program-pratikler', 'program-ritim',
+    'program', 'program-pratikler', 'program-destek', 'program-ritim',
     'uygunluk',
     'nilufer'
   ]);
