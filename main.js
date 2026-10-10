@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Week & light-themed sections for theme & tracking
   const weekSections = document.querySelectorAll('.scene-journey-week');
-  const lightSurfaceSections = document.querySelectorAll('.scene-journey-week, [data-slide-theme="light"]');
+  const lightSurfaceSections = document.querySelectorAll('[data-slide-theme="light"]');
   const journeyTracker = document.getElementById('journeyTracker');
   const trackerLinks = document.querySelectorAll('.tracker-link');
 
@@ -261,6 +261,25 @@ document.addEventListener('DOMContentLoaded', () => {
         liveChatAnchor.classList.add('is-visible');
         liveChatAnchor.setAttribute('aria-hidden', 'false');
         if (liveChatBtn) liveChatBtn.setAttribute('tabindex', '0');
+      }
+
+      // Check if chat anchor is over a light surface
+      const chatRect = liveChatAnchor.getBoundingClientRect();
+      const chatMidY = chatRect.top + chatRect.height / 2;
+      let chatOnLight = false;
+      for (let i = 0; i < lightSurfaceSections.length; i++) {
+        const sec = lightSurfaceSections[i];
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= chatMidY && rect.bottom >= chatMidY) {
+          chatOnLight = true;
+          break;
+        }
+      }
+
+      if (chatOnLight) {
+        if (!liveChatAnchor.classList.contains('is-on-light')) liveChatAnchor.classList.add('is-on-light');
+      } else {
+        if (liveChatAnchor.classList.contains('is-on-light')) liveChatAnchor.classList.remove('is-on-light');
       }
     } else {
       if (liveChatAnchor.classList.contains('is-visible')) {

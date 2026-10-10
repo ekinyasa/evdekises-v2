@@ -275,14 +275,11 @@ a {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  background: rgba(14, 18, 22, 0.74);
-  backdrop-filter: blur(20px) saturate(175%);
-  -webkit-backdrop-filter: blur(20px) saturate(175%);
+  background-color: rgba(34, 34, 34, 0.17);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 
-    0 8px 32px -4px rgba(0, 0, 0, 0.38),
-    0 2px 8px -1px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.15);
   padding: 0.3125rem 0.375rem 0.3125rem clamp(1.125rem, 1.4vw, 1.5rem);
   gap: clamp(1rem, 1.6vw, 1.75rem);
   width: min(900px, calc(100vw - 2rem));
@@ -299,47 +296,50 @@ a {
     max-width 0.4s var(--ease-out-expo);
 }
 
-/* State 2 over Light Surfaces (Sections 6–12 ONLY): Warm Translucent Bone Glass */
+/* State 2 over Light Surfaces: Identical glassmorphism background with dark/terracotta content */
 .site-header.is-scrolled.is-on-light .header-pill {
-  background: rgba(245, 241, 232, 0.84);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(20, 24, 28, 0.12);
-  box-shadow: 
-    0 4px 20px -2px rgba(20, 24, 28, 0.08),
-    0 1px 4px 0 rgba(20, 24, 28, 0.04);
+  background-color: rgba(34, 34, 34, 0.17);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.15);
 }
 
 .site-header.is-scrolled.is-on-light .header-identity {
-  color: #15181b;
+  color: #111519;
 }
 
 .site-header.is-scrolled.is-on-light .header-identity:hover .header-logo-text {
-  color: var(--accent-terracotta-dark);
+  color: var(--accent-terracotta);
 }
 
 .site-header.is-scrolled.is-on-light .header-logo-text {
-  color: #15181b;
+  color: #111519;
 }
 
 .site-header.is-scrolled.is-on-light .nav-link {
-  color: rgba(21, 24, 27, 0.78);
+  color: rgba(17, 21, 25, 0.85);
 }
 
 .site-header.is-scrolled.is-on-light .nav-link:hover {
-  color: #15181b;
+  color: #111519;
 }
 
 .site-header.is-scrolled.is-on-light .btn-header-cta {
-  background-color: #c85a36;
-  color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: rgba(245, 245, 245, 0.38);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.15);
+  background-color: rgba(34, 34, 34, 0.44);
+  border: 1px solid rgba(0, 0, 0, 0.1); 
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
 .site-header.is-scrolled.is-on-light .btn-header-cta:hover {
-  background-color: #b8502e;
-  color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  background-color: rgba(34, 34, 34, 0.58);
+  color: #111519;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* 1. Identity Wordmark (Instrument Serif in both State 1 & State 2) */
@@ -426,7 +426,7 @@ a {
 .nav-link {
   font-family: var(--font-sans);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.72);
   text-decoration: none;
   white-space: nowrap;
@@ -470,29 +470,35 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
-  color: #111519;
+  background: rgba(245, 245, 245, 0.38);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 253, 237, 0.44);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
   font-family: var(--font-sans);
   font-size: 0.8125rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
   padding: 0.4375rem 1.0625rem;
   border-radius: 9999px;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
   transition: 
     background-color 0.3s ease,
+    border-color 0.3s ease,
     color 0.3s ease,
     transform 0.22s var(--ease-out-expo),
     box-shadow 0.3s ease;
 }
 
 .btn-header-cta:hover {
-  background-color: rgba(255, 255, 255, 0.94);
+  background-color: rgba(255, 253, 237, 0.6);
+  color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.22);
 }
 
 .btn-header-cta:active {
@@ -1607,8 +1613,8 @@ a {
 
 .scene-journey-week[data-slide-theme="dark"] .journey-slide-scrim {
   background: 
-    linear-gradient(to right, rgba(10, 12, 15, 0.78) 0%, rgba(10, 12, 15, 0.52) 42%, rgba(10, 12, 15, 0.16) 72%, rgba(10, 12, 15, 0.5) 100%),
-    linear-gradient(to bottom, rgba(8, 10, 12, 0.5) 0%, transparent 18%, transparent 80%, rgba(8, 10, 12, 0.6) 100%);
+    linear-gradient(to right, rgba(10, 12, 15, 0.88) 0%, rgba(10, 12, 15, 0.52) 42%, rgba(10, 12, 15, 0.36) 72%, rgba(10, 12, 15, 0.9) 100%),
+linear-gradient(to bottom, rgba(8, 10, 12, 1.6) 0%, transparent 18%, transparent 80%, rgba(8, 10, 12, 0.9) 100%);
 }
 
 .scene-journey-week[data-slide-theme="light"] .journey-slide-scrim {
@@ -2020,12 +2026,14 @@ a {
   background-color: #111418;
 }
 
+
 .program-frame-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  display: block;
+  object-position: 50% 50%;
+  opacity: 0.72;
+  filter: contrast(1.05) brightness(0.95);
 }
 
 /* Typography tokens matching Illustrator specifications */
@@ -2535,22 +2543,43 @@ align-self: flex-end;
   overflow: hidden;
 }
 
-.nilufer-photo {
-  object-fit: cover;
-  object-position: 72% 35%;
+.nilufer-image-wrap {
+  position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  --nilufer-img-x: 9%;
+  --nilufer-img-y: 4%;
+  --nilufer-img-scale: 1.8;
+  --nilufer-img-pos-x: 50%;
+  --nilufer-img-pos-y: 50%;
+  --nilufer-img-opacity: 1;
+}
+
+.scene-nilufer .program-frame-photo,
+.scene-nilufer .nilufer-photo,
+.nilufer-image-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--nilufer-img-pos-x) var(--nilufer-img-pos-y);
+  transform: translate(var(--nilufer-img-x), var(--nilufer-img-y)) scale(var(--nilufer-img-scale));
+  transform-origin: center center;
+  opacity: var(--nilufer-img-opacity);
+  filter: contrast(1.05) brightness(0.95);
   display: block;
 }
 
 .nilufer-gradient-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(8, 10, 12, 0.90) 0%, rgba(8, 10, 12, 0.78) 42%, rgba(8, 10, 12, 0.20) 72%, rgba(8, 10, 12, 0.10) 100%),
-    linear-gradient(180deg, rgba(8, 10, 12, 0.45) 0%, transparent 25%, transparent 75%, rgba(8, 10, 12, 0.65) 100%);
+  background: 
+    linear-gradient(to right, rgba(8, 10, 12, 0.94) 0%, rgba(8, 10, 12, 0.16) 42%, rgba(8, 10, 12, 0.72) 74%, rgba(8, 10, 12, 0.92) 100%),
+    linear-gradient(to bottom, rgba(8, 10, 12, 0.4) 0%, transparent 22%, transparent 68%, rgba(8, 10, 12, 0.98) 100%);
   pointer-events: none;
-  z-index: 1;
 }
 
 .nilufer-container {
@@ -2567,7 +2596,7 @@ align-self: flex-end;
 }
 
 .nilufer-content-col {
-  max-width: 560px;
+  max-width: 30vw;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -3227,26 +3256,47 @@ body.modal-open {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background: rgba(17, 21, 25, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background-color: rgba(34, 34, 34, 0.17);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 -1x 30px rgba(0, 0, 0, 0.15);
   border-radius: 9999px;
   padding: 0.65rem 1.15rem;
-  color: #cccccc;
+  color: #ffffff;
   font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
   transition: all 0.25s ease;
 }
 
+.btn-live-chat-placeholder svg {
+  color: #ffffff;
+  transition: color 0.25s ease;
+}
+
 .btn-live-chat-placeholder:hover {
-  background: rgba(25, 30, 36, 0.96);
-  border-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(45, 45, 45, 0.35);
+  border-color: rgba(255, 255, 255, 0.3);
   color: #ffffff;
   transform: translateY(-2px);
+}
+
+/* Over light surface: Dark text and terracotta/orange icon */
+.floating-chat-anchor.is-on-light .btn-live-chat-placeholder {
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #111519;
+}
+
+.floating-chat-anchor.is-on-light .btn-live-chat-placeholder svg {
+  color: #d86843;
+}
+
+.floating-chat-anchor.is-on-light .btn-live-chat-placeholder:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #111519;
 }
 
 /* Hide live chat when modal is open */
