@@ -2558,209 +2558,317 @@ align-self: flex-end;
 }
 
 /* ═══════════════════════════════════════════════════════════
-   PHASE 2 / SECTION 5: PRACTICAL & DECISION ENVIRONMENT
-   Environment: RICH TERRACOTTA / EARTHEN SANCTUARY
+   PHASE 2 / SECTION 5: PRATİK BİLGİLER (Two-Column Light Composition)
+   Reference: superpower-practical-reference.png
+   Photo: assets/practical.jpg
    ═══════════════════════════════════════════════════════════ */
-.scene-decision {
+.scene-practical {
   position: relative;
-  background-color: var(--bg-terracotta-sanctuary);
-  color: var(--text-warm-1);
+  background-color: #ffffff;
+  color: #000000;
   height: 100vh;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: clamp(2.5rem, 5vh, 4rem) 0;
-  border-top: 1px solid rgba(216, 104, 67, 0.2);
-  border-bottom: 1px solid var(--border-hairline);
+  padding: clamp(2.5rem, 4.5vh, 4rem) 0;
   box-sizing: border-box;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   overflow: hidden;
 }
 
-.decision-environment-grid {
+.practical-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 clamp(2rem, 5vw, 5.5rem);
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(2.5rem, 4.5vw, 4.5rem);
+  grid-template-columns: 46% 46%;
+  gap: 8%;
   align-items: center;
 }
 
-.decision-practical-col {
+/* Left: Editorial Photograph */
+.practical-media-col {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-.decision-heading {
-  font-size: clamp(2rem, 3vw, 2.75rem);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--text-pure);
-  margin-bottom: clamp(1.25rem, 2.2vh, 1.75rem);
-}
-
-.decision-facts-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem 2rem;
-  padding-bottom: clamp(1rem, 1.8vh, 1.5rem);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: clamp(1rem, 1.8vh, 1.5rem);
-}
-
-.fact-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.fact-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent-sand);
-}
-
-.fact-val {
-  font-size: clamp(1rem, 1.1vw, 1.125rem);
-  font-weight: 500;
-  color: var(--text-pure);
-}
-
-.highlight-capacity {
-  color: var(--accent-ochre);
-  font-weight: 700;
-}
-
-.live-dates-block {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin-bottom: clamp(1rem, 1.8vh, 1.35rem);
-}
-
-.live-dates-title {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--text-warm-1);
-}
-
-.live-dates-stream {
-  font-size: clamp(0.95rem, 1.05vw, 1.05rem);
-  font-weight: 600;
-  color: var(--accent-sand);
-  letter-spacing: 0.02em;
-}
-
-.decision-notes-stream {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.decision-note {
-  font-size: clamp(0.85rem, 0.92vw, 0.925rem);
-  line-height: 1.55;
-  color: var(--text-muted);
-}
-
-.decision-deadline-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  padding: 0.875rem 1.15rem;
-  background: rgba(216, 104, 67, 0.12);
-  border-left: 3px solid var(--accent-terracotta);
-  border-radius: 0 8px 8px 0;
-  margin-top: 0.35rem;
-}
-
-.deadline-main {
-  font-size: clamp(0.925rem, 1vw, 1rem);
-  font-weight: 700;
-  color: var(--text-pure);
-}
-
-.deadline-sub {
-  font-size: 0.8125rem;
-  color: var(--text-warm-2);
-}
-
-/* Right: Commitment & Pricing Plane */
-.decision-action-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.decision-commitment-plane {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: clamp(2rem, 3.5vh, 2.5rem) clamp(1.75rem, 2.5vw, 2.25rem);
-  background: rgba(14, 18, 22, 0.7);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(216, 104, 67, 0.3);
+.practical-photo-frame {
+  width: 100%;
+  max-width: 520px;
+  max-height: clamp(480px, 72vh, 640px);
+  aspect-ratio: 4 / 5;
   border-radius: 16px;
+  overflow: hidden;
+  background-color: #f3f0ec;
 }
 
-.pricing-title {
-  font-size: clamp(1.5rem, 2vw, 1.85rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--text-pure);
+.practical-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  display: block;
 }
 
-.pricing-options-flow {
+/* Right: Information Hierarchy */
+.practical-content-col {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--border-hairline);
-  border-bottom: 1px solid var(--border-hairline);
+  gap: clamp(0.75rem, 1.6vh, 1.15rem);
+  max-width: 520px;
+  width: 100%;
 }
 
-.price-tier-row {
+.practical-title {
+  margin: 0;
+  color: #000000;
+  font-size: clamp(24px, 2.2vw, 32px);
+  line-height: 1.15;
+}
+
+/* Schedule Group */
+.practical-schedule-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.practical-schedule-row {
+  font-family: 'NB International Regular Webfont', 'NB International Pro', 'NB International', var(--font-sans);
+  font-size: clamp(12.5px, 0.98vw, 14px);
+  line-height: 1.45;
+  color: #000000;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.practical-schedule-label {
+  font-weight: 700;
+  color: #000000;
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+.practical-schedule-val {
+  font-weight: 400;
+  color: #222222;
+}
+
+/* Pricing Group */
+.practical-pricing-group {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
 }
 
-.tier-figure {
-  font-size: clamp(1.25rem, 1.4vw, 1.375rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--text-pure);
-}
-
-.decision-cta-wrap {
+.practical-price-primary {
   display: flex;
-  flex-direction: column;
+  align-items: baseline;
+  gap: 0.4rem;
 }
 
-.btn-decision {
+.practical-price-amount {
+  font-family: 'NB International Regular Webfont', 'NB International Pro', 'NB International', var(--font-sans);
+  font-size: clamp(26px, 2.2vw, 32px);
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.practical-price-type {
+  font-family: 'NB International Regular Webfont', 'NB International Pro', 'NB International', var(--font-sans);
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 400;
+  color: #666666;
+}
+
+.practical-price-installment {
+  font-family: 'NB International Regular Webfont', 'NB International Pro', 'NB International', var(--font-sans);
+  font-size: clamp(12.5px, 0.95vw, 14px);
+  font-weight: 500;
+  color: #444444;
+}
+
+/* CTA Wrap & Button */
+.practical-cta-wrap {
+  width: 100%;
+  padding: 0.15rem 0;
+}
+
+.btn-practical-cta {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
   width: 100%;
-  padding: 1.125rem 2rem;
-  background: var(--accent-terracotta);
+  background-color: var(--accent-terracotta);
   color: #ffffff;
+  font-family: 'NB International Regular Webfont', 'NB International Pro', 'NB International', var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.5rem;
   border-radius: 9999px;
-  font-weight: 600;
-  font-size: 0.9375rem;
-  letter-spacing: 0.04em;
   text-decoration: none;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 16px rgba(216, 104, 67, 0.3);
+  box-shadow: 0 4px 14px rgba(216, 104, 67, 0.22);
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
+  gap: 0.5rem;
 }
 
-.btn-decision:hover {
-  background: var(--accent-terracotta-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(216, 104, 67, 0.45);
+.btn-practical-cta:hover {
+  background-color: #c45a36;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(216, 104, 67, 0.32);
+}
+
+.btn-practical-cta:active {
+  transform: translateY(0);
+}
+
+/* Conditions Group */
+.practical-conditions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.practical-condition-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-family: 'NB International Regular Webfont', 'NB International Pro', 'NB International', var(--font-sans);
+  font-size: clamp(11.5px, 0.88vw, 13px);
+  line-height: 1.45;
+  color: #444444;
+  margin: 0;
+}
+
+.practical-condition-item p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.practical-condition-item p strong {
+  color: #000000;
+  font-weight: 700;
+}
+
+.condition-bullet {
+  color: var(--accent-terracotta);
+  font-size: 0.95rem;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+/* Deadline Group */
+.practical-deadline-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-family: 'NB International Regular Webfont', 'NB International Pro', 'NB International', var(--font-sans);
+  font-size: clamp(11.5px, 0.88vw, 13px);
+  line-height: 1.4;
+  color: #333333;
+}
+
+.practical-deadline-main {
+  color: #000000;
+  margin: 0;
+}
+
+.practical-deadline-main strong {
+  font-weight: 700;
+}
+
+.practical-deadline-sub {
+  color: #777777;
+  margin: 0;
+}
+
+/* Live Dates Disclosure */
+.practical-dates-disclosure {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 0.45rem;
+  font-family: 'NB International Regular Webfont', 'NB International Pro', 'NB International', var(--font-sans);
+}
+
+.practical-dates-summary {
+  font-size: clamp(11.5px, 0.88vw, 13px);
+  font-weight: 600;
+  color: #111111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  outline: none;
+  user-select: none;
+}
+
+.practical-dates-summary::-webkit-details-marker {
+  display: none;
+}
+
+.disclosure-arrow {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #666666;
+  transition: transform 0.2s ease;
+}
+
+details.practical-dates-disclosure[open] .disclosure-arrow {
+  transform: rotate(45deg);
+}
+
+.practical-dates-content {
+  padding-top: 0.35rem;
+  font-size: clamp(11.5px, 0.88vw, 12.5px);
+  line-height: 1.45;
+  color: #555555;
+  font-weight: 500;
+}
+
+.practical-dates-content p {
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .scene-practical {
+    height: auto;
+    min-height: 100svh;
+    padding: clamp(5.5rem, 11vh, 7rem) 0 clamp(3.5rem, 6vh, 4.5rem);
+    overflow: visible;
+  }
+
+  .practical-container {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    padding: 0 clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .practical-photo-frame {
+    max-height: 380px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .practical-content-col {
+    max-width: 100%;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════
