@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -44,7 +44,7 @@
   <main>
     <!-- ═══════════════════════════════════════════════════════════
          SCENE A: HERO / “BİR GÜN” (Framed White Canvas)
-         Simplified Opening: Brand Identity → 2-line Question → Handwritten List → Primary CTA
+         Left: Handwritten List (#E55500) → Right: Brand Statement + Subcopy + Primary CTA
          ═══════════════════════════════════════════════════════════ -->
     <div class="hero-frame-wrapper">
       <section class="scene-hero" id="hero" data-slide-theme="light">
@@ -63,16 +63,8 @@
         <div class="hero-container">
           <div class="hero-layout-grid">
             
-            <!-- LEFT: The Recognition & Question Field -->
+            <!-- LEFT: Four-line Orange Handwritten List -->
             <div class="hero-left-field">
-              <h1 class="hero-title">
-                <span class="hero-title-line-1">Ne zamandır</span>
-                <span class="hero-title-line-2">
-                  <span class="serif-italic">“bir gün”</span>
-                  <span class="hero-title-sans">diyorsun?</span>
-                </span>
-              </h1>
-
               <div class="hero-handwritten-wrap">
                 <img 
                   src="assets/birgun.svg" 
@@ -84,24 +76,32 @@
               </div>
             </div>
 
-            <!-- RIGHT / POSTER FIELD: Program Identity & Independent Action -->
+            <!-- RIGHT: Brand Statement, Subcopy & Primary CTA -->
             <div class="hero-poster-field">
-              <div class="hero-poster-title-wrap">
-                <div class="hero-poster-title">EVDEKİ SES</div>
-              </div>
+              <h1 class="brand-statement brand-statement--hero">
+                <span class="brand-statement__top">NE &#8198;ZAMANDIR</span>
+                <span class="brand-statement__script">“Bir Gün”</span>
+                <span class="brand-statement__bottom">DİYORSUN?</span>
+              </h1>
 
-              <div class="hero-poster-action-wrap">
-                <a href="#karar" class="btn-primary hero-poster-cta">
-                  <span>EVDEKİ SES’E KATIL</span>
-                  <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
+              <div class="hero-bottom-group">
+                <p class="hero-subcopy">“Bir gün” dediğin şeyi dünyayla buluştur.</p>
+
+                <div class="hero-poster-action-wrap">
+                  <a href="#karar" class="cta-primary">Evdeki Ses’e Katıl</a>
+                </div>
               </div>
             </div>
 
           </div>
         </div>
+
+        <a href="#giris-anlatisi" class="hero-scroll-indicator" aria-label="Aşağı kaydır">
+          <svg viewBox="0 0 20 22" width="18" height="20" fill="none" aria-hidden="true">
+            <path d="M4 8.5L10 14.5L16 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 14L10 20L16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </section>
     </div>
 
@@ -124,8 +124,10 @@
           <!-- Right Beat: The Pivot & Definition -->
           <div class="continuation-detail-col">
             <div class="continuation-pivot-block">
-              <p class="continuation-pivot-1">Hazırlığı var. Niyeti var. Malzemesi var. Ama kendisi yok.</p>
-              <p class="continuation-pivot-2">Hâlâ içerideki kadar gerçek değil.</p>
+              <div class="continuation-pivot-group">
+                <p class="continuation-pivot-1">Hazırlığı var. Niyeti var. Malzemesi var. Ama kendisi yok.</p>
+                <p class="continuation-pivot-2">Hâlâ içerideki kadar gerçek değil.</p>
+              </div>
               <p class="continuation-pivot-action">Artık onunla bir şey yap.</p>
             </div>
 
@@ -165,9 +167,11 @@
         
         <!-- Upper-Left / Upper-Middle Narrative Setup -->
         <div class="recognition-narrative-flow">
-          <p class="rec-line rec-line-1">Belki başladın.</p>
-          <p class="rec-line rec-line-2">Sonra başka bir fikir geldi. Adını değiştirdin.</p>
-          <p class="rec-line rec-line-3">Biraz daha araştırdın.. Tam ilerlerken başka sesler araya girdi:</p>
+          <p class="rec-line">
+            Belki başladın.<br>
+            Sonra başka bir fikir geldi. Adını değiştirdin.<br>
+            Biraz daha araştırdın.. Tam ilerlerken başka sesler araya girdi:
+          </p>
         </div>
 
         <!-- Descending Diagonal Handwritten Internal Questions -->
@@ -215,23 +219,18 @@
 
           <div class="method-cascade-step step-2">
             <p class="movement-text">
-              İki yön arasında kaldığında yalnızca hangisinin<br>
-              daha mantıklı olduğuna bakmazsın. Birini<br>
-              anlatırken savunmaya geçtiğini, ötekini<br>
-              anlatırken yeni cümlelerin gelmeye devam<br>
-              ettiğini duyarsın.
+              İki yön arasında kaldığında yalnızca hangisinin daha mantıklı olduğuna bakmazsın. Birini anlatırken savunmaya geçtiğini, ötekini anlatırken yeni cümlelerin gelmeye devam ettiğini duyarsın.
             </p>
           </div>
 
           <div class="method-cascade-step step-3">
             <p class="movement-text">
-              Sürekli başa döndüğün yeri fark edersin. Bir şeyi daha<br>
-              ortaya çıkmadan düzeltmeye başladığın anı da.
+              Sürekli başa döndüğün yeri fark edersin. Bir şeyi daha ortaya çıkmadan düzeltmeye başladığın anı da.
             </p>
           </div>
         </div>
 
-        <!-- Bottom Right Conclusion Moment -->
+        <!-- Bottom Conclusion Moment -->
         <div class="method-realization">
           <p class="realization-primary">
             Bazı sorularla başlarız.<br>
@@ -300,24 +299,26 @@
          ═══════════════════════════════════════════════════════════ -->
     <section class="scene-encounter" id="encounter" data-slide-theme="dark">
       <div class="container">
-        <div class="encounter-columns">
-          <div class="encounter-intro-col">
-            <h3 class="encounter-lead">Program bitmeden başka biri onunla karşılaşır.</h3>
-            
-            <div class="encounter-reactions-list">
-              <p class="reaction-line">Belki beklediğin yere cevap vermez.</p>
-              <p class="reaction-line">Belki senin küçük gördüğün bir şeyi hemen fark eder.</p>
-              <p class="reaction-line">Belki ilk karşılık sende her şeyi değiştirme isteği uyandırır.</p>
-            </div>
-          </div>
+        <div class="encounter-stage-wrap">
+          <h3 class="encounter-lead">Program bitmeden başka biri onunla karşılaşır.</h3>
 
-          <div class="encounter-discernment-col">
-            <p class="discernment-thesis">
-              Karşılığı duyarsın, ama direksiyonu ona vermezsin.
-            </p>
-            <p class="discernment-sub">
-              Dışarıdan gelenle sende olanı karıştırmadan yeniden seçersin.
-            </p>
+          <div class="encounter-columns">
+            <div class="encounter-intro-col">
+              <div class="encounter-reactions-list">
+                <p class="reaction-line">Belki beklediğin yere cevap vermez.</p>
+                <p class="reaction-line">Belki senin küçük gördüğün bir şeyi hemen fark eder.</p>
+                <p class="reaction-line">Belki ilk karşılık sende her şeyi değiştirme isteği uyandırır.</p>
+              </div>
+            </div>
+
+            <div class="encounter-discernment-col">
+              <p class="discernment-thesis">
+                Karşılığı duyarsın, ama direksiyonu ona vermezsin.
+              </p>
+              <p class="discernment-sub">
+                Dışarıdan gelenle sende olanı karıştırmadan yeniden seçersin.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -364,33 +365,37 @@
             <p class="prose-p prose-highlight">
               Evdeki Ses de oradan başlar.
             </p>
-            <p class="prose-p">
-              O kıpırtının dünyaya çıkana kadar geçtiği bir yol var. Herkes onu bir yerinden tanır:
-            </p>
+            <div class="conceptual-echoes-group">
+              <p class="prose-p">
+                O kıpırtının dünyaya çıkana kadar geçtiği bir yol var. Herkes onu bir yerinden tanır:
+              </p>
 
-            <div class="embodied-echoes">
-              <div class="echo-row">
-                <span class="echo-dash">—</span>
-                <p class="echo-text">Bir cümle boğazına kadar gelir, geri döner.</p>
-              </div>
-              <div class="echo-row">
-                <span class="echo-dash">—</span>
-                <p class="echo-text">Günlerce seni çağıran fikrin başına tam oturduğunda başka sesler konuşmaya başlar.</p>
-              </div>
-              <div class="echo-row">
-                <span class="echo-dash">—</span>
-                <p class="echo-text">Yazdığını yüksek sesle okursun ve kâğıtta göremediğin şeyi duyarsın.</p>
+              <div class="embodied-echoes">
+                <div class="echo-row">
+                  <span class="echo-dash">—</span>
+                  <p class="echo-text">Bir cümle boğazına kadar gelir, geri döner.</p>
+                </div>
+                <div class="echo-row">
+                  <span class="echo-dash">—</span>
+                  <p class="echo-text">Günlerce seni çağıran fikrin başına tam oturduğunda başka sesler konuşmaya başlar.</p>
+                </div>
+                <div class="echo-row">
+                  <span class="echo-dash">—</span>
+                  <p class="echo-text">Yazdığını yüksek sesle okursun ve kâğıtta göremediğin şeyi duyarsın.</p>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="conceptual-column-right">
-            <p class="prose-p">
-              Aynı cümleyi iki insan söyler. Kelimeler aynıdır. Birininki geçip gider, ötekininki sende kalır.
-            </p>
-            <p class="prose-p">
-              Aynı kıpırtı yol boyunca söze, işe, teklife dönüşür; biçimi değişir. Ama gücü, doğduğu yerle bağını ne kadar koruduğundan gelir.
-            </p>
+            <div class="conceptual-prose-group">
+              <p class="prose-p">
+                Aynı cümleyi iki insan söyler. Kelimeler aynıdır. Birininki geçip gider, ötekininki sende kalır.
+              </p>
+              <p class="prose-p">
+                Aynı kıpırtı yol boyunca söze, işe, teklife dönüşür; biçimi değişir. Ama gücü, doğduğu yerle bağını ne kadar koruduğundan gelir.
+              </p>
+            </div>
             
             <div class="thesis-emphasis">
               <p class="thesis-text">
@@ -897,8 +902,8 @@
           
           <div class="fit-prose-stream">
             <p class="fit-p-bold">
-              Evdeki Ses'e ne yapmak istediğini bilerek de gelebilirsin, 
-              </br>yalnızca içinde bir şeyin biriktiğini bilerek de.
+              Evdeki Ses'e ne yapmak istediğini bilerek de gelebilirsin,<br>
+              yalnızca içinde bir şeyin biriktiğini bilerek de.
             </p>
             
             <p class="fit-p-body">
@@ -985,10 +990,7 @@
         <!-- Right: Information Hierarchy -->
         <div class="practical-content-col">
           
-          <!-- A. Section Heading -->
-          <div class="practical-header">
-            <h2 class="program-title-34 practical-title">Pratik Bilgiler</h2>
-          </div>
+    
 
           <!-- B. Schedule Summary -->
           <div class="practical-schedule-group">
@@ -1017,15 +1019,7 @@
             </div>
           </div>
 
-          <!-- D. Primary Registration CTA -->
-          <div class="practical-cta-wrap">
-            <a href="#karar" class="btn-practical-cta">
-              <span>EVDEKİ SES’E KATIL</span>
-              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
+          
 
           <!-- E. Important Participation Conditions -->
           <div class="practical-conditions-group">
@@ -1050,15 +1044,20 @@
           </div>
 
           <!-- G. Full Live Meeting Dates (Accessible Minimal Disclosure) -->
-          <details class="practical-dates-disclosure">
-            <summary class="practical-dates-summary">
-              <span>Canlı buluşma tarihleri</span>
-              <span class="disclosure-arrow" aria-hidden="true">+</span>
-            </summary>
-            <div class="practical-dates-content">
+          <div class="practical-dates-content">
+            <span>Canlı buluşma tarihleri</span>
               <p>4 Kasım · 11 Kasım · 18 Kasım · 25 Kasım · 2 Aralık · 9 Aralık</p>
-            </div>
-          </details>
+          </div>
+
+          <!-- D. Primary Registration CTA -->
+          <div class="practical-cta-wrap">
+            <a href="#karar" class="btn-practical-cta">
+              <span>EVDEKİ SES’E KATIL</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
 
         </div>
 
@@ -1071,21 +1070,32 @@
          ═══════════════════════════════════════════════════════════ -->
     <footer class="scene-close" id="kapanis">
       <div class="container">
-        
         <div class="close-echo-content">
-          <h2 class="close-title">
-            Ne zamandır <span class="serif-italic">“bir gün”</span> diyorsun?
-          </h2>
-          <p class="close-date">4 Kasım’da başlıyoruz.</p>
-          
-          <div class="close-cta-moment">
-            <a href="#karar" class="btn-primary">
-              <span>EVDEKİ SES’E KATIL</span>
-              <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
+          <div class="close-main-grid">
+            <div class="close-left-col">
+              <h2 class="brand-statement brand-statement--close">
+                <span class="brand-statement__top">NE ZAMANDIR</span>
+                <span class="brand-statement__script">“Bir Gün”</span>
+                <span class="brand-statement__bottom">DİYORSUN?</span>
+              </h2>
+            </div>
+
+            <div class="close-right-col">
+              <p class="close-date">11 Kasım’da başlıyoruz.</p>
+              
+              <div class="close-cta-moment">
+                <a href="#karar" class="cta-primary">Evdeki Ses’e Katıl</a>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+
+      <div class="close-footer-bar">
+        <div class="close-footer-inner">
+          <p class="footer-copy">
+            <a href="https://niluferormanlistudio.com" target="_blank" rel="noopener noreferrer" class="footer-studio-link">Nilufer Ormanli Studio LLC</a>  · © 2026 · Tüm hakları saklıdır.
+          </p>
 
           <div class="close-footer-faq-action">
             <button type="button" class="footer-faq-btn" data-open-faq="all">
@@ -1095,17 +1105,7 @@
               </svg>
             </button>
           </div>
-
-          <div class="close-footer-brand">
-            <div class="footer-brand-title">
-              <span>Nilüfer Ormanlı</span>
-              <span class="brand-sep">/</span>
-              <span>Evdeki Ses</span>
-            </div>
-            <p class="footer-copy">© 2026 · Tüm hakları saklıdır.</p>
-          </div>
         </div>
-
       </div>
     </footer>
 
