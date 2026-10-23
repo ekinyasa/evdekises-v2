@@ -12,11 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Strict iOS Safari detection for Dynamic Island and Floating URL bar adaptations
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
                 (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isIOSMobile = isIOS && window.innerWidth <= 768;
   if (isIOS) {
     document.documentElement.classList.add('is-ios');
   }
+  if (isIOSMobile) {
+    document.documentElement.classList.add('is-ios-mobile');
+  }
 
   const header = document.getElementById('siteHeader');
+  const mainContainer = document.querySelector('main');
   
   // Header state on scroll with requestAnimationFrame for buttery performance
   let ticking = false;
@@ -34,12 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const handleScroll = () => {
     if (!header) return;
-    const currentScrollY = window.scrollY || window.pageYOffset;
+    const currentScrollY = isIOSMobile && mainContainer ? mainContainer.scrollTop : (window.scrollY || window.pageYOffset);
 
-    // Smooth Universal Section Isolation
-    // When resting on Section K, adjacent sections (K-1 and K+1) have opacity: 0 to eliminate edge peeking.
-    // While actively scrolling between sections, adjacent sections immediately have opacity: 1 for unbroken gliding.
-    if (snapSections.length > 0) {
+    // Smooth Universal Section Isolation (Active strictly on Desktop/Tablets)
+    // On iOS mobile, 100dvh pure CSS snap prevents edge peeking natively without opacity clipping
+    if (!isIOSMobile && snapSections.length > 0) {
       const viewCenter = currentScrollY + window.innerHeight * 0.5;
 
       let activeIdx = 0;
@@ -124,18 +128,78 @@ document.addEventListener('DOMContentLoaded', () => {
     ticking = false;
   };
 
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(handleScroll);
-      ticking = true;
-    }
-  }, { passive: true });
+  if (isIOSMobile && mainContainer) {
+    mainContainer.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+  } else {
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
+    }, { passive: true });
 
-  window.addEventListener('scrollend', () => {
-    handleScroll();
-  }, { passive: true });
+    window.addEventListener('scrollend', () => {
+      handleScroll();
+    }, { passive: true });
+  }
   
   handleScroll();
+
+  // ══════════════════════════════════════════════════════════════════════
+  // iOS MOBILE EXCLUSIVE: SMART BOUNDARY SWAP FOR SCENE CONCEPTUAL
+  // 1. Kart içi doğal ve pürüzsüz kayar.
+  // 2. İçerik sonundayken aşağı kaydırma -> sonraki bölüme (#journeyCarouselWrapper) geçer.
+  // 3. İçerik başındayken yukarı kaydırma -> önceki bölüme (#encounter) döner.
+  // ══════════════════════════════════════════════════════════════════════
+  if (isIOSMobile) {
+    const conceptualInner = document.querySelector('.scene-conceptual .conceptual-stage-container');
+    const conceptualPrev = document.getElementById('encounter');
+    const conceptualNext = document.getElementById('journeyCarouselWrapper') || document.getElementById('hafta-0');
+
+    let touchStartY = 0;
+    let touchStartX = 0;
+    let initialScrollTop = 0;
+    let isTransitioning = false;
+
+    if (conceptualInner && conceptualPrev && conceptualNext) {
+      conceptualInner.addEventListener('touchstart', (e) => {
+        if (e.touches.length !== 1) return;
+        touchStartY = e.touches[0].clientY;
+        touchStartX = e.touches[0].clientX;
+        initialScrollTop = conceptualInner.scrollTop;
+      }, { passive: true });
+
+      conceptualInner.addEventListener('touchend', (e) => {
+        if (isTransitioning) return;
+        const touchEndY = e.changedTouches[0].clientY;
+        const touchEndX = e.changedTouches[0].clientX;
+        const deltaY = touchStartY - touchEndY; // > 0: swipe up (scroll down), < 0: swipe down (scroll up)
+        const deltaX = Math.abs(touchStartX - touchEndX);
+
+        if (deltaX > Math.abs(deltaY)) return;
+
+        const threshold = 40;
+        const maxScroll = conceptualInner.scrollHeight - conceptualInner.clientHeight;
+        const isAtBottom = initialScrollTop >= (maxScroll - 10);
+        const isAtTop = initialScrollTop <= 10;
+
+        if (deltaY > threshold && isAtBottom) {
+          isTransitioning = true;
+          conceptualNext.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => { isTransitioning = false; }, 700);
+        } else if (deltaY < -threshold && isAtTop) {
+          isTransitioning = true;
+          conceptualPrev.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => { isTransitioning = false; }, 700);
+        }
+      }, { passive: true });
+    }
+  }
 
   // Smooth scroll for internal anchor links (excluding FAQ modal triggers)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

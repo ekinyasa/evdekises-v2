@@ -2,9 +2,20 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Evdeki Ses — Nilüfer Ormanlı</title>
   <meta name="description" content="Evdeki Ses, içinde uzun zamandır taşıdığı bir şeyi hayata geçirmek isteyen kadınlar için altı haftalık canlı bir grup programı." />
+  
+  <!-- Immediate iOS Mobile Detection to prevent layout shift -->
+  <script>
+    (function() {
+      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      if (isIOS && window.innerWidth <= 768) {
+        document.documentElement.classList.add('is-ios-mobile');
+      }
+    })();
+  </script>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
