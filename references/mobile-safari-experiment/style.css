@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: red;
+}
+
+/* Mobile Safari için Scroll Snap Kapsayıcısı */
+.snap-container {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Tam ekran kesitleri */
+.section {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always; /* Hızlı kaydırmalarda da tek tek section atlamayı zorunlu kılar */
+}
+
+/* Farklı fon renkleri */
+.section-1 {
+  background-color: #1e293b; /* Koyu arduvaz mavisi */
+}
+
+.section-2 {
+  background-color: #0f766e; /* Zümrüt / petrol yeşili */
+}

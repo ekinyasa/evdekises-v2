@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Mobile Safari Snap Experiment (1, 2, 3, 4, 5)</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  
+  <!-- Ana tasarım stilleri -->
+  <link rel="stylesheet" href="styles.css?v=20261023a" />
+
+  <!-- Sadece bu deney sayfasına özel, izole iOS Mobile Safari Snap kuralları -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* references/mobile-safari-experiment yapısı */
+    .snap-container {
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      position: relative;
+    }
+
+    /* Her section tam ekran snap noktasıdır */
+    .snap-section {
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      box-sizing: border-box;
+      position: relative;
+      flex-shrink: 0;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTION 1: HERO
+       ═══════════════════════════════════════════ */
+    .hero-frame-wrapper.snap-section {
+      display: flex;
+      flex-direction: column;
+      padding: clamp(0.375rem, 1.5vw, 0.5rem);
+      height: 100vh;
+      height: 100dvh;
+      min-height: 100dvh;
+      max-height: 100dvh;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    .hero-frame-wrapper .scene-hero {
+      height: 100%;
+      width: 100%;
+      flex: 1;
+      min-height: 0;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTION 2: NARRATIVE CONTINUATION
+       ═══════════════════════════════════════════ */
+    .scene-hero-continuation.snap-section {
+      height: 100vh;
+      height: 100dvh;
+      min-height: 100dvh;
+      max-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(1rem, 2.5vh, 2rem) 0;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    .scene-hero-continuation .continuation-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 0 clamp(1.25rem, 6vw, 1.75rem);
+    }
+
+    .scene-hero-continuation .continuation-lead-script {
+      font-size: clamp(52px, 14vw, 76px);
+      line-height: 1;
+      margin: 0;
+    }
+
+    .scene-hero-continuation .continuation-lead-sub {
+      font-size: clamp(20px, 5.2vw, 24px);
+      line-height: 1.25;
+    }
+
+    .scene-hero-continuation .continuation-body-evidence {
+      font-size: clamp(14px, 3.6vw, 15px);
+      line-height: 1.45;
+      margin-top: clamp(8px, 1.5vh, 14px);
+    }
+
+    .scene-hero-continuation .continuation-pivot-1 {
+      font-size: clamp(15px, 4vw, 18px);
+      line-height: 1.35;
+    }
+
+    .scene-hero-continuation .continuation-pivot-block {
+      margin-top: clamp(8px, 1.5vh, 12px);
+    }
+
+    .scene-hero-continuation .continuation-definition-block {
+      font-size: clamp(13px, 3.5vw, 15px);
+      line-height: 1.45;
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTION 3: RECOGNITION / VOICES
+       ═══════════════════════════════════════════ */
+    .scene-recognition.snap-section {
+      display: flex;
+      flex-direction: column;
+      padding: clamp(0.375rem, 1.5vw, 0.5rem);
+      height: 100vh;
+      height: 100dvh;
+      min-height: 100dvh;
+      max-height: 100dvh;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    .scene-recognition .recognition-card {
+      height: 100%;
+      min-height: 0;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTION 4: CONCEPTUAL DEPTH (Scrollable Card)
+       ═══════════════════════════════════════════ */
+    .scene-conceptual.snap-section {
+      display: flex;
+      flex-direction: column;
+      padding: clamp(0.375rem, 1.5vw, 0.5rem);
+      height: 100vh;
+      height: 100dvh;
+      min-height: 100dvh;
+      max-height: 100dvh;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    .scene-conceptual .conceptual-stage {
+      height: 100%;
+      min-height: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .scene-conceptual .conceptual-stage-container {
+      height: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-y: contain;
+      padding: clamp(1.75rem, 4vh, 2.5rem) clamp(1.25rem, 6vw, 1.75rem);
+      padding-bottom: 4rem; /* Son kısımların rahat okunabilmesi için pay */
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTION 5: TEST PLACEHOLDER
+       ═══════════════════════════════════════════ */
+    .section-placeholder.snap-section {
+      display: flex;
+      flex-direction: column;
+      padding: clamp(0.375rem, 1.5vw, 0.5rem);
+      height: 100vh;
+      height: 100dvh;
+      min-height: 100dvh;
+      max-height: 100dvh;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    .placeholder-card {
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #0f2b26 0%, #164e43 60%, #0d3830 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: #ffffff;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .placeholder-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.125rem;
+      max-width: 330px;
+    }
+
+    .placeholder-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      color: #5eead4;
+    }
+
+    .placeholder-title {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 8vw, 36px);
+      line-height: 1.2;
+      font-weight: 400;
+      color: #ffffff;
+    }
+
+    .placeholder-desc {
+      font-size: 15px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .placeholder-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 0.5rem;
+      padding: 12px 22px;
+      background-color: #ffffff;
+      color: #0f2b26;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MASTER SITE HEADER -->
+  <header class="site-header is-on-hero" id="siteHeader">
+    <div class="header-pill">
+      <a href="#hero" class="header-identity" aria-label="Nilüfer Ormanlı">
+        <span class="header-logo-text">NİLÜFER ORMANLI</span>
+      </a>
+      <div class="header-action">
+        <a href="#karar" class="btn-header-cta">
+          <span>Evdeki Ses’e Katıl</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="snap-container" id="snapContainer">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 1: HERO / “BİR GÜN” (Framed Canvas)
+         ═══════════════════════════════════════════════════════════ -->
+    <div class="hero-frame-wrapper snap-section" id="section-1">
+      <section class="scene-hero" id="hero" data-slide-theme="light">
+        <div class="hero-canvas">
+          <div class="hero-image-wrap">
+            <img 
+              src="assets/evdeki-ses-hero.jpg" 
+              alt="Nilüfer Ormanlı — Evdeki Ses" 
+              class="hero-photo"
+              fetchpriority="high"
+            />
+            <div class="hero-gradient-overlay"></div>
+          </div>
+        </div>
+
+        <div class="hero-container">
+          <div class="hero-layout-grid">
+            
+            <!-- LEFT: Four-line Orange Handwritten List -->
+            <div class="hero-left-field">
+              <div class="hero-handwritten-wrap">
+                <img 
+                  src="assets/birgun.svg?v=20261020b" 
+                  alt="Bir gün yazacağım. Bir gün o atölyeyi açacağım. Bir gün şarkılarımı çıkaracağım. Bir gün kendi işimi kuracağım." 
+                  class="hero-handwritten-img"
+                  width="522"
+                  height="215"
+                />
+              </div>
+            </div>
+
+            <!-- RIGHT: Brand Statement, Program Title, Subcopy & Primary CTA -->
+            <div class="hero-poster-field">
+              <h1 class="brand-statement brand-statement--hero">
+                <span class="brand-statement__top">NE ZAMANDIR</span>
+                <span class="brand-statement__script">“Bir Gün”</span>
+                <span class="brand-statement__bottom">DİYORSUN?</span>
+              </h1>
+
+              <div class="hero-program-title">EVDEKİ SES</div>
+
+              <p class="hero-subcopy">“Bir gün” dediğin şeyi <span class="hero-subcopy-phrase">altı hafta içinde dünyayla buluştur.</span></p>
+
+              <div class="hero-poster-action-wrap">
+                <a href="#karar" class="cta-primary hero-cta">
+                  <span>Evdeki Ses’e Katıl</span>
+                  <svg class="cta-arrow" viewBox="0 0 20 14" fill="none" aria-hidden="true">
+                    <path d="M1 7H18.5M12.5 1L18.5 7L12.5 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <a href="#giris-anlatisi" class="hero-scroll-indicator" aria-label="Aşağı kaydır">
+          <svg viewBox="0 0 20 22" width="32" height="20" preserveAspectRatio="none" fill="none" aria-hidden="true">
+            <path d="M4 8.5L10 14.5L16 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 14L10 20L16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </section>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 2: NARRATIVE CONTINUATION SECTION
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-hero-continuation snap-section" id="giris-anlatisi" data-slide-theme="light">
+      <div class="continuation-container">
+
+        <!-- Upper Centered Composition: “Bir Gün” + Subtitle + Evidence -->
+        <div class="continuation-upper">
+          <div class="continuation-lead-truth">
+            <span class="continuation-lead-script">“Bir Gün”</span>
+            <p class="continuation-lead-sub">
+              <span class="continuation-lead-line">dediğin şey</span>
+              <span class="continuation-lead-line">hayatında yok değil.</span>
+            </p>
+          </div>
+
+          <p class="continuation-body-evidence">
+            <span class="continuation-evidence-line">Defterlerinde izleri var. Telefonunda ses kayıtları var.</span>
+            <span class="continuation-evidence-line">Bir dosya açtın, birkaç sayfa yazdın.</span>
+            <span class="continuation-evidence-line">Bir eğitim aldın. Sonra bir tane daha.</span>
+            <span class="continuation-evidence-line">Arkadaşlarına anlattın.</span>
+          </p>
+        </div>
+
+        <!-- Lower Composition -->
+        <div class="continuation-grid">
+          <!-- Left Column: Emphasis & Terracotta Border Block -->
+          <div class="continuation-lead-col">
+            <p class="continuation-pivot-1">
+              <span class="continuation-pivot-1-regular">Hazırlığı var. Niyeti var. Malzemesi var.</span>
+              <strong class="continuation-pivot-1-strong">Ama kendisi yok.</strong>
+            </p>
+
+            <div class="continuation-pivot-block">
+              <p class="continuation-pivot-2">Hâlâ içerideki kadar gerçek değil.</p>
+              <p class="continuation-pivot-action">Artık onunla bir şey yap.</p>
+            </div>
+          </div>
+
+          <!-- Right Column: Program Definition, Facts & Closing Statement -->
+          <div class="continuation-detail-col">
+            <div class="continuation-definition-block">
+              <p class="continuation-def-core">
+                <strong>Evdeki Ses</strong>, içinde uzun zamandır taşıdığı bir şeyi hayata geçirmek isteyen kadınlar için altı haftalık canlı bir grup programı.
+              </p>
+              <p class="continuation-def-kicker">6 Hafta · Her Çarşamba · 10 Kişi</p>
+              <p class="continuation-def-sub">
+                Sende canlı olan yerden başlıyor, onunla çalışıyor ve program bitmeden ona biçim verip dünyayla buluşturuyorsun.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 3: RECOGNITION / COMPETING INTERNAL VOICES
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-recognition snap-section" id="recognition" data-slide-theme="dark">
+      <div class="recognition-card">
+
+        <!-- Full-bleed photographic background -->
+        <div class="recognition-photo-wrap" aria-hidden="true">
+          <picture class="recognition-picture">
+            <source media="(max-width: 768px)" srcset="assets/scene-03-mobile.web.webp" />
+            <img
+              src="assets/scene-03-desktop.webp"
+              alt=""
+              class="recognition-photo"
+              loading="eager"
+            />
+          </picture>
+        </div>
+
+        <!-- Spatial content frame -->
+        <div class="recognition-stage-container">
+
+          <!-- Upper Narrative Setup -->
+          <div class="recognition-narrative-flow">
+            <p class="rec-line">Belki başladın.</p>
+            <p class="rec-line">
+              <span class="rec-sentence">Sonra başka bir fikir geldi.</span>
+              <span class="rec-sentence">Adını değiştirdin.</span>
+            </p>
+            <p class="rec-line">Biraz daha araştırdın.. Tam ilerlerken başka sesler araya girdi:</p>
+          </div>
+
+          <!-- Handwritten Internal Questions -->
+          <div class="recognition-handwritten-field" aria-label="Araya giren sesler">
+            <p class="rec-thought-row rec-thought-row--first">
+              <span class="rec-thought-phrase rec-thought-1">Bu iyi mi?</span>
+              <span class="rec-thought-phrase rec-thought-2">..bunu kim ister?</span>
+            </p>
+            <p class="rec-thought-row rec-thought-row--second">
+              <span class="rec-thought-phrase rec-thought-3">..böyle mi yapmalıyım?</span>
+              <span class="rec-thought-phrase rec-thought-4">Yoksa başka türlü mü?</span>
+            </p>
+          </div>
+
+          <!-- Closing Line -->
+          <div class="recognition-closing-moment">
+            <p class="rec-closing-line">Ve yapmak istediğin şeyle arandaki mesafe yeniden açıldı.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 4: CONCEPTUAL DEPTH (BİR ŞEY DÜNYAYA GELMEDEN ÖNCE)
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-conceptual snap-section" id="conceptual-scene" data-slide-theme="dark">
+      <div class="conceptual-stage">
+        <div class="conceptual-image-holder" aria-hidden="true">
+          <picture class="conceptual-picture">
+            <source media="(max-width: 768px)" srcset="assets/scene-07-mobile.webp" />
+            <img
+              src="assets/scene-07-desktop.webp"
+              alt="Evdeki Ses — Derinlik"
+              class="conceptual-photo"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+
+        <div class="conceptual-stage-container" id="section4ScrollContainer">
+          <div class="conceptual-header">
+            <h2 class="conceptual-question">
+              Bir şey dünyaya gelmeden önce nerede başlar?
+            </h2>
+          </div>
+
+          <div class="conceptual-body-flow">
+            <div class="conceptual-column-left">
+              <p class="conceptual-lead-prose">
+                Söyleyeceğin şeyi henüz bilmezsin, ama göğsünde bir şey kıpırdamıştır bile.
+              </p>
+
+              <p class="prose-p">
+                Ses üzerine çalışan bazı eski gelenekler, sesi kulağın işittiği yerde başlatmaz. Sufi müzisyen Hazrat Inayat Khan, sesin sırrının onun geldiği yerde saklı olduğunu söyler.
+              </p>
+
+              <p class="prose-p prose-accent-orange">
+                Evdeki Ses de oradan başlar.
+              </p>
+
+              <div class="conceptual-echoes-group">
+                <p class="prose-p">
+                  O kıpırtının dünyaya çıkana kadar geçtiği bir yol var. Herkes onu bir yerinden tanır:
+                </p>
+
+                <div class="embodied-echoes">
+                  <p class="echo-item">- Bir cümle boğazına kadar gelir, geri döner.</p>
+                  <p class="echo-item">- Günlerce seni çağıran fikrin başına tam oturduğunda başka sesler konuşmaya başlar.</p>
+                  <p class="echo-item">- Yazdığını yüksek sesle okursun ve kâğıtta göremediğin şeyi duyarsın.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="conceptual-column-right">
+              <div class="conceptual-prose-group">
+                <p class="prose-p">
+                  Aynı cümleyi iki insan söyler. Kelimeler aynıdır. Birininki geçip gider, ötekininki sende kalır.
+                </p>
+                <p class="prose-p">
+                  Aynı kıpırtı yol boyunca söze, işe, teklife dönüşür; biçimi değişir. Ama gücü, doğduğu yerle bağını ne kadar koruduğundan gelir.
+                </p>
+              </div>
+
+              <div class="thesis-emphasis">
+                <p class="prose-p">
+                  Bir şeyin tesiri, yalnızca ne söylediğinde değil, nereden söylediğinde saklıdır.
+                </p>
+              </div>
+
+              <div class="conceptual-closing-emphasis">
+                <p class="closing-lead">Altı hafta boyunca</p>
+                <p class="closing-sub">bu yolun tamamıyla çalışıyoruz:</p>
+                <p class="closing-accent">göğsündeki ilk kıpırtıdan dünyada birine değen işe kadar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 5: TEST PLACEHOLDER
+         ═══════════════════════════════════════════════════════════ -->
+    <div class="snap-section section-placeholder" id="section-5">
+      <div class="placeholder-card">
+        <div class="placeholder-content">
+          <span class="placeholder-tag">5. BÖLÜM</span>
+          <h2 class="placeholder-title">Test Placeholder</h2>
+          <p class="placeholder-desc">4. section içeriğinin sonuna gelindiğinde yapılan bir sonraki kaydırma (swap next) ile buraya geçtiniz.</p>
+          <a href="#conceptual-scene" class="placeholder-btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 13V3M3 8L8 3L13 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>4. Bölüme Geri Dön</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Smooth navigation anchor links within the snap container
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').substring(1);
+        const targetEl = document.getElementById(targetId);
+        const snapContainer = document.getElementById('snapContainer');
+        if (targetEl && snapContainer) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ══════════════════════════════════════════════════════════════════════
+    // SECTION 4: SMART SWAP & BOUNDARY SCROLL HANDLER
+    // 1. Section 4 içinde içerik doğal olarak kayar.
+    // 2. İçerik sonuna gelindiğinde aşağı kaydırma (swipe up) -> 5. Section'a geçer.
+    // 3. İçerik en başındayken yukarı kaydırma (swipe down) -> 3. Section'a döner.
+    // ══════════════════════════════════════════════════════════════════════
+    const innerContainer = document.getElementById('section4ScrollContainer');
+    const snapContainer = document.getElementById('snapContainer');
+    const prevSection = document.getElementById('recognition');
+    const nextSection = document.getElementById('section-5');
+
+    let touchStartY = 0;
+    let touchStartX = 0;
+    let initialScrollTop = 0;
+    let isTransitioning = false;
+
+    if (innerContainer && nextSection && prevSection) {
+      innerContainer.addEventListener('touchstart', (e) => {
+        if (e.touches.length !== 1) return;
+        touchStartY = e.touches[0].clientY;
+        touchStartX = e.touches[0].clientX;
+        initialScrollTop = innerContainer.scrollTop;
+      }, { passive: true });
+
+      innerContainer.addEventListener('touchend', (e) => {
+        if (isTransitioning) return;
+        const touchEndY = e.changedTouches[0].clientY;
+        const touchEndX = e.changedTouches[0].clientX;
+        const deltaY = touchStartY - touchEndY; // > 0: swipe up (scroll down), < 0: swipe down (scroll up)
+        const deltaX = Math.abs(touchStartX - touchEndX);
+
+        // Yatay kaydırmaları yoksay
+        if (deltaX > Math.abs(deltaY)) return;
+
+        const threshold = 40; // minimum kaydırma mesafesi
+        const maxScroll = innerContainer.scrollHeight - innerContainer.clientHeight;
+        const isAtBottom = initialScrollTop >= (maxScroll - 10);
+        const isAtTop = initialScrollTop <= 10;
+
+        if (deltaY > threshold && isAtBottom) {
+          // İçeriğin sonundayken aşağı kaydırma -> 5. Section'a geç (swap next)
+          isTransitioning = true;
+          nextSection.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => { isTransitioning = false; }, 700);
+        } else if (deltaY < -threshold && isAtTop) {
+          // İçeriğin başındayken yukarı kaydırma -> 3. Section'a geç (swap prev)
+          isTransitioning = true;
+          prevSection.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => { isTransitioning = false; }, 700);
+        }
+      }, { passive: true });
+
+      // Trackpad / Fare tekerleği (wheel) desteği
+      innerContainer.addEventListener('wheel', (e) => {
+        if (isTransitioning) return;
+        const maxScroll = innerContainer.scrollHeight - innerContainer.clientHeight;
+        const isAtBottom = innerContainer.scrollTop >= (maxScroll - 5);
+        const isAtTop = innerContainer.scrollTop <= 5;
+
+        if (e.deltaY > 20 && isAtBottom) {
+          e.preventDefault();
+          isTransitioning = true;
+          nextSection.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => { isTransitioning = false; }, 700);
+        } else if (e.deltaY < -20 && isAtTop) {
+          e.preventDefault();
+          isTransitioning = true;
+          prevSection.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => { isTransitioning = false; }, 700);
+        }
+      }, { passive: false });
+    }
+
+    // ══════════════════════════════════════════════════════════════════════
+    // SECTION GEÇİŞ YÖNÜ AKILLI POZİSYONLAMA
+    // 5. Section'dan 4'e dönüldüğünde en altta; 3'ten 4'e gelindiğinde en başta başlar.
+    // ══════════════════════════════════════════════════════════════════════
+    const sectionIds = ['section-1', 'giris-anlatisi', 'recognition', 'conceptual-scene', 'section-5'];
+    const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+    let currentIdx = 0;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+          const newIdx = sectionEls.indexOf(entry.target);
+          if (newIdx !== -1) {
+            if (entry.target.id === 'conceptual-scene' && innerContainer) {
+              if (currentIdx > newIdx) {
+                // 5'ten yukarı dönüldüyse en alttan başlat
+                innerContainer.scrollTop = innerContainer.scrollHeight - innerContainer.clientHeight;
+              } else if (currentIdx < newIdx) {
+                // 3'ten aşağı gelindiyse en baştan başlat
+                innerContainer.scrollTop = 0;
+              }
+            }
+            currentIdx = newIdx;
+          }
+        }
+      });
+    }, { root: snapContainer, threshold: 0.5 });
+
+    sectionEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
