@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" class="scroll-smooth">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,12 +11,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
   
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20261022h" />
 </head>
 <body>
 
   <!-- MASTER SITE HEADER -->
-  <header class="site-header" id="siteHeader">
+  <header class="site-header is-on-hero" id="siteHeader">
     <div class="header-pill">
       <!-- 1. Identity Wordmark (Center in State 1 -> Left in State 2) -->
       <a href="#hero" class="header-identity" aria-label="Nilüfer Ormanlı">
@@ -39,12 +39,32 @@
         </a>
       </div>
     </div>
+
+    <button
+      type="button"
+      class="mobile-menu-toggle"
+      aria-label="Menüyü aç"
+      aria-expanded="false"
+    >
+      <svg
+        class="mobile-menu-icon"
+        width="19.5"
+        height="11.5"
+        viewBox="0 0 19.5 11.5"
+        fill="none"
+        aria-hidden="true"
+      >
+        <line x1="0" y1="0.75" x2="19.5" y2="0.75" stroke="currentColor" stroke-width="1.5" />
+        <line x1="0" y1="5.75" x2="19.5" y2="5.75" stroke="currentColor" stroke-width="1.5" />
+        <line x1="0" y1="10.75" x2="19.5" y2="10.75" stroke="currentColor" stroke-width="1.5" />
+      </svg>
+    </button>
   </header>
 
   <main>
     <!-- ═══════════════════════════════════════════════════════════
          SCENE A: HERO / “BİR GÜN” (Framed White Canvas)
-         Left: Handwritten List (#E55500) → Right: Brand Statement + Subcopy + Primary CTA
+         Left: Handwritten List (#E47C3A) → Right: Brand Statement + EVDEKİ SES + Subcopy + Primary CTA
          ═══════════════════════════════════════════════════════════ -->
     <div class="hero-frame-wrapper">
       <section class="scene-hero" id="hero" data-slide-theme="light">
@@ -67,7 +87,7 @@
             <div class="hero-left-field">
               <div class="hero-handwritten-wrap">
                 <img 
-                  src="assets/birgun.svg" 
+                  src="assets/birgun.svg?v=20261020b" 
                   alt="Bir gün yazacağım. Bir gün o atölyeyi açacağım. Bir gün şarkılarımı çıkaracağım. Bir gün kendi işimi kuracağım." 
                   class="hero-handwritten-img"
                   width="522"
@@ -76,20 +96,25 @@
               </div>
             </div>
 
-            <!-- RIGHT: Brand Statement, Subcopy & Primary CTA -->
+            <!-- RIGHT: Brand Statement, Program Title, Subcopy & Primary CTA -->
             <div class="hero-poster-field">
               <h1 class="brand-statement brand-statement--hero">
-                <span class="brand-statement__top">NE &#8198;ZAMANDIR</span>
+                <span class="brand-statement__top">NE ZAMANDIR</span>
                 <span class="brand-statement__script">“Bir Gün”</span>
                 <span class="brand-statement__bottom">DİYORSUN?</span>
               </h1>
 
-              <div class="hero-bottom-group">
-                <p class="hero-subcopy">“Bir gün” dediğin şeyi dünyayla buluştur.</p>
+              <div class="hero-program-title">EVDEKİ SES</div>
 
-                <div class="hero-poster-action-wrap">
-                  <a href="#karar" class="cta-primary">Evdeki Ses’e Katıl</a>
-                </div>
+              <p class="hero-subcopy">“Bir gün” dediğin şeyi <span class="hero-subcopy-phrase">altı hafta içinde dünyayla buluştur.</span></p>
+
+              <div class="hero-poster-action-wrap">
+                <a href="#karar" class="cta-primary hero-cta">
+                  <span>Evdeki Ses’e Katıl</span>
+                  <svg class="cta-arrow" viewBox="0 0 20 14" fill="none" aria-hidden="true">
+                    <path d="M1 7H18.5M12.5 1L18.5 7L12.5 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
               </div>
             </div>
 
@@ -97,7 +122,7 @@
         </div>
 
         <a href="#giris-anlatisi" class="hero-scroll-indicator" aria-label="Aşağı kaydır">
-          <svg viewBox="0 0 20 22" width="18" height="20" fill="none" aria-hidden="true">
+          <svg viewBox="0 0 20 22" width="32" height="20" preserveAspectRatio="none" fill="none" aria-hidden="true">
             <path d="M4 8.5L10 14.5L16 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M4 14L10 20L16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -109,34 +134,51 @@
          NEW POST-HERO WHITE NARRATIVE CONTINUATION SECTION
          Exact source copy moved from hero right side
          ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-hero-continuation" id="giris-anlatisi" data-slide-theme="light">
+    <section class="scene-hero-continuation is-section-hidden" id="giris-anlatisi" data-slide-theme="light">
       <div class="continuation-container">
-        
-        <div class="continuation-grid">
-          <!-- Left Beat: The Grounded Truth & Evidence -->
-          <div class="continuation-lead-col">
-            <p class="continuation-lead-truth">“Bir gün” dediğin şey hayatında yok değil.</p>
-            <p class="continuation-body-evidence">
-              Defterlerinde izleri var. Telefonunda ses kayıtları var. Bir dosya açtın, birkaç sayfa yazdın. Bir eğitim aldın. Sonra bir tane daha. Arkadaşlarına anlattın.
+
+        <!-- Upper Centered Composition: “Bir Gün” + Subtitle + Evidence -->
+        <div class="continuation-upper">
+          <div class="continuation-lead-truth">
+            <span class="continuation-lead-script">“Bir Gün”</span>
+            <p class="continuation-lead-sub">
+              <span class="continuation-lead-line">dediğin şey</span>
+              <span class="continuation-lead-line">hayatında yok değil.</span>
             </p>
           </div>
 
-          <!-- Right Beat: The Pivot & Definition -->
-          <div class="continuation-detail-col">
+          <p class="continuation-body-evidence">
+            <span class="continuation-evidence-line">Defterlerinde izleri var. Telefonunda ses kayıtları var.</span>
+            <span class="continuation-evidence-line">Bir dosya açtın, birkaç sayfa yazdın.</span>
+            <span class="continuation-evidence-line">Bir eğitim aldın. Sonra bir tane daha.</span>
+            <span class="continuation-evidence-line">Arkadaşlarına anlattın.</span>
+          </p>
+        </div>
+
+        <!-- Lower Two-Column Composition (Desktop) / Single Column Flow (Mobile) -->
+        <div class="continuation-grid">
+          <!-- Left Column: Emphasis & Terracotta Border Block -->
+          <div class="continuation-lead-col">
+            <p class="continuation-pivot-1">
+              <span class="continuation-pivot-1-regular">Hazırlığı var. Niyeti var. Malzemesi var.</span>
+              <strong class="continuation-pivot-1-strong">Ama kendisi yok.</strong>
+            </p>
+
             <div class="continuation-pivot-block">
-              <div class="continuation-pivot-group">
-                <p class="continuation-pivot-1">Hazırlığı var. Niyeti var. Malzemesi var. Ama kendisi yok.</p>
-                <p class="continuation-pivot-2">Hâlâ içerideki kadar gerçek değil.</p>
-              </div>
+              <p class="continuation-pivot-2">Hâlâ içerideki kadar gerçek değil.</p>
               <p class="continuation-pivot-action">Artık onunla bir şey yap.</p>
             </div>
+          </div>
 
+          <!-- Right Column: Program Definition, Facts & Closing Statement -->
+          <div class="continuation-detail-col">
             <div class="continuation-definition-block">
               <p class="continuation-def-core">
                 <strong>Evdeki Ses</strong>, içinde uzun zamandır taşıdığı bir şeyi hayata geçirmek isteyen kadınlar için altı haftalık canlı bir grup programı.
               </p>
+              <p class="continuation-def-kicker">6 Hafta · Her Çarşamba · 10 Kişi</p>
               <p class="continuation-def-sub">
-                Yapmak istediğin bir şeyi seçiyor, onunla çalışıyor ve program bitmeden ona biçim verip dünyayla buluşturuyorsun.
+                Sende canlı olan yerden başlıyor, onunla çalışıyor ve program bitmeden ona biçim verip dünyayla buluşturuyorsun.
               </p>
             </div>
           </div>
@@ -149,45 +191,52 @@
          SCENE B: RECOGNITION / COMPETING INTERNAL VOICES
          Environment: Deep dark acoustic field
          ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-recognition" id="recognition" data-slide-theme="dark">
-      
-      <!-- Right photographic presence -->
-      <div class="recognition-photo-wrap" aria-hidden="true">
-        <img 
-          src="assets/section3image.avif" 
-          alt="" 
-          class="recognition-photo"
-          loading="eager"
-        />
-        <div class="recognition-photo-vignette"></div>
-      </div>
+    <section class="scene-recognition is-section-hidden" id="recognition" data-slide-theme="dark">
+      <div class="recognition-card">
 
-      <!-- Spatial content frame -->
-      <div class="recognition-stage-container">
-        
-        <!-- Upper-Left / Upper-Middle Narrative Setup -->
-        <div class="recognition-narrative-flow">
-          <p class="rec-line">
-            Belki başladın.<br>
-            Sonra başka bir fikir geldi. Adını değiştirdin.<br>
-            Biraz daha araştırdın.. Tam ilerlerken başka sesler araya girdi:
-          </p>
+        <!-- Full-bleed photographic background (Desktop & Mobile responsive sources) -->
+        <div class="recognition-photo-wrap" aria-hidden="true">
+          <picture class="recognition-picture">
+            <source media="(max-width: 768px)" srcset="assets/scene-03-mobile.web.webp" />
+            <img
+              src="assets/scene-03-desktop.webp"
+              alt=""
+              class="recognition-photo"
+              loading="eager"
+            />
+          </picture>
         </div>
 
-        <!-- Descending Diagonal Handwritten Internal Questions -->
-        <div class="recognition-handwritten-field" aria-label="Araya giren sesler">
-          <p class="rec-thought rec-thought-1">Bu iyi mi?</p>
-          <p class="rec-thought rec-thought-2">...bunu kim ister?</p>
-          <p class="rec-thought rec-thought-3">...böyle mi yapmalıyım?</p>
-          <p class="rec-thought rec-thought-4">...yoksa başka türlü mü?</p>
-        </div>
+        <!-- Spatial content frame -->
+        <div class="recognition-stage-container">
 
-        <!-- Lower-Right Closing Line -->
-        <div class="recognition-closing-moment">
-          <p class="rec-closing-line">
-            Ve yapmak istediğin şeyle<br>
-            arandaki mesafe <span class="rec-closing-highlight">yeniden açıldı.</span>
-          </p>
+          <!-- Upper Narrative Setup -->
+          <div class="recognition-narrative-flow">
+            <p class="rec-line">Belki başladın.</p>
+            <p class="rec-line">
+              <span class="rec-sentence">Sonra başka bir fikir geldi.</span>
+              <span class="rec-sentence">Adını değiştirdin.</span>
+            </p>
+            <p class="rec-line">Biraz daha araştırdın.. Tam ilerlerken başka sesler araya girdi:</p>
+          </div>
+
+          <!-- Handwritten Internal Questions -->
+          <div class="recognition-handwritten-field" aria-label="Araya giren sesler">
+            <p class="rec-thought-row rec-thought-row--first">
+              <span class="rec-thought-phrase rec-thought-1">Bu iyi mi?</span>
+              <span class="rec-thought-phrase rec-thought-2">..bunu kim ister?</span>
+            </p>
+            <p class="rec-thought-row rec-thought-row--second">
+              <span class="rec-thought-phrase rec-thought-3">..böyle mi yapmalıyım?</span>
+              <span class="rec-thought-phrase rec-thought-4">Yoksa başka türlü mü?</span>
+            </p>
+          </div>
+
+          <!-- Closing Line -->
+          <div class="recognition-closing-moment">
+            <p class="rec-closing-line">Ve yapmak istediğin şeyle arandaki mesafe yeniden açıldı.</p>
+          </div>
+
         </div>
 
       </div>
@@ -195,25 +244,25 @@
 
     <!-- ═══════════════════════════════════════════════════════════
          SCENE C: METHOD (Conceptual Pivot & Attention)
-         Environment: Deep dark / ochre attention
+         Environment: White editorial surface
          ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-method" id="method" data-slide-theme="dark">
+    <section class="scene-method" id="method" data-slide-theme="light">
       <div class="method-stage-container">
-        
+
         <!-- Headline -->
         <div class="method-opening">
           <h2 class="method-headline">
-            Bu kez yalnızca sonuca değil, <span class="serif-italic">olurken ne</span><br>
-            <span class="serif-italic">olduğuna</span> da kulak veriyoruz.
+            <span class="method-headline-line">Bu kez yalnızca sonuca değil,</span>
+            <span class="method-headline-line"><span class="method-headline-accent">olurken ne olduğuna</span> da kulak veriyoruz.</span>
           </h2>
         </div>
 
-        <!-- 3 Cascading Staggered Movements -->
+        <!-- 3 Body Paragraphs -->
         <div class="method-cascade-flow">
           <div class="method-cascade-step step-1">
             <p class="movement-text">
-              Seni tekrar tekrar çağıran şeyden başlarsın.<br>
-              Belki üç yıldır dönüp durduğun tek bir cümleden.
+              <span class="method-sentence">Seni tekrar tekrar çağıran şeyden başlarsın.</span>
+              <span class="method-sentence">Belki üç yıldır dönüp durduğun tek bir cümleden.</span>
             </p>
           </div>
 
@@ -230,15 +279,13 @@
           </div>
         </div>
 
-        <!-- Bottom Conclusion Moment -->
+        <!-- Bottom Highlighted Statement -->
         <div class="method-realization">
-          <p class="realization-primary">
-            Bazı sorularla başlarız.<br>
-            Asıl sorular yaptığın şeyin içinde belirir.
-          </p>
-          <p class="realization-secondary">
-            Verdiğin cevap da işi değiştirir.
-          </p>
+          <div class="realization-primary">
+            <p class="realization-line-1">Bazı sorularla başlarız.</p>
+            <p class="realization-line-2">Asıl sorular yaptığın şeyin içinde belirir.</p>
+          </div>
+          <p class="realization-secondary">Verdiğin cevap da işi değiştirir.</p>
         </div>
 
       </div>
@@ -249,15 +296,18 @@
          Environment: Panoramic landscape / release / conceptual depth
          ═══════════════════════════════════════════════════════════ -->
     <section class="scene-inside-world" id="inside-world" data-slide-theme="dark">
-      
+
       <div class="editorial-stage">
         <div class="editorial-image-holder" aria-hidden="true">
-          <img 
-            src="assets/evdeki-ses-editorial.jpg" 
-            alt="Evdeki Ses — İçeriden Dünyaya Yol" 
-            class="editorial-photo"
-            loading="lazy"
-          />
+          <picture class="editorial-picture">
+            <source media="(max-width: 768px)" srcset="assets/scene-05-mobile.webp" />
+            <img
+              src="assets/scene-05-desktop.webp"
+              alt="Evdeki Ses — İçeriden Dünyaya Yol"
+              class="editorial-photo"
+              loading="lazy"
+            />
+          </picture>
           <div class="editorial-scrim"></div>
         </div>
 
@@ -265,59 +315,94 @@
           <!-- 1. Top Intro Line -->
           <div class="threshold-intro-wrap">
             <p class="threshold-intro">
-              Altı hafta boyunca çalıştığın şey<br>
-              biçim kazanır.
+              Altı hafta boyunca çalıştığın şey biçim kazanır.
             </p>
           </div>
 
-          <!-- 2. Middle Forms Stream -->
-          <div class="forms-stream-block">
-            <p class="forms-stream-line">
-              <span class="form-stream-item">Bir metin.</span>
-              <span class="form-stream-item">Bir teklif.</span>
-              <span class="form-stream-item">Bir atölye.</span>
-              <span class="form-stream-item">Bir eser.</span>
-              <span class="form-stream-item">Bir işin ilk çalışan hâli.</span>
-            </p>
-            <p class="forms-stream-open">
-              Ya da işinin kendi istediğin başka bir biçim.
-            </p>
-          </div>
+          <!-- 2 & 3. Lower Editorial Group (Middle Forms Stream + Bottom Release Monument) -->
+          <div class="editorial-lower-group">
+            <!-- 2. Middle Forms Stream -->
+            <div class="forms-stream-block">
+              <p class="forms-stream-line">
+                <span class="form-stream-item">Bir teklif.</span>
+                <span class="form-stream-item">Bir atölye.</span>
+                <span class="form-stream-item">Bir eser.</span>
+              </p>
+              <p class="forms-stream-second">
+                Bir işin ilk çalışan hâli.
+              </p>
+              <p class="forms-stream-open">
+                Ya da işinin kendi istediğin başka bir biçim.
+              </p>
+            </div>
 
-          <!-- 3. Bottom Release Monument -->
-          <div class="release-monument">
-            <h2 class="release-headline">
-              <span class="release-headline-sans">Ve yaptığın şey </span><span class="release-headline-italic">senden çıkar.</span>
-            </h2>
+            <!-- 3. Bottom Release Monument -->
+            <div class="release-monument">
+              <h2 class="release-headline">
+                <span class="release-headline-sans">Ve yaptığın şey </span><span class="release-headline-italic">senden çıkar.</span>
+              </h2>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         SCENE: ENCOUNTER (KARŞILAŞMA)
+         SCENE 6: ENCOUNTER & CULMINATION (KARŞILAŞMA VE EŞİK)
          ═══════════════════════════════════════════════════════════ -->
     <section class="scene-encounter" id="encounter" data-slide-theme="dark">
-      <div class="container">
-        <div class="encounter-stage-wrap">
-          <h3 class="encounter-lead">Program bitmeden başka biri onunla karşılaşır.</h3>
+      <div class="encounter-stage">
+        <div class="encounter-image-holder" aria-hidden="true">
+          <picture class="encounter-picture">
+            <source media="(max-width: 768px)" srcset="assets/scene-06-mobile.webp" />
+            <img
+              src="assets/scene-06-desktop.webp"
+              alt="Evdeki Ses — Karşılaşma ve Eşik"
+              class="encounter-photo"
+              loading="lazy"
+            />
+          </picture>
+        </div>
 
+        <div class="encounter-stage-container">
           <div class="encounter-columns">
-            <div class="encounter-intro-col">
-              <div class="encounter-reactions-list">
-                <p class="reaction-line">Belki beklediğin yere cevap vermez.</p>
-                <p class="reaction-line">Belki senin küçük gördüğün bir şeyi hemen fark eder.</p>
-                <p class="reaction-line">Belki ilk karşılık sende her şeyi değiştirme isteği uyandırır.</p>
+            <!-- Sol Sütun: Açılış metni, açıklamalar ve vurgulu sonuç -->
+            <div class="encounter-left-col">
+              <div class="encounter-left-top">
+                <h2 class="encounter-lead">
+                  Program bitmeden başka biri onunla karşılaşır.
+                </h2>
+                <div class="encounter-reactions-list">
+                  <p class="reaction-line">Belki beklediğin yere cevap vermez.</p>
+                  <p class="reaction-line">Belki senin küçük gördüğün bir şeyi hemen fark eder.</p>
+                  <p class="reaction-line">Belki ilk karşılık sende her şeyi değiştirme isteği uyandırır.</p>
+                </div>
+              </div>
+
+              <div class="encounter-discernment">
+                <p class="discernment-thesis">
+                  Karşılığı duyarsın, ama direksiyonu ona vermezsin.
+                </p>
+                <p class="discernment-sub">
+                  Dışarıdan gelenle sende olanı karıştırmadan yeniden seçersin.
+                </p>
               </div>
             </div>
 
-            <div class="encounter-discernment-col">
-              <p class="discernment-thesis">
-                Karşılığı duyarsın, ama direksiyonu ona vermezsin.
-              </p>
-              <p class="discernment-sub">
-                Dışarıdan gelenle sende olanı karıştırmadan yeniden seçersin.
-              </p>
+            <!-- Sağ Sütun: ALTI HAFTANIN SONUNDA, açıklama ve büyük kapanış -->
+            <div class="encounter-right-col">
+              <div class="encounter-right-top">
+                <span class="culmination-kicker">Altı haftanın sonunda</span>
+                <p class="culmination-promise">
+                  Uzun zamandır “bir gün” dediğin şeyin dünyada bir karşılığı olacak.
+                </p>
+              </div>
+
+              <div class="encounter-right-bottom">
+                <h2 class="culmination-closing">
+                  Ve içinden dünyaya giden yolu bir kez baştan sona yürümüş olacaksın.
+                </h2>
+              </div>
             </div>
           </div>
         </div>
@@ -325,87 +410,78 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         SCENE: CULMINATION THRESHOLD (ALTI HAFTANIN SONUNDA)
-         ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-culmination" id="culmination" data-slide-theme="dark">
-      <div class="container">
-        <div class="culmination-threshold-wrap">
-          <div class="threshold-anchor">
-            <span class="threshold-kicker">Altı haftanın sonunda</span>
-            <h2 class="threshold-main-promise">
-              Uzun zamandır “bir gün” dediğin şeyin dünyada bir karşılığı olacak.
-            </h2>
-            <p class="threshold-walk-promise">
-              Ve içinden dünyaya giden yolu bir kez baştan sona yürümüş olacaksın.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         SCENE: CONCEPTUAL DEPTH (BİR ŞEY DÜNYAYA GELMEDEN ÖNCE)
+         SCENE 7: CONCEPTUAL DEPTH (BİR ŞEY DÜNYAYA GELMEDEN ÖNCE)
          ═══════════════════════════════════════════════════════════ -->
     <section class="scene-conceptual" id="conceptual-scene" data-slide-theme="dark">
-      <div class="container">
-        <div class="conceptual-header">
-          <h2 class="conceptual-question">
-            Bir şey dünyaya gelmeden önce <span class="serif-italic">nerede başlar?</span>
-          </h2>
-          <p class="conceptual-lead-prose">
-            Söyleyeceğin şeyi henüz bilmezsin, ama göğsünde bir şey kıpırdamıştır bile.
-          </p>
+      <div class="conceptual-stage">
+        <div class="conceptual-image-holder" aria-hidden="true">
+          <picture class="conceptual-picture">
+            <source media="(max-width: 768px)" srcset="assets/scene-07-mobile.webp" />
+            <img
+              src="assets/scene-07-desktop.webp"
+              alt="Evdeki Ses — Derinlik"
+              class="conceptual-photo"
+              loading="lazy"
+            />
+          </picture>
         </div>
 
-        <div class="conceptual-body-flow">
-          <div class="conceptual-column-left">
-            <p class="prose-p">
-              Ses üzerine çalışan bazı eski gelenekler, sesi kulağın işittiği yerde başlatmaz. Sufi müzisyen Hazrat Inayat Khan, sesin sırrının onun geldiği yerde saklı olduğunu söyler.
-            </p>
-            <p class="prose-p prose-highlight">
-              Evdeki Ses de oradan başlar.
-            </p>
-            <div class="conceptual-echoes-group">
-              <p class="prose-p">
-                O kıpırtının dünyaya çıkana kadar geçtiği bir yol var. Herkes onu bir yerinden tanır:
+        <div class="conceptual-stage-container">
+          <div class="conceptual-header">
+            <h2 class="conceptual-question">
+              Bir şey dünyaya gelmeden önce nerede başlar?
+            </h2>
+          </div>
+
+          <div class="conceptual-body-flow">
+            <div class="conceptual-column-left">
+              <p class="conceptual-lead-prose">
+                Söyleyeceğin şeyi henüz bilmezsin, ama göğsünde bir şey kıpırdamıştır bile.
               </p>
 
-              <div class="embodied-echoes">
-                <div class="echo-row">
-                  <span class="echo-dash">—</span>
-                  <p class="echo-text">Bir cümle boğazına kadar gelir, geri döner.</p>
-                </div>
-                <div class="echo-row">
-                  <span class="echo-dash">—</span>
-                  <p class="echo-text">Günlerce seni çağıran fikrin başına tam oturduğunda başka sesler konuşmaya başlar.</p>
-                </div>
-                <div class="echo-row">
-                  <span class="echo-dash">—</span>
-                  <p class="echo-text">Yazdığını yüksek sesle okursun ve kâğıtta göremediğin şeyi duyarsın.</p>
+              <p class="prose-p">
+                Ses üzerine çalışan bazı eski gelenekler, sesi kulağın işittiği yerde başlatmaz. Sufi müzisyen Hazrat Inayat Khan, sesin sırrının onun geldiği yerde saklı olduğunu söyler.
+              </p>
+
+              <p class="prose-p prose-accent-orange">
+                Evdeki Ses de oradan başlar.
+              </p>
+
+              <div class="conceptual-echoes-group">
+                <p class="prose-p">
+                  O kıpırtının dünyaya çıkana kadar geçtiği bir yol var. Herkes onu bir yerinden tanır:
+                </p>
+
+                <div class="embodied-echoes">
+                  <p class="echo-item">- Bir cümle boğazına kadar gelir, geri döner.</p>
+                  <p class="echo-item">- Günlerce seni çağıran fikrin başına tam oturduğunda başka sesler konuşmaya başlar.</p>
+                  <p class="echo-item">- Yazdığını yüksek sesle okursun ve kâğıtta göremediğin şeyi duyarsın.</p>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="conceptual-column-right">
-            <div class="conceptual-prose-group">
-              <p class="prose-p">
-                Aynı cümleyi iki insan söyler. Kelimeler aynıdır. Birininki geçip gider, ötekininki sende kalır.
-              </p>
-              <p class="prose-p">
-                Aynı kıpırtı yol boyunca söze, işe, teklife dönüşür; biçimi değişir. Ama gücü, doğduğu yerle bağını ne kadar koruduğundan gelir.
-              </p>
-            </div>
-            
-            <div class="thesis-emphasis">
-              <p class="thesis-text">
-                Bir şeyin tesiri, yalnızca ne söylediğinde değil, nereden söylediğinde saklıdır.
-              </p>
-            </div>
+            <div class="conceptual-column-right">
+              <div class="conceptual-prose-group">
+                <p class="prose-p">
+                  Aynı cümleyi iki insan söyler. Kelimeler aynıdır. Birininki geçip gider, ötekininki sende kalır.
+                </p>
+                <p class="prose-p">
+                  Aynı kıpırtı yol boyunca söze, işe, teklife dönüşür; biçimi değişir. Ama gücü, doğduğu yerle bağını ne kadar koruduğundan gelir.
+                </p>
+              </div>
 
-            <p class="prose-p prose-closing">
-              Altı hafta boyunca bu yolun tamamıyla çalışıyoruz: göğsündeki ilk kıpırtıdan dünyada birine değen işe kadar.
-            </p>
+              <div class="thesis-emphasis">
+                <p class="prose-p">
+                  Bir şeyin tesiri, yalnızca ne söylediğinde değil, nereden söylediğinde saklıdır.
+                </p>
+              </div>
+
+              <div class="conceptual-closing-emphasis">
+                <p class="closing-lead">Altı hafta boyunca</p>
+                <p class="closing-sub">bu yolun tamamıyla çalışıyoruz:</p>
+                <p class="closing-accent">göğsündeki ilk kıpırtıdan dünyada birine değen işe kadar.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -452,251 +528,456 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════
-         SECTION 6: PROLOGUE / İÇERİDEN DÜNYAYA (00)
+         SIX-WEEK STORYTELLING CAROUSEL WRAPPER (MOBILE) / CONTENTS (DESKTOP)
          ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-journey-week scene-journey-prologue" id="hafta-0" data-week-index="0" data-slide-theme="dark">
-      <div id="journey" class="journey-nav-anchor" aria-hidden="true"></div>
-      <div class="journey-slide-media" aria-hidden="true">
-        <img src="assets/6hafta/00.png" alt="" class="journey-slide-photo" loading="eager" onerror="this.style.display='none'" />
-        <div class="journey-slide-scrim"></div>
-      </div>
-      <div class="container journey-week-container">
-        <div class="journey-slide-main-col">
-          <div class="journey-slide-body">
-            <h2 class="journey-slide-title">
-              Altı hafta. İçeriden dünyaya<br class="desktop-br"/>bir yol.
-            </h2>
-            <div class="journey-slide-desc">
-              <p>Evdeki Ses boyunca tek bir şey seçip onunla çalışacaksın. Her hafta ona başka bir yerinden yaklaşacak, onu dinleyecek, deneyecek, seslendirecek, karar verecek ve biçimlendireceksin.</p>
-            </div>
-          </div>
-          <div class="journey-slide-faq-wrap">
-            <button type="button" class="journey-faq-pill" data-open-faq="faq-bulusma-kacirirsam" aria-haspopup="dialog">
-              <span class="faq-pill-text">Canlı buluşmalardan birini kaçırırsam ne olur ?</span>
-              <span class="faq-pill-icon" aria-hidden="true">+</span>
-            </button>
-          </div>
-        </div>
-        <div class="journey-slide-spacer-col" aria-hidden="true"></div>
-        <div class="journey-slide-tracker-col" aria-hidden="true"></div>
-      </div>
-    </section>
+    <div class="journey-carousel-wrapper" id="journeyCarouselWrapper">
+      <div class="journey-carousel-track" id="journeyCarouselTrack">
 
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 7: WEEK 1 / İZİ DUYMAK (01)
-         ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-journey-week" id="hafta-1" data-week-index="1" data-slide-theme="dark">
-      <div class="journey-slide-media" aria-hidden="true">
-        <img src="assets/6hafta/01.png" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
-        <div class="journey-slide-scrim"></div>
-      </div>
-      <div class="container journey-week-container">
-        <div class="journey-slide-main-col">
-          <div class="journey-slide-body">
-            <div class="journey-chapter-header">
-              <span class="journey-chapter-kicker">1. HAFTA</span>
-              <h2 class="journey-slide-title">İZİ DUYMAK</h2>
-              <p class="journey-slide-subtitle">Seni çağıran şeyin peşine düşmek</p>
-            </div>
-            <div class="journey-slide-desc">
-              <p>Uzun zamandır çevresinde dolaştığın şeylerin arasından hangisinin şimdi çalışılmak istediğine bakıyoruz. Ne olacağını kesinleştirmeden izlerini topluyor, seni tekrar tekrar aynı yere getiren şeyi takip ediyor ve peşinden gideceğin izi seçiyorsun. Onu büyük bir projeye dönüştürmeden, küçük ve geri alınabilir bir biçimle dışarı çıkarıyorsun.</p>
-            </div>
-            <div class="journey-slide-takeaway">
-              <span class="takeaway-label">Haftanın sonunda elinde:</span>
-              <p class="takeaway-val">takip edeceğin canlı bir iz ve onun ilk küçük biçimi.</p>
-            </div>
+        <!-- ═══════════════════════════════════════════════════════════
+             SECTION 6: PROLOGUE / İÇERİDEN DÜNYAYA (00)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="scene-journey-week scene-journey-prologue" id="hafta-0" data-week-index="0" data-slide-theme="dark">
+          <div id="journey" class="journey-nav-anchor" aria-hidden="true"></div>
+          <div class="journey-slide-media" aria-hidden="true">
+            <img src="assets/6hafta/00.png" alt="" class="journey-slide-photo" loading="eager" onerror="this.style.display='none'" />
+            <div class="journey-slide-scrim"></div>
           </div>
-          <div class="journey-slide-faq-wrap">
-            <button type="button" class="journey-faq-pill" data-open-faq="faq-ne-calisacagimi-bilmiyorsam" aria-haspopup="dialog">
-              <span class="faq-pill-text">Ne üzerinde çalışacağımı henüz bilmiyorsam katılabilir miyim?</span>
-              <span class="faq-pill-icon" aria-hidden="true">+</span>
-            </button>
+          <div class="container journey-week-container">
+            <div class="journey-slide-main-col">
+              <div class="journey-slide-body">
+                <h2 class="journey-slide-title">
+                  <span class="desktop-title">Altı hafta. İçeriden dünyaya<br class="desktop-br"/>bir yol.</span>
+                  <span class="mobile-intro-title">
+                    <span class="mobile-intro-kicker">6 HAFTA</span>
+                    <span class="mobile-intro-heading">İÇERİDEN DÜNYAYA BİR YOL.</span>
+                  </span>
+                </h2>
+                <div class="journey-slide-desc">
+                  <p>Evdeki Ses boyunca tek bir şey seçip onunla çalışacaksın. Her hafta ona başka bir yerinden yaklaşacak, onu dinleyecek, deneyecek, seslendirecek, karar verecek ve biçimlendireceksin.</p>
+                </div>
+                <!-- Mobile Intro Action Row with Divider & Arrow -->
+                <div class="journey-intro-mobile-action">
+                  <div class="journey-intro-divider" aria-hidden="true"></div>
+                  <button type="button" class="journey-intro-advance-btn" id="journeyIntroAdvanceBtn" aria-label="Altı haftalık yolculuğu keşfetmek için kaydır">
+                    <span>Altı haftalık yolculuğu keşfetmek için kaydır.</span>
+                    <svg class="journey-advance-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="journey-slide-faq-wrap">
+                <button type="button" class="journey-faq-pill" data-open-faq="faq-bulusma-kacirirsam" aria-haspopup="dialog">
+                  <span class="faq-pill-text">Canlı buluşmalardan birini kaçırırsam ne olur ?</span>
+                  <span class="faq-pill-icon" aria-hidden="true">+</span>
+                </button>
+              </div>
+            </div>
+            <div class="journey-slide-spacer-col" aria-hidden="true"></div>
+            <div class="journey-slide-tracker-col" aria-hidden="true"></div>
           </div>
-        </div>
-        <div class="journey-slide-spacer-col" aria-hidden="true"></div>
-        <div class="journey-slide-tracker-col" aria-hidden="true"></div>
-      </div>
-    </section>
+        </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 8: WEEK 2 / AYNI ŞEY, BAŞKA KILIKLARDA (02)
-         ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-journey-week" id="hafta-2" data-week-index="2" data-slide-theme="dark">
-      <div class="journey-slide-media" aria-hidden="true">
-        <img src="assets/6hafta/02.avif" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
-        <div class="journey-slide-scrim"></div>
-      </div>
-      <div class="container journey-week-container">
-        <div class="journey-slide-main-col">
-          <div class="journey-slide-body">
-            <div class="journey-chapter-header">
-              <span class="journey-chapter-kicker">2. HAFTA</span>
-              <h2 class="journey-slide-title">AYNI ŞEY, BAŞKA KILIKLARDA</h2>
-              <p class="journey-slide-subtitle">İlk parçanı bulmak</p>
-            </div>
-            <div class="journey-slide-desc">
-              <p>Seçtiğin izi yalnızca düşünerek anlamaya çalışmıyorsun. Bir cümleyi sesle, bir imgeyi hareketle, bazen bir nesneyle yokluyor ve verdiği cevapları dinliyorsun. Biçim değiştikçe bazı nitelikler geri gelmeye devam ediyor: bir ritim, bir yön, bir atmosfer. Sen henüz adını koymamışken kendini belli eden bir karakter. Bunlarla ilk parçanı yapıyorsun. Artık yalnızca zihninde duran bir fikir değil.</p>
-            </div>
-            <div class="journey-slide-takeaway">
-              <span class="takeaway-label">Haftanın sonunda elinde:</span>
-              <p class="takeaway-val">üzerinde çalışabileceğin ilk somut parça.</p>
-            </div>
+        <!-- ═══════════════════════════════════════════════════════════
+             SECTION 7: WEEK 1 / İZİ DUYMAK (01)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="scene-journey-week" id="hafta-1" data-week-index="1" data-slide-theme="dark">
+          <div class="journey-slide-media" aria-hidden="true">
+            <img src="assets/6hafta/01.png" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
+            <div class="journey-slide-scrim"></div>
           </div>
-          <div class="journey-slide-faq-wrap">
-            <button type="button" class="journey-faq-pill" data-open-faq="faq-ses-deneyimi" aria-haspopup="dialog">
-              <span class="faq-pill-text">Sesimi kullanma konusunda deneyimli olmam gerekiyor mu?</span>
-              <span class="faq-pill-icon" aria-hidden="true">+</span>
-            </button>
+          <div class="container journey-week-container">
+            <div class="journey-slide-main-col">
+              <div class="journey-slide-body">
+                <div class="journey-chapter-header">
+                  <span class="journey-chapter-kicker">1. HAFTA</span>
+                  <h2 class="journey-slide-title">İZİ DUYMAK</h2>
+                  <p class="journey-slide-subtitle">Seni çağıran şeyin peşine düşmek</p>
+                </div>
+                <div class="journey-slide-desc">
+                  <p>Uzun zamandır çevresinde dolaştığın şeylerin arasından hangisinin şimdi çalışılmak istediğine bakıyoruz. Ne olacağını kesinleştirmeden izlerini topluyor, seni tekrar tekrar aynı yere getiren şeyi takip ediyor ve peşinden gideceğin izi seçiyorsun. Onu büyük bir projeye dönüştürmeden, küçük ve geri alınabilir bir biçimle dışarı çıkarıyorsun.</p>
+                </div>
+                <div class="journey-slide-takeaway">
+                  <span class="takeaway-label">Haftanın sonunda elinde:</span>
+                  <p class="takeaway-val">takip edeceğin canlı bir iz ve onun ilk küçük biçimi.</p>
+                </div>
+              </div>
+              <div class="journey-mobile-controls">
+                <div class="journey-mobile-pagination" aria-label="Hafta seçimi">
+                  <button type="button" class="journey-dot" data-target-index="0" aria-label="Giriş"></button>
+                  <button type="button" class="journey-dot" data-target-index="1" aria-label="1. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="2" aria-label="2. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="3" aria-label="3. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="4" aria-label="4. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="5" aria-label="5. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="6" aria-label="6. Hafta"></button>
+                </div>
+                <div class="journey-mobile-nav-row">
+                  <button type="button" class="journey-nav-btn journey-nav-prev" data-journey-prev aria-label="Önceki Hafta">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button type="button" class="journey-mobile-chat-btn" aria-label="Canlı Destek">
+                    <svg class="journey-chat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Canlı Destek</span>
+                  </button>
+                  <button type="button" class="journey-nav-btn journey-nav-next" data-journey-next aria-label="Sonraki Hafta">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="journey-slide-faq-wrap">
+                <button type="button" class="journey-faq-pill" data-open-faq="faq-ne-calisacagimi-bilmiyorsam" aria-haspopup="dialog">
+                  <span class="faq-pill-text">Ne üzerinde çalışacağımı henüz bilmiyorsam katılabilir miyim?</span>
+                  <span class="faq-pill-icon" aria-hidden="true">+</span>
+                </button>
+              </div>
+            </div>
+            <div class="journey-slide-spacer-col" aria-hidden="true"></div>
+            <div class="journey-slide-tracker-col" aria-hidden="true"></div>
           </div>
-        </div>
-        <div class="journey-slide-spacer-col" aria-hidden="true"></div>
-        <div class="journey-slide-tracker-col" aria-hidden="true"></div>
-      </div>
-    </section>
+        </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 9: WEEK 3 / KEMİKLERE ŞARKI SÖYLEMEK (03)
-         ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-journey-week" id="hafta-3" data-week-index="3" data-slide-theme="dark">
-      <div class="journey-slide-media" aria-hidden="true">
-        <img src="assets/6hafta/03.avif" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
-        <div class="journey-slide-scrim"></div>
-      </div>
-      <div class="container journey-week-container">
-        <div class="journey-slide-main-col">
-          <div class="journey-slide-body">
-            <div class="journey-chapter-header">
-              <span class="journey-chapter-kicker">3. HAFTA</span>
-              <h2 class="journey-slide-title">KEMİKLERE ŞARKI SÖYLEMEK</h2>
-              <p class="journey-slide-subtitle">Yazdığın şeyi ağzına almak</p>
-            </div>
-            <div class="journey-slide-desc">
-              <p>Bir şeyi yazmakla onu söylemek aynı şey değil. Bu hafta ilk parçanı sesle buluşturuyoruz. Yüksek sesle okuduğunda nefesin nerede değişiyor? Hangi kelime ağzında yabancılaşıyor? Kâğıtta doğru görünen bir cümle, söylendiğinde hâlâ doğru geliyor mu? Buradan işinin merkezinde taşıdığı şeyi duymaya başlıyorsun. Ona bir eksen veriyor ve bu eksenin işi taşıyıp taşımadığını parçanın üzerinde deniyorsun.</p>
-            </div>
-            <div class="journey-slide-takeaway">
-              <span class="takeaway-label">Haftanın sonunda elinde:</span>
-              <p class="takeaway-val">sesle sınanmış bir eksen ve onunla yeniden kurulmuş bir parça.</p>
-            </div>
+        <!-- ═══════════════════════════════════════════════════════════
+             SECTION 8: WEEK 2 / AYNI ŞEY, BAŞKA KILIKLARDA (02)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="scene-journey-week" id="hafta-2" data-week-index="2" data-slide-theme="dark">
+          <div class="journey-slide-media" aria-hidden="true">
+            <img src="assets/6hafta/02.avif" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
+            <div class="journey-slide-scrim"></div>
           </div>
-          <div class="journey-slide-faq-wrap">
-            <button type="button" class="journey-faq-pill" data-open-faq="faq-bitirmek-gerekiyor-mu" aria-haspopup="dialog">
-              <span class="faq-pill-text">Altı haftada başladığım şeyi bitirmem gerekiyor mu?</span>
-              <span class="faq-pill-icon" aria-hidden="true">+</span>
-            </button>
+          <div class="container journey-week-container">
+            <div class="journey-slide-main-col">
+              <div class="journey-slide-body">
+                <div class="journey-chapter-header">
+                  <span class="journey-chapter-kicker">2. HAFTA</span>
+                  <h2 class="journey-slide-title">AYNI ŞEY, BAŞKA KILIKLARDA</h2>
+                  <p class="journey-slide-subtitle">İlk parçanı bulmak</p>
+                </div>
+                <div class="journey-slide-desc">
+                  <p>Seçtiğin izi yalnızca düşünerek anlamaya çalışmıyorsun. Bir cümleyi sesle, bir imgeyi hareketle, bazen bir nesneyle yokluyor ve verdiği cevapları dinliyorsun. Biçim değiştikçe bazı nitelikler geri gelmeye devam ediyor: bir ritim, bir yön, bir atmosfer. Sen henüz adını koymamışken kendini belli eden bir karakter. Bunlarla ilk parçanı yapıyorsun. Artık yalnızca zihninde duran bir fikir değil.</p>
+                </div>
+                <div class="journey-slide-takeaway">
+                  <span class="takeaway-label">Haftanın sonunda elinde:</span>
+                  <p class="takeaway-val">üzerinde çalışabileceğin ilk somut parça.</p>
+                </div>
+              </div>
+              <div class="journey-mobile-controls">
+                <div class="journey-mobile-pagination" aria-label="Hafta seçimi">
+                  <button type="button" class="journey-dot" data-target-index="0" aria-label="Giriş"></button>
+                  <button type="button" class="journey-dot" data-target-index="1" aria-label="1. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="2" aria-label="2. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="3" aria-label="3. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="4" aria-label="4. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="5" aria-label="5. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="6" aria-label="6. Hafta"></button>
+                </div>
+                <div class="journey-mobile-nav-row">
+                  <button type="button" class="journey-nav-btn journey-nav-prev" data-journey-prev aria-label="Önceki Hafta">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button type="button" class="journey-mobile-chat-btn" aria-label="Canlı Destek">
+                    <svg class="journey-chat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Canlı Destek</span>
+                  </button>
+                  <button type="button" class="journey-nav-btn journey-nav-next" data-journey-next aria-label="Sonraki Hafta">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="journey-slide-faq-wrap">
+                <button type="button" class="journey-faq-pill" data-open-faq="faq-ses-deneyimi" aria-haspopup="dialog">
+                  <span class="faq-pill-text">Sesimi kullanma konusunda deneyimli olmam gerekiyor mu?</span>
+                  <span class="faq-pill-icon" aria-hidden="true">+</span>
+                </button>
+              </div>
+            </div>
+            <div class="journey-slide-spacer-col" aria-hidden="true"></div>
+            <div class="journey-slide-tracker-col" aria-hidden="true"></div>
           </div>
-        </div>
-        <div class="journey-slide-spacer-col" aria-hidden="true"></div>
-        <div class="journey-slide-tracker-col" aria-hidden="true"></div>
-      </div>
-    </section>
+        </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 10: WEEK 4 / PARÇALARIN BİRBİRİNİ BULDUĞU YER (04)
-         ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-journey-week" id="hafta-4" data-week-index="4" data-slide-theme="dark">
-      <div class="journey-slide-media" aria-hidden="true">
-        <img src="assets/6hafta/04.png" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
-        <div class="journey-slide-scrim"></div>
-      </div>
-      <div class="container journey-week-container">
-        <div class="journey-slide-main-col">
-          <div class="journey-slide-body">
-            <div class="journey-chapter-header">
-              <span class="journey-chapter-kicker">4. HAFTA</span>
-              <h2 class="journey-slide-title">PARÇALARIN BİRBİRİNİ BULDUĞU YER</h2>
-              <p class="journey-slide-subtitle">Başı ve sonu olan bir şey</p>
-            </div>
-            <div class="journey-slide-desc">
-              <p>Şimdi parçaların birbiriyle konuşması gerekiyor. İşinin hangi biçimi istediğine karar veriyor, sınırlarını koyuyorsun. Nereye kadar gidecek? Neyi içine almayacak? Bu kararlarla ilk kez baştan sona görülebilen bir bütün kuruyorsun. İşin dünyada kiminle, nerede karşılaşacağını da bu hafta seçiyorsun. Böylece görünürlük son gün verilen bir ödev olmuyor, yaklaştığını bildiğin bir eşik oluyor.</p>
-            </div>
-            <div class="journey-slide-takeaway">
-              <span class="takeaway-label">Haftanın sonunda elinde:</span>
-              <p class="takeaway-val">başı ve sonu olan ilk bütün.</p>
-            </div>
+        <!-- ═══════════════════════════════════════════════════════════
+             SECTION 9: WEEK 3 / KEMİKLERE ŞARKI SÖYLEMEK (03)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="scene-journey-week" id="hafta-3" data-week-index="3" data-slide-theme="dark">
+          <div class="journey-slide-media" aria-hidden="true">
+            <img src="assets/6hafta/03.avif" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
+            <div class="journey-slide-scrim"></div>
           </div>
-          <div class="journey-slide-faq-wrap">
-            <button type="button" class="journey-faq-pill" data-open-faq="faq-sanatci-olmak" aria-haspopup="dialog">
-              <span class="faq-pill-text">Sanatçı olmam gerekiyor mu?</span>
-              <span class="faq-pill-icon" aria-hidden="true">+</span>
-            </button>
+          <div class="container journey-week-container">
+            <div class="journey-slide-main-col">
+              <div class="journey-slide-body">
+                <div class="journey-chapter-header">
+                  <span class="journey-chapter-kicker">3. HAFTA</span>
+                  <h2 class="journey-slide-title">KEMİKLERE ŞARKI SÖYLEMEK</h2>
+                  <p class="journey-slide-subtitle">Yazdığın şeyi ağzına almak</p>
+                </div>
+                <div class="journey-slide-desc">
+                  <p>Bir şeyi yazmakla onu söylemek aynı şey değil. Bu hafta ilk parçanı sesle buluşturuyoruz. Yüksek sesle okuduğunda nefesin nerede değişiyor? Hangi kelime ağzında yabancılaşıyor? Kâğıtta doğru görünen bir cümle, söylendiğinde hâlâ doğru geliyor mu? Buradan işinin merkezinde taşıdığı şeyi duymaya başlıyorsun. Ona bir eksen veriyor ve bu eksenin işi taşıyıp taşımadığını parçanın üzerinde deniyorsun.</p>
+                </div>
+                <div class="journey-slide-takeaway">
+                  <span class="takeaway-label">Haftanın sonunda elinde:</span>
+                  <p class="takeaway-val">sesle sınanmış bir eksen ve onunla yeniden kurulmuş bir parça.</p>
+                </div>
+              </div>
+              <div class="journey-mobile-controls">
+                <div class="journey-mobile-pagination" aria-label="Hafta seçimi">
+                  <button type="button" class="journey-dot" data-target-index="0" aria-label="Giriş"></button>
+                  <button type="button" class="journey-dot" data-target-index="1" aria-label="1. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="2" aria-label="2. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="3" aria-label="3. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="4" aria-label="4. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="5" aria-label="5. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="6" aria-label="6. Hafta"></button>
+                </div>
+                <div class="journey-mobile-nav-row">
+                  <button type="button" class="journey-nav-btn journey-nav-prev" data-journey-prev aria-label="Önceki Hafta">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button type="button" class="journey-mobile-chat-btn" aria-label="Canlı Destek">
+                    <svg class="journey-chat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Canlı Destek</span>
+                  </button>
+                  <button type="button" class="journey-nav-btn journey-nav-next" data-journey-next aria-label="Sonraki Hafta">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="journey-slide-faq-wrap">
+                <button type="button" class="journey-faq-pill" data-open-faq="faq-bitirmek-gerekiyor-mu" aria-haspopup="dialog">
+                  <span class="faq-pill-text">Altı haftada başladığım şeyi bitirmem gerekiyor mu?</span>
+                  <span class="faq-pill-icon" aria-hidden="true">+</span>
+                </button>
+              </div>
+            </div>
+            <div class="journey-slide-spacer-col" aria-hidden="true"></div>
+            <div class="journey-slide-tracker-col" aria-hidden="true"></div>
           </div>
-        </div>
-        <div class="journey-slide-spacer-col" aria-hidden="true"></div>
-        <div class="journey-slide-tracker-col" aria-hidden="true"></div>
-      </div>
-    </section>
+        </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 11: WEEK 5 / KAPIYI KAPATMAK (05)
-         ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-journey-week" id="hafta-5" data-week-index="5" data-slide-theme="dark">
-      <div class="journey-slide-media" aria-hidden="true">
-        <img src="assets/6hafta/05.png" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
-        <div class="journey-slide-scrim"></div>
-      </div>
-      <div class="container journey-week-container">
-        <div class="journey-slide-main-col">
-          <div class="journey-slide-body">
-            <div class="journey-chapter-header">
-              <span class="journey-chapter-kicker">5. HAFTA</span>
-              <h2 class="journey-slide-title">KAPIYI KAPATMAK</h2>
-              <p class="journey-slide-subtitle">“Şimdilik bu” diyebilmek</p>
-            </div>
-            <div class="journey-slide-desc">
-              <p>Bu hafta yeni ihtimaller açmak yerine elindeki bütünü bitiriyorsun. Nerede gerçekten bir şey eksik, nerede bitirmekten kaçınmak için yeniden açıyorsun? Bunu ayırıyor, son kararlarını veriyor ve işi paylaşılabilir hâle getiriyorsun. Onu kiminle ve nasıl buluşturacağın da netleşiyor.</p>
-            </div>
-            <div class="journey-slide-takeaway">
-              <span class="takeaway-label">Haftanın sonunda elinde:</span>
-              <p class="takeaway-val">dünyaya çıkmaya hazır, paylaşılabilir ilk tam hâli.</p>
-            </div>
+        <!-- ═══════════════════════════════════════════════════════════
+             SECTION 10: WEEK 4 / PARÇALARIN BİRBİRİNİ BULDUĞU YER (04)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="scene-journey-week" id="hafta-4" data-week-index="4" data-slide-theme="dark">
+          <div class="journey-slide-media" aria-hidden="true">
+            <img src="assets/6hafta/04.png" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
+            <div class="journey-slide-scrim"></div>
           </div>
-          <div class="journey-slide-faq-wrap">
-            <button type="button" class="journey-faq-pill" data-open-faq="faq-zaman-ayirmak" aria-haspopup="dialog">
-              <span class="faq-pill-text">Haftada ne kadar zaman ayırmam gerekiyor?</span>
-              <span class="faq-pill-icon" aria-hidden="true">+</span>
-            </button>
+          <div class="container journey-week-container">
+            <div class="journey-slide-main-col">
+              <div class="journey-slide-body">
+                <div class="journey-chapter-header">
+                  <span class="journey-chapter-kicker">4. HAFTA</span>
+                  <h2 class="journey-slide-title">PARÇALARIN BİRBİRİNİ BULDUĞU YER</h2>
+                  <p class="journey-slide-subtitle">Başı ve sonu olan bir şey</p>
+                </div>
+                <div class="journey-slide-desc">
+                  <p>Şimdi parçaların birbiriyle konuşması gerekiyor. İşinin hangi biçimi istediğine karar veriyor, sınırlarını koyuyorsun. Nereye kadar gidecek? Neyi içine almayacak? Bu kararlarla ilk kez baştan sona görülebilen bir bütün kuruyorsun. İşin dünyada kiminle, nerede karşılaşacağını da bu hafta seçiyorsun. Böylece görünürlük son gün verilen bir ödev olmuyor, yaklaştığını bildiğin bir eşik oluyor.</p>
+                </div>
+                <div class="journey-slide-takeaway">
+                  <span class="takeaway-label">Haftanın sonunda elinde:</span>
+                  <p class="takeaway-val">başı ve sonu olan ilk bütün.</p>
+                </div>
+              </div>
+              <div class="journey-mobile-controls">
+                <div class="journey-mobile-pagination" aria-label="Hafta seçimi">
+                  <button type="button" class="journey-dot" data-target-index="0" aria-label="Giriş"></button>
+                  <button type="button" class="journey-dot" data-target-index="1" aria-label="1. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="2" aria-label="2. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="3" aria-label="3. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="4" aria-label="4. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="5" aria-label="5. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="6" aria-label="6. Hafta"></button>
+                </div>
+                <div class="journey-mobile-nav-row">
+                  <button type="button" class="journey-nav-btn journey-nav-prev" data-journey-prev aria-label="Önceki Hafta">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button type="button" class="journey-mobile-chat-btn" aria-label="Canlı Destek">
+                    <svg class="journey-chat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Canlı Destek</span>
+                  </button>
+                  <button type="button" class="journey-nav-btn journey-nav-next" data-journey-next aria-label="Sonraki Hafta">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="journey-slide-faq-wrap">
+                <button type="button" class="journey-faq-pill" data-open-faq="faq-sanatci-olmak" aria-haspopup="dialog">
+                  <span class="faq-pill-text">Sanatçı olmam gerekiyor mu?</span>
+                  <span class="faq-pill-icon" aria-hidden="true">+</span>
+                </button>
+              </div>
+            </div>
+            <div class="journey-slide-spacer-col" aria-hidden="true"></div>
+            <div class="journey-slide-tracker-col" aria-hidden="true"></div>
           </div>
-        </div>
-        <div class="journey-slide-spacer-col" aria-hidden="true"></div>
-        <div class="journey-slide-tracker-col" aria-hidden="true"></div>
-      </div>
-    </section>
+        </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         SECTION 12: WEEK 6 / KARAYA ÇIKMAK (06)
-         ═══════════════════════════════════════════════════════════ -->
-    <section class="scene-journey-week" id="hafta-6" data-week-index="6" data-slide-theme="dark">
-      <div class="journey-slide-media" aria-hidden="true">
-        <img src="assets/6hafta/06.png" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
-        <div class="journey-slide-scrim"></div>
-      </div>
-      <div class="container journey-week-container">
-        <div class="journey-slide-main-col">
-          <div class="journey-slide-body">
-            <div class="journey-chapter-header">
-              <span class="journey-chapter-kicker">6. HAFTA</span>
-              <h2 class="journey-slide-title">KARAYA ÇIKMAK</h2>
-              <p class="journey-slide-subtitle">Yaptığın şeyin dünyada nefes alması</p>
-            </div>
-            <div class="journey-slide-desc">
-              <p>Gönderiyorsun, yayımlıyorsun, sunuyorsun, kapıyı açıyorsun. İlk kez bilgi yalnızca içeriden değil, temasın içinden de geliyor. Gelen karşılıkla sende olanı birbirinden ayırarak işe yeniden bakıyorsun. Ne değişmek istiyor? Neyi korumak istiyorsun? Buradan sonra hangi hareketi seçiyorsun? Program, işi rafa kaldırdığın yerde değil, temastan sonra yeniden seçtiğin yerde tamamlanıyor.</p>
-            </div>
-            <div class="journey-slide-takeaway">
-              <span class="takeaway-label">Haftanın sonunda elinde:</span>
-              <p class="takeaway-val">dünyayla karşılaşmış bir iş ve onunla ilgili yeni bir seçim.</p>
-            </div>
+        <!-- ═══════════════════════════════════════════════════════════
+             SECTION 11: WEEK 5 / KAPIYI KAPATMAK (05)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="scene-journey-week" id="hafta-5" data-week-index="5" data-slide-theme="dark">
+          <div class="journey-slide-media" aria-hidden="true">
+            <img src="assets/6hafta/05.png" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
+            <div class="journey-slide-scrim"></div>
           </div>
-          <div class="journey-slide-faq-wrap">
-            <button type="button" class="journey-faq-pill" data-open-faq="faq-partner-calismasi" aria-haspopup="dialog">
-              <span class="faq-pill-text">Partner çalışması nasıl işliyor?</span>
-              <span class="faq-pill-icon" aria-hidden="true">+</span>
-            </button>
+          <div class="container journey-week-container">
+            <div class="journey-slide-main-col">
+              <div class="journey-slide-body">
+                <div class="journey-chapter-header">
+                  <span class="journey-chapter-kicker">5. HAFTA</span>
+                  <h2 class="journey-slide-title">KAPIYI KAPATMAK</h2>
+                  <p class="journey-slide-subtitle">“Şimdilik bu” diyebilmek</p>
+                </div>
+                <div class="journey-slide-desc">
+                  <p>Bu hafta yeni ihtimaller açmak yerine elindeki bütünü bitiriyorsun. Nerede gerçekten bir şey eksik, nerede bitirmekten kaçınmak için yeniden açıyorsun? Bunu ayırıyor, son kararlarını veriyor ve işi paylaşılabilir hâle getiriyorsun. Onu kiminle ve nasıl buluşturacağın da netleşiyor.</p>
+                </div>
+                <div class="journey-slide-takeaway">
+                  <span class="takeaway-label">Haftanın sonunda elinde:</span>
+                  <p class="takeaway-val">dünyaya çıkmaya hazır, paylaşılabilir ilk tam hâli.</p>
+                </div>
+              </div>
+              <div class="journey-mobile-controls">
+                <div class="journey-mobile-pagination" aria-label="Hafta seçici">
+                  <button type="button" class="journey-dot" data-target-index="0" aria-label="Giriş"></button>
+                  <button type="button" class="journey-dot" data-target-index="1" aria-label="1. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="2" aria-label="2. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="3" aria-label="3. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="4" aria-label="4. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="5" aria-label="5. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="6" aria-label="6. Hafta"></button>
+                </div>
+                <div class="journey-mobile-nav-row">
+                  <button type="button" class="journey-nav-btn journey-nav-prev" data-journey-prev aria-label="Önceki Hafta">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button type="button" class="journey-mobile-chat-btn" aria-label="Canlı Destek">
+                    <svg class="journey-chat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Canlı Destek</span>
+                  </button>
+                  <button type="button" class="journey-nav-btn journey-nav-next" data-journey-next aria-label="Sonraki Hafta">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="journey-slide-faq-wrap">
+                <button type="button" class="journey-faq-pill" data-open-faq="faq-zaman-ayirmak" aria-haspopup="dialog">
+                  <span class="faq-pill-text">Haftada ne kadar zaman ayırmam gerekiyor?</span>
+                  <span class="faq-pill-icon" aria-hidden="true">+</span>
+                </button>
+              </div>
+            </div>
+            <div class="journey-slide-spacer-col" aria-hidden="true"></div>
+            <div class="journey-slide-tracker-col" aria-hidden="true"></div>
           </div>
-        </div>
-        <div class="journey-slide-spacer-col" aria-hidden="true"></div>
-        <div class="journey-slide-tracker-col" aria-hidden="true"></div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+             SECTION 12: WEEK 6 / KARAYA ÇIKMAK (06)
+             ═══════════════════════════════════════════════════════════ -->
+        <section class="scene-journey-week" id="hafta-6" data-week-index="6" data-slide-theme="dark">
+          <div class="journey-slide-media" aria-hidden="true">
+            <img src="assets/6hafta/06.png" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
+            <div class="journey-slide-scrim"></div>
+          </div>
+          <div class="container journey-week-container">
+            <div class="journey-slide-main-col">
+              <div class="journey-slide-body">
+                <div class="journey-chapter-header">
+                  <span class="journey-chapter-kicker">6. HAFTA</span>
+                  <h2 class="journey-slide-title">KARAYA ÇIKMAK</h2>
+                  <p class="journey-slide-subtitle">Yaptığın şeyin dünyada nefes alması</p>
+                </div>
+                <div class="journey-slide-desc">
+                  <p>Gönderiyorsun, yayımlıyorsun, sunuyorsun, kapıyı açıyorsun. İlk kez bilgi yalnızca içeriden değil, temasın içinden de geliyor. Gelen karşılıkla sende olanı birbirinden ayırarak işe yeniden bakıyorsun. Ne değişmek istiyor? Neyi korumak istiyorsun? Buradan sonra hangi hareketi seçiyorsun? Program, işi rafa kaldırdığın yerde değil, temastan sonra yeniden seçtiğin yerde tamamlanıyor.</p>
+                </div>
+                <div class="journey-slide-takeaway">
+                  <span class="takeaway-label">Haftanın sonunda elinde:</span>
+                  <p class="takeaway-val">dünyayla karşılaşmış bir iş ve onunla ilgili yeni bir seçim.</p>
+                </div>
+              </div>
+              <div class="journey-mobile-controls">
+                <div class="journey-mobile-pagination" aria-label="Hafta seçici">
+                  <button type="button" class="journey-dot" data-target-index="0" aria-label="Giriş"></button>
+                  <button type="button" class="journey-dot" data-target-index="1" aria-label="1. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="2" aria-label="2. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="3" aria-label="3. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="4" aria-label="4. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="5" aria-label="5. Hafta"></button>
+                  <button type="button" class="journey-dot" data-target-index="6" aria-label="6. Hafta"></button>
+                </div>
+                <div class="journey-mobile-nav-row">
+                  <button type="button" class="journey-nav-btn journey-nav-prev" data-journey-prev aria-label="Önceki Hafta">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button type="button" class="journey-mobile-chat-btn" aria-label="Canlı Destek">
+                    <svg class="journey-chat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Canlı Destek</span>
+                  </button>
+                  <span class="journey-nav-btn-placeholder" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="journey-slide-faq-wrap">
+                <button type="button" class="journey-faq-pill" data-open-faq="faq-partner-calismasi" aria-haspopup="dialog">
+                  <span class="faq-pill-text">Partner çalışması nasıl işliyor?</span>
+                  <span class="faq-pill-icon" aria-hidden="true">+</span>
+                </button>
+              </div>
+            </div>
+            <div class="journey-slide-spacer-col" aria-hidden="true"></div>
+            <div class="journey-slide-tracker-col" aria-hidden="true"></div>
+          </div>
+        </section>
+
+      </div><!-- /.journey-carousel-track -->
+
+      <!-- Mobile Downward Continuation Link (rendered below track on mobile) -->
+      <div class="journey-mobile-continuation" id="journeyMobileContinuation">
+        <a href="#program" class="journey-downward-link" id="journeyDownwardLink">
+          <span class="downward-text" id="journeyDownwardText">Aşağıda: Programın içinde neler var?</span>
+          <span class="downward-chevrons" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 4L7 8L11 4M3 8L7 12L11 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
       </div>
-    </section>
+    </div><!-- /.journey-carousel-wrapper -->
 
     <!-- ═══════════════════════════════════════════════════════════
          PROGRAM: DİKEY ZAMAN ÇİZGİSİ / SAYI DOĞRUSU (SEC-16–19)
@@ -1258,7 +1539,7 @@
   </aside>
 
   <!-- Scripts -->
-  <script src="main.js"></script>
+  <script src="main.js?v=20261022h"></script>
   <script>
     // Precision Viewport Slice Preview Mode for QA Screenshots
     const params = new URLSearchParams(window.location.search);

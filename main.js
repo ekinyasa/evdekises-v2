@@ -4,13 +4,29 @@
 // ═══════════════════════════════════════════════════════════════
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Prevent Safari from restoring stale scroll positions on reload
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // Strict iOS Safari detection for Dynamic Island and Floating URL bar adaptations
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (isIOS) {
+    document.documentElement.classList.add('is-ios');
+  }
+
   const header = document.getElementById('siteHeader');
   
   // Header state on scroll with requestAnimationFrame for buttery performance
   let ticking = false;
   const SCROLL_THRESHOLD = 90;
 
-  // Week & light-themed sections for theme & tracking
+  // Universal Section Array for Edge Peeking Prevention across all sections
+  const snapSections = Array.from(document.querySelectorAll(
+    '.hero-frame-wrapper, .scene-hero-continuation, .scene-recognition, .scene-method, .scene-inside-world, .journey-carousel-wrapper, .scene-program-timeline, .scene-program-ritim, .scene-fit, .scene-nilufer, .scene-practical, .scene-close'
+  ));
+  const heroSection = document.getElementById('hero');
   const weekSections = document.querySelectorAll('.scene-journey-week');
   const lightSurfaceSections = document.querySelectorAll('[data-slide-theme="light"]');
   const journeyTracker = document.getElementById('journeyTracker');
@@ -19,6 +35,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleScroll = () => {
     if (!header) return;
     const currentScrollY = window.scrollY || window.pageYOffset;
+
+    // Smooth Universal Section Isolation
+    // When resting on Section K, adjacent sections (K-1 and K+1) have opacity: 0 to eliminate edge peeking.
+    // While actively scrolling between sections, adjacent sections immediately have opacity: 1 for unbroken gliding.
+    if (snapSections.length > 0) {
+      const viewCenter = currentScrollY + window.innerHeight * 0.5;
+
+      let activeIdx = 0;
+      for (let i = 0; i < snapSections.length; i++) {
+        const sec = snapSections[i];
+        const top = sec.offsetTop;
+        const bottom = top + sec.offsetHeight;
+        if (viewCenter >= top && viewCenter < bottom) {
+          activeIdx = i;
+          break;
+        }
+      }
+
+      const activeSec = snapSections[activeIdx];
+      const activeTop = activeSec.offsetTop;
+      const isSettled = Math.abs(currentScrollY - activeTop) <= 60;
+
+      for (let i = 0; i < snapSections.length; i++) {
+        const sec = snapSections[i];
+        if (i === activeIdx) {
+          if (sec.classList.contains('is-section-hidden')) {
+            sec.classList.remove('is-section-hidden');
+          }
+        } else if (isSettled && (i === activeIdx - 1 || i === activeIdx + 1)) {
+          if (!sec.classList.contains('is-section-hidden')) {
+            sec.classList.add('is-section-hidden');
+          }
+        } else if (!isSettled && (i === activeIdx - 1 || i === activeIdx + 1)) {
+          if (sec.classList.contains('is-section-hidden')) {
+            sec.classList.remove('is-section-hidden');
+          }
+        } else {
+          if (!sec.classList.contains('is-section-hidden')) {
+            sec.classList.add('is-section-hidden');
+          }
+        }
+      }
+    }
+
+    if (heroSection) {
+      const heroRect = heroSection.getBoundingClientRect();
+      const checkY = 28;
+      if (heroRect.top <= checkY && heroRect.bottom >= checkY) {
+        if (!header.classList.contains('is-on-hero')) header.classList.add('is-on-hero');
+      } else {
+        if (header.classList.contains('is-on-hero')) header.classList.remove('is-on-hero');
+      }
+    }
     
     if (currentScrollY > SCROLL_THRESHOLD) {
       if (!header.classList.contains('is-scrolled')) {
@@ -61,6 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
       ticking = true;
     }
   }, { passive: true });
+
+  window.addEventListener('scrollend', () => {
+    handleScroll();
+  }, { passive: true });
   
   handleScroll();
 
@@ -72,6 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
+        if (targetEl.classList.contains('is-section-hidden')) {
+          targetEl.classList.remove('is-section-hidden');
+        }
         e.preventDefault();
         targetEl.scrollIntoView({
           behavior: 'smooth',
@@ -256,7 +332,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    if (currentSectionId && eligibleChatSectionIds.has(currentSectionId)) {
+    const isMobile = window.innerWidth <= 768;
+    const isCarouselSection = currentSectionId && currentSectionId.startsWith('hafta-');
+    if (currentSectionId && eligibleChatSectionIds.has(currentSectionId) && !(isMobile && isCarouselSection)) {
       if (!liveChatAnchor.classList.contains('is-visible')) {
         liveChatAnchor.classList.add('is-visible');
         liveChatAnchor.setAttribute('aria-hidden', 'false');
@@ -300,4 +378,115 @@ document.addEventListener('DOMContentLoaded', () => {
       openFaqModal('all');
     });
   }
+
+  // ═══════════════════════════════════════════════════════════
+  // MOBILE SIX-WEEK HORIZONTAL STORYTELLING CAROUSEL
+  // Supports touch swiping, dot pagination, prev/next buttons,
+  // FAQ modal trigger, and dynamic downward continuation link
+  // ═══════════════════════════════════════════════════════════
+  const initMobileJourneyCarousel = () => {
+    const track = document.getElementById('journeyCarouselTrack');
+    if (!track) return;
+
+    const weeks = Array.from(track.querySelectorAll('.scene-journey-week'));
+    if (weeks.length === 0) return;
+
+    const allDots = Array.from(document.querySelectorAll('.journey-dot'));
+    const prevBtns = document.querySelectorAll('[data-journey-prev]');
+    const nextBtns = document.querySelectorAll('[data-journey-next]');
+    const advanceBtn = document.getElementById('journeyIntroAdvanceBtn');
+    const mobileChatBtns = document.querySelectorAll('.journey-mobile-chat-btn');
+    const continuationWrap = document.getElementById('journeyMobileContinuation');
+    const downwardText = document.getElementById('journeyDownwardText');
+
+    const scrollToIndex = (index) => {
+      const targetIndex = Math.max(0, Math.min(weeks.length - 1, index));
+      const targetWeek = weeks[targetIndex];
+      if (targetWeek) {
+        track.scrollTo({
+          left: targetWeek.offsetLeft,
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    if (advanceBtn) {
+      advanceBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        scrollToIndex(1);
+      });
+    }
+
+    prevBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const currentIdx = Math.round(track.scrollLeft / (track.clientWidth || 1));
+        scrollToIndex(currentIdx - 1);
+      });
+    });
+
+    nextBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const currentIdx = Math.round(track.scrollLeft / (track.clientWidth || 1));
+        scrollToIndex(currentIdx + 1);
+      });
+    });
+
+    allDots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetIdx = parseInt(dot.getAttribute('data-target-index'), 10);
+        if (!isNaN(targetIdx)) {
+          scrollToIndex(targetIdx);
+        }
+      });
+    });
+
+    mobileChatBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openFaqModal('all');
+      });
+    });
+
+    let carouselTicking = false;
+    const updateCarouselState = () => {
+      const trackWidth = track.clientWidth || 1;
+      const currentIdx = Math.max(0, Math.min(weeks.length - 1, Math.round(track.scrollLeft / trackWidth)));
+
+      // Sync active pagination dot
+      allDots.forEach(dot => {
+        const dotIdx = parseInt(dot.getAttribute('data-target-index'), 10);
+        dot.classList.toggle('active', dotIdx === currentIdx);
+      });
+
+      // Update downward continuation text and visibility
+      if (continuationWrap && downwardText) {
+        if (currentIdx === 0) {
+          downwardText.textContent = 'Aşağıda: Programın içinde neler var?';
+          continuationWrap.classList.remove('is-hidden');
+        } else if (currentIdx === weeks.length - 1) {
+          downwardText.textContent = 'Sonraki bölüm: Programın içinde neler var?';
+          continuationWrap.classList.remove('is-hidden');
+        } else {
+          continuationWrap.classList.add('is-hidden');
+        }
+      }
+
+      carouselTicking = false;
+    };
+
+    track.addEventListener('scroll', () => {
+      if (!carouselTicking) {
+        window.requestAnimationFrame(updateCarouselState);
+        carouselTicking = true;
+      }
+    }, { passive: true });
+
+    // Initial state setup
+    updateCarouselState();
+  };
+
+  initMobileJourneyCarousel();
 });
