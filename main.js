@@ -9,15 +9,28 @@ document.addEventListener('DOMContentLoaded', () => {
     history.scrollRestoration = 'manual';
   }
 
-  // Strict iOS Safari detection for Dynamic Island and Floating URL bar adaptations
+  // Mobile detection for Dynamic Viewport & Universal Mobile Snap Engine
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
                 (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  const isIOSMobile = isIOS && window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 768;
   if (isIOS) {
     document.documentElement.classList.add('is-ios');
   }
-  if (isIOSMobile) {
-    document.documentElement.classList.add('is-ios-mobile');
+  if (isMobile) {
+    document.documentElement.classList.add('is-mobile');
+    if (isIOS) {
+      document.documentElement.classList.add('is-ios-mobile');
+    }
+
+    // Ensure mobile source images are cleanly loaded on mobile devices
+    const conceptualImg = document.querySelector('.conceptual-photo');
+    if (conceptualImg) {
+      conceptualImg.src = 'assets/scene-07-mobile.webp';
+    }
+    const niluferImg = document.querySelector('.scene-nilufer .program-frame-photo');
+    if (niluferImg) {
+      niluferImg.src = 'assets/hero-mobile.webp';
+    }
   }
 
   const header = document.getElementById('siteHeader');
@@ -39,11 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const handleScroll = () => {
     if (!header) return;
-    const currentScrollY = isIOSMobile && mainContainer ? mainContainer.scrollTop : (window.scrollY || window.pageYOffset);
+    const currentScrollY = isMobile && mainContainer ? mainContainer.scrollTop : (window.scrollY || window.pageYOffset);
 
     // Smooth Universal Section Isolation (Active strictly on Desktop/Tablets)
-    // On iOS mobile, 100dvh pure CSS snap prevents edge peeking natively without opacity clipping
-    if (!isIOSMobile && snapSections.length > 0) {
+    // On mobile devices (<=768px), 100dvh pure CSS snap handles section alignment natively
+    if (!isMobile && snapSections.length > 0) {
       const viewCenter = currentScrollY + window.innerHeight * 0.5;
 
       let activeIdx = 0;
@@ -125,10 +138,45 @@ document.addEventListener('DOMContentLoaded', () => {
         header.classList.remove('is-on-light');
       }
     }
+
+    // Dynamic Deep Black theme adaptation for Journey Slides (7 slides) and Closing Section
+    const journeyWrapper = document.getElementById('journeyCarouselWrapper');
+    const closeSection = document.getElementById('kapanis');
+    const metaTheme = document.getElementById('metaThemeColor');
+    
+    let isDarkActive = false;
+    const vh = window.innerHeight || 1;
+
+    if (journeyWrapper) {
+      const jRect = journeyWrapper.getBoundingClientRect();
+      if (jRect.top < vh * 0.5 && jRect.bottom > vh * 0.5) {
+        isDarkActive = true;
+      }
+    }
+
+    if (closeSection) {
+      const cRect = closeSection.getBoundingClientRect();
+      if (cRect.top < vh * 0.5 && cRect.bottom > vh * 0.5) {
+        isDarkActive = true;
+      }
+    }
+
+    if (isDarkActive) {
+      if (!document.documentElement.classList.contains('is-theme-journey')) {
+        document.documentElement.classList.add('is-theme-journey');
+        if (metaTheme) metaTheme.setAttribute('content', '#080A0C');
+      }
+    } else {
+      if (document.documentElement.classList.contains('is-theme-journey')) {
+        document.documentElement.classList.remove('is-theme-journey');
+        if (metaTheme) metaTheme.setAttribute('content', '#ffffff');
+      }
+    }
+
     ticking = false;
   };
 
-  if (isIOSMobile && mainContainer) {
+  if (isMobile && mainContainer) {
     mainContainer.addEventListener('scroll', () => {
       if (!ticking) {
         window.requestAnimationFrame(handleScroll);
@@ -151,30 +199,28 @@ document.addEventListener('DOMContentLoaded', () => {
   handleScroll();
 
   // ══════════════════════════════════════════════════════════════════════
-  // iOS MOBILE EXCLUSIVE: SMART BOUNDARY SWAP FOR SCENE CONCEPTUAL
-  // 1. Kart içi doğal ve pürüzsüz kayar.
-  // 2. İçerik sonundayken aşağı kaydırma -> sonraki bölüme (#journeyCarouselWrapper) geçer.
-  // 3. İçerik başındayken yukarı kaydırma -> önceki bölüme (#encounter) döner.
+  // UNIVERSAL MOBILE: SMART BOUNDARY SWAP (CONCEPTUAL & PROGRAM TIMELINE)
+  // 1. Kart/bölüm içi doğal ve pürüzsüz kayar.
+  // 2. İçerik sonundayken aşağı kaydırma -> sonraki bölüme geçer.
+  // 3. İçerik başındayken yukarı kaydırma -> önceki bölüme döner.
   // ══════════════════════════════════════════════════════════════════════
-  if (isIOSMobile) {
-    const conceptualInner = document.querySelector('.scene-conceptual .conceptual-stage-container');
-    const conceptualPrev = document.getElementById('encounter');
-    const conceptualNext = document.getElementById('journeyCarouselWrapper') || document.getElementById('hafta-0');
+  if (isMobile) {
+    const setupBoundarySwipe = (container, prevEl, nextEl) => {
+      if (!container || !prevEl || !nextEl) return;
 
-    let touchStartY = 0;
-    let touchStartX = 0;
-    let initialScrollTop = 0;
-    let isTransitioning = false;
+      let touchStartY = 0;
+      let touchStartX = 0;
+      let initialScrollTop = 0;
+      let isTransitioning = false;
 
-    if (conceptualInner && conceptualPrev && conceptualNext) {
-      conceptualInner.addEventListener('touchstart', (e) => {
+      container.addEventListener('touchstart', (e) => {
         if (e.touches.length !== 1) return;
         touchStartY = e.touches[0].clientY;
         touchStartX = e.touches[0].clientX;
-        initialScrollTop = conceptualInner.scrollTop;
+        initialScrollTop = container.scrollTop;
       }, { passive: true });
 
-      conceptualInner.addEventListener('touchend', (e) => {
+      container.addEventListener('touchend', (e) => {
         if (isTransitioning) return;
         const touchEndY = e.changedTouches[0].clientY;
         const touchEndX = e.changedTouches[0].clientX;
@@ -184,21 +230,33 @@ document.addEventListener('DOMContentLoaded', () => {
         if (deltaX > Math.abs(deltaY)) return;
 
         const threshold = 40;
-        const maxScroll = conceptualInner.scrollHeight - conceptualInner.clientHeight;
+        const maxScroll = container.scrollHeight - container.clientHeight;
         const isAtBottom = initialScrollTop >= (maxScroll - 10);
         const isAtTop = initialScrollTop <= 10;
 
         if (deltaY > threshold && isAtBottom) {
           isTransitioning = true;
-          conceptualNext.scrollIntoView({ behavior: 'smooth' });
+          nextEl.scrollIntoView({ behavior: 'smooth' });
           setTimeout(() => { isTransitioning = false; }, 700);
         } else if (deltaY < -threshold && isAtTop) {
           isTransitioning = true;
-          conceptualPrev.scrollIntoView({ behavior: 'smooth' });
+          prevEl.scrollIntoView({ behavior: 'smooth' });
           setTimeout(() => { isTransitioning = false; }, 700);
         }
       }, { passive: true });
-    }
+    };
+
+    // 1. Scene Conceptual (Section 7)
+    const conceptualInner = document.querySelector('.scene-conceptual .conceptual-stage-container');
+    const conceptualPrev = document.getElementById('encounter');
+    const conceptualNext = document.getElementById('journeyCarouselWrapper') || document.getElementById('hafta-0');
+    setupBoundarySwipe(conceptualInner, conceptualPrev, conceptualNext);
+
+    // 2. Scene Program Timeline (Section 13: Programın içinde neler var?)
+    const programInner = document.querySelector('.scene-program-timeline .program-timeline-container');
+    const programPrev = document.getElementById('journeyCarouselWrapper') || document.getElementById('hafta-6');
+    const programNext = document.getElementById('program-ritim');
+    setupBoundarySwipe(programInner, programPrev, programNext);
   }
 
   // Smooth scroll for internal anchor links (excluding FAQ modal triggers)
@@ -213,6 +271,10 @@ document.addEventListener('DOMContentLoaded', () => {
           targetEl.classList.remove('is-section-hidden');
         }
         e.preventDefault();
+        if (targetId === '#program') {
+          const programInner = document.querySelector('.scene-program-timeline .program-timeline-container');
+          if (programInner) programInner.scrollTop = 0;
+        }
         targetEl.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
@@ -293,22 +355,33 @@ document.addEventListener('DOMContentLoaded', () => {
     let targetItem = null;
 
     allItems.forEach(item => {
-      const id = item.getAttribute('data-faq-id');
-      if (targetFaqId && targetFaqId !== 'all' && (id === targetFaqId || item.id === targetFaqId)) {
+      const dataId = item.getAttribute('data-faq-id');
+      const itemId = item.getAttribute('id');
+      const matches = Boolean(
+        targetFaqId &&
+        targetFaqId !== 'all' &&
+        (dataId === targetFaqId || itemId === targetFaqId)
+      );
+
+      if (matches) {
+        item.setAttribute('open', '');
         item.open = true;
         targetItem = item;
       } else {
+        item.removeAttribute('open');
         item.open = false;
       }
     });
 
+    const modalBody = faqModal.querySelector('.faq-modal-body');
     if (targetItem) {
       setTimeout(() => {
         targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
         const summary = targetItem.querySelector('summary');
         if (summary) summary.focus();
-      }, 120);
+      }, 100);
     } else {
+      if (modalBody) modalBody.scrollTop = 0;
       const closeBtn = faqModal.querySelector('.faq-modal-close');
       if (closeBtn) closeBtn.focus();
     }
@@ -324,13 +397,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Open modal triggers
-  document.querySelectorAll('[data-open-faq]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  // Open modal triggers (event delegation ensures all desktop & mobile elements with data-open-faq work)
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-open-faq]');
+    if (trigger) {
       e.preventDefault();
-      const faqId = btn.getAttribute('data-open-faq');
+      const faqId = trigger.getAttribute('data-open-faq');
       openFaqModal(faqId);
-    });
+    }
   });
 
   // Close modal triggers (backdrop and close button)
@@ -439,7 +513,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (liveChatBtn) {
     liveChatBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      openFaqModal('all');
+      // Canlı destek henüz aktif değil - ileride başka fonksiyon atanacak
     });
   }
 
@@ -460,6 +534,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtns = document.querySelectorAll('[data-journey-next]');
     const advanceBtn = document.getElementById('journeyIntroAdvanceBtn');
     const mobileChatBtns = document.querySelectorAll('.journey-mobile-chat-btn');
+    const mobileChatFab = document.getElementById('journeyMobileChatFab');
     const continuationWrap = document.getElementById('journeyMobileContinuation');
     const downwardText = document.getElementById('journeyDownwardText');
 
@@ -492,10 +567,55 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const currentIdx = Math.round(track.scrollLeft / (track.clientWidth || 1));
-        scrollToIndex(currentIdx + 1);
+        const trackWidth = track.clientWidth || 1;
+        const currentIdx = Math.round(track.scrollLeft / trackWidth);
+        if (currentIdx >= weeks.length - 1) {
+          // On 7th slide, clicking right arrow smoothly scrolls down to #program
+          const programEl = document.getElementById('program');
+          if (programEl) {
+            const programInner = document.querySelector('.scene-program-timeline .program-timeline-container');
+            if (programInner) programInner.scrollTop = 0;
+            programEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        } else {
+          scrollToIndex(currentIdx + 1);
+        }
       });
     });
+
+    // Touch swipe boundary handler on 7th slide to smoothly transition down to #program
+    let trackTouchStartX = 0;
+    let trackTouchStartY = 0;
+    let isTrackTransitioning = false;
+
+    track.addEventListener('touchstart', (e) => {
+      if (e.touches.length !== 1) return;
+      trackTouchStartX = e.touches[0].clientX;
+      trackTouchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      if (isTrackTransitioning) return;
+      const trackTouchEndX = e.changedTouches[0].clientX;
+      const trackTouchEndY = e.changedTouches[0].clientY;
+      const deltaX = trackTouchStartX - trackTouchEndX;
+      const deltaY = Math.abs(trackTouchStartY - trackTouchEndY);
+
+      const trackWidth = track.clientWidth || 1;
+      const currentIdx = Math.round(track.scrollLeft / trackWidth);
+
+      // On 7th slide, swiping right (finger drags left past end) triggers smooth transition to #program
+      if (currentIdx >= weeks.length - 1 && deltaX > 35 && deltaX > deltaY) {
+        isTrackTransitioning = true;
+        const programEl = document.getElementById('program');
+        if (programEl) {
+          const programInner = document.querySelector('.scene-program-timeline .program-timeline-container');
+          if (programInner) programInner.scrollTop = 0;
+          programEl.scrollIntoView({ behavior: 'smooth' });
+        }
+        setTimeout(() => { isTrackTransitioning = false; }, 800);
+      }
+    }, { passive: true });
 
     allDots.forEach(dot => {
       dot.addEventListener('click', (e) => {
@@ -510,9 +630,16 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileChatBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        openFaqModal('all');
+        // Canlı destek henüz aktif değil - ileride başka fonksiyon atanacak
       });
     });
+
+    if (mobileChatFab) {
+      mobileChatFab.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Canlı destek henüz aktif değil - ileride başka fonksiyon atanacak
+      });
+    }
 
     let carouselTicking = false;
     const updateCarouselState = () => {
@@ -524,6 +651,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const dotIdx = parseInt(dot.getAttribute('data-target-index'), 10);
         dot.classList.toggle('active', dotIdx === currentIdx);
       });
+
+      // Sync counter number (1/7 to 7/7)
+      const counterCurr = document.getElementById('journeyCounterCurr');
+      if (counterCurr) {
+        counterCurr.textContent = (currentIdx + 1);
+      }
+
+      // Sync prev / next buttons disabled state
+      const navPrev = document.getElementById('journeyNavPrev');
+      const navNext = document.getElementById('journeyNavNext');
+      if (navPrev) {
+        navPrev.classList.toggle('disabled', currentIdx === 0);
+      }
+      if (navNext) {
+        navNext.classList.toggle('disabled', currentIdx === weeks.length - 1);
+      }
 
       // Update downward continuation text and visibility
       if (continuationWrap && downwardText) {

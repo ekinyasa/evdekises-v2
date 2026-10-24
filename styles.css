@@ -301,9 +301,9 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 1px 30px rgba(0, 0, 0, 0.15);
   padding: 0.3125rem 0.375rem 0.3125rem clamp(1.125rem, 1.4vw, 1.5rem);
-  gap: clamp(1rem, 1.6vw, 1.75rem);
-  width: min(900px, calc(100vw - 2rem));
-  max-width: min(900px, calc(100vw - 2rem));
+  gap: clamp(0.75rem, 1.2vw, 1.5rem);
+  width: min(980px, calc(100vw - 2rem));
+  max-width: min(980px, calc(100vw - 2rem));
   min-height: 49px;
   transition: 
     background-color 0.35s var(--ease-out-expo),
@@ -407,8 +407,8 @@ a {
 
 .site-header.is-scrolled .header-logo-text {
   font-size: 0.8125rem;
-  letter-spacing: clamp(0.35em, 0.75vw + 0.35em, 1.08em);
-  text-indent: clamp(0.35em, 0.75vw + 0.35em, 1.08em);
+  letter-spacing: clamp(0.2em, 0.25vw, 0.32em);
+  text-indent: clamp(0.2em, 0.25vw, 0.32em);
   color: #ffffff;
   transition: color 0.3s ease;
 }
@@ -439,7 +439,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: clamp(0.875rem, 1.35vw, 1.5rem);
+  gap: clamp(0.65rem, 1vw, 1.15rem);
   width: 100%;
 }
 
@@ -452,6 +452,7 @@ a {
   white-space: nowrap;
   letter-spacing: 0.01em;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 .nav-link:hover {
@@ -704,6 +705,12 @@ a {
 
 .hero-image-wrap {
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-photo-picture {
+  display: block;
   width: 100%;
   height: 100%;
 }
@@ -1879,9 +1886,25 @@ a {
   filter: none;
 }
 
+.conceptual-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(
+    to right,
+    rgba(26, 20, 16, 0.8) 0%,
+    rgba(26, 20, 16, 0.5) 50%,
+    rgba(26, 20, 16, 0.6) 58%,
+    rgba(26, 20, 16, 0.8) 100%
+  );
+}
+
 .conceptual-stage-container {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
@@ -2378,7 +2401,7 @@ linear-gradient(to bottom, rgba(8, 10, 12, 1.6) 0%, transparent 18%, transparent
   font-size: clamp(14px, 1.18vw, 17px);
   line-height: 24px;
   transition: all 0.25s ease;
-  max-width: 100%;
+
 }
 
 .scene-journey-week[data-slide-theme="dark"] .journey-faq-pill {
@@ -2453,7 +2476,15 @@ linear-gradient(to bottom, rgba(8, 10, 12, 1.6) 0%, transparent 18%, transparent
   display: none;
 }
 
+.journey-carousel-mobile-bar {
+  display: none;
+}
+
 .journey-intro-mobile-action {
+  display: none;
+}
+
+.mobile-br {
   display: none;
 }
 
@@ -3234,18 +3265,42 @@ linear-gradient(to bottom, rgba(8, 10, 12, 1.6) 0%, transparent 18%, transparent
   background-color: #ffffff;
 }
 
+.scene-program-ritim .program-frame-media {
+  background: linear-gradient(180deg, #d1b496 0%, #d1b496 50%, #c8b6a0 50%, #c8b6a0 100%) !important;
+}
+
+.program-ritim-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(180deg, #d1b496 0%, #d1b496 50%, #c8b6a0 50%, #c8b6a0 100%);
+  pointer-events: none;
+}
+
+.program-ritim-picture,
+.program-frame-photo {
+  position: relative;
+  z-index: 1;
+}
+
 .program-ritim-photo {
-  object-position: 60% center;
+  object-position: 28% 0vw;
 }
 
 .program-ritim-subtle-gradient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse at 18% 78%,
-    rgba(255, 255, 255, 0.76) 0%,
-    rgba(255, 255, 255, 0.42) 36%,
-    rgba(255, 255, 255, 0) 65%
+  z-index: 2;
+  background: linear-gradient(
+    to bottom,
+    #cfb28e 0%,
+    #d1b594 9%,
+    rgba(216, 192, 170, 0.4) 22%,
+    rgba(222, 211, 199, 0.4) 63%,
+    rgba(230, 222, 212, 0.96) 89%,
+    #e7e0d6 100%
   );
   pointer-events: none;
 }
@@ -3332,6 +3387,7 @@ linear-gradient(to bottom, rgba(8, 10, 12, 1.6) 0%, transparent 18%, transparent
   font-weight: 600;
   color: #000000;
   margin: 0;
+  max-width: 30vw;
 }
 
 .fit-p-body {
@@ -3431,6 +3487,15 @@ linear-gradient(to bottom, rgba(8, 10, 12, 1.6) 0%, transparent 18%, transparent
   --nilufer-img-opacity: 1;
 }
 
+.nilufer-photo-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .scene-nilufer .program-frame-photo,
 .scene-nilufer .nilufer-photo,
 .nilufer-image-wrap img {
@@ -3502,12 +3567,13 @@ linear-gradient(to bottom, rgba(8, 10, 12, 1.6) 0%, transparent 18%, transparent
   font-size: 18px;
   line-height: 28px;
   font-weight: 600;
-  color: #ffffff;
+  color: white;
   text-decoration: none;
   display: inline-block;
   opacity: 0.95;
   transition: opacity 0.2s ease, transform 0.2s ease;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .nilufer-more-link:hover {
@@ -4619,21 +4685,20 @@ body.modal-open .floating-chat-anchor {
 
   .hero-photo {
     object-fit: cover;
-    object-position: -5% 18%;
-    transform-origin: 50% 24%;
-    transform: rotate(11.574deg) scale(1.92);
+    object-position: 93% 0% !important;
+    transform: none !important;
     opacity: 1;
     filter: none;
   }
 
   .hero-gradient-overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(12, 13, 14, 0) 15%,
-      rgba(12, 13, 14, 0.5) 32%,
-      rgba(12, 13, 14, 0.9) 67%,
-      rgba(12, 13, 14, 1) 100%
-    );
+    display: none !important;
+  }
+
+  .hero-handwritten-wrap {
+    padding: 0 0 0 clamp(3px, 36px, 9vw) !important;
+    width: clamp(0px, 98vw, 98vw) !important;
+    max-width: none !important;
   }
 
   .hero-container {
@@ -5654,11 +5719,11 @@ body.modal-open .floating-chat-anchor {
   }
 
   /* ═══════════════════════════════════════════════════════════
-     IOS MOBILE SNAP ENGINE (Strictly Scoped to iPhone / iOS Mobile)
+     UNIVERSAL MOBILE SNAP ENGINE (All Mobile Devices <= 768px)
      Leaves Desktop, Android, Tablets, and all other browsers completely unaffected at 100vh
      ═══════════════════════════════════════════════════════════ */
-  html.is-ios-mobile,
-  html.is-ios-mobile body {
+  html.is-mobile,
+  html.is-mobile body {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -5666,10 +5731,12 @@ body.modal-open .floating-chat-anchor {
     padding: 0;
     background-color: #ffffff;
     -webkit-text-size-adjust: 100%;
+    transition: background-color 0.25s ease;
   }
 
-  html.is-ios-mobile main {
+  html.is-mobile main {
     width: 100%;
+    height: 100%;
     height: 100vh;
     height: 100dvh;
     overflow-y: scroll;
@@ -5677,23 +5744,24 @@ body.modal-open .floating-chat-anchor {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     position: relative;
+    transition: background-color 0.25s ease;
   }
 
   /* Force all snap sections to be full screen snap points without desktop edge peeking */
-  html.is-ios-mobile .hero-frame-wrapper,
-  html.is-ios-mobile .scene-hero-continuation,
-  html.is-ios-mobile .scene-recognition,
-  html.is-ios-mobile .scene-method,
-  html.is-ios-mobile .scene-inside-world,
-  html.is-ios-mobile .scene-encounter,
-  html.is-ios-mobile .scene-conceptual,
-  html.is-ios-mobile .journey-carousel-wrapper,
-  html.is-ios-mobile .scene-program-timeline,
-  html.is-ios-mobile .scene-program-ritim,
-  html.is-ios-mobile .scene-fit,
-  html.is-ios-mobile .scene-nilufer,
-  html.is-ios-mobile .scene-practical,
-  html.is-ios-mobile .scene-close {
+  html.is-mobile .hero-frame-wrapper,
+  html.is-mobile .scene-hero-continuation,
+  html.is-mobile .scene-recognition,
+  html.is-mobile .scene-method,
+  html.is-mobile .scene-inside-world,
+  html.is-mobile .scene-encounter,
+  html.is-mobile .scene-conceptual,
+  html.is-mobile .journey-carousel-wrapper,
+  html.is-mobile .scene-program-timeline,
+  html.is-mobile .scene-program-ritim,
+  html.is-mobile .scene-fit,
+  html.is-mobile .scene-nilufer,
+  html.is-mobile .scene-practical,
+  html.is-mobile .scene-close {
     width: 100%;
     height: 100vh;
     height: 100dvh;
@@ -5710,14 +5778,14 @@ body.modal-open .floating-chat-anchor {
   }
 
   /* Section 1: Hero Frame */
-  html.is-ios-mobile .hero-frame-wrapper {
+  html.is-mobile .hero-frame-wrapper {
     display: flex;
     flex-direction: column;
     padding: clamp(0.375rem, 1.5vw, 0.5rem);
     background-color: #ffffff;
   }
 
-  html.is-ios-mobile .hero-frame-wrapper .scene-hero {
+  html.is-mobile .hero-frame-wrapper .scene-hero {
     height: 100%;
     width: 100%;
     flex: 1;
@@ -5727,7 +5795,7 @@ body.modal-open .floating-chat-anchor {
   }
 
   /* Section 2: Continuation */
-  html.is-ios-mobile .scene-hero-continuation {
+  html.is-mobile .scene-hero-continuation {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -5735,54 +5803,64 @@ body.modal-open .floating-chat-anchor {
     background-color: #ffffff;
   }
 
-  html.is-ios-mobile .scene-hero-continuation .continuation-container {
+ 
+  html.is-mobile .scene-hero-continuation .continuation-container {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     padding: 0 clamp(1.25rem, 6vw, 1.75rem);
+    justify-content: space-evenly;
   }
 
-  html.is-ios-mobile .scene-hero-continuation .continuation-lead-script {
-    font-size: clamp(52px, 14vw, 76px);
+  html.is-mobile .scene-hero-continuation .continuation-container .continuation-grid{
+    gap: 5px;
+    margin: unset;
+  }
+ 
+  html.is-mobile .scene-hero-continuation .continuation-lead-script {
+    font-size: clamp(52px, 20vw, 76px);
     line-height: 1;
     margin: 0;
   }
 
-  html.is-ios-mobile .scene-hero-continuation .continuation-lead-sub {
-    font-size: clamp(20px, 5.2vw, 24px);
+  html.is-mobile .scene-hero-continuation .continuation-lead-sub {
+    font-size: clamp(20px, 5.6vw, 24px);
     line-height: 1.25;
   }
 
-  html.is-ios-mobile .scene-hero-continuation .continuation-body-evidence {
-    font-size: clamp(14px, 3.6vw, 15px);
+  html.is-mobile .scene-hero-continuation .continuation-body-evidence {
+    font-size: clamp(15px, 4.6vw, 20px);
     line-height: 1.45;
-    margin-top: clamp(8px, 1.5vh, 14px);
+  
   }
-
-  html.is-ios-mobile .scene-hero-continuation .continuation-pivot-1 {
+  html.is-mobile .scene-hero-continuation .continuation-container .continuation-lead-col{
+    gap: clamp(15px, 3vh, 35px);
+  }
+  
+  html.is-mobile .scene-hero-continuation .continuation-pivot-1 {
     font-size: clamp(15px, 4vw, 18px);
     line-height: 1.35;
   }
 
-  html.is-ios-mobile .scene-hero-continuation .continuation-pivot-block {
+  html.is-mobile .scene-hero-continuation .continuation-pivot-block {
     margin-top: clamp(8px, 1.5vh, 12px);
   }
 
-  html.is-ios-mobile .scene-hero-continuation .continuation-definition-block {
+  html.is-mobile .scene-hero-continuation .continuation-definition-block {
     font-size: clamp(13px, 3.5vw, 15px);
     line-height: 1.45;
   }
 
   /* Section 3: Recognition */
-  html.is-ios-mobile .scene-recognition {
+  html.is-mobile .scene-recognition {
     display: flex;
     flex-direction: column;
     padding: clamp(0.375rem, 1.5vw, 0.5rem);
     background-color: #ffffff;
   }
 
-  html.is-ios-mobile .scene-recognition .recognition-card {
+  html.is-mobile .scene-recognition .recognition-card {
     height: 100%;
     min-height: 0;
     border-radius: 18px;
@@ -5790,56 +5868,84 @@ body.modal-open .floating-chat-anchor {
   }
 
   /* Section 4: Method */
-  html.is-ios-mobile .scene-method {
+  html.is-mobile .scene-method {
     display: flex;
     flex-direction: column;
     padding: clamp(0.375rem, 1.5vw, 0.5rem);
     background-color: #ffffff;
   }
 
-  html.is-ios-mobile .scene-method .method-stage-container {
+  html.is-mobile .scene-method .method-stage-container {
     height: 100%;
     overflow-y: auto;
+    justify-content: space-evenly;
+    overflow-sclling: touch;
     -webkit-overflow-scrolling: touch;
   }
+   html.is-mobile .scene-method  .method-opening {
+    margin: unset;
+    max-width: calc(100vw - 90px);
+    }
+
+
+     html.is-mobile .scene-method .method-headline, html.is-mobile .scene-method .method-headline-line, html.is-mobile .scene-method .method-headline-accent {
+      font-size: 25px;
+      line-height: 34px;
+      }
+
+      html.is-mobile .scene-method .method-realization {
+        gap: unset;
+        margin: unset;
+      }
+
+      html.is-mobile .scene-method .method-cascade-flow{
+        gap: clamp(4px,1.7vh,15px);
+        margin: unset;
+      }
 
   /* Section 5: Inside World */
-  html.is-ios-mobile .scene-inside-world {
+  html.is-mobile .scene-inside-world {
     display: flex;
     flex-direction: column;
     padding: clamp(0.375rem, 1.5vw, 0.5rem);
     background-color: #ffffff;
   }
 
-  html.is-ios-mobile .scene-inside-world .editorial-stage {
+  html.is-mobile .scene-inside-world .editorial-stage {
     height: 100%;
     border-radius: 18px;
     overflow: hidden;
   }
 
   /* Section 6: Encounter */
-  html.is-ios-mobile .scene-encounter {
+  html.is-mobile .scene-encounter {
     display: flex;
     flex-direction: column;
     padding: clamp(0.375rem, 1.5vw, 0.5rem);
     background-color: #ffffff;
   }
 
-  html.is-ios-mobile .scene-encounter .encounter-stage {
+  html.is-mobile .scene-encounter .encounter-stage {
     height: 100%;
     border-radius: 18px;
     overflow: hidden;
   }
 
+  html.is-mobile .scene-encounter .encounter-lead, 
+  html.is-mobile .scene-encounter .culmination-closing {
+      font-size: 25px;
+      line-height: 34px;
+      }
+
   /* Section 7: Conceptual */
-  html.is-ios-mobile .scene-conceptual {
+  html.is-mobile .scene-conceptual {
     display: flex;
     flex-direction: column;
     padding: clamp(0.375rem, 1.5vw, 0.5rem);
     background-color: #ffffff;
   }
 
-  html.is-ios-mobile .scene-conceptual .conceptual-stage {
+  html.is-mobile .scene-conceptual .conceptual-stage {
     height: 100%;
     min-height: 0;
     border-radius: 18px;
@@ -5848,7 +5954,7 @@ body.modal-open .floating-chat-anchor {
     flex-direction: column;
   }
 
-  html.is-ios-mobile .scene-conceptual .conceptual-stage-container {
+  html.is-mobile .scene-conceptual .conceptual-stage-container {
     height: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -5857,17 +5963,783 @@ body.modal-open .floating-chat-anchor {
     padding-bottom: 4rem;
   }
 
-  /* Other Program Sections */
-  html.is-ios-mobile .scene-program-timeline,
-  html.is-ios-mobile .scene-program-ritim,
-  html.is-ios-mobile .scene-fit,
-  html.is-ios-mobile .scene-nilufer,
-  html.is-ios-mobile .scene-practical,
-  html.is-ios-mobile .scene-close {
+  /* Section 13: Program Timeline (Programın içinde neler var?) */
+  html.is-mobile .scene-program-timeline {
     display: flex;
     flex-direction: column;
     padding: clamp(0.375rem, 1.5vw, 0.5rem);
     background-color: #ffffff;
+  }
+
+  html.is-mobile .scene-program-timeline .program-timeline-container {
+    height: 100%;
+    min-height: 0;
+    width: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+    padding: clamp(2.5rem, 5vh, 3.5rem) clamp(1.25rem, 5vw, 1.75rem);
+    padding-bottom: 5.5rem;
+    box-sizing: border-box;
+  }
+
+  html.is-mobile .program-timeline-header {
+    margin-bottom: clamp(1.75rem, 3.5vh, 2.5rem);
+  }
+
+  html.is-mobile .program-timeline-stream {
+    gap: clamp(1.75rem, 3vh, 2.25rem);
+  }
+
+  html.is-mobile .program-timeline-bottom-snap {
+    display: none;
+  }
+
+  html.is-mobile .scene-fit .fit-title {
+      font-size: 25px;
+      line-height: 34px;
+      max-width: 68vw;
+      }
+
+
+  html.is-mobile .scene-fit  .fit-prose-stream {
+      gap: clamp(7px,1.4vh,15px);
+      }
+
+  html.is-mobile .scene-fit  .fit-p-bold {
+      max-width: 70vw;
+      font-size: 16px;
+      line-height: 26px;
+      }
+
+        html.is-mobile .scene-fit  .fit-p-body {
+      font-size: 16px;
+      line-height: 26px;
+      }
+   html.is-mobile .scene-nilufer .program-title-34 {
+      font-size: 25px;
+      line-height: 34px;
+      }
+
+  html.is-mobile .scene-nilufer .nilufer-more-link {font-size: 16px;font-weight: 400;color: #C07F53;text-decoration: none;}
+
+      html.is-mobile .scene-nilufer .nilufer-narrative p {
+      font-size: 16px;
+      line-height: 25px;
+    }
+
+  /* Other Program Sections */
+  html.is-mobile .scene-program-ritim,
+  html.is-mobile .scene-fit,
+  html.is-mobile .scene-nilufer,
+  html.is-mobile .scene-practical {
+    display: flex;
+    flex-direction: column;
+    padding: clamp(0.375rem, 1.5vw, 0.5rem);
+    background-color: #ffffff;
+  }
+
+ 
+  /* ═══════════════════════════════════════════════════════════
+     JOURNEY CAROUSEL (6 HAFTA) FULL-HEIGHT MOBILE ENGINE
+     ═══════════════════════════════════════════════════════════ */
+  /* Deep Black Theme for Journey Slides (Removes harsh white contrast at status bar & URL bar) */
+  html.is-theme-journey,
+  html.is-theme-journey body,
+  html.is-theme-journey main {
+    background-color: var(--bg-dark-0) !important;
+  }
+
+  html.is-mobile .journey-carousel-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding: 0 !important;
+    background-color: var(--bg-dark-0) !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 0 !important;
+    position: relative;
+  }
+
+  /* Completely remove the bottom white continuation section so slides fill full height */
+  html.is-mobile .journey-mobile-continuation {
+    display: none !important;
+  }
+
+  html.is-mobile .journey-carousel-track {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    min-height: 0;
+    border-radius: 0 !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  html.is-mobile .journey-carousel-track .scene-journey-week {
+    height: 100%;
+    min-height: 0;
+    border-radius: 0 !important;
+    overflow: hidden;
+  }
+
+  html.is-mobile .journey-carousel-track .journey-slide-media {
+    border-radius: 0 !important;
+  }
+
+  html.is-mobile .journey-carousel-track .journey-week-container {
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: clamp(3.25rem, 7vh, 4rem) clamp(1.25rem, 5vw, 1.75rem) clamp(4.25rem, 9vh, 5.25rem);
+    box-sizing: border-box;
+  }
+
+  html.is-mobile .journey-carousel-track .journey-slide-main-col {
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  html.is-mobile .journey-slide-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    min-height: 0;
+  }
+
+  /* Slide 0 (Prologue: 6 HAFTA İÇERİDEN DÜNYAYA BİR YOL.) Specific Styling */
+  html.is-mobile .scene-journey-prologue .journey-slide-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    flex: 1;
+    min-height: 0;
+  }
+
+  html.is-mobile .scene-journey-prologue .journey-slide-title {
+    margin: 0;
+  }
+
+  html.is-mobile .scene-journey-prologue .mobile-intro-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  html.is-mobile .scene-journey-prologue .mobile-intro-kicker {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--orange-text);
+    text-transform: uppercase;
+  }
+
+  html.is-mobile .scene-journey-prologue .mobile-intro-heading {
+    font-family: var(--font-serif-heading);
+    font-size: clamp(26px, 7.8vw, 32px);
+    line-height: 1.16;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  html.is-mobile .scene-journey-prologue .journey-slide-desc {
+    margin: 0;
+  }
+
+  html.is-mobile .scene-journey-prologue .journey-slide-desc p {
+    font-family: var(--font-sans);
+    font-size: clamp(14px, 3.8vw, 15px);
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0;
+  }
+
+  /* Hide any legacy in-slide controls */
+  html.is-mobile .journey-carousel-track .journey-mobile-controls,
+  html.is-mobile .journey-carousel-track .journey-mobile-controls--prologue {
+    display: none !important;
+  }
+
+  /* Fixed Bottom Bar: Counter, Navigator (< dots >), and Round Canlı Destek Button */
+  html.is-mobile .journey-carousel-mobile-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: clamp(0.75rem, 2vh, 1.25rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: none;
+    box-sizing: border-box;
+    padding: 0 1.25rem;
+  }
+
+  html.is-mobile .journey-nav-cluster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    pointer-events: auto;
+  }
+
+  html.is-mobile .journey-nav-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+
+  html.is-mobile .journey-nav-counter .prologue-counter-curr {
+    color: var(--orange-text);
+  }
+
+  html.is-mobile .journey-nav-counter .prologue-counter-total {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  html.is-mobile .journey-nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  html.is-mobile .journey-nav-row .journey-arrow-btn {
+    background: transparent;
+    border: none;
+    padding: 6px;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 1;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html.is-mobile .journey-nav-row .journey-arrow-btn:active {
+    transform: scale(0.9);
+  }
+
+  html.is-mobile .journey-nav-row .journey-arrow-btn.disabled {
+    color: rgba(255, 255, 255, 0.25);
+    cursor: default;
+  }
+
+  html.is-mobile .journey-nav-row .journey-nav-prev.disabled {
+    pointer-events: none;
+  }
+
+  html.is-mobile .journey-nav-row .journey-nav-next.disabled {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  /* Fixed Round Canlı Destek Button (Icon-only, bottom-right across all 7 slides) */
+  html.is-mobile .journey-mobile-chat-fab {
+    position: absolute;
+    right: 1.25rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: auto;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html.is-mobile .journey-mobile-chat-fab:active {
+    transform: scale(0.92);
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  /* Mobile Hero Custom Adjustments */
+  html.is-mobile .hero-photo {
+    object-position: 93% 0% !important;
+    transform: none !important;
+  }
+
+  html.is-mobile .hero-gradient-overlay {
+    display: none !important;
+  }
+
+  html.is-mobile .hero-handwritten-wrap {
+    padding: 0 0 0 clamp(3px, 36px, 9vw) !important;
+    width: clamp(0px, 98vw, 98vw) !important;
+    max-width: none !important;
+  }
+
+  /* Mobile Program Section Custom Adjustments */
+  html.is-mobile .scene-program-timeline .program-timeline-title {
+    max-width: 75vw;
+  }
+
+  html.is-mobile .scene-program-ritim .program-frame-media {
+    background: linear-gradient(180deg, #d1b496 0%, #d1b496 50%, #c8b6a0 50%, #c8b6a0 100%) !important;
+  }
+
+  html.is-mobile .scene-program-ritim .program-ritim-backdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: linear-gradient(180deg, #d1b496 0%, #d1b496 50%, #c8b6a0 50%, #c8b6a0 100%);
+    pointer-events: none;
+  }
+
+  html.is-mobile .scene-program-ritim .program-ritim-picture,
+  html.is-mobile .scene-program-ritim .program-frame-photo {
+    position: relative;
+    z-index: 1;
+  }
+
+
+  html.is-mobile .scene-program-ritim .program-ritim-photo {
+    max-width: unset;
+    margin: 11vw -40vw;
+    width: auto;
+    height: 89%;
+    }
+
+  html.is-mobile .scene-program-ritim .program-frame-photo {
+    opacity: 1;
+    filter: contrast(1) brightness(1);
+  }
+
+  html.is-mobile .scene-program-ritim .program-ritim-container {
+    padding-top: unset;
+    padding-bottom: unset;
+    align-items: center;
+  }
+
+  html.is-mobile .scene-program-ritim .program-ritim-content {
+    max-width: 70vw;
+    margin: unset;
+    margin-bottom: 0;
+    max-height: 100%;
+    justify-content: space-evenly;
+    height: 100vh;
+  }
+
+  html.is-mobile .scene-program-ritim .program-ritim-subtle-gradient {
+    background: radial-gradient(
+      ellipse at 18% 78%,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.52) 100%,
+      rgba(255, 255, 255, 0.5) 20%
+    );
+  }
+
+  html.is-mobile .scene-nilufer .nilufer-narrative {
+    justify-content: space-evenly;
+    height: 78vh;
+    gap: unset;
+  }
+
+  html.is-mobile .scene-nilufer .nilufer-image-wrap img,
+  html.is-mobile .scene-nilufer .nilufer-photo,
+  html.is-mobile .scene-nilufer .program-frame-photo {
+    transform: none !important;
+    object-position: center top !important;
+    opacity: 1 !important;
+  }
+
+  html.is-mobile .conceptual-gradient-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(26, 20, 16, 0.8) 0%,
+      rgba(26, 20, 16, 0.7) 30%,
+      rgba(26, 20, 16, 0.7) 70%,
+      rgba(26, 20, 16, 0.8) 100%
+    );
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     SCENE PRACTICAL (PRATİK BİLGİLER) REFINED MOBILE ENGINE
+     ═══════════════════════════════════════════════════════════ */
+  html.is-mobile .scene-practical {
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    box-sizing: border-box;
+    padding: clamp(3.25rem, 6.5vh, 4rem) clamp(1.25rem, 5vw, 1.75rem) clamp(1.25rem, 3vh, 1.75rem) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #ffffff;
+  }
+
+  html.is-mobile .scene-practical .practical-container {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-template-columns: 1fr;
+  }
+
+  html.is-mobile .scene-practical .practical-media-col {
+    display: none;
+  }
+
+  html.is-mobile .scene-practical .practical-content-col {
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 !important;
+    gap: 9px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Schedule Summary */
+  html.is-mobile .scene-practical .practical-schedule-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0;
+  }
+
+  html.is-mobile .scene-practical .practical-schedule-row {
+    font-size: 15px;
+    line-height: 23px;
+    gap: 0.4rem;
+  }
+
+  html.is-mobile .scene-practical .practical-schedule-label {
+    font-size: 15px;
+    line-height: 23px;
+    font-weight: 600;
+    min-width: 110px;
+    flex-shrink: 0;
+  }
+
+  html.is-mobile .scene-practical .practical-schedule-val {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  /* Pricing Group */
+  html.is-mobile .scene-practical .practical-pricing-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 16px;
+    zoom: 1.2;
+    border-bottom: dashed 1px #cccccc;
+    border-top: dashed 1px #cccccc;
+  }
+
+  html.is-mobile .scene-practical .practical-price-primary {
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+
+  html.is-mobile .scene-practical .practical-price-amount {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 600;
+  }
+
+  html.is-mobile .scene-practical .practical-price-type {
+    font-size: 13.5px;
+    line-height: 19px;
+    color: #666666;
+  }
+
+  html.is-mobile .scene-practical .practical-price-installment {
+    font-size: 15.5px;
+line-height: 18px;
+color: #555555;
+  }
+
+  /* Participation Conditions Bullets */
+  html.is-mobile .scene-practical .practical-conditions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0;
+  }
+
+  html.is-mobile .scene-practical .practical-condition-item {
+    gap: 0.35rem;
+    color: #444444;
+  }
+
+  html.is-mobile .scene-practical .practical-condition-item p {
+    font-size: 16px;
+    line-height: 25px;
+    color: inherit;
+  }
+
+  html.is-mobile .scene-practical .practical-condition-item p strong {
+    font-size: 17px;
+    line-height: 17px;
+    font-weight: 600;
+    color: #000000;
+  }
+
+  /* Registration Deadline Note */
+  html.is-mobile .scene-practical .practical-deadline-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 0;
+  }
+
+  html.is-mobile .scene-practical .practical-deadline-main {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  html.is-mobile .scene-practical .practical-deadline-main strong {
+    font-weight: 600;
+    font-size: 17px;
+    color: #000000;
+  }
+
+  html.is-mobile .scene-practical .practical-deadline-sub {
+    font-size: 14px;
+    line-height: 25px;
+    margin: 0;
+    color: var(--orange-cta);
+  }
+
+  /* Meeting Dates */
+  html.is-mobile .scene-practical .practical-dates-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 0;
+  }
+
+  html.is-mobile .scene-practical .practical-dates-content span {
+    font-size: 15px;
+    line-height: 25px;
+    color: #666666;
+  }
+
+  html.is-mobile .scene-practical .practical-dates-content p {
+    font-size: 15px;
+    line-height: 25px;
+    color: #333333;
+    margin: 0;
+  }
+
+  /* Practical CTA — slightly reduced ("bir tık küçült") */
+  html.is-mobile .scene-practical .practical-cta-wrap {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  html.is-mobile .scene-practical .btn-practical-cta {
+    padding: 0.65rem 1.4rem;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border-radius: 9999px;
+    gap: 0.45rem;
+  }
+
+  html.is-mobile .scene-practical .btn-practical-cta svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     CLOSING SECTION (SON EKRAN) MOBILE ENGINE
+     ═══════════════════════════════════════════════════════════ */
+  html.is-mobile .scene-close {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-dark-0) !important;
+    color: #ffffff;
+    padding: clamp(2.5rem, 6vh, 4rem) 1.5rem clamp(1rem, 2.5vh, 1.75rem);
+    box-sizing: border-box;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  html.is-mobile .scene-close > .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 0;
+  }
+
+  html.is-mobile .close-echo-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 0;
+  }
+
+  html.is-mobile .close-main-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1.75rem, 4.5vh, 2.75rem);
+    width: 100%;
+    padding: 0;
+  }
+
+  html.is-mobile .brand-statement--close {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  html.is-mobile .brand-statement--close .brand-statement__top {
+    font-family: 'Plus Jakarta Sans', var(--font-sans);
+    font-weight: 200;
+    font-size: clamp(26px, 7.8vw, 36px);
+    line-height: 1.35;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+  }
+
+  html.is-mobile .brand-statement--close .brand-statement__script {
+    font-family: 'ekinBOHO';
+    font-weight: 400;
+    font-size: clamp(82px, 24vw, 110px);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin: -0.15em 0 -0.2em 0;
+  }
+
+  html.is-mobile .brand-statement--close .brand-statement__bottom {
+    font-family: 'Plus Jakarta Sans', var(--font-sans);
+    font-weight: 200;
+    font-size: clamp(30px, 9vw, 42px);
+    line-height: 1.35;
+    letter-spacing: 0.12em;
+    color: #ffffff;
+  }
+
+  html.is-mobile .close-right-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1.75rem, 4.5vh, 2.5rem);
+    width: 100%;
+  }
+
+  html.is-mobile .close-date {
+    font-family: 'Plus Jakarta Sans', var(--font-sans);
+    font-size: clamp(20px, 5.5vw, 25px);
+    line-height: 1.4;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  /* Matching the exact CTA dimensions and font from practical section */
+  html.is-mobile .scene-close .cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 220px;
+    background-color: var(--orange-cta);
+    color: #ffffff;
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.8rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(157, 77, 46, 0.22);
+    box-sizing: border-box;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+  }
+
+  html.is-mobile .close-footer-bar {
+    background-color: transparent !important;
+    border-top: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0.5rem 0 0.5rem 0 !important;
+    width: 100%;
+  }
+
+  html.is-mobile .close-footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+  }
+
+  html.is-mobile .close-footer-bar .footer-copy {
+    margin: 0 !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    text-align: center !important;
+  }
+
+  html.is-mobile .close-footer-faq-action {
+    display: none !important;
   }
 }
 
