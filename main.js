@@ -42,8 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Universal Section Array for Edge Peeking Prevention across all sections
   const snapSections = Array.from(document.querySelectorAll(
-    '.hero-frame-wrapper, .scene-hero-continuation, .scene-recognition, .scene-method, .scene-inside-world, .journey-carousel-wrapper, .scene-program-timeline, .scene-program-ritim, .scene-fit, .scene-nilufer, .scene-practical, .scene-close'
+    '.hero-frame-wrapper, .scene-hero-continuation, .scene-recognition, .scene-method, .scene-inside-world, .scene-program-timeline, .scene-program-ritim, .scene-fit, .scene-nilufer, .scene-practical, .scene-close'
   ));
+
+  const journeyWrapper = document.getElementById('journeyCarouselWrapper');
+  if (journeyWrapper) {
+    journeyWrapper.classList.remove('is-section-hidden');
+  }
   const heroSection = document.getElementById('hero');
   const weekSections = document.querySelectorAll('.scene-journey-week');
   const lightSurfaceSections = document.querySelectorAll('[data-slide-theme="light"]');
