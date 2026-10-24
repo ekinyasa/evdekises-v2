@@ -6359,13 +6359,20 @@ body.modal-open .floating-chat-anchor {
   }
 
   html.is-mobile .scene-program-ritim .program-ritim-subtle-gradient {
-    background: radial-gradient(
-      ellipse at 18% 78%,
-      rgba(255, 255, 255, 0.9) 0%,
-      rgba(255, 255, 255, 0.52) 100%,
-      rgba(255, 255, 255, 0.5) 20%
-    );
-  }
+position: absolute;
+inset: 0;
+z-index: 2;
+background: linear-gradient(
+to bottom,
+#cfb28e 0%,
+#d1b594 9%,
+rgba(216, 192, 170, 0.4) 22%,
+rgba(222, 211, 199, 0.4) 63%,
+rgba(230, 222, 212, 0.96) 89%,
+#e7e0d6 100%
+);
+pointer-events: none;
+}
 
   html.is-mobile .scene-nilufer .nilufer-narrative {
     justify-content: space-evenly;
