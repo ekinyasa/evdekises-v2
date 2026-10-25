@@ -264,11 +264,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setupBoundarySwipe(programInner, programPrev, programNext);
   }
 
-  // Smooth scroll for internal anchor links (excluding FAQ modal triggers)
+  // Smooth scroll for internal anchor links (excluding FAQ modal triggers and pending destinations)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
-      if (targetId === '#' || targetId === '' || this.hasAttribute('data-open-faq')) return;
+      if (targetId === '#' || targetId === '' || this.hasAttribute('data-open-faq') || this.hasAttribute('data-pending')) return;
       
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
@@ -442,6 +442,225 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // ═══════════════════════════════════════════════════════════
+  // MOBILE FULL-SCREEN NAVIGATION CONTROLLER
+  // ═══════════════════════════════════════════════════════════
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+  const mobileNavFaqBtn = document.getElementById('mobileNavFaqBtn');
+  let isMobileNavOpen = false;
+  let savedScrollTop = 0;
+
+  const openMobileNav = () => {
+    if (isMobileNavOpen || !mobileNavOverlay) return;
+    isMobileNavOpen = true;
+
+    // Record exact current scroll position before locking
+    savedScrollTop = isMobile && mainContainer ? mainContainer.scrollTop : (window.scrollY || window.pageYOffset);
+
+    mobileNavOverlay.classList.add('is-open');
+    mobileNavOverlay.setAttribute('aria-hidden', 'false');
+
+    if (mobileMenuToggle) {
+      mobileMenuToggle.setAttribute('aria-expanded', 'true');
+      mobileMenuToggle.setAttribute('aria-label', 'Menüyü kapat');
+    }
+
+    document.body.classList.add('mobile-nav-open');
+    document.documentElement.classList.add('mobile-nav-open');
+
+    // Accessibility: Focus first interactive link in overlay
+    const firstLink = mobileNavOverlay.querySelector('.mobile-nav-link');
+    if (firstLink) {
+      setTimeout(() => firstLink.focus(), 60);
+    }
+  };
+
+  const closeMobileNav = (options = { restoreScroll: true }) => {
+    if (!isMobileNavOpen || !mobileNavOverlay) return;
+    isMobileNavOpen = false;
+
+    mobileNavOverlay.classList.remove('is-open');
+    mobileNavOverlay.setAttribute('aria-hidden', 'true');
+
+    if (mobileMenuToggle) {
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      mobileMenuToggle.setAttribute('aria-label', 'Menüyü aç');
+    }
+
+    document.body.classList.remove('mobile-nav-open');
+    document.documentElement.classList.remove('mobile-nav-open');
+
+    if (options.restoreScroll) {
+      if (isMobile && mainContainer) {
+        mainContainer.scrollTop = savedScrollTop;
+      } else {
+        window.scrollTo(0, savedScrollTop);
+      }
+    }
+  };
+
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (isMobileNavOpen) {
+        closeMobileNav({ restoreScroll: true });
+        mobileMenuToggle.focus();
+      } else {
+        openMobileNav();
+      }
+    });
+  }
+
+  // Section navigation handlers for mobile menu items
+  const navigateFromMobileMenu = (targetSelector, resetCarousel = false) => {
+    closeMobileNav({ restoreScroll: false });
+
+    // Allow browser frame to unlock scroll container
+    requestAnimationFrame(() => {
+      if (resetCarousel) {
+        const carouselTrack = document.getElementById('journeyCarouselTrack');
+        if (carouselTrack) {
+          carouselTrack.scrollTo({ left: 0, behavior: 'instant' });
+        }
+      }
+
+      if (targetSelector === '#hero') {
+        if (isMobile && mainContainer) {
+          mainContainer.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        return;
+      }
+
+      const targetEl = document.querySelector(targetSelector);
+      if (targetEl) {
+        if (targetEl.classList.contains('is-section-hidden')) {
+          targetEl.classList.remove('is-section-hidden');
+        }
+
+        if (targetSelector === '#program') {
+          const programInner = document.querySelector('.scene-program-timeline .program-timeline-container');
+          if (programInner) {
+            programInner.scrollTop = 0;
+          }
+        }
+
+        if (isMobile && mainContainer) {
+          const mainRect = mainContainer.getBoundingClientRect();
+          const targetRect = targetEl.getBoundingClientRect();
+          const targetOffset = targetRect.top - mainRect.top + mainContainer.scrollTop;
+          mainContainer.scrollTo({
+            top: targetOffset,
+            behavior: 'smooth'
+          });
+        } else {
+          targetEl.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  };
+
+  // Wire mobile menu navigation links
+  if (mobileNavOverlay) {
+    const navLinks = mobileNavOverlay.querySelectorAll('[data-mobile-nav]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = link.getAttribute('data-mobile-nav');
+        const resetCarousel = link.getAttribute('data-reset-carousel') === 'true';
+        navigateFromMobileMenu(target, resetCarousel);
+      });
+    });
+
+    // FAQ handler: Close mobile menu cleanly first, then open FAQ modal
+    if (mobileNavFaqBtn) {
+      mobileNavFaqBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeMobileNav({ restoreScroll: true });
+        setTimeout(() => {
+          openFaqModal('all');
+        }, 180);
+      });
+    }
+
+    // Pending legal & contact links (prevent default; do not silently redirect)
+    const pendingLinks = mobileNavOverlay.querySelectorAll('[data-pending="true"]');
+    pendingLinks.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+      });
+    });
+
+    // Close on overlay backdrop tap (if tapping directly on overlay backdrop)
+    mobileNavOverlay.addEventListener('click', (e) => {
+      if (e.target === mobileNavOverlay) {
+        closeMobileNav({ restoreScroll: true });
+      }
+    });
+  }
+
+  // Keyboard navigation: Escape key closes mobile navigation overlay
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isMobileNavOpen) {
+      closeMobileNav({ restoreScroll: true });
+      if (mobileMenuToggle) mobileMenuToggle.focus();
+    }
+  });
+
+  // ═══════════════════════════════════════════════════════════
+  // FOOTER LEGAL & CONTACT LINK INTEGRATION HOOKS
+  // Missing destinations await finalized legal documents / channels.
+  // Prevents silent redirects / hash jumps; provides clean implementation hooks.
+  // ═══════════════════════════════════════════════════════════
+  const footerLegalLinks = document.querySelectorAll('.footer-legal-link');
+  footerLegalLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const legalType = link.getAttribute('data-legal');
+
+      switch (legalType) {
+        case 'kvkk':
+          // TODO: Open KVKK Aydınlatma Metni modal or navigate to /kvkk when document is provided
+          console.info('[Footer] KVKK Aydınlatma Metni: Awaiting final document destination.');
+          break;
+        case 'gizlilik':
+          // TODO: Open Gizlilik Politikası modal or navigate to /gizlilik when document is provided
+          console.info('[Footer] Gizlilik Politikası: Awaiting final document destination.');
+          break;
+        case 'cerez':
+          // TODO: Open Çerez Politikası modal or navigate to /cerez-politikasi when document is provided
+          console.info('[Footer] Çerez Politikası: Awaiting final document destination.');
+          break;
+        case 'kullanim':
+          // TODO: Open Kullanım Koşulları modal or navigate to /kullanim-kosullari when document is provided
+          console.info('[Footer] Kullanım Koşulları: Awaiting final document destination.');
+          break;
+        case 'iletisim':
+          // TODO: Connect to official contact modal, mailto:, or support channel when provided
+          console.info('[Footer] İletişim: Awaiting final contact destination.');
+          break;
+        case 'cookie-preferences':
+          // Hook: Invoke consent management system if initialized
+          if (window.EvdekiSesConsent && typeof window.EvdekiSesConsent.openPreferences === 'function') {
+            window.EvdekiSesConsent.openPreferences();
+          } else if (typeof window.openCookiePreferences === 'function') {
+            window.openCookiePreferences();
+          } else {
+            // TODO: Consent management interface is not yet installed in codebase
+            console.info('[Footer] Çerez Tercihlerini Yönet: Consent manager interface not detected yet.');
+          }
+          break;
+        default:
+          break;
+      }
+    });
+  });
 
   // ═══════════════════════════════════════════════════════════
   // FLOATING LIVE CHAT VISIBILITY SYSTEM
