@@ -36,6 +36,9 @@ Aşağıdaki dokuz kaynak okundu; PDF’nin 25 sayfasının tamamı bellekte ren
 | PDF | `revision/references/illustrator-latest.pdf` | 21af1b80a6b4eb9480df7ed288970898a9c491a5f3b0756fb576b49262387dde |
 | F12 | `revision/references/readability-feedback.md` | 708f63b58921fbbb81c1d87e96128ec1d37924e1d7b286945d9299578a971d3c |
 | F14 | `revision/references/nilufer-feedback-2026-10-14.md` | 88ab2d9885a46cdad5127db7462a667cb9ceb40219069a9d2aac97323e3433d2 |
+| LEGAL-OPS | `/Users/ekinyasa/Documents/Nilufer/Evdeki-legal/` & `evdekises-legal-operations` (25 Ekim 2026 v1) | Word/ZIP orijinalleri + 8 inceleme Markdown belgesi (00_READ_ME..07_UYGULAMA_BRIFI) |
+
+LEGAL-OPS: 25 Ekim 2026 tarihli Evdeki Ses Handoff paketi (Ekin'in GPT ile hazırladığı çalışma taslakları). Önceden işaretlenen "MISSING" durumu düzeltildi; fiziksel dosyalar ve yerel operations kopyası doğrulandı. Hukuki ve ticari inceleme devam ederken geliştirme/önizleme ortamı için L01–L10, C01–C07 ve P-A–P-I maddeleri `legal-docs/LEGAL_SYNC_LOG.md` ile uzlaştırıldı.
 
 COPY: 01_PUBLIC_COPY.md’nin tamamı; PRODUCT: 02_PRODUCT_TRUTH.md’nin tamamı, nihai müfredat değildir; OPS: 03_PRODUCTION_STATUS.md’nin tamamı, 3 Ekim çalışma durumu. Kaynakların kendileri değiştirilmez. Eski takvim, bu dosyalar kendilerini CURRENT/FINAL diye tanımlasa dahi DEC-019 tarafından geçersiz kılınmıştır.
 

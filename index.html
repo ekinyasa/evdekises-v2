@@ -6,13 +6,13 @@
   <title>Evdeki Ses — Nilüfer Ormanlı</title>
   <meta name="description" content="Evdeki Ses, içinde uzun zamandır taşıdığı bir şeyi hayata geçirmek isteyen kadınlar için altı haftalık canlı bir grup programı." />
   <meta name="theme-color" content="#ffffff" id="metaThemeColor" />
-  
+
   <!-- Immediate Mobile Detection to prevent layout shift -->
   <script>
     (function() {
       if (window.innerWidth <= 768) {
         document.documentElement.classList.add('is-mobile');
-        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
                     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
         if (isIOS) {
           document.documentElement.classList.add('is-ios-mobile');
@@ -20,13 +20,13 @@
       }
     })();
   </script>
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  
-  <link rel="stylesheet" href="styles.css?v=20261025b" />
+
+  <link rel="stylesheet" href="styles.css?v=20261025c" />
 </head>
 <body>
 
@@ -50,7 +50,7 @@
 
       <!-- 3. Right Action CTA (Revealed in State 2) -->
       <div class="header-action">
-        <a href="#karar" class="btn-header-cta">
+        <a href="#karar" class="btn-header-cta" data-open-checkout="true">
           <span>Evdeki Ses’e Katıl</span>
         </a>
       </div>
@@ -96,7 +96,7 @@
   <div id="mobileNavOverlay" class="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Mobil Gezinti" aria-hidden="true">
     <div class="mobile-nav-scroll">
       <div class="mobile-nav-body">
-        
+
         <!-- SECTION 1: PROGRAMI KEŞFET -->
         <div class="mobile-nav-group">
           <span class="mobile-nav-kicker">Programı Keşfet</span>
@@ -109,17 +109,18 @@
           </nav>
         </div>
 
-        <!-- SECTION 2: DESTEK & BİLGİ -->
+        <!-- SECTION 2: DESTEK & BİLGİ (L10) -->
         <div class="mobile-nav-group mobile-nav-group--support">
-          <span class="mobile-nav-kicker">Destek &amp; Bilgi</span>
+          <span class="mobile-nav-kicker">Destek &amp; Yasal Bilgiler</span>
           <nav class="mobile-nav-links" aria-label="Destek ve Bilgi">
-            <a href="#iletisim" class="mobile-nav-link mobile-nav-link--contact" data-pending="true">İletişim</a>
+            <a href="mailto:hello@niluferormanli.studio" class="mobile-nav-link mobile-nav-link--contact">İletişim: hello@niluferormanli.studio</a>
             <div class="mobile-nav-legal-group" aria-label="Yasal Bilgiler">
-              <a href="#kvkk" class="mobile-nav-sublink" data-pending="true">KVKK Aydınlatma Metni</a>
-              <a href="#gizlilik" class="mobile-nav-sublink" data-pending="true">Gizlilik Politikası</a>
-              <a href="#cerez" class="mobile-nav-sublink" data-pending="true">Çerez Politikası</a>
-              <a href="#kullanim" class="mobile-nav-sublink" data-pending="true">Kullanım Koşulları</a>
-              <button type="button" class="mobile-nav-sublink" data-pending="true">Çerez Tercihlerini Yönet</button>
+              <a href="legal/on-bilgilendirme.html" class="mobile-nav-sublink" data-legal="on-bilgilendirme">Ön Bilgilendirme</a>
+              <a href="legal/mesafeli-satis.html" class="mobile-nav-sublink" data-legal="mesafeli-satis">Mesafeli Satış/Hizmet Sözleşmesi</a>
+              <span class="mobile-nav-sublink footer-legal-link--pending" title="Hedef henüz belirlenmedi">[İptal ve İade]</span>
+              <a href="legal/katilim-kosullari.html" class="mobile-nav-sublink" data-legal="katilim-kosullari">Katılım Koşulları</a>
+              <a href="legal/gizlilik.html" class="mobile-nav-sublink" data-legal="gizlilik">Gizlilik</a>
+              <button type="button" class="mobile-nav-sublink" data-open-cookies="true">Çerez Tercihleri</button>
             </div>
           </nav>
         </div>
@@ -128,7 +129,7 @@
 
       <!-- PRIMARY ACTION -->
       <div class="mobile-nav-cta-wrap">
-        <a href="#karar" class="cta-primary mobile-nav-cta" data-mobile-nav="#karar">Evdeki Ses’e Katıl</a>
+        <a href="#karar" class="cta-primary mobile-nav-cta" data-open-checkout="true">Evdeki Ses’e Katıl</a>
       </div>
 
     </div>
@@ -144,10 +145,10 @@
         <div class="hero-canvas">
           <div class="hero-image-wrap">
             <picture class="hero-photo-picture">
-              <source media="(max-width: 768px)" srcset="assets/hero-mobile.webp" type="image/webp" />
-              <img 
-                src="assets/evdeki-ses-hero.jpg" 
-                alt="Nilüfer Ormanlı — Evdeki Ses" 
+              <source media="(max-width: 768px)" srcset="assets/nilufer.webp" type="image/webp" />
+              <img
+                src="assets/nilufer.webp"
+                alt="Nilüfer Ormanlı — Evdeki Ses"
                 class="hero-photo"
                 fetchpriority="high"
               />
@@ -158,13 +159,13 @@
 
         <div class="hero-container">
           <div class="hero-layout-grid">
-            
+
             <!-- LEFT: Four-line Orange Handwritten List -->
             <div class="hero-left-field">
               <div class="hero-handwritten-wrap">
-                <img 
-                  src="assets/birgun.svg?v=20261020b" 
-                  alt="Bir gün yazacağım. Bir gün o atölyeyi açacağım. Bir gün şarkılarımı çıkaracağım. Bir gün kendi işimi kuracağım." 
+                <img
+                  src="assets/birgun.svg?v=20261020b"
+                  alt="Bir gün yazacağım. Bir gün o atölyeyi açacağım. Bir gün şarkılarımı çıkaracağım. Bir gün kendi işimi kuracağım."
                   class="hero-handwritten-img"
                   width="522"
                   height="215"
@@ -185,7 +186,7 @@
               <p class="hero-subcopy">“Bir gün” dediğin şeyi <span class="hero-subcopy-phrase">altı hafta içinde dünyayla buluştur.</span></p>
 
               <div class="hero-poster-action-wrap">
-                <a href="#karar" class="cta-primary hero-cta">
+                <a href="#karar" class="cta-primary hero-cta" data-open-checkout="true">
                   <span>Evdeki Ses’e Katıl</span>
                   <svg class="cta-arrow" viewBox="0 0 20 14" fill="none" aria-hidden="true">
                     <path d="M1 7H18.5M12.5 1L18.5 7L12.5 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -616,7 +617,7 @@
         <section class="scene-journey-week scene-journey-prologue" id="hafta-0" data-week-index="0" data-slide-theme="dark">
           <div id="journey" class="journey-nav-anchor" aria-hidden="true"></div>
           <div class="journey-slide-media" aria-hidden="true">
-            <img src="assets/6hafta/00.png" alt="" class="journey-slide-photo" loading="eager" onerror="this.style.display='none'" />
+            <img src="assets/6hafta/00.webp" alt="" class="journey-slide-photo" loading="eager" onerror="this.style.display='none'" />
             <div class="journey-slide-scrim"></div>
           </div>
           <div class="container journey-week-container">
@@ -651,7 +652,7 @@
              ═══════════════════════════════════════════════════════════ -->
         <section class="scene-journey-week" id="hafta-1" data-week-index="1" data-slide-theme="dark">
           <div class="journey-slide-media" aria-hidden="true">
-            <img src="assets/6hafta/01.png" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
+            <img src="assets/6hafta/01.webp" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
             <div class="journey-slide-scrim"></div>
           </div>
           <div class="container journey-week-container">
@@ -687,7 +688,7 @@
              ═══════════════════════════════════════════════════════════ -->
         <section class="scene-journey-week" id="hafta-2" data-week-index="2" data-slide-theme="dark">
           <div class="journey-slide-media" aria-hidden="true">
-            <img src="assets/6hafta/02.avif" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
+            <img src="assets/6hafta/02.webp" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
             <div class="journey-slide-scrim"></div>
           </div>
           <div class="container journey-week-container">
@@ -723,7 +724,7 @@
              ═══════════════════════════════════════════════════════════ -->
         <section class="scene-journey-week" id="hafta-3" data-week-index="3" data-slide-theme="dark">
           <div class="journey-slide-media" aria-hidden="true">
-            <img src="assets/6hafta/03.avif" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
+            <img src="assets/6hafta/03.webp" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
             <div class="journey-slide-scrim"></div>
           </div>
           <div class="container journey-week-container">
@@ -759,7 +760,7 @@
              ═══════════════════════════════════════════════════════════ -->
         <section class="scene-journey-week" id="hafta-4" data-week-index="4" data-slide-theme="dark">
           <div class="journey-slide-media" aria-hidden="true">
-            <img src="assets/6hafta/04.png" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
+            <img src="assets/6hafta/04.webp" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
             <div class="journey-slide-scrim"></div>
           </div>
           <div class="container journey-week-container">
@@ -795,7 +796,7 @@
              ═══════════════════════════════════════════════════════════ -->
         <section class="scene-journey-week" id="hafta-5" data-week-index="5" data-slide-theme="dark">
           <div class="journey-slide-media" aria-hidden="true">
-            <img src="assets/6hafta/05.png" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
+            <img src="assets/6hafta/05.webp" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
             <div class="journey-slide-scrim"></div>
           </div>
           <div class="container journey-week-container">
@@ -831,7 +832,7 @@
              ═══════════════════════════════════════════════════════════ -->
         <section class="scene-journey-week" id="hafta-6" data-week-index="6" data-slide-theme="dark">
           <div class="journey-slide-media" aria-hidden="true">
-            <img src="assets/6hafta/06.png" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
+            <img src="assets/6hafta/06.webp" alt="" class="journey-slide-photo" loading="lazy" onerror="this.style.display='none'" />
             <div class="journey-slide-scrim"></div>
           </div>
           <div class="container journey-week-container">
@@ -919,7 +920,7 @@
          ═══════════════════════════════════════════════════════════ -->
     <section class="scene-program scene-program-timeline" id="program" data-slide-theme="light">
       <div class="container program-timeline-container">
-        
+
         <header class="program-timeline-header">
           <h2 class="program-timeline-title">Programın içinde neler var?</h2>
           <p class="program-timeline-intro">
@@ -1111,24 +1112,24 @@
          ═══════════════════════════════════════════════════════════ -->
     <section class="scene-program scene-fit" id="uygunluk" data-slide-theme="light">
       <div class="container fit-container">
-        
+
         <div class="fit-passage-wrap">
           <h2 class="program-title-34 fit-title">Bu program sana uygun mu?</h2>
-          
+
           <div class="fit-prose-stream">
             <p class="fit-p-bold">
               Evdeki Ses'e ne yapmak istediğini bilerek de gelebilirsin,
               yalnızca içinde bir şeyin biriktiğini bilerek de.
             </p>
-            
+
             <p class="fit-p-body">
               Altı hafta boyunca kendi malzemenin başına tekrar tekrar dönüyorsun. Sesinle ve bedeninle çalışıyorsun; burada önemli olan iyi söylemek değil, duymak. Yaptığın şeyi partnerinle paylaşıyor ve program bitmeden dünyayla buluşturuyorsun.
             </p>
-            
+
             <p class="fit-p-body">
               <em class="fit-em">Bunun için meraktan biraz daha fazlası gerekiyor: zaman ayırmaya, denemeye, seçim yapmaya ve başladığın şeyin yanında kalmaya istekli olman.</em>
             </p>
-            
+
             <p class="fit-p-body">
               Buraya bir şeyi yanında taşımaya devam etmek için değil, onunla bir şey yapmak için geliyorsun.
             </p>
@@ -1145,22 +1146,22 @@
       <div class="program-frame-media" aria-hidden="true">
         <div class="nilufer-image-wrap">
           <picture class="nilufer-photo-picture">
-            <source media="(max-width: 768px)" srcset="assets/hero-mobile.webp" type="image/webp" />
-            <img 
-              src="assets/nilufer-portrait-wide.png" 
-              alt="Nilüfer Ormanlı" 
+            <source media="(max-width: 768px)" srcset="assets/nilufer.webp" type="image/webp" />
+            <img
+              src="assets/nilufer.webp"
+              alt="Nilüfer Ormanlı"
               class="program-frame-photo nilufer-photo"
               fetchpriority="high"
             />
           </picture>
           <div class="nilufer-gradient-overlay"></div>
         </div>
-        
+
       </div>
       <div class="container nilufer-container">
         <div class="nilufer-content-col">
           <h2 class="program-title-34 theme-white">Ben Nilüfer Ormanlı.</h2>
-          
+
           <div class="nilufer-narrative">
             <p>
               Hayatımın büyük bölümünü bir şeylerin nasıl doğduğunu, biçim kazandığını ve dünyaya çıktığını yaşayarak geçirdim.
@@ -1186,90 +1187,335 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
+         TESTIMONIALS: NİLÜFER'LE ÇALIŞANLARDAN (L09 / P-C)
+         Positioned immediately before #karar (Social Proof & Trust)
+         Section ID: #deneyimler
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="scene-program scene-testimonials" id="deneyimler" data-slide-theme="light" aria-labelledby="testimonialsTitle">
+      <div class="container testimonials-container">
+
+        <!-- Header: Title, Description, and Navigation Controls -->
+        <header class="testimonials-header">
+          <div class="testimonials-header-text">
+            <span class="testimonials-kicker">KATILIMCILARIN DENEYİMİ</span>
+            <h2 id="testimonialsTitle" class="testimonials-title">Nilüfer’le çalışanlardan</h2>
+            <p class="testimonials-desc">Nilüfer Ormanlı’nın önceki bireysel çalışmalarına ve eğitimlerine katılan kişilerin kendi sözleriyle deneyimleri.</p>
+          </div>
+
+          <div class="testimonials-nav-controls" aria-label="Yorum Gezintisi">
+            <button type="button" class="btn-testimonial-nav btn-testimonial-prev" id="btnTestimonialPrev" aria-label="Önceki yorum" disabled>
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button type="button" class="btn-testimonial-nav btn-testimonial-next" id="btnTestimonialNext" aria-label="Sonraki yorum">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <!-- Carousel Track Wrapper (Trackpad, Swipe & Keyboard accessible) -->
+        <div class="testimonials-carousel-wrapper" id="testimonialsCarouselWrapper" role="region" aria-roledescription="carousel" aria-label="Nilüfer Ormanlı Katılımcı Deneyimleri" tabindex="0">
+          <div class="testimonials-track" id="testimonialsTrack">
+
+            <!-- Card 1: Aslınur -->
+            <article class="testimonial-card" data-testimonial-id="testimonial-01" aria-roledescription="slide" aria-label="1 / 6: Aslınur">
+              <div class="testimonial-card-media">
+                <img src="assets/testimonials/aslinur.webp" alt="İçsel çalışma ve not alma anı temsili editoryal fotoğrafı" class="testimonial-card-img testimonial-card-img--aslinur" loading="eager" />
+              </div>
+              <div class="testimonial-card-content">
+                <blockquote class="testimonial-quote">
+                  “Sesin bedene ilmek ilmek örülü olduğunu… gösterdi. Her görüşme sonrası bedenimin bir parçası çiçeğe duruyor ve sesim çiçeğin etrafında arı gibi vızıldamaya başlıyordu.”
+                </blockquote>
+                <div class="testimonial-card-footer">
+                  <div class="testimonial-author-info">
+                    <strong class="testimonial-author-name">Aslınur</strong>
+                    <span class="testimonial-author-role">Bireysel çalışma katılımcısı</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Özge -->
+            <article class="testimonial-card" data-testimonial-id="testimonial-02" aria-roledescription="slide" aria-label="2 / 6: Özge">
+              <div class="testimonial-card-media">
+                <img src="assets/testimonials/ozge.webp" alt="Açık havada derin ve sakin bir nefes anı temsili editoryal fotoğrafı" class="testimonial-card-img testimonial-card-img--ozge" loading="eager" />
+              </div>
+              <div class="testimonial-card-content">
+                <blockquote class="testimonial-quote">
+                  “Ses eğitimi diye başladığım eğitim sırasında önce bedende yarattığım sıkışıklıkları fark ettim, ve günlük hayatımda bu daralmaları başka nerelerde yaşadığıma bir ayna görevi yapmaya başladı… Yine gündelik hayatımda, işimde netlikler kazanmaya başladım.”
+                </blockquote>
+                <div class="testimonial-card-footer">
+                  <div class="testimonial-author-info">
+                    <strong class="testimonial-author-name">Özge</strong>
+                    <span class="testimonial-author-role">Ses eğitimi katılımcısı</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Ceren -->
+            <article class="testimonial-card" data-testimonial-id="testimonial-03" aria-roledescription="slide" aria-label="3 / 6: Ceren">
+              <div class="testimonial-card-media">
+                <img src="assets/testimonials/ceren.webp" alt="Çocuksu oyunbazlık ve doğada neşe temsili editoryal fotoğrafı" class="testimonial-card-img testimonial-card-img--ceren" loading="eager" />
+              </div>
+              <div class="testimonial-card-content">
+                <blockquote class="testimonial-quote">
+                  “Çocuksu oyunbazlığım ortaya çıktığında buna hem aynı şekilde karşılık verebilecek çocuksu bir ruh, hem de alanı ve olanı tutabilecek olgun bir ruha ihtiyaç duyarım; işte Nilüfer ikisini de taşıyan bir can.”
+                </blockquote>
+                <div class="testimonial-card-footer">
+                  <div class="testimonial-author-info">
+                    <strong class="testimonial-author-name">Ceren</strong>
+                    <span class="testimonial-author-role">Atölye ve pratik katılımcısı</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: Esma -->
+            <article class="testimonial-card" data-testimonial-id="testimonial-04" aria-roledescription="slide" aria-label="4 / 6: Esma">
+              <div class="testimonial-card-media">
+                <img src="assets/testimonials/esma.webp" alt="Ev ortamında sakin ve kendine ait bir alan temsili editoryal fotoğrafı" class="testimonial-card-img testimonial-card-img--esma" loading="eager" />
+              </div>
+              <div class="testimonial-card-content">
+                <blockquote class="testimonial-quote">
+                  “Her yaptığımız ders, elimde kendime ait bir hediyeyle bitti.”
+                </blockquote>
+                <div class="testimonial-card-footer">
+                  <div class="testimonial-author-info">
+                    <strong class="testimonial-author-name">Esma</strong>
+                    <span class="testimonial-author-role">Ders çalışması katılımcısı</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5: Mükerrem -->
+            <article class="testimonial-card" data-testimonial-id="testimonial-05" aria-roledescription="slide" aria-label="5 / 6: Mükerrem">
+              <div class="testimonial-card-media">
+                <img src="assets/testimonials/mukerrem.webp" alt="Güneş ışığında dingin ve bedenle barışık bir an temsili editoryal fotoğrafı" class="testimonial-card-img testimonial-card-img--mukerrem" loading="eager" />
+              </div>
+              <div class="testimonial-card-content">
+                <blockquote class="testimonial-quote">
+                  “Daha ilk gün bile kapınızdan çıkarken hafiflediğimi hissetmiştim. Bana kendimi sevmeyi, bedenimi sevmeyi hatırlattığınız […] için minnettarım.”
+                </blockquote>
+                <div class="testimonial-card-footer">
+                  <div class="testimonial-author-info">
+                    <strong class="testimonial-author-name">Mükerrem</strong>
+                    <span class="testimonial-author-role">Bireysel çalışma katılımcısı</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 6: Merve G. (Standard Photographic Card) -->
+            <article class="testimonial-card" data-testimonial-id="testimonial-06" aria-roledescription="slide" aria-label="6 / 6: Merve G.">
+              <div class="testimonial-card-media">
+                <img src="assets/testimonials/merve-g.webp" alt="Samimi ve içten bir iletişim anı temsili editoryal fotoğrafı" class="testimonial-card-img testimonial-card-img--merve-g" loading="eager" />
+              </div>
+              <div class="testimonial-card-content">
+                <blockquote class="testimonial-quote">
+                  “Dokuz aylık bir süreci birlikte geçirdiğim, bilgisine, tecrübesine güvendiğim, nefes terapisi, ses terapisi, farklı meditasyon teknikleri, nefesoloji ve adını bilmediğim farklı tekniklerle uzun ve çok da kolay olmayan zamanlarda bana şifa olan, çok şey öğrendiğim rehberliğine güvendiğim Nilüfer Ormanlı’nın sizlere de şifa olmasını umarım ve canıgönülden tavsiye ederim.”
+                </blockquote>
+                <div class="testimonial-card-footer">
+                  <div class="testimonial-author-info">
+                    <strong class="testimonial-author-name">Merve G.</strong>
+                    <span class="testimonial-author-role">Bireysel çalışma katılımcısı</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Carousel Footer: Indicator Dots & Counter -->
+        <footer class="testimonials-footer">
+          <p class="testimonials-editorial-note">Alıntılar Nilüfer Ormanlı’nın önceki bireysel çalışmalarına ve eğitimlerine aittir; temsili editoryal görsellerle sunulmuştur.</p>
+          <div class="testimonials-footer-actions">
+            <div class="testimonials-indicators" id="testimonialsIndicators" aria-label="Slayt göstergeleri" role="tablist">
+              <button type="button" class="indicator-dot active" data-slide-index="0" aria-label="Slayt 1" aria-selected="true" role="tab"></button>
+              <button type="button" class="indicator-dot" data-slide-index="1" aria-label="Slayt 2" aria-selected="false" role="tab"></button>
+              <button type="button" class="indicator-dot" data-slide-index="2" aria-label="Slayt 3" aria-selected="false" role="tab"></button>
+              <button type="button" class="indicator-dot" data-slide-index="3" aria-label="Slayt 4" aria-selected="false" role="tab"></button>
+              <button type="button" class="indicator-dot" data-slide-index="4" aria-label="Slayt 5" aria-selected="false" role="tab"></button>
+              <button type="button" class="indicator-dot" data-slide-index="5" aria-label="Slayt 6" aria-selected="false" role="tab"></button>
+            </div>
+            <span class="testimonials-counter" id="testimonialsCounter" aria-live="polite">1 / 6</span>
+          </div>
+        </footer>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
          PRATİK BİLGİLER & KARAR (SECTION 5)
          Reference: superpower-practical-reference.png (Two-Column Light Composition)
-         Photo: assets/practical.jpg
+         Photo: assets/practical-photo.webp
          ═══════════════════════════════════════════════════════════ -->
     <section class="scene-program scene-practical" id="karar" data-slide-theme="light">
       <div class="container practical-container">
-        
+
         <!-- Left: Editorial Photograph -->
         <div class="practical-media-col" aria-hidden="true">
           <div class="practical-photo-frame">
-            <img 
-              src="assets/practical.png" 
-              alt="Evdeki Ses pratik çalışma anı" 
-              class="practical-photo" 
-              loading="lazy" 
+            <img
+              src="assets/practical-photo.webp"
+              alt="Evdeki Ses pratik çalışma anı"
+              class="practical-photo"
+              loading="lazy"
             />
           </div>
         </div>
 
         <!-- Right: Information Hierarchy -->
         <div class="practical-content-col">
-          
-    
 
-          <!-- B. Schedule Summary -->
+          <div class="practical-header">
+            <span class="practical-kicker">KAYIT VE KATILIM</span>
+            <h2 class="practical-title">Pratik Bilgiler</h2>
+          </div>
+
+          <!-- B. Schedule Summary (L01) -->
           <div class="practical-schedule-group">
             <div class="practical-schedule-row">
               <span class="practical-schedule-label">Başlangıç:</span>
-              <span class="practical-schedule-val">4 Kasım 2026, Çarşamba</span>
-            </div>
-            <div class="practical-schedule-row">
-              <span class="practical-schedule-label">Program süresi:</span>
-              <span class="practical-schedule-val">6 hafta</span>
+              <span class="practical-schedule-val">11 Kasım 2026, Çarşamba · 6 hafta</span>
             </div>
             <div class="practical-schedule-row">
               <span class="practical-schedule-label">Canlı buluşmalar:</span>
-              <span class="practical-schedule-val">Her Çarşamba, 19.30–21.30</span>
+              <span class="practical-schedule-val">Her çarşamba, 19.30–21.30 (Türkiye saati)</span>
+            </div>
+            <div class="practical-schedule-row">
+              <span class="practical-schedule-label">Buluşma tarihleri:</span>
+              <span class="practical-schedule-val">11, 18, 25 Kasım ve 2, 9, 16 Aralık 2026</span>
+            </div>
+            <div class="practical-schedule-row">
+              <span class="practical-schedule-label">Kontenjan:</span>
+              <span class="practical-schedule-val">En fazla 10 kişi</span>
+            </div>
+            <div class="practical-schedule-row">
+              <span class="practical-schedule-label">Son kayıt:</span>
+              <span class="practical-schedule-val">10 Kasım 2026, 23.59 (TSİ) <span class="practical-note-muted">(Kontenjan dolarsa erken kapanır)</span></span>
+            </div>
+            <div class="practical-schedule-row">
+              <span class="practical-schedule-label">Erişim süresi:</span>
+              <span class="practical-schedule-val">15 Ocak 2027 saat 23.59’a kadar</span>
             </div>
           </div>
 
-          <!-- C. Pricing Hierarchy -->
+          <!-- C. Pricing Hierarchy (L07, L08) -->
           <div class="practical-pricing-group">
             <div class="practical-price-primary">
               <span class="practical-price-amount">15.500 TL</span>
               <span class="practical-price-type">peşin</span>
+              <span class="practical-price-divider">·</span>
+              <span class="practical-price-installment">2 taksit: 2 × 8.500 TL</span>
             </div>
-            <div class="practical-price-installment">
-              2 taksit: 2 × 8.500 TL
-            </div>
+            <p class="practical-value-summary">6 hafta boyunca canlı buluşmalar, günlük ve haftalık rehberli çalışmalar, kendi malzemen üzerinde çalışma, partner desteği ve Evdeki Ses asistanıyla birlikte ilerliyorsun.</p>
+            <p class="practical-refund-note">İptal, cayma ve iade koşullarını satın alma öncesinde <a href="legal/on-bilgilendirme.html" data-legal="on-bilgilendirme" class="legal-inline-link">Ön Bilgilendirme Metni</a>’nde ve <a href="legal/mesafeli-satis.html" data-legal="mesafeli-satis" class="legal-inline-link">Mesafeli Satış/Hizmet Sözleşmesi</a>’nde bulabilirsin. Uygulanabilir zorunlu tüketici hakları saklıdır. Soruların için: <a href="mailto:hello@niluferormanli.studio" class="legal-inline-link">hello@niluferormanli.studio</a>.</p>
           </div>
 
-          
+          <!-- E. Important Participation Conditions (Accessible Accordion) -->
+          <div class="practical-conditions-accordion">
+            <span class="practical-accordion-kicker">Önemli Katılım Koşulları</span>
 
-          <!-- E. Important Participation Conditions -->
-          <div class="practical-conditions-group">
-            <div class="practical-condition-item">
-              <span class="condition-bullet">•</span>
-              <p><strong>Kontenjan:</strong> En fazla 10 kişi</p>
-            </div>
-            <div class="practical-condition-item">
-              <span class="condition-bullet">•</span>
-              <p>Canlı buluşmalar kaydedilmiyor. Programın önemli bir parçası oldukları için mümkün olduğunca tüm buluşmalara katılmanı bekliyoruz.</p>
-            </div>
-            <div class="practical-condition-item">
-              <span class="condition-bullet">•</span>
-              <p>Program sona erdikten sonra kayıtlı derslere ve program materyallerine 30 gün daha erişebilirsin.</p>
-            </div>
-          </div>
+            <!-- 1. Aktif Katılım -->
+            <details name="practical-conditions" class="practical-condition-item">
+              <summary class="practical-condition-summary">
+                <span class="condition-summary-left">
+                  <span class="condition-summary-bullet">•</span>
+                  <span class="condition-summary-title"><strong>Aktif katılım:</strong> Kamera ve mikrofonla katılım</span>
+                </span>
+                <span class="condition-summary-chevron" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6L8 10L12 6"/>
+                  </svg>
+                </span>
+              </summary>
+              <div class="practical-condition-body">
+                <p>Evdeki Ses, yalnızca izlemeye dayalı bir eğitim değil; ses, beden ve ifadeyi birlikte araştırdığımız, aktif katılımlı canlı bir grup çalışmasıdır. Buluşmalarda kamera ve mikrofonla katılım beklenir. Kişisel deneyimlerini paylaşmak zorunda değilsin; ihtiyaç duyduğunda kameranı veya mikrofonunu geçici olarak kapatabilirsin.</p>
+              </div>
+            </details>
 
-          <!-- F. Registration Deadline -->
-          <div class="practical-deadline-group">
-            <p class="practical-deadline-main"><strong>Kayıtlar 3 Kasım 2026, 23.59’da kapanıyor.</strong></p>
-            <p class="practical-deadline-sub">Kontenjan daha önce dolarsa kayıtlar daha erken kapanır.</p>
-          </div>
+            <!-- 2. 18 Yaş Koşulu -->
+            <details name="practical-conditions" class="practical-condition-item">
+              <summary class="practical-condition-summary">
+                <span class="condition-summary-left">
+                  <span class="condition-summary-bullet">•</span>
+                  <span class="condition-summary-title"><strong>18 yaş koşulu:</strong> Yalnızca yetişkinlere yöneliktir</span>
+                </span>
+                <span class="condition-summary-chevron" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6L8 10L12 6"/>
+                  </svg>
+                </span>
+              </summary>
+              <div class="practical-condition-body">
+                <p>Evdeki Ses yalnızca 18 yaşını doldurmuş yetişkinlere açıktır. Programın kapsamı ve uzmanlık alanımız 18 yaş altındakilerin katılımına uygun değildir.</p>
+              </div>
+            </details>
 
-          <!-- G. Full Live Meeting Dates (Accessible Minimal Disclosure) -->
-          <div class="practical-dates-content">
-            <span>Canlı buluşma tarihleri</span>
-              <p class="practical-dates-list">4 Kasım · 11 Kasım · 18 Kasım · 25 Kasım · 2 Aralık · 9 Aralık</p>
+            <!-- 3. Canlı Kayıt ve Telafi -->
+            <details name="practical-conditions" class="practical-condition-item">
+              <summary class="practical-condition-summary">
+                <span class="condition-summary-left">
+                  <span class="condition-summary-bullet">•</span>
+                  <span class="condition-summary-title"><strong>Canlı kayıt ve telafi:</strong> Oturumlar kaydedilmez</span>
+                </span>
+                <span class="condition-summary-chevron" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6L8 10L12 6"/>
+                  </svg>
+                </span>
+              </summary>
+              <div class="practical-condition-body">
+                <p>Canlı buluşmalar kaydedilmez. Kaçırdığın bir buluşmanın kaydını izleme veya bireysel telafi imkânı sunulmaz. Önceden hazırlanmış eğitim içerikleri bundan ayrıdır.</p>
+              </div>
+            </details>
+
+            <!-- 4. Hizmet Sınırı -->
+            <details name="practical-conditions" class="practical-condition-item">
+              <summary class="practical-condition-summary">
+                <span class="condition-summary-left">
+                  <span class="condition-summary-bullet">•</span>
+                  <span class="condition-summary-title"><strong>Hizmet sınırı:</strong> Terapi veya tıbbi tedavi değildir</span>
+                </span>
+                <span class="condition-summary-chevron" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6L8 10L12 6"/>
+                  </svg>
+                </span>
+              </summary>
+              <div class="practical-condition-body">
+                <p>Evdeki Ses yaratıcı ve deneyimsel bir grup çalışmasıdır; psikoterapi, tıbbi tedavi veya kriz desteği değildir. Belirli bir kişisel dönüşüm ya da sonuç garanti edilmez.</p>
+              </div>
+            </details>
+
+            <!-- 5. Erişim Süresi Detayı -->
+            <details name="practical-conditions" class="practical-condition-item">
+              <summary class="practical-condition-summary">
+                <span class="condition-summary-left">
+                  <span class="condition-summary-bullet">•</span>
+                  <span class="condition-summary-title"><strong>Erişim süresi ve platform açılışı:</strong> Detaylar</span>
+                </span>
+                <span class="condition-summary-chevron" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6L8 10L12 6"/>
+                  </svg>
+                </span>
+              </summary>
+              <div class="practical-condition-body">
+                <p>Program 11 Kasım 2026’da başlar. Üyelik alanı, program materyalleri ve isteğe bağlı yapay zekâ asistanı bu tarihten önce açılmaz. Program alanına erişim 15 Ocak 2027 saat 23.59’da (Türkiye saati) sona erer.</p>
+              </div>
+            </details>
           </div>
 
           <!-- D. Primary Registration CTA -->
           <div class="practical-cta-wrap">
-            <a href="#karar" class="btn-practical-cta">
+            <a href="#karar" class="btn-practical-cta" data-open-checkout="true">
               <span>EVDEKİ SES’E KATIL</span>
               <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1299,10 +1545,10 @@
             </div>
 
             <div class="close-right-col">
-              <p class="close-date">4 Kasım’da başlıyoruz.</p>
-              
+              <p class="close-date">11 Kasım 2026’da başlıyoruz.</p>
+
               <div class="close-cta-moment">
-                <a href="#karar" class="cta-primary">EVDEKİ SES’E KATIL</a>
+                <a href="#karar" class="cta-primary" data-open-checkout="true">EVDEKİ SES’E KATIL</a>
               </div>
             </div>
           </div>
@@ -1313,17 +1559,19 @@
         <div class="close-footer-inner">
           <div class="close-footer-meta-col">
             <nav class="footer-legal-nav" aria-label="Yasal Bilgiler ve İletişim">
-              <a href="#kvkk" class="footer-legal-link" data-legal="kvkk" data-pending="true">KVKK Aydınlatma Metni</a>
+              <a href="legal/on-bilgilendirme.html" class="footer-legal-link" data-legal="on-bilgilendirme">Ön Bilgilendirme</a>
               <span class="footer-legal-dot" aria-hidden="true">·</span>
-              <a href="#gizlilik" class="footer-legal-link" data-legal="gizlilik" data-pending="true">Gizlilik Politikası</a>
+              <a href="legal/mesafeli-satis.html" class="footer-legal-link" data-legal="mesafeli-satis">Mesafeli Satış/Hizmet Sözleşmesi</a>
               <span class="footer-legal-dot" aria-hidden="true">·</span>
-              <a href="#cerez" class="footer-legal-link" data-legal="cerez" data-pending="true">Çerez Politikası</a>
+              <span class="footer-legal-link footer-legal-link--pending" title="Hedef henüz belirlenmedi">[İptal ve İade]</span>
               <span class="footer-legal-dot" aria-hidden="true">·</span>
-              <a href="#kullanim" class="footer-legal-link" data-legal="kullanim" data-pending="true">Kullanım Koşulları</a>
+              <a href="legal/katilim-kosullari.html" class="footer-legal-link" data-legal="katilim-kosullari">Katılım Koşulları</a>
               <span class="footer-legal-dot" aria-hidden="true">·</span>
-              <a href="#iletisim" class="footer-legal-link" data-legal="iletisim" data-pending="true">İletişim</a>
+              <a href="legal/gizlilik.html" class="footer-legal-link" data-legal="gizlilik">Gizlilik</a>
               <span class="footer-legal-dot" aria-hidden="true">·</span>
-              <button type="button" class="footer-legal-link footer-cookie-pref-btn" data-legal="cookie-preferences" data-pending="true">Çerez Tercihlerini Yönet</button>
+              <button type="button" class="footer-legal-link footer-cookie-pref-btn" data-open-cookies="true">Çerez Tercihleri</button>
+              <span class="footer-legal-dot" aria-hidden="true">·</span>
+              <a href="mailto:hello@niluferormanli.studio" class="footer-legal-link">İletişim: hello@niluferormanli.studio</a>
             </nav>
 
             <p class="footer-copy">
@@ -1365,11 +1613,11 @@
             </svg>
           </button>
         </div>
-        
+
         <div class="faq-modal-body">
           <div class="faq-accordion-wrap">
-            
-            <!-- 00 -->
+
+            <!-- 00 (L05) -->
             <details class="faq-item" id="faq-item-00" data-faq-id="faq-bulusma-kacirirsam">
               <summary class="faq-question">
                 <span>Canlı buluşmalardan birini kaçırırsam ne olur?</span>
@@ -1378,7 +1626,7 @@
                 </svg>
               </summary>
               <div class="faq-answer">
-                <p>Canlı buluşmalar programın önemli bir parçası ve kaydedilmiyor. Bir buluşmayı kaçırman programdan kopacağın anlamına gelmiyor; haftanın diğer çalışmaları ve partner buluşmanla sürece devam edebilirsin. Ama canlı buluşmalar sonradan telafi edilemediği için mümkün olduğunca hepsine katılmanı bekliyoruz.</p>
+                <p>Canlı buluşmalar kaydedilmez. Kaçırdığın bir buluşmanın kaydını izleme veya bireysel telafi imkânı sunulmaz. Önceden hazırlanmış eğitim içerikleri bundan ayrıdır. Bir oturumu kaçırmak tek başına kalan program erişimini kaldırmaz.</p>
               </div>
             </details>
 
@@ -1460,7 +1708,7 @@
               </div>
             </details>
 
-            <!-- 07 (Assistant) -->
+            <!-- 07 (Assistant - L04) -->
             <details class="faq-item" id="faq-item-asistan" data-faq-id="faq-asistan">
               <summary class="faq-question">
                 <span>Evdeki Ses asistanını kullanmak zorunda mıyım?</span>
@@ -1469,12 +1717,421 @@
                 </svg>
               </summary>
               <div class="faq-answer">
-                <p>Hayır. Asistan, canlı buluşmaların arasında haftanın çalışmasına ve kendi malzemene dönmek istediğinde kullanabileceğin ek bir alan.</p>
+                <p>Hayır. Evdeki Ses asistanı isteğe bağlı bir yaratıcı çalışma alanıdır. Canlı buluşmaların arasında haftanın çalışmasına ve kendi malzemene dönmek için kullanabilirsin. Program başlamadan açılmaz; program alanıyla birlikte erişimi 15 Ocak 2027 saat 23.59’da (Türkiye saati) sona erer.</p>
+              </div>
+            </details>
+
+            <!-- 08 (Health & Therapy Boundaries - L06) -->
+            <details class="faq-item" id="faq-item-terapi" data-faq-id="faq-terapi">
+              <summary class="faq-question">
+                <span>Evdeki Ses bir terapi veya psikolojik destek midir?</span>
+                <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5 10H15M10 5V15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Evdeki Ses yaratıcı ve deneyimsel bir grup çalışmasıdır; psikoterapi, tıbbi tedavi veya kriz desteği değildir. Belirli bir kişisel dönüşüm ya da sonuç garanti edilmez.</p>
+              </div>
+            </details>
+
+            <!-- 09 (Camera, Mic & Adult Requirement - L02, L03) -->
+            <details class="faq-item" id="faq-item-katilim" data-faq-id="faq-katilim">
+              <summary class="faq-question">
+                <span>Canlı buluşmalara kamera ve mikrofonla katılmak zorunda mıyım?</span>
+                <svg class="faq-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5 10H15M10 5V15" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Evdeki Ses, yalnızca izlemeye dayalı bir eğitim değil; ses, beden ve ifadeyi birlikte araştırdığımız, aktif katılımlı canlı bir grup çalışmasıdır. Buluşmalarda kamera ve mikrofonla katılım beklenir. Kişisel deneyimlerini paylaşmak zorunda değilsin; ihtiyaç duyduğunda kameranı veya mikrofonunu geçici olarak kapatabilirsin.</p>
+                <p>Evdeki Ses yalnızca 18 yaşını doldurmuş yetişkinlere açıktır.</p>
               </div>
             </details>
 
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHECKOUT MODAL (C01–C07 PREVIEW IMPLEMENTATION)
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="checkoutModal" class="checkout-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle" aria-hidden="true">
+    <div class="checkout-modal-backdrop" data-close-checkout="true"></div>
+    <div class="checkout-modal-container">
+      <div class="checkout-modal-card">
+
+        <div class="checkout-modal-header">
+          <div class="checkout-modal-header-text">
+            <span class="checkout-modal-kicker">Evdeki Ses</span>
+            <h2 id="checkoutModalTitle" class="checkout-modal-title">Programa Katıl</h2>
+          </div>
+          <button type="button" class="checkout-modal-close" data-close-checkout="true" aria-label="Kapat">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="checkout-modal-body">
+
+          <!-- C01: Satın Alma Özeti -->
+          <div class="checkout-summary-box">
+            <div class="checkout-summary-title">Program Özeti</div>
+            <p class="checkout-summary-desc">Evdeki Ses · 6 haftalık canlı çevrimiçi grup programı</p>
+            <div class="checkout-summary-meta">
+              <span><strong>Başlangıç:</strong> 11 Kasım 2026, Çarşamba</span>
+              <span><strong>Canlı Buluşmalar:</strong> Çarşamba 19.30–21.30 (TSİ)</span>
+              <span><strong>Erişim Bitişi:</strong> 15 Ocak 2027, 23.59 (TSİ)</span>
+            </div>
+          </div>
+
+          <!-- C06: Ödeme Türü Seçimi -->
+          <div class="checkout-plan-selector">
+            <span class="checkout-section-label">Ödeme Seçeneği:</span>
+            <div class="checkout-plans-grid">
+              <label class="checkout-plan-option is-selected">
+                <input type="radio" name="checkoutPlan" value="pesin" checked>
+                <div class="checkout-plan-content">
+                  <div class="checkout-plan-name">Peşin Ödeme</div>
+                  <div class="checkout-plan-price">15.500 TL</div>
+                  <div class="checkout-plan-sub">Tek çekim · Tüm vergiler dahil</div>
+                </div>
+              </label>
+
+              <label class="checkout-plan-option">
+                <input type="radio" name="checkoutPlan" value="taksit">
+                <div class="checkout-plan-content">
+                  <div class="checkout-plan-name">2 Taksit</div>
+                  <div class="checkout-plan-price">2 × 8.500 TL</div>
+                  <div class="checkout-plan-sub">Toplam 17.000 TL · 30 gün arayla</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Müşteri İletişim Formu -->
+          <form id="checkoutPreviewForm" class="checkout-form" novalidate>
+            <div class="checkout-simulation-banner">
+              <span class="sim-pill">Yerel Önizleme</span>
+              <span>Bu ekran bir tasarım simülasyonudur; gerçek ödeme tahsilatı, program kaydı veya e-posta gönderimi yapılmaz.</span>
+            </div>
+
+            <div class="checkout-field-row">
+              <div class="checkout-field">
+                <label for="checkoutName" class="checkout-label">Ad Soyad *</label>
+                <input type="text" id="checkoutName" class="checkout-input" placeholder="Adınız Soyadınız" required>
+              </div>
+              <div class="checkout-field">
+                <label for="checkoutEmail" class="checkout-label">E-posta Adresi *</label>
+                <input type="email" id="checkoutEmail" class="checkout-input" placeholder="ornek@alanadi.com" required>
+              </div>
+            </div>
+
+            <!-- C02 & C03: Zorunlu Sözleşme Kabulü (Local Simulation) -->
+            <div class="checkout-consent-group">
+              <label class="checkout-checkbox-label">
+                <input type="checkbox" id="checkoutAgreeTerms" class="checkout-checkbox" required>
+                <span class="checkout-checkbox-custom"></span>
+                <span class="checkout-checkbox-text">
+                  Önizleme için sözleşme kabulü adımını örnek olarak işaretliyorum. Bu işlem gerçek sipariş veya ödeme oluşturmaz. (<a href="legal/on-bilgilendirme.html" data-legal="on-bilgilendirme" class="checkout-legal-link">Ön Bilgilendirme Metni</a>, <a href="legal/mesafeli-satis.html" data-legal="mesafeli-satis" class="checkout-legal-link">Mesafeli Satış Sözleşmesi</a> ve <a href="legal/katilim-kosullari.html" data-legal="katilim-kosullari" class="checkout-legal-link">Katılım Koşulları</a>) *
+                </span>
+              </label>
+              <div id="checkoutTermsError" class="checkout-field-error" style="display: none;">Önizlemeye devam etmek için örnek kabul kutusunu işaretle.</div>
+            </div>
+
+            <!-- C04: İsteğe Bağlı Pazarlama İzni -->
+            <div class="checkout-consent-group">
+              <label class="checkout-checkbox-label">
+                <input type="checkbox" id="checkoutAgreeMarketing" class="checkout-checkbox">
+                <span class="checkout-checkbox-custom"></span>
+                <span class="checkout-checkbox-text">
+                  Nilüfer Ormanlı’nın yeni programları ve HÂL içerikleri hakkında e-posta almak istiyorum. İznimi her e-postadaki bağlantıyla veya <a href="mailto:hello@niluferormanli.studio" class="checkout-legal-link">hello@niluferormanli.studio</a> adresinden dilediğim zaman geri çekebilirim. Bu izni vermeden de Evdeki Ses’e kaydolabilirim.
+                </span>
+              </label>
+            </div>
+
+            <!-- C05: Gizlilik Bildirimi -->
+            <p class="checkout-privacy-note">
+              Kayıt ve ödeme bilgilerinin nasıl işlendiğini <a href="legal/gizlilik.html" data-legal="gizlilik" class="checkout-legal-link">Gizlilik Bildirimi</a>’nde açıklıyoruz. Programa ilişkin zorunlu bilgilendirme e-postaları, pazarlama izninden bağımsızdır. <button type="button" class="checkout-cookie-pref-link" data-open-cookies="true">Çerez Tercihleri</button>
+            </p>
+
+            <!-- CTA Buton (C06) -->
+            <div class="checkout-actions">
+              <button type="submit" class="btn-checkout-submit" id="checkoutSubmitBtn">
+                <span>Önizlemeyi Tamamla</span>
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12L12 4M12 4H6M12 4V10"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- C07: Satıcı Kimliği -->
+            <div class="checkout-seller-id">
+              Satıcı: Nilüfer Ormanlı Studio LLC · 131 Continental Dr, Suite 305, Newark, DE 19713, ABD · <a href="mailto:hello@niluferormanli.studio">hello@niluferormanli.studio</a>
+            </div>
+          </form>
+
+          <!-- T01 & T02: Simüle Edilmiş Sonuç Ekranları -->
+          <div id="checkoutSuccessNotice" class="checkout-success-box" style="display: none;">
+
+            <!-- State 1: Simulated Success (T01) -->
+            <div id="checkoutStateSimSuccess" class="checkout-result-state">
+              <div class="checkout-success-icon">✓</div>
+              <div class="checkout-success-badge">T01 · Başarı Ekranı Örneği (Simülasyon)</div>
+              <h3 class="checkout-success-title">Önizleme tamamlandı.</h3>
+              <p class="checkout-success-p">
+                Bu bir checkout simülasyonudur. Ödeme alınmadı, program kaydı oluşturulmadı ve e-posta gönderilmedi.
+              </p>
+              <p class="checkout-success-sub">
+                Bu ekran, doğrulanmış ödeme sonrasında gösterilecek sonuç için bir yerleşim örneğidir.<br>
+                Program başlangıcı: 11 Kasım 2026, Çarşamba · 19.30–21.30 (TSİ). Program alanına erişim 15 Ocak 2027 saat 23.59’da (TSİ) sona erer.
+              </p>
+            </div>
+
+            <!-- State 2: Processing (T02) -->
+            <div id="checkoutStateProcessing" class="checkout-result-state" style="display: none;">
+              <div class="checkout-warning-icon">⋯</div>
+              <div class="checkout-warning-badge">T02 · İşlem Sürüyor Örneği (Simülasyon)</div>
+              <h3 class="checkout-warning-title">Ödeme durumu kontrol ediliyor</h3>
+              <p class="checkout-warning-p">
+                Bu bir simülasyondur; sağlayıcı ile gerçek bir işlem yürütülmüyor.
+              </p>
+              <p class="checkout-success-sub">
+                Bu ekran, ödeme onayının beklendiği anlar için yerleşim örneğidir. Lütfen sayfayı yenilemeden bekleyin.
+              </p>
+            </div>
+
+            <!-- State 3: Pending Unknown (T02) -->
+            <div id="checkoutStatePending" class="checkout-result-state" style="display: none;">
+              <div class="checkout-warning-icon">!</div>
+              <div class="checkout-warning-badge">T02 · Bekleme Ekranı Örneği (Simülasyon)</div>
+              <h3 class="checkout-warning-title">Ödeme durumu kontrol bekliyor</h3>
+              <p class="checkout-warning-p">
+                Bu bir simülasyondur; gerçek bir ödeme sorgulanmadı. Gerçek işlemde aynı ödemeyi yeniden yapmadan önce <a href="mailto:hello@niluferormanli.studio">hello@niluferormanli.studio</a> adresinden destek al.
+              </p>
+              <p class="checkout-success-sub">
+                Bu ekran, ödeme sonucunun teyit edilemediği durumlar için yerleşim örneğidir.
+              </p>
+            </div>
+
+            <!-- State 4: Confirmed Failed (T02) -->
+            <div id="checkoutStateFailed" class="checkout-result-state" style="display: none;">
+              <div class="checkout-warning-icon">✕</div>
+              <div class="checkout-warning-badge">T02 · Başarısızlık Ekranı Örneği (Simülasyon)</div>
+              <h3 class="checkout-warning-title">Ödeme tamamlanamadı</h3>
+              <p class="checkout-warning-p">
+                Bu bir simülasyondur; kartından gerçek bir çekim yapılmadı veya reddedilmedi.
+              </p>
+              <p class="checkout-success-sub">
+                Bu ekran, ödemenin tamamlanamadığı veya kartın reddedildiği durumlar için yerleşim örneğidir.
+              </p>
+            </div>
+
+            <!-- Simülasyon Durum Değiştirici -->
+            <div class="checkout-sim-controls">
+              <button type="button" class="btn-sim-state active" data-sim-state="simulated-success">Başarı (T01)</button>
+              <button type="button" class="btn-sim-state" data-sim-state="processing">İşlemde</button>
+              <button type="button" class="btn-sim-state" data-sim-state="pending">Beklemede (T02)</button>
+              <button type="button" class="btn-sim-state" data-sim-state="failed">Başarısız</button>
+              <button type="button" class="btn-sim-reset" id="btnResetCheckoutForm">Forma Geri Dön</button>
+            </div>
+
+            <div class="checkout-preview-legal-link">
+              <a href="legal/index.html" target="_blank" rel="noopener noreferrer">Yasal Belgeler Merkezini Görüntüle →</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       IN-PAGE ACCESSIBLE LEGAL READER MODAL
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="legalModal" class="legal-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle" aria-hidden="true">
+    <div class="legal-modal-backdrop" data-close-legal="true"></div>
+    <div class="legal-modal-container">
+      <div class="legal-modal-card">
+
+        <div class="legal-modal-header">
+          <div class="legal-modal-nav">
+            <button type="button" class="legal-modal-tab active" data-legal-tab="on-bilgilendirme">Ön Bilgilendirme</button>
+            <button type="button" class="legal-modal-tab" data-legal-tab="mesafeli-satis">Mesafeli Satış</button>
+            <button type="button" class="legal-modal-tab" data-legal-tab="katilim-kosullari">Katılım Koşulları</button>
+            <button type="button" class="legal-modal-tab" data-legal-tab="gizlilik">Gizlilik &amp; KVKK</button>
+            <button type="button" class="legal-modal-tab" data-legal-tab="cerez">Çerez Politikası</button>
+          </div>
+
+          <div class="legal-modal-actions">
+            <a href="legal/index.html" id="legalModalExternalLink" class="legal-modal-ext-link" target="_blank" rel="noopener noreferrer" title="Ayrı Sekmede Aç">
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 9v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4M10 2h4v4M7 9l7-7"/>
+              </svg>
+            </a>
+            <button type="button" class="legal-modal-close" data-close-legal="true" aria-label="Kapat">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="legal-modal-body" id="legalModalBody">
+          <!-- Draft Banner for Candidate Review -->
+          <div class="legal-modal-draft-banner">
+            <span class="legal-draft-badge">Önizleme Metni · Aday Taslak</span>
+            <p>Bu penceredeki metinler prototip ve aday çalışma taslağıdır. Kesinleşmiş sözleşme şartları, sağlayıcı bilgileri ve yasal beyanlar yayın öncesinde hukuk danışmanı ile doğrulanacaktır.</p>
+          </div>
+
+          <!-- Dynamically populated or toggled between tabs -->
+          <div class="legal-modal-view active" id="legalView-on-bilgilendirme">
+            <h2 id="legalModalTitle" class="legal-doc-title">Ön Bilgilendirme Metni</h2>
+            <div class="legal-doc-meta">Satıcı: Nilüfer Ormanlı Studio LLC · Tarih: 26 Ekim 2026 · Sürüm: v1 Aday Taslak</div>
+            <p><strong>1. Satıcı:</strong> Nilüfer Ormanlı Studio LLC · 131 Continental Dr, Suite 305, Newark, DE 19713, ABD · hello@niluferormanli.studio</p>
+            <p><strong>2. Program Takvimi:</strong> Başlangıç 11 Kasım 2026, Çarşamba. Canlı buluşmalar 11, 18, 25 Kasım ve 2, 9, 16 Aralık 2026, 19.30–21.30 TSİ. Son kayıt: 10 Kasım 2026, 23.59 TSİ. Platform ve materyal erişimi 15 Ocak 2027 saat 23.59’a kadar sürer.</p>
+            <p><strong>3. Katılım Koşulları:</strong> 18 yaşını doldurmuş yetişkinlere yöneliktir. Buluşmalarda kamera ve mikrofonla aktif katılım beklenir (ihtiyaç halinde geçici kapatılabilir). Canlı oturumlar kaydedilmez; kaçırılan oturum telafisi yoktur.</p>
+            <p><strong>4. Sınırlar:</strong> Evdeki Ses bir yaratıcı grup çalışmasıdır; psikoterapi veya tıbbi tedavi niteliği taşımaz; belirli bir sonuç garanti edilmez.</p>
+            <p><strong>5. Bedel ve Cayma Hakkı:</strong> 15.500 TL peşin / 2 taksit: 2 × 8.500 TL (aday önizleme tutarları). 6502 sayılı Kanun ve Mesafeli Sözleşmeler Yönetmeliği uyarınca 14 günlük yasal cayma hakkı saklıdır. Canlı oturumların başlaması öncesinde yapılan cayma bildirimlerinde ödenen bedel mevzuata uygun olarak iade edilir; ifa başlangıcı ve dijital içerik teslimine ilişkin detaylı cayma koşulları Mesafeli Satış Sözleşmesi taslağında düzenlenmektedir.</p>
+          </div>
+
+          <div class="legal-modal-view" id="legalView-mesafeli-satis">
+            <h2 class="legal-doc-title">Mesafeli Satış Sözleşmesi</h2>
+            <div class="legal-doc-meta">Satıcı: Nilüfer Ormanlı Studio LLC · Sipariş anında onaylanır (Aday Taslak)</div>
+            <p><strong>Taraflar:</strong> Satıcı Nilüfer Ormanlı Studio LLC ile web sitesi üzerinden satın alma yapan Katılımcı arasındadır.</p>
+            <p><strong>Konu:</strong> 6 haftalık Evdeki Ses canlı çevrimiçi programı ve bağlantılı dijital materyallerin satış ve ifası.</p>
+            <p><strong>Takvim ve İfa:</strong> Program 11 Kasım 2026’da başlar, 16 Aralık’ta tamamlanır. Kayıtlı materyallere erişim 15 Ocak 2027 saat 23.59’da biter.</p>
+            <p><strong>Kayıt Yasağı:</strong> Canlı buluşmalar Satıcı tarafından kaydedilmez; katılımcıların da oturumlarda ses, video veya ekran kaydı alması kesinlikle yasaktır.</p>
+            <p><strong>Cayma ve İade:</strong> 14 günlük yasal cayma hakkı saklıdır. Program başlangıç tarihi öncesinde yapılan cayma bildirimlerinde ödenen bedel kesintisiz iade edilir. Cayma hakkı bildirimi ve iade süreçlerine ilişkin detaylar için hello@niluferormanli.studio adresi üzerinden iletişime geçilebilir.</p>
+          </div>
+
+          <div class="legal-modal-view" id="legalView-katilim-kosullari">
+            <h2 class="legal-doc-title">Program Katılım Koşulları</h2>
+            <div class="legal-doc-meta">Pedagojik Çerçeve ve Grup Etiği</div>
+            <p><strong>Yaş Sınırı:</strong> Yalnızca 18 yaşını doldurmuş yetişkinler katılabilir.</p>
+            <p><strong>Aktif Katılım:</strong> Kamera ve mikrofonla katılım esastır. Katılımcı hiçbir deneyimi paylaşmaya zorlanmaz; dilediğinde kamerasını geçici olarak kapatabilir.</p>
+            <p><strong>Terapi/Tedavi Olmama:</strong> Program sanatsal ve yaratıcı bir çalışmadır; psikoterapi veya tıbbi kriz desteği değildir. Nilüfer ses veya bedenden teşhis çıkarmaz.</p>
+            <p><strong>Grup Mahremiyeti:</strong> Diğer katılımcıların paylaşımları ve işleri grup dışına taşınamaz.</p>
+          </div>
+
+          <div class="legal-modal-view" id="legalView-gizlilik">
+            <h2 class="legal-doc-title">Gizlilik Politikası ve KVKK Aydınlatma Metni</h2>
+            <div class="legal-doc-meta">Veri Sorumlusu: Nilüfer Ormanlı Studio LLC</div>
+            <p><strong>Veri İşleme ve Altyapı:</strong> Kimlik, iletişim ve fatura verileri sözleşmenin kurulması ve yasal yükümlülükler çerçevesinde işlenir. Ödeme altyapısı lisanslı PCI-DSS uyumlu ödeme sağlayıcıları üzerinden korunur.</p>
+            <p><strong>Canlı Oturumlar:</strong> Mahremiyeti korumak amacıyla canlı Zoom buluşmaları kaydedilmez.</p>
+            <p><strong>AI Asistan:</strong> Program açılışında üyelik alanı devreye alındığında, asistan ile yapılan konuşmalar varsayılan olarak Nilüfer’e açılmaz; sohbet geçmişinin saklanması ve silinebilmesi üyelik alanı altyapı sağlayıcısının teknik yetenekleri doğrultusunda sağlanacaktır (Aday Taslak / P-G).</p>
+            <p><strong>Haklarınız:</strong> Bilgi talep etme, düzeltme ve silme başvurularınız için: hello@niluferormanli.studio.</p>
+          </div>
+
+          <div class="legal-modal-view" id="legalView-cerez">
+            <h2 class="legal-doc-title">Çerez Politikası</h2>
+            <div class="legal-doc-meta">Oturum ve Tercih Yönetimi</div>
+            <p><strong>Kullanılan Çerezler:</strong> Sitemizde oturum ve çerez tercihleri için zorunlu ve işlevsel kayıtlar tutulur; şu an aktif bir üçüncü taraf analitik veya izleyici çerez bulunmamaktadır (Aday Taslak).</p>
+            <p><strong>Tercihler:</strong> Sitenin altındaki "Çerez Tercihlerini Yönet" butonuna tıklayarak izinlerinizi dilediğiniz an güncelleyebilirsiniz.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       COOKIE PREFERENCES MODAL
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="cookieModal" class="cookie-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" aria-hidden="true">
+    <div class="cookie-modal-backdrop" data-close-cookies="true"></div>
+    <div class="cookie-modal-container">
+      <div class="cookie-modal-card">
+
+        <div class="cookie-modal-header">
+          <div class="cookie-modal-header-text">
+            <span class="cookie-modal-kicker">Evdeki Ses</span>
+            <h2 id="cookieModalTitle" class="cookie-modal-title">Çerez Tercihlerini Yönet</h2>
+          </div>
+          <button type="button" class="cookie-modal-close" data-close-cookies="true" aria-label="Kapat">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.75" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="cookie-modal-body">
+          <p class="cookie-modal-desc">
+            Web sitemizde güvenliği sağlamak, form tercihlerinizi hatırlamak ve kullanıcı deneyimini geliştirmek amacıyla çerezler kullanılmaktadır. Tercihlerinizi aşağıdan yönetebilirsiniz.
+          </p>
+
+          <div class="cookie-options-list">
+
+            <div class="cookie-option-item">
+              <div class="cookie-option-info">
+                <div class="cookie-option-name">
+                  <span>Zorunlu Çerezler</span>
+                  <span class="cookie-badge-required">Her Zaman Aktif</span>
+                </div>
+                <p class="cookie-option-sub">Web sitesinin ve checkout adımlarının temel fonksiyonlarının çalışması için zorunludur; kapatılamazlar.</p>
+              </div>
+              <div class="cookie-switch-wrap">
+                <input type="checkbox" id="cookieReq" checked disabled class="cookie-switch-input">
+                <label for="cookieReq" class="cookie-switch-label disabled"></label>
+              </div>
+            </div>
+
+            <div class="cookie-option-item">
+              <div class="cookie-option-info">
+                <div class="cookie-option-name">
+                  <span>İşlevsel Çerezler</span>
+                </div>
+                <p class="cookie-option-sub">Dil ve tercih ayarlarınızı hatırlamamıza yardımcı olur.</p>
+              </div>
+              <div class="cookie-switch-wrap">
+                <input type="checkbox" id="cookieFunc" class="cookie-switch-input">
+                <label for="cookieFunc" class="cookie-switch-label"></label>
+              </div>
+            </div>
+
+            <div class="cookie-option-item">
+              <div class="cookie-option-info">
+                <div class="cookie-option-name">
+                  <span>Analitik Çerezler</span>
+                </div>
+                <p class="cookie-option-sub">Ziyaretçi trafiğini ve etkileşimleri anonim olarak ölçümleyerek siteyi geliştirmemizi sağlar.</p>
+              </div>
+              <div class="cookie-switch-wrap">
+                <input type="checkbox" id="cookieAnalytics" class="cookie-switch-input">
+                <label for="cookieAnalytics" class="cookie-switch-label"></label>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="cookie-modal-actions">
+            <button type="button" class="btn-cookie-save" id="saveCookiePreferencesBtn">Tercihleri Kaydet</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       COOKIE CONSENT BANNER (L10 / P-D)
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="cookieBanner" class="cookie-banner" role="region" aria-label="Çerez Bildirimi">
+    <div class="cookie-banner-content">
+      <p class="cookie-banner-text">
+        Bu web sitesinde güvenliği sağlamak, form tercihlerinizi hatırlamak ve deneyiminizi geliştirmek amacıyla çerezler kullanılmaktadır. Detaylar için <a href="legal/cerez.html" data-legal="cerez" class="cookie-banner-link">Çerez Politikası</a>’nı inceleyebilirsiniz.
+      </p>
+      <div class="cookie-banner-actions">
+        <button type="button" class="btn-cookie-accept" id="cookieAcceptAll">Kabul Et</button>
+        <button type="button" class="btn-cookie-reject" id="cookieRejectNonEssential">Yalnızca Zorunlu</button>
+        <button type="button" class="btn-cookie-settings" data-open-cookies="true">Tercihleri Yönet</button>
       </div>
     </div>
   </div>
@@ -1492,12 +2149,16 @@
   </aside>
 
   <!-- Scripts -->
-  <script src="main.js?v=20261025b"></script>
+  <script src="testimonials-data.js"></script>
+  <script src="main.js?v=20261025c"></script>
   <script>
     // Precision Viewport Slice Preview Mode for QA Screenshots
     const params = new URLSearchParams(window.location.search);
     const view = params.get('view');
-    
+    if (view) {
+      document.body.classList.add('is-preview-mode');
+    }
+
     if (view === 'journey') {
       const hero = document.getElementById('hero');
       const recognition = document.getElementById('recognition');
@@ -1536,23 +2197,33 @@
       if (program) program.style.display = 'none';
       if (uygunluk) uygunluk.style.display = 'none';
       window.scrollTo(0, 0);
+    } else if (view === 'testimonials') {
+      const deneyimler = document.getElementById('deneyimler');
+      if (deneyimler) {
+        document.querySelectorAll('main > *, #siteHeader, #kapanis, #cookieBanner').forEach(el => {
+          if (el !== deneyimler && !el.contains(deneyimler)) {
+            el.style.display = 'none';
+          }
+        });
+        deneyimler.style.display = 'flex';
+        deneyimler.classList.remove('is-section-hidden');
+        deneyimler.style.opacity = '1';
+        deneyimler.style.visibility = 'visible';
+      }
+      window.scrollTo(0, 0);
     } else if (view === 'decision') {
-      const hero = document.getElementById('hero');
-      const recognition = document.getElementById('recognition');
-      const method = document.getElementById('method');
-      const insideWorld = document.getElementById('inside-world');
-      const journey = document.getElementById('journey');
-      const program = document.getElementById('program');
-      const uygunluk = document.getElementById('uygunluk');
-      const nilufer = document.getElementById('nilufer');
-      if (hero) hero.style.display = 'none';
-      if (recognition) recognition.style.display = 'none';
-      if (method) method.style.display = 'none';
-      if (insideWorld) insideWorld.style.display = 'none';
-      if (journey) journey.style.display = 'none';
-      if (program) program.style.display = 'none';
-      if (uygunluk) uygunluk.style.display = 'none';
-      if (nilufer) nilufer.style.display = 'none';
+      const karar = document.getElementById('karar');
+      if (karar) {
+        document.querySelectorAll('main > *, #siteHeader, #kapanis, #cookieBanner').forEach(el => {
+          if (el !== karar && !el.contains(karar)) {
+            el.style.display = 'none';
+          }
+        });
+        karar.style.display = 'flex';
+        karar.classList.remove('is-section-hidden');
+        karar.style.opacity = '1';
+        karar.style.visibility = 'visible';
+      }
       window.scrollTo(0, 0);
     } else if (view === 'journey_mobile') {
       const hero = document.getElementById('hero');

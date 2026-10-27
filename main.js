@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Mobile detection for Dynamic Viewport & Universal Mobile Snap Engine
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
                 (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   const isMobile = window.innerWidth <= 768;
   if (isIOS) {
@@ -27,22 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (conceptualImg) {
       conceptualImg.src = 'assets/scene-07-mobile.webp';
     }
-    const niluferImg = document.querySelector('.scene-nilufer .program-frame-photo');
-    if (niluferImg) {
-      niluferImg.src = 'assets/hero-mobile.webp';
-    }
   }
 
   const header = document.getElementById('siteHeader');
   const mainContainer = document.querySelector('main');
-  
+
   // Header state on scroll with requestAnimationFrame for buttery performance
   let ticking = false;
   const SCROLL_THRESHOLD = 90;
 
   // Universal Section Array for Edge Peeking Prevention across all sections
   const snapSections = Array.from(document.querySelectorAll(
-    '.hero-frame-wrapper, .scene-hero-continuation, .scene-recognition, .scene-method, .scene-inside-world, .scene-program-timeline, .scene-program-ritim, .scene-fit, .scene-nilufer, .scene-practical, .scene-close'
+    '.hero-frame-wrapper, .scene-hero-continuation, .scene-recognition, .scene-method, .scene-inside-world, .scene-program-timeline, .scene-program-ritim, .scene-fit, .scene-nilufer, .scene-testimonials, .scene-practical, .scene-close'
   ));
 
   const journeyWrapper = document.getElementById('journeyCarouselWrapper');
@@ -110,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (header.classList.contains('is-on-hero')) header.classList.remove('is-on-hero');
       }
     }
-    
+
     if (currentScrollY > SCROLL_THRESHOLD) {
       if (!header.classList.contains('is-scrolled')) {
         header.classList.add('is-scrolled');
@@ -119,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Context-aware surface check for smooth material adaptation
       const headerRect = header.getBoundingClientRect();
       const headerMidY = headerRect.top + headerRect.height / 2;
-      
+
       let onLight = false;
       for (let i = 0; i < lightSurfaceSections.length; i++) {
         const section = lightSurfaceSections[i];
@@ -129,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
           break;
         }
       }
-      
+
       if (onLight) {
         if (!header.classList.contains('is-on-light')) header.classList.add('is-on-light');
       } else {
@@ -148,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const journeyWrapper = document.getElementById('journeyCarouselWrapper');
     const closeSection = document.getElementById('kapanis');
     const metaTheme = document.getElementById('metaThemeColor');
-    
+
     let isDarkActive = false;
     const vh = window.innerHeight || 1;
 
@@ -200,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
       handleScroll();
     }, { passive: true });
   }
-  
+
   handleScroll();
 
   // ══════════════════════════════════════════════════════════════════════
@@ -269,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#' || targetId === '' || this.hasAttribute('data-open-faq') || this.hasAttribute('data-pending')) return;
-      
+
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         if (targetEl.classList.contains('is-section-hidden')) {
@@ -297,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = entry.target.getAttribute('id');
         const weekIndex = entry.target.getAttribute('data-week-index');
         const theme = entry.target.getAttribute('data-slide-theme');
-        
+
         if (entry.isIntersecting) {
           activeWeeks.add(id);
 
@@ -621,6 +617,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const footerLegalLinks = document.querySelectorAll('.footer-legal-link');
   footerLegalLinks.forEach(link => {
     link.addEventListener('click', (e) => {
+      // Allow native mailto: handler to open mail client without preventDefault
+      if (link.getAttribute('href') && link.getAttribute('href').startsWith('mailto:')) {
+        return;
+      }
       e.preventDefault();
       const legalType = link.getAttribute('data-legal');
 
@@ -668,7 +668,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ═══════════════════════════════════════════════════════════
   const liveChatAnchor = document.getElementById('liveChatAnchor');
   const liveChatBtn = document.getElementById('liveChatBtn');
-  
+
   const eligibleChatSectionIds = new Set([
     'hafta-0', 'hafta-1', 'hafta-2', 'hafta-3', 'hafta-4', 'hafta-5', 'hafta-6',
     'program', 'program-ritim',
@@ -920,4 +920,718 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   initMobileJourneyCarousel();
+
+  // ═══════════════════════════════════════════════════════════
+  // CENTRAL MODAL SCROLL LOCK HELPER
+  // Manages body scroll lock when stacked modals open/close
+  // ═══════════════════════════════════════════════════════════
+  const updateModalScrollLock = () => {
+    const isAnyOpen = Boolean(
+      document.querySelector('.checkout-modal-overlay.is-open, .legal-modal-overlay.is-open, .cookie-modal-overlay.is-open, .faq-modal-overlay.is-open')
+    );
+    if (isAnyOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
+    }
+  };
+
+  // ═══════════════════════════════════════════════════════════
+  // CHECKOUT PREVIEW MODAL (C01–C07 IMPLEMENTATION)
+  // ═══════════════════════════════════════════════════════════
+  const initCheckoutModal = () => {
+    const checkoutModal = document.getElementById('checkoutModal');
+    if (!checkoutModal) return;
+
+    const openTriggers = document.querySelectorAll('[data-open-checkout="true"]');
+    const closeTriggers = document.querySelectorAll('[data-close-checkout="true"]');
+    const planRadios = document.querySelectorAll('input[name="checkoutPlan"]');
+    const checkoutForm = document.getElementById('checkoutPreviewForm');
+    const agreeTerms = document.getElementById('checkoutAgreeTerms');
+    const termsError = document.getElementById('checkoutTermsError');
+    const successBox = document.getElementById('checkoutSuccessNotice');
+    const submitBtn = document.getElementById('checkoutSubmitBtn');
+
+    let previousActiveElement = null;
+
+    const openCheckout = (e) => {
+      if (e) e.preventDefault();
+      // If mobile navigation is open, close it first cleanly
+      if (typeof closeMobileNav === 'function' && typeof isMobileNavOpen !== 'undefined' && isMobileNavOpen) {
+        closeMobileNav({ restoreScroll: false });
+      }
+
+      previousActiveElement = document.activeElement;
+      checkoutModal.classList.add('is-open');
+      checkoutModal.setAttribute('aria-hidden', 'false');
+      updateModalScrollLock();
+
+      // Focus first input
+      const firstInput = checkoutModal.querySelector('#checkoutName');
+      if (firstInput) {
+        setTimeout(() => firstInput.focus(), 100);
+      }
+    };
+
+    const closeCheckout = (e) => {
+      if (e) e.preventDefault();
+      checkoutModal.classList.remove('is-open');
+      checkoutModal.setAttribute('aria-hidden', 'true');
+      updateModalScrollLock();
+      if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+        previousActiveElement.focus();
+      }
+    };
+
+    openTriggers.forEach(btn => {
+      btn.addEventListener('click', openCheckout);
+    });
+
+    closeTriggers.forEach(btn => {
+      btn.addEventListener('click', closeCheckout);
+    });
+
+    planRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        document.querySelectorAll('.checkout-plan-option').forEach(opt => opt.classList.remove('is-selected'));
+        const parentLabel = radio.closest('.checkout-plan-option');
+        if (parentLabel) parentLabel.classList.add('is-selected');
+      });
+    });
+
+    const resetBtn = document.getElementById('btnResetCheckoutForm');
+    const simStateButtons = document.querySelectorAll('.btn-sim-state');
+    const simStates = {
+      'simulated-success': document.getElementById('checkoutStateSimSuccess'),
+      'processing': document.getElementById('checkoutStateProcessing'),
+      'pending': document.getElementById('checkoutStatePending'),
+      'failed': document.getElementById('checkoutStateFailed')
+    };
+
+    const activateSimState = (stateKey) => {
+      simStateButtons.forEach(btn => {
+        const isTarget = btn.getAttribute('data-sim-state') === stateKey;
+        btn.classList.toggle('active', isTarget);
+        btn.classList.toggle('is-active', isTarget);
+      });
+      Object.keys(simStates).forEach(key => {
+        const el = simStates[key];
+        if (el) {
+          el.style.display = (key === stateKey) ? 'block' : 'none';
+        }
+      });
+    };
+
+    simStateButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetState = btn.getAttribute('data-sim-state');
+        activateSimState(targetState);
+      });
+    });
+
+    if (checkoutForm) {
+      const nameInput = document.getElementById('checkoutName');
+      const emailInput = document.getElementById('checkoutEmail');
+
+      if (nameInput) {
+        nameInput.addEventListener('input', () => {
+          if (nameInput.value.trim()) nameInput.classList.remove('has-error');
+        });
+      }
+
+      if (emailInput) {
+        emailInput.addEventListener('input', () => {
+          if (emailInput.value.trim()) emailInput.classList.remove('has-error');
+        });
+      }
+
+      checkoutForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let hasFieldErrors = false;
+
+        if (nameInput) {
+          if (!nameInput.value.trim()) {
+            nameInput.classList.add('has-error');
+            hasFieldErrors = true;
+          } else {
+            nameInput.classList.remove('has-error');
+          }
+        }
+
+        if (emailInput) {
+          const emailVal = emailInput.value.trim();
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailVal || !emailRegex.test(emailVal)) {
+            emailInput.classList.add('has-error');
+            hasFieldErrors = true;
+          } else {
+            emailInput.classList.remove('has-error');
+          }
+        }
+
+        if (hasFieldErrors) {
+          if (nameInput && !nameInput.value.trim()) {
+            nameInput.focus();
+          } else if (emailInput) {
+            emailInput.focus();
+          }
+          return;
+        }
+
+        if (!agreeTerms || !agreeTerms.checked) {
+          if (termsError) termsError.style.display = 'block';
+          const label = agreeTerms ? agreeTerms.closest('.checkout-checkbox-label') : null;
+          if (label) label.classList.add('has-error');
+          return;
+        }
+
+        if (termsError) termsError.style.display = 'none';
+        const label = agreeTerms.closest('.checkout-checkbox-label');
+        if (label) label.classList.remove('has-error');
+
+        // Show simulated preview confirmation (defaults to simulated-success)
+        checkoutForm.style.display = 'none';
+        if (successBox) successBox.style.display = 'block';
+        activateSimState('simulated-success');
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        if (checkoutForm) {
+          checkoutForm.reset();
+          checkoutForm.style.display = 'block';
+          const nameInput = document.getElementById('checkoutName');
+          const emailInput = document.getElementById('checkoutEmail');
+          if (nameInput) nameInput.classList.remove('has-error');
+          if (emailInput) emailInput.classList.remove('has-error');
+          // Ensure first plan option remains visually active
+          document.querySelectorAll('.checkout-plan-option').forEach((opt, idx) => {
+            if (idx === 0) {
+              opt.classList.add('is-selected');
+              const r = opt.querySelector('input[type="radio"]');
+              if (r) r.checked = true;
+            } else {
+              opt.classList.remove('is-selected');
+            }
+          });
+        }
+        if (successBox) successBox.style.display = 'none';
+        if (termsError) termsError.style.display = 'none';
+        const label = agreeTerms ? agreeTerms.closest('.checkout-checkbox-label') : null;
+        if (label) label.classList.remove('has-error');
+      });
+    }
+
+    if (agreeTerms) {
+      agreeTerms.addEventListener('change', () => {
+        if (agreeTerms.checked) {
+          if (termsError) termsError.style.display = 'none';
+          const label = agreeTerms.closest('.checkout-checkbox-label');
+          if (label) label.classList.remove('has-error');
+        }
+      });
+    }
+  };
+
+  initCheckoutModal();
+
+  // ═══════════════════════════════════════════════════════════
+  // IN-PAGE LEGAL READER MODAL & TAB CONTROLLER
+  // ═══════════════════════════════════════════════════════════
+  const initLegalModals = () => {
+    const legalModal = document.getElementById('legalModal');
+    if (!legalModal) return;
+
+    const closeTriggers = document.querySelectorAll('[data-close-legal="true"]');
+    const legalLinks = document.querySelectorAll('[data-legal]');
+    const tabs = legalModal.querySelectorAll('.legal-modal-tab');
+    const views = legalModal.querySelectorAll('.legal-modal-view');
+    const extLink = document.getElementById('legalModalExternalLink');
+
+    const docUrls = {
+      'on-bilgilendirme': 'legal/on-bilgilendirme.html',
+      'mesafeli-satis': 'legal/mesafeli-satis.html',
+      'katilim-kosullari': 'legal/katilim-kosullari.html',
+      'gizlilik': 'legal/gizlilik.html',
+      'kvkk': 'legal/gizlilik.html',
+      'cerez': 'legal/cerez.html',
+      'kullanim': 'legal/katilim-kosullari.html'
+    };
+
+    const activateTab = (docKey) => {
+      const canonicalKey = (docKey === 'kvkk') ? 'gizlilik' : (docKey === 'kullanim') ? 'katilim-kosullari' : docKey;
+
+      tabs.forEach(tab => {
+        tab.classList.toggle('active', tab.getAttribute('data-legal-tab') === canonicalKey);
+      });
+
+      views.forEach(view => {
+        view.classList.toggle('active', view.id === `legalView-${canonicalKey}`);
+      });
+
+      if (extLink && docUrls[canonicalKey]) {
+        extLink.href = docUrls[canonicalKey];
+      }
+
+      // Scroll modal body to top on tab change
+      const body = document.getElementById('legalModalBody');
+      if (body) body.scrollTop = 0;
+    };
+
+    const openLegalModal = (docKey) => {
+      // If mobile navigation is open, close it first cleanly
+      if (typeof closeMobileNav === 'function' && typeof isMobileNavOpen !== 'undefined' && isMobileNavOpen) {
+        closeMobileNav({ restoreScroll: false });
+      }
+
+      activateTab(docKey);
+      legalModal.classList.add('is-open');
+      legalModal.setAttribute('aria-hidden', 'false');
+      updateModalScrollLock();
+    };
+
+    const closeLegalModal = () => {
+      legalModal.classList.remove('is-open');
+      legalModal.setAttribute('aria-hidden', 'true');
+      updateModalScrollLock();
+    };
+
+    legalLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        // Let middle click or Ctrl/Cmd click open actual standalone page in new tab
+        if (e.button === 1 || e.ctrlKey || e.metaKey) return;
+        e.preventDefault();
+        const docKey = link.getAttribute('data-legal');
+        openLegalModal(docKey);
+      });
+    });
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const docKey = tab.getAttribute('data-legal-tab');
+        activateTab(docKey);
+      });
+    });
+
+    closeTriggers.forEach(btn => {
+      btn.addEventListener('click', closeLegalModal);
+    });
+  };
+
+  initLegalModals();
+
+  // ═══════════════════════════════════════════════════════════
+  // COOKIE PREFERENCES MODAL
+  // ═══════════════════════════════════════════════════════════
+  const initCookiePreferencesModal = () => {
+    const cookieModal = document.getElementById('cookieModal');
+    if (!cookieModal) return;
+
+    const openTriggers = document.querySelectorAll('[data-open-cookies="true"], .footer-cookie-pref-btn');
+    const closeTriggers = document.querySelectorAll('[data-close-cookies="true"]');
+    const saveBtn = document.getElementById('saveCookiePreferencesBtn');
+    const funcInput = document.getElementById('cookieFunc');
+    const analyticsInput = document.getElementById('cookieAnalytics');
+
+    // Helper: synchronize modal checkboxes with stored preferences or set defaults (OFF on first visit)
+    const syncModalInputsFromStorage = () => {
+      try {
+        const stored = localStorage.getItem('evdeki_cookie_consent');
+        if (stored) {
+          const saved = JSON.parse(stored);
+          if (funcInput) funcInput.checked = Boolean(saved.functional);
+          if (analyticsInput) analyticsInput.checked = Boolean(saved.analytics);
+        } else {
+          // KVKK / GDPR compliance: Non-essential cookies must start unchecked (off) on initial visit
+          if (funcInput) funcInput.checked = false;
+          if (analyticsInput) analyticsInput.checked = false;
+        }
+      } catch (_) {
+        if (funcInput) funcInput.checked = false;
+        if (analyticsInput) analyticsInput.checked = false;
+      }
+    };
+
+    // Run on init
+    syncModalInputsFromStorage();
+
+    const openCookieModal = (e) => {
+      if (e) e.preventDefault();
+      // Ensure switches accurately reflect current stored state whenever opened
+      syncModalInputsFromStorage();
+
+      // If mobile navigation is open, close it first cleanly
+      if (typeof closeMobileNav === 'function' && typeof isMobileNavOpen !== 'undefined' && isMobileNavOpen) {
+        closeMobileNav({ restoreScroll: false });
+      }
+
+      cookieModal.classList.add('is-open');
+      cookieModal.setAttribute('aria-hidden', 'false');
+      updateModalScrollLock();
+    };
+
+    const closeCookieModal = () => {
+      cookieModal.classList.remove('is-open');
+      cookieModal.setAttribute('aria-hidden', 'true');
+      updateModalScrollLock();
+    };
+
+    openTriggers.forEach(btn => {
+      btn.addEventListener('click', openCookieModal);
+    });
+
+    closeTriggers.forEach(btn => {
+      btn.addEventListener('click', closeCookieModal);
+    });
+
+    // Cookie Consent Banner Handling
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptAllBtn = document.getElementById('cookieAcceptAll');
+    const rejectNonEssentialBtn = document.getElementById('cookieRejectNonEssential');
+
+    const hasStoredConsent = () => {
+      try {
+        return !!localStorage.getItem('evdeki_cookie_consent');
+      } catch (_) {
+        return false;
+      }
+    };
+
+    if (cookieBanner && !hasStoredConsent()) {
+      setTimeout(() => {
+        cookieBanner.classList.add('is-visible');
+      }, 700);
+    }
+
+    if (acceptAllBtn) {
+      acceptAllBtn.addEventListener('click', () => {
+        const preferences = {
+          necessary: true,
+          functional: true,
+          analytics: true,
+          timestamp: new Date().toISOString()
+        };
+        try {
+          localStorage.setItem('evdeki_cookie_consent', JSON.stringify(preferences));
+        } catch (_) {}
+        if (funcInput) funcInput.checked = true;
+        if (analyticsInput) analyticsInput.checked = true;
+        if (cookieBanner) cookieBanner.classList.remove('is-visible');
+      });
+    }
+
+    if (rejectNonEssentialBtn) {
+      rejectNonEssentialBtn.addEventListener('click', () => {
+        const preferences = {
+          necessary: true,
+          functional: false,
+          analytics: false,
+          timestamp: new Date().toISOString()
+        };
+        try {
+          localStorage.setItem('evdeki_cookie_consent', JSON.stringify(preferences));
+        } catch (_) {}
+        if (funcInput) funcInput.checked = false;
+        if (analyticsInput) analyticsInput.checked = false;
+        if (cookieBanner) cookieBanner.classList.remove('is-visible');
+      });
+    }
+
+    if (saveBtn) {
+      saveBtn.addEventListener('click', () => {
+        const preferences = {
+          necessary: true,
+          functional: funcInput ? funcInput.checked : false,
+          analytics: analyticsInput ? analyticsInput.checked : false,
+          timestamp: new Date().toISOString()
+        };
+        try {
+          localStorage.setItem('evdeki_cookie_consent', JSON.stringify(preferences));
+        } catch (_) {}
+
+        if (cookieBanner) cookieBanner.classList.remove('is-visible');
+        saveBtn.textContent = 'Kaydedildi ✓';
+        setTimeout(() => {
+          saveBtn.textContent = 'Tercihleri Kaydet';
+          closeCookieModal();
+        }, 500);
+      });
+    }
+  };
+
+  // ═══════════════════════════════════════════════════════════
+  // STACKED MODAL ESCAPE KEY CONTROLLER
+  // Closes only the topmost open modal without closing lower modals
+  // ═══════════════════════════════════════════════════════════
+  window.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+
+    const cookieModal = document.getElementById('cookieModal');
+    const legalModal = document.getElementById('legalModal');
+    const checkoutModal = document.getElementById('checkoutModal');
+    const faqModal = document.getElementById('faqModal');
+
+    if (cookieModal && cookieModal.classList.contains('is-open')) {
+      cookieModal.classList.remove('is-open');
+      cookieModal.setAttribute('aria-hidden', 'true');
+      updateModalScrollLock();
+      e.stopImmediatePropagation();
+      return;
+    }
+
+    if (legalModal && legalModal.classList.contains('is-open')) {
+      legalModal.classList.remove('is-open');
+      legalModal.setAttribute('aria-hidden', 'true');
+      updateModalScrollLock();
+      e.stopImmediatePropagation();
+      return;
+    }
+
+    if (checkoutModal && checkoutModal.classList.contains('is-open')) {
+      checkoutModal.classList.remove('is-open');
+      checkoutModal.setAttribute('aria-hidden', 'true');
+      updateModalScrollLock();
+      e.stopImmediatePropagation();
+      return;
+    }
+
+    if (faqModal && faqModal.classList.contains('is-open')) {
+      faqModal.classList.remove('is-open');
+      faqModal.setAttribute('aria-hidden', 'true');
+      updateModalScrollLock();
+      e.stopImmediatePropagation();
+      return;
+    }
+  });
+
+  // ═══════════════════════════════════════════════════════════
+  // TESTIMONIALS (NİLÜFER'LE ÇALIŞANLARDAN) EDITORIAL CAROUSEL
+  // Supports Touch Swipe, Trackpad, Keyboard & Controls
+  // ═══════════════════════════════════════════════════════════
+  const initTestimonialsCarousel = () => {
+    const wrapper = document.getElementById('testimonialsCarouselWrapper');
+    const track = document.getElementById('testimonialsTrack');
+    const btnPrev = document.getElementById('btnTestimonialPrev');
+    const btnNext = document.getElementById('btnTestimonialNext');
+    const indicatorsContainer = document.getElementById('testimonialsIndicators');
+    const counterEl = document.getElementById('testimonialsCounter');
+
+    if (!wrapper || !track) return;
+
+    const cards = Array.from(track.querySelectorAll('.testimonial-card'));
+    if (!cards.length) return;
+
+    const totalCards = cards.length;
+    let currentIndex = 0;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const updateControls = () => {
+      const wrapperScrollLeft = wrapper.scrollLeft;
+      const maxScrollLeft = Math.max(0, wrapper.scrollWidth - wrapper.clientWidth);
+      const isAtEnd = maxScrollLeft > 0 && wrapperScrollLeft >= maxScrollLeft - 10;
+      const isAtStart = wrapperScrollLeft <= 10;
+
+      let closestIdx = 0;
+      let minDiff = Infinity;
+
+      cards.forEach((card, idx) => {
+        const cardOffset = card.offsetLeft - track.offsetLeft;
+        const diff = Math.abs(cardOffset - wrapperScrollLeft);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIdx = idx;
+        }
+      });
+
+      if (isAtEnd) {
+        currentIndex = totalCards - 1;
+      } else if (isAtStart) {
+        currentIndex = 0;
+      } else {
+        currentIndex = closestIdx;
+      }
+
+      // Update Prev / Next button disabled state
+      if (btnPrev) {
+        btnPrev.disabled = isAtStart;
+        btnPrev.setAttribute('aria-disabled', String(isAtStart));
+      }
+      if (btnNext) {
+        btnNext.disabled = isAtEnd;
+        btnNext.setAttribute('aria-disabled', String(isAtEnd));
+      }
+
+      // Update Indicators
+      if (indicatorsContainer) {
+        const dots = indicatorsContainer.querySelectorAll('.indicator-dot');
+        dots.forEach((dot, idx) => {
+          const isActive = idx === currentIndex;
+          dot.classList.toggle('active', isActive);
+          dot.setAttribute('aria-selected', String(isActive));
+        });
+      }
+
+      // Update Counter
+      if (counterEl) {
+        counterEl.textContent = `${currentIndex + 1} / ${totalCards}`;
+      }
+    };
+
+    const scrollToPosition = (targetScroll) => {
+      const maxScrollLeft = Math.max(0, wrapper.scrollWidth - wrapper.clientWidth);
+      const bounded = Math.max(0, Math.min(targetScroll, maxScrollLeft));
+      wrapper.scrollTo({
+        left: bounded,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+      });
+    };
+
+    const getPrevTargetScroll = () => {
+      const currentScroll = wrapper.scrollLeft;
+      // Find all card offsets that are visibly before current scroll position
+      const candidateOffsets = cards
+        .map(c => c.offsetLeft - track.offsetLeft)
+        .filter(offset => offset < currentScroll - 15);
+
+      if (candidateOffsets.length > 0) {
+        return candidateOffsets[candidateOffsets.length - 1];
+      }
+      return 0;
+    };
+
+    const getNextTargetScroll = () => {
+      const currentScroll = wrapper.scrollLeft;
+      const maxScrollLeft = Math.max(0, wrapper.scrollWidth - wrapper.clientWidth);
+      // Find all card offsets that are visibly after current scroll position
+      const candidateOffsets = cards
+        .map(c => c.offsetLeft - track.offsetLeft)
+        .filter(offset => offset > currentScroll + 15);
+
+      if (candidateOffsets.length > 0) {
+        return Math.min(candidateOffsets[0], maxScrollLeft);
+      }
+      return maxScrollLeft;
+    };
+
+    const scrollToCard = (index) => {
+      if (index < 0 || index >= totalCards) return;
+      const maxScrollLeft = Math.max(0, wrapper.scrollWidth - wrapper.clientWidth);
+
+      if (index >= totalCards - 1) {
+        scrollToPosition(maxScrollLeft);
+        return;
+      }
+
+      if (index <= 0) {
+        scrollToPosition(0);
+        return;
+      }
+
+      const targetCard = cards[index];
+      if (!targetCard) return;
+
+      scrollToPosition(targetCard.offsetLeft - track.offsetLeft);
+    };
+
+    // Button Click Listeners
+    if (btnPrev) {
+      btnPrev.addEventListener('click', () => {
+        if (wrapper.scrollLeft > 10) {
+          scrollToPosition(getPrevTargetScroll());
+        }
+      });
+    }
+
+    if (btnNext) {
+      btnNext.addEventListener('click', () => {
+        const maxScrollLeft = Math.max(0, wrapper.scrollWidth - wrapper.clientWidth);
+        if (wrapper.scrollLeft < maxScrollLeft - 10) {
+          scrollToPosition(getNextTargetScroll());
+        }
+      });
+    }
+
+    // Indicator Dot Click Listeners
+    if (indicatorsContainer) {
+      indicatorsContainer.addEventListener('click', (e) => {
+        const dot = e.target.closest('.indicator-dot');
+        if (!dot) return;
+        const targetIdx = parseInt(dot.getAttribute('data-slide-index'), 10);
+        if (!isNaN(targetIdx)) {
+          scrollToCard(targetIdx);
+        }
+      });
+    }
+
+    // Keyboard Navigation (ArrowLeft / ArrowRight)
+    wrapper.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        if (wrapper.scrollLeft > 10) scrollToPosition(getPrevTargetScroll());
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        const maxScrollLeft = Math.max(0, wrapper.scrollWidth - wrapper.clientWidth);
+        if (wrapper.scrollLeft < maxScrollLeft - 10) scrollToPosition(getNextTargetScroll());
+      }
+    });
+
+    // Scroll Listener with RAF
+    let isTicking = false;
+    wrapper.addEventListener('scroll', () => {
+      if (!isTicking) {
+        window.requestAnimationFrame(() => {
+          updateControls();
+          isTicking = false;
+        });
+        isTicking = true;
+      }
+    }, { passive: true });
+
+    // Initial sync
+    updateControls();
+  };
+
+  // ═══════════════════════════════════════════════════════════
+  // PRATİK BİLGİLER ACCORDION (EXCLUSIVE EXPANSION)
+  // Ensures only one condition item is open at a time across all browsers
+  // ═══════════════════════════════════════════════════════════
+  const initPracticalAccordion = () => {
+    const accordion = document.querySelector('.practical-conditions-accordion');
+    if (!accordion) return;
+
+    const items = accordion.querySelectorAll('details.practical-condition-item');
+    items.forEach((item) => {
+      const summary = item.querySelector('summary');
+      if (summary) {
+        summary.addEventListener('click', () => {
+          if (!item.open) {
+            items.forEach((other) => {
+              if (other !== item && other.open) {
+                other.open = false;
+              }
+            });
+          }
+        });
+      }
+
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          items.forEach((other) => {
+            if (other !== item && other.open) {
+              other.open = false;
+            }
+          });
+        }
+      });
+    });
+  };
+
+  initCookiePreferencesModal();
+  initTestimonialsCarousel();
+  initPracticalAccordion();
 });

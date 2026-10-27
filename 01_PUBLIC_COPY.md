@@ -275,42 +275,84 @@ Beden ve hareket de uzun yıllardır pratiğimin bir parçası. Yoga, dans ve so
 
 ---
 
-## KATILIMCI SESLERİ — CONTENT PENDING
+# Nilüfer’le çalışanlardan (L09 / P-C)
 
-Do not invent or publish testimonial copy here.
+> Nilüfer Ormanlı’nın önceki bireysel çalışmalarına ve eğitimlerine katılan kişilerin kendi sözleriyle deneyimleri.  
+> *Bu yorumlar Evdeki Ses programının sonuçları değildir; Nilüfer Ormanlı’nın önceki çalışmalarına aittir.*
 
-Real participant comments from Nilüfer's previous work will be supplied later and must not be represented as outcomes from Evdeki Ses.
+### 1 — Aslınur
+*Bireysel çalışma katılımcısı*  
+“Sesin bedene ilmek ilmek örülü olduğunu… gösterdi. Her görüşme sonrası bedenimin bir parçası çiçeğe duruyor ve sesim çiçeğin etrafında arı gibi vızıldamaya başlıyordu.”  
+*(Durum: DRAFT · Onay Sürecinde)*
+
+### 2 — Özge
+*Ses eğitimi katılımcısı*  
+“Ses eğitimi diye başladığım eğitim sırasında önce bedende yarattığım sıkışıklıkları fark ettim, ve günlük hayatımda bu daralmaları başka nerelerde yaşadığıma bir ayna görevi yapmaya başladı… Yine gündelik hayatımda, işimde netlikler kazanmaya başladım.”  
+*(Durum: DRAFT · Onay Sürecinde)*
+
+### 3 — Ceren
+*Atölye ve pratik katılımcısı*  
+“Çocuksu oyunbazlığım ortaya çıktığında buna hem aynı şekilde karşılık verebilecek çocuksu bir ruh, hem de alanı ve olanı tutabilecek olgun bir ruha ihtiyaç duyarım; işte Nilüfer ikisini de taşıyan bir can.”  
+*(Durum: DRAFT · Onay Sürecinde)*
+
+### 4 — Esma
+*Ders çalışması katılımcısı*  
+“Her yaptığımız ders, elimde kendime ait bir hediyeyle bitti.”  
+*(Durum: DRAFT · Onay Sürecinde)*
+
+### 5 — Mükerrem
+*Bireysel çalışma katılımcısı*  
+“Daha ilk gün bile kapınızdan çıkarken hafiflediğimi hissetmiştim. Bana kendimi sevmeyi, bedenimi sevmeyi hatırlattığınız […] için minnettarım.”  
+*(Durum: DRAFT · Uzun özgün yorumdan editoryal kısaltma; nihai alıntı kontrolü bekliyor)*
+
+### 6 — Merve G.
+*Bireysel çalışma katılımcısı*  
+“Dokuz aylık bir süreci birlikte geçirdiğim, bilgisine, tecrübesine güvendiğim, nefes terapisi, ses terapisi, farklı meditasyon teknikleri, nefesoloji ve adını bilmediğim farklı tekniklerle uzun ve çok da kolay olmayan zamanlarda bana şifa olan, çok şey öğrendiğim rehberliğine güvendiğim Nilüfer Ormanlı’nın sizlere de şifa olmasını umarım ve canıgönülden tavsiye ederim.”  
+*(Durum: DRAFT · Özgün el yazısı mektuptan transkribe edilerek uygulandı; nihai izin kontrolü bekliyor)*
 
 ---
 
-# Pratik Bilgiler
+# Pratik Bilgiler (L01–L08)
 
-**Başlangıç:** 4 Kasım 2026, Çarşamba  
+**Başlangıç:** 11 Kasım 2026, Çarşamba  
 **Program süresi:** 6 hafta  
-**Canlı buluşmalar:** Her Çarşamba, 19.30–21.30  
+**Canlı buluşmalar:** Her çarşamba, 19.30–21.30 (Türkiye saati)  
 **Kontenjan:** En fazla 10 kişi
 
 ### Canlı buluşma tarihleri
 
-**4 Kasım · 11 Kasım · 18 Kasım · 25 Kasım · 2 Aralık · 9 Aralık**
+**11, 18, 25 Kasım ve 2, 9, 16 Aralık 2026**
 
-Canlı buluşmalar kaydedilmiyor. Programın önemli bir parçası oldukları için mümkün olduğunca tüm buluşmalara katılmanı bekliyoruz.
+**Aktif katılım:** Evdeki Ses, yalnızca izlemeye dayalı bir eğitim değil; ses, beden ve ifadeyi birlikte araştırdığımız, aktif katılımlı canlı bir grup çalışmasıdır. Buluşmalarda kamera ve mikrofonla katılım beklenir. Kişisel deneyimlerini paylaşmak zorunda değilsin; ihtiyaç duyduğunda kameranı veya mikrofonunu geçici olarak kapatabilirsin.
 
-Program sona erdikten sonra kayıtlı derslere ve program materyallerine 30 gün daha erişebilirsin.
+**18 yaş koşulu:** Evdeki Ses yalnızca 18 yaşını doldurmuş yetişkinlere açıktır. Programın kapsamı ve uzmanlık alanımız 18 yaş altındakilerin katılımına uygun değildir.
 
-**Kayıtlar 3 Kasım 2026, 23.59’da kapanıyor.**
+**Erişim süresi:** Program 11 Kasım 2026’da başlar. Üyelik alanı, program materyalleri ve isteğe bağlı yapay zekâ asistanı bu tarihten önce açılmaz. Program alanına erişim 15 Ocak 2027 saat 23.59’da (Türkiye saati) sona erer.
+
+**Canlı kayıt ve telafi:** Canlı buluşmalar kaydedilmez. Kaçırdığın bir buluşmanın kaydını izleme veya bireysel telafi imkânı sunulmaz. Önceden hazırlanmış eğitim içerikleri bundan ayrıdır.
+
+**Hizmet sınırı:** Evdeki Ses yaratıcı ve deneyimsel bir grup çalışmasıdır; psikoterapi, tıbbi tedavi veya kriz desteği değildir. Belirli bir kişisel dönüşüm ya da sonuç garanti edilmez.
+
+**Kayıtlar 10 Kasım 2026, 23.59’da (Türkiye saati) kapanıyor.**
 
 Kontenjan daha önce dolarsa kayıtlar daha erken kapanır.
 
-## Ücret
+## Ücret (DRAFT / ÇALIŞMA ÖNİZLEMESİ - L07)
 
-**15.500 TL peşin**
+> **Statü:** Çalışma Önizlemesi (DRAFT) — Nihai şirket, vergi ve ödeme onayına tabidir.
 
-**2 taksit: 2 × 8.500 TL**
+**15.500 TL** peşin  
+*2 taksit: 2 × 8.500 TL*  
+*(Nihai vergi/KDV gösterimi ve taksit çekim detayları kesinleştiğinde güncellenecektir)*
+
+6 hafta boyunca canlı buluşmalar, günlük ve haftalık rehberli çalışmalar, kendi malzemen üzerinde çalışma, partner desteği ve Evdeki Ses asistanıyla birlikte ilerliyorsun.
+
+İptal, cayma ve iade koşullarını satın alma öncesinde Ön Bilgilendirme Metni’nde ve Mesafeli Satış/Hizmet Sözleşmesi’nde bulabilirsin. Uygulanabilir zorunlu tüketici hakları saklıdır. Soruların için: hello@niluferormanli.studio.
 
 **[ EVDEKİ SES’E KATIL ]**
 
 ---
+
 
 # Sık Sorulan Sorular
 
@@ -326,9 +368,9 @@ Hayır. Üzerinde çalışacağın şey bir eser olabileceği gibi bir atölye, 
 
 Her hafta 2 saatlik canlı buluşma ve her gün 8–10 dakikalık Günlük Akort. Video ders, rehberli pratik, küçük araştırmalar, workbook ve partner buluşması kendi zamanına yerleşiyor. Üzerinde çalıştığın şey için de haftada en az 45 dakika ayırmanı öneriyoruz.
 
-### Canlı buluşmalardan birini kaçırırsam ne olur?
+### Canlı buluşmalardan birini kaçırırsam ne olur? (L05)
 
-Canlı buluşmalar programın önemli bir parçası ve kaydedilmiyor. Bir buluşmayı kaçırman programdan kopacağın anlamına gelmiyor; haftanın diğer çalışmaları ve partner buluşmanla sürece devam edebilirsin. Ama canlı buluşmalar sonradan telafi edilemediği için mümkün olduğunca hepsine katılmanı bekliyoruz.
+Canlı buluşmalar kaydedilmez. Kaçırdığın bir buluşmanın kaydını izleme veya bireysel telafi imkânı sunulmaz. Önceden hazırlanmış eğitim içerikleri bundan ayrıdır. Bir oturumu kaçırmak tek başına kalan program erişimini kaldırmaz.
 
 ### Altı haftada başladığım şeyi bitirmem gerekiyor mu?
 
@@ -342,12 +384,28 @@ Partnerinle haftada yaklaşık 20–25 dakika buluşuyorsun. Yaptığın şeyi p
 
 Hayır. Burada sesle çalışmak şarkı söylemek ya da “iyi bir sese” sahip olmak anlamına gelmiyor. Önemli olan iyi söylemek değil, duymak.
 
-### Evdeki Ses asistanını kullanmak zorunda mıyım?
+### Evdeki Ses asistanını kullanmak zorunda mıyım? (L04)
 
-Hayır. Asistan, canlı buluşmaların arasında haftanın çalışmasına ve kendi malzemene dönmek istediğinde kullanabileceğin ek bir alan.
+Hayır. Evdeki Ses asistanı isteğe bağlı bir yaratıcı çalışma alanıdır. Canlı buluşmaların arasında haftanın çalışmasına ve kendi malzemene dönmek için kullanabilirsin. Program başlamadan açılmaz; program alanıyla birlikte erişimi 15 Ocak 2027 saat 23.59’da (Türkiye saati) sona erer.
+
+### Evdeki Ses bir terapi veya psikolojik destek midir? (L06)
+
+Evdeki Ses yaratıcı ve deneyimsel bir grup çalışmasıdır; psikoterapi, tıbbi tedavi veya kriz desteği değildir. Belirli bir kişisel dönüşüm ya da sonuç garanti edilmez.
+
+### Canlı buluşmalara kamera ve mikrofonla katılmak zorunda mıyım? (L02, L03)
+
+Evdeki Ses, yalnızca izlemeye dayalı bir eğitim değil; ses, beden ve ifadeyi birlikte araştırdığımız, aktif katılımlı canlı bir grup çalışmasıdır. Buluşmalarda kamera ve mikrofonla katılım beklenir. Kişisel deneyimlerini paylaşmak zorunda değilsin; ihtiyaç duyduğunda kameranı veya mikrofonunu geçici olarak kapatabilirsin.
+
+Evdeki Ses yalnızca 18 yaşını doldurmuş yetişkinlere açıktır.
 
 ---
 
-# Ne zamandır “bir gün” diyorsun?
+# Ne zamandır “bir gün” diyorsun? (L01)
 
-**4 Kasım’da başlıyoruz.**
+**11 Kasım 2026’da başlıyoruz.**
+
+---
+
+# Yasal Bilgiler ve Footer Bağlantıları (L10)
+
+Ön Bilgilendirme · Mesafeli Satış/Hizmet Sözleşmesi · [İptal ve İade] (Placeholder) · Katılım Koşulları · Gizlilik · Çerez Tercihleri · İletişim: hello@niluferormanli.studio
