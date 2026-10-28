@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 375" width="600" height="375" fill="none">
+  <defs>
+    <linearGradient id="bg-muk" x1="0" y1="0" x2="600" y2="375" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F6EFE6"/>
+      <stop offset="50%" stop-color="#EFE6DC"/>
+      <stop offset="100%" stop-color="#DDD0C0"/>
+    </linearGradient>
+    <radialGradient id="light-glow" cx="300" cy="170" r="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#E47C3A" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#DDD0C0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="375" fill="url(#bg-muk)"/>
+  <!-- Ambient Radiance -->
+  <circle cx="300" cy="170" r="120" fill="url(#light-glow)"/>
+  <!-- Ascending Lightness Waves (Threshold of Release) -->
+  <g stroke-linecap="round">
+    <!-- Rising Waves of Breath and Relief -->
+    <path d="M190 240 C235 220 270 250 315 225 C360 200 385 225 425 205" stroke="#9E6E4D" stroke-width="1.25" fill="none" opacity="0.4"/>
+    <path d="M210 205 C250 185 285 210 325 185 C365 160 380 185 410 165" stroke="#C07F53" stroke-width="1.5" fill="none" opacity="0.65"/>
+    <path d="M230 170 C265 150 295 170 330 145 C365 120 375 145 395 125" stroke="#C07F53" stroke-width="1.2" stroke-dasharray="3 4" fill="none" opacity="0.8"/>
+    <!-- Rising Seed Points -->
+    <circle cx="395" cy="125" r="3" fill="#E47C3A"/>
+    <circle cx="330" cy="145" r="2.5" fill="#C07F53"/>
+    <circle cx="230" cy="170" r="2" fill="#9E6E4D" opacity="0.7"/>
+    <!-- Gentle Threshold Arc (Kapıdan çıkarken hafifleme) -->
+    <path d="M270 270 Q300 255 330 270" stroke="#9E6E4D" stroke-width="1" opacity="0.45"/>
+  </g>
+  <text x="300" y="335" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="500" letter-spacing="3" fill="#8C6E56" opacity="0.75">LIGHTNESS · THRESHOLD &amp; EMBODIMENT</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 375" width="600" height="375" fill="none">
+  <defs>
+    <linearGradient id="bg-mg" x1="0" y1="0" x2="600" y2="375" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F5EEE4"/>
+      <stop offset="50%" stop-color="#ECE1D2"/>
+      <stop offset="100%" stop-color="#DFD0BD"/>
+    </linearGradient>
+    <pattern id="ruled-lines" width="100" height="24" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="23" x2="100" y2="23" stroke="#D3C3B1" stroke-width="0.75" stroke-dasharray="1 2"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="375" fill="url(#bg-mg)"/>
+  
+  <!-- Simulated Studio Note Card -->
+  <g transform="translate(140, 50)">
+    <rect width="320" height="225" rx="8" fill="#FBF8F4" stroke="#D7C6B3" stroke-width="1" filter="drop-shadow(0 4px 12px rgba(0,0,0,0.04))"/>
+    <!-- Ruled manuscript lines -->
+    <rect x="25" y="30" width="270" height="150" fill="url(#ruled-lines)" opacity="0.65"/>
+    
+    <!-- Feather / Pen Calligraphy Motif -->
+    <path d="M160 55 C162 75 158 95 152 115 C146 135 155 145 160 150" stroke="#C07F53" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.5"/>
+    <circle cx="160" cy="150" r="2.5" fill="#C07F53" opacity="0.7"/>
+
+    <!-- Seal Stamp Badge -->
+    <g transform="translate(135, 175)">
+      <circle cx="25" cy="20" r="16" fill="#F4E8DB" stroke="#C07F53" stroke-width="1"/>
+      <path d="M21 16 L25 24 L29 16" stroke="#9D4D2E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Technical / Archival Notice -->
+  <text x="300" y="320" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5" font-weight="600" letter-spacing="2" fill="#9D4D2E" opacity="0.9">ÖZGÜN EL YAZISI BELGE · TARAMA BEKLENİYOR</text>
+  <text x="300" y="338" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="400" letter-spacing="1" fill="#8C6E56" opacity="0.7">STATUS: PENDING_TRANSCRIPTION</text>
+</svg>

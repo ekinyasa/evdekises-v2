@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 375" width="600" height="375" fill="none">
+  <defs>
+    <linearGradient id="bg-cer" x1="0" y1="0" x2="600" y2="375" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F7EFE8"/>
+      <stop offset="60%" stop-color="#EFE3D8"/>
+      <stop offset="100%" stop-color="#E2D0C2"/>
+    </linearGradient>
+    <radialGradient id="play-light" cx="260" cy="160" r="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E47C3A" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#C07F53" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="375" fill="url(#bg-cer)"/>
+  <!-- Ambient Radiance -->
+  <circle cx="260" cy="160" r="120" fill="url(#play-light)"/>
+  <!-- Interplay: Playful Spiral / Spark + Wise Embracing Arc -->
+  <g stroke-linecap="round">
+    <!-- Embracing Vessel / Container Arc (Wise Holding Presence) -->
+    <path d="M190 140 C185 240 270 270 370 255 C420 245 440 200 435 150" stroke="#9A694B" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <!-- Playful Rising Spiral / Joyful Trace -->
+    <path d="M260 190 Q290 150 270 125 Q250 100 280 85 Q305 70 330 95" stroke="#C07F53" stroke-width="1.8" fill="none" opacity="0.85"/>
+    <circle cx="330" cy="95" r="4" fill="#E47C3A"/>
+    <!-- Holding Harmonic Lines -->
+    <path d="M210 160 C210 230 275 250 350 240" stroke="#B88A6B" stroke-width="0.8" stroke-dasharray="3 4" fill="none" opacity="0.5"/>
+    <circle cx="220" cy="180" r="2.5" fill="#C07F53" opacity="0.6"/>
+    <circle cx="390" cy="170" r="3" fill="#9A694B" opacity="0.6"/>
+  </g>
+  <text x="300" y="335" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="500" letter-spacing="3" fill="#8C6E56" opacity="0.75">PLAYFUL SPIRIT · EMBRACING SPACE</text>
+</svg>

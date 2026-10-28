@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 375" width="600" height="375" fill="none">
+  <defs>
+    <linearGradient id="bg-esm" x1="0" y1="0" x2="600" y2="375" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F4ECE2"/>
+      <stop offset="50%" stop-color="#ECE1D2"/>
+      <stop offset="100%" stop-color="#DFD0BD"/>
+    </linearGradient>
+    <radialGradient id="gift-glow" cx="300" cy="180" r="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E47C3A" stop-opacity="0.2"/>
+      <stop offset="60%" stop-color="#C07F53" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#DFD0BD" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="375" fill="url(#bg-esm)"/>
+  <!-- Ambient Radiance -->
+  <circle cx="300" cy="180" r="115" fill="url(#gift-glow)"/>
+  <!-- Gentle Vessel / Gift Archetype Form -->
+  <g stroke="#9E6E4D" stroke-linecap="round" opacity="0.65">
+    <!-- Vessel Bowl / Open Hands Symbol -->
+    <path d="M225 155 C230 230 260 255 300 255 C340 255 370 230 375 155" stroke-width="1.4" fill="none"/>
+    <!-- Subtle Inner Horizon & Gift Element -->
+    <path d="M255 180 C270 205 330 205 345 180" stroke-width="0.9" stroke-dasharray="2 3" fill="none"/>
+    <circle cx="300" cy="170" r="12" fill="#E47C3A" fill-opacity="0.35" stroke="#C07F53" stroke-width="1.2"/>
+    <circle cx="300" cy="170" r="3.5" fill="#C07F53"/>
+    <!-- Radiating Delicate Rays -->
+    <line x1="300" y1="135" x2="300" y2="120" stroke-width="1" stroke="#C07F53"/>
+    <line x1="325" y1="145" x2="337" y2="135" stroke-width="0.8" stroke="#C07F53"/>
+    <line x1="275" y1="145" x2="263" y2="135" stroke-width="0.8" stroke="#C07F53"/>
+  </g>
+  <text x="300" y="335" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="500" letter-spacing="3" fill="#8C6E56" opacity="0.75">GIFT OF EMBODIMENT · QUIET PRESENCE</text>
+</svg>

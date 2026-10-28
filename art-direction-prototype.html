@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evdeki Ses — Round 2 Art Direction Prototype</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="art-direction-prototype.css?v=20261028" />
+</head>
+<body class="proto-page">
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       PROTOTYPE CONTROL & QUICK LAUNCH BAR
+       ══════════════════════════════════════════════════════════════════ -->
+  <header class="proto-control-bar" role="banner">
+    <div class="proto-brand-col">
+      <span class="proto-title">EVDEKİ SES</span>
+      <span class="proto-badge">Round 2 · Küratöryel Sanat Galerisi Prototipi</span>
+    </div>
+
+    <nav class="proto-nav-pills" aria-label="Bölüm Gezintisi">
+      <a href="#protoPractical" class="proto-pill-btn">1. Pratik Bilgiler</a>
+      <a href="#protoTestimonials" class="proto-pill-btn">2. Testimonials (Superpower)</a>
+      <a href="#protoModals" class="proto-pill-btn">3. Modallar Gösterimi</a>
+    </nav>
+
+    <div class="proto-diagnostics-badge">
+      <span class="proto-diagnostics-dot"></span>
+      <span>İzole Önizleme · Canlı Sayfaya Dokunulmadı</span>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       INTRO CARD & INTERACTIVE MODAL LAUNCHERS
+       ══════════════════════════════════════════════════════════════════ -->
+  <div class="proto-intro-banner">
+    <div class="proto-intro-card">
+      <div class="proto-intro-text">
+        <h1>Sanat Galerisi ve Editoryal Tasarım Prototipi</h1>
+        <p>Ağır border'lar, tekrarlayan gri kutular ve wellness şablonu estetiği yerine; sakin tipografik hiyerarşi, zarif aydınger yüzeyler ve fotoğrafa alan açan küratöryel düzen.</p>
+      </div>
+      
+      <div class="proto-modal-launchers">
+        <div class="proto-modal-btn-group">
+          <button type="button" class="proto-btn-modal" onclick="protoOpenModal('protoCheckoutModal', 'light')">Checkout (Açık)</button>
+          <button type="button" class="proto-btn-modal proto-btn-modal--dark" onclick="protoOpenModal('protoCheckoutModal', 'dark')">Checkout (Koyu)</button>
+        </div>
+        <div class="proto-modal-btn-group">
+          <button type="button" class="proto-btn-modal" onclick="protoOpenModal('protoLegalModal', 'light')">Hukuki Belgeler (Açık)</button>
+          <button type="button" class="proto-btn-modal proto-btn-modal--dark" onclick="protoOpenModal('protoLegalModal', 'dark')">Hukuki Belgeler (Koyu)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ══════════════════════════════════════════════════════════════════
+         1. PRATİK BİLGİLER (CURATORIAL EDITORIAL COMPOSITION)
+         ══════════════════════════════════════════════════════════════════ -->
+    <section class="proto-practical-section" id="protoPractical">
+      <div class="proto-container">
+        
+        <div class="proto-section-kicker-bar">
+          <span class="proto-section-num">Bölüm 01 · Pratik Bilgiler</span>
+          <span class="proto-height-indicator-pill" id="protoHeightDiagPill">Fotoğraf: 558px · Sağ Sütun: 558px · Sapma: 0px</span>
+        </div>
+
+        <div class="proto-practical-grid">
+          
+          <!-- Left: Editorial Photo (Fixed Natural Height) -->
+          <div class="proto-practical-media-col">
+            <div class="proto-photo-frame" id="protoPhotoFrame">
+              <img src="assets/practical-photo.webp" alt="Evdeki Ses pratik çalışma anı editoryal fotoğrafı" loading="eager" />
+            </div>
+            <div class="proto-photo-caption">
+              <span>Evdeki Ses pratik çalışma anı</span>
+              <span>Fotoğraf Yüksekliği: Sabit / Kilitli</span>
+            </div>
+          </div>
+
+          <!-- Right: Curatorial Information Hierarchy -->
+          <div class="proto-practical-content-col" id="protoPracticalRightCol">
+            
+            <h2 class="proto-practical-title">Pratik Bilgiler</h2>
+
+            <!-- A. Tabular Schedule Metadata (Clean lines, zero boxes) -->
+            <dl class="proto-meta-list">
+              <div class="proto-meta-row">
+                <dt class="proto-meta-dt">Başlangıç</dt>
+                <dd class="proto-meta-dd">11 Kasım 2026, Çarşamba · 6 hafta</dd>
+              </div>
+              <div class="proto-meta-row">
+                <dt class="proto-meta-dt">Canlı buluşmalar</dt>
+                <dd class="proto-meta-dd">Her çarşamba, 19.30–21.30 (Türkiye saati)</dd>
+              </div>
+              <div class="proto-meta-row">
+                <dt class="proto-meta-dt">Buluşma tarihleri</dt>
+                <dd class="proto-meta-dd">11, 18, 25 Kasım ve 2, 9, 16 Aralık 2026</dd>
+              </div>
+              <div class="proto-meta-row">
+                <dt class="proto-meta-dt">Kontenjan</dt>
+                <dd class="proto-meta-dd">En fazla 10 kişi</dd>
+              </div>
+              <div class="proto-meta-row">
+                <dt class="proto-meta-dt">Son kayıt</dt>
+                <dd class="proto-meta-dd">10 Kasım 2026, 23.59 (TSİ) <span class="proto-meta-note">(Kontenjan dolarsa erken kapanır)</span></dd>
+              </div>
+              <div class="proto-meta-row">
+                <dt class="proto-meta-dt">Erişim süresi</dt>
+                <dd class="proto-meta-dd">15 Ocak 2027 saat 23.59’a kadar</dd>
+              </div>
+            </dl>
+
+            <!-- B. Pricing & Value Summary (Museum Label Style) -->
+            <div class="proto-price-block">
+              <div class="proto-price-headline">
+                <span class="proto-price-amount">15.500 TL</span>
+                <span class="proto-price-type">peşin</span>
+                <span class="proto-price-divider">·</span>
+                <span class="proto-price-installment">2 taksit: 2 × 8.500 TL</span>
+              </div>
+              <p class="proto-value-summary">6 hafta boyunca canlı buluşmalar, günlük ve haftalık rehberli çalışmalar, kendi malzemen üzerinde çalışma, partner desteği ve Evdeki Ses asistanıyla birlikte ilerliyorsun.</p>
+              <p class="proto-refund-note">İptal, cayma ve iade koşullarını satın alma öncesinde <a class="proto-inline-link" onclick="protoOpenModal('protoLegalModal', 'light')">Ön Bilgilendirme Metni</a>’nde ve <a class="proto-inline-link" onclick="protoOpenModal('protoLegalModal', 'light')">Mesafeli Satış/Hizmet Sözleşmesi</a>’nde bulabilirsin. Uygulanabilir zorunlu tüketici hakları saklıdır. Soruların için: <a href="mailto:hello@niluferormanli.studio" class="proto-inline-link">hello@niluferormanli.studio</a>.</p>
+            </div>
+
+            <!-- C. Participation Conditions (Hairline Disclosure Rows) -->
+            <div class="proto-conditions-wrap">
+              <div class="proto-conditions-header">
+                <span class="proto-conditions-kicker">Önemli Katılım Koşulları</span>
+                <span class="proto-test-height-pill" onclick="protoToggleAccordions()">Akordeonu Test Et ↗</span>
+              </div>
+
+              <!-- Item 1: Aktif Katılım -->
+              <details class="proto-accordion-item">
+                <summary class="proto-accordion-summary">
+                  <div class="proto-summary-left">
+                    <span class="proto-summary-idx">01</span>
+                    <span class="proto-summary-title"><strong>Aktif katılım ve kamera:</strong> Etkileşimli ve canlı</span>
+                  </div>
+                  <svg class="proto-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                    <line x1="8" y1="2" x2="8" y2="14"></line>
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                  </svg>
+                </summary>
+                <div class="proto-accordion-body">
+                  <p>Evdeki Ses, yalnızca izlemeye dayalı bir eğitim değil; ses, beden ve ifadeyi birlikte araştırdığımız canlı bir grup çalışmasıdır. Buluşmalarda kamera ve mikrofonla katılım beklenir (ihtiyaç halinde geçici kapatılabilir).</p>
+                </div>
+              </details>
+
+              <!-- Item 2: 18 Yaş Koşulu -->
+              <details class="proto-accordion-item">
+                <summary class="proto-accordion-summary">
+                  <div class="proto-summary-left">
+                    <span class="proto-summary-idx">02</span>
+                    <span class="proto-summary-title"><strong>18 yaş koşulu:</strong> Yalnızca yetişkinlere açık</span>
+                  </div>
+                  <svg class="proto-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                    <line x1="8" y1="2" x2="8" y2="14"></line>
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                  </svg>
+                </summary>
+                <div class="proto-accordion-body">
+                  <p>Evdeki Ses yalnızca 18 yaşını doldurmuş yetişkinlere açıktır. Programın kapsamı ve uzmanlık alanımız 18 yaş altındakilerin katılımına uygun değildir.</p>
+                </div>
+              </details>
+
+              <!-- Item 3: Canlı Kayıt ve Telafi -->
+              <details class="proto-accordion-item">
+                <summary class="proto-accordion-summary">
+                  <div class="proto-summary-left">
+                    <span class="proto-summary-idx">03</span>
+                    <span class="proto-summary-title"><strong>Canlı kayıt ve telafi:</strong> Oturumlar kaydedilmez</span>
+                  </div>
+                  <svg class="proto-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                    <line x1="8" y1="2" x2="8" y2="14"></line>
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                  </svg>
+                </summary>
+                <div class="proto-accordion-body">
+                  <p>Canlı buluşmalar kaydedilmez. Kaçırdığın bir buluşmanın kaydını izleme veya bireysel telafi imkânı sunulmaz. Önceden hazırlanmış eğitim içerikleri bundan ayrıdır.</p>
+                </div>
+              </details>
+
+              <!-- Item 4: Hizmet Sınırı -->
+              <details class="proto-accordion-item">
+                <summary class="proto-accordion-summary">
+                  <div class="proto-summary-left">
+                    <span class="proto-summary-idx">04</span>
+                    <span class="proto-summary-title"><strong>Hizmet sınırı:</strong> Terapi veya tıbbi tedavi değildir</span>
+                  </div>
+                  <svg class="proto-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                    <line x1="8" y1="2" x2="8" y2="14"></line>
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                  </svg>
+                </summary>
+                <div class="proto-accordion-body">
+                  <p>Evdeki Ses yaratıcı ve deneyimsel bir grup çalışmasıdır; psikoterapi, tıbbi tedavi veya kriz desteği değildir. Belirli bir kişisel dönüşüm ya da sonuç garanti edilmez.</p>
+                </div>
+              </details>
+
+              <!-- Item 5: Erişim Süresi -->
+              <details class="proto-accordion-item">
+                <summary class="proto-accordion-summary">
+                  <div class="proto-summary-left">
+                    <span class="proto-summary-idx">05</span>
+                    <span class="proto-summary-title"><strong>Erişim süresi ve platform açılışı:</strong> Detaylar</span>
+                  </div>
+                  <svg class="proto-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                    <line x1="8" y1="2" x2="8" y2="14"></line>
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                  </svg>
+                </summary>
+                <div class="proto-accordion-body">
+                  <p>Program 11 Kasım 2026’da başlar. Üyelik alanı, program materyalleri ve isteğe bağlı yapay zekâ asistanı bu tarihten önce açılmaz. Program alanına erişim 15 Ocak 2027 saat 23.59’da (Türkiye saati) sona erer.</p>
+                </div>
+              </details>
+
+            </div>
+
+            <!-- D. Action CTA -->
+            <div class="proto-cta-wrap">
+              <button type="button" class="proto-btn-cta" onclick="protoOpenModal('protoCheckoutModal', 'light')">
+                <span>EVDEKİ SES’E KATIL</span>
+                <svg class="proto-btn-cta-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         2. TESTIMONIALS CAROUSEL (SUPERPOWER CURATORIAL ENGINE)
+         ══════════════════════════════════════════════════════════════════ -->
+    <section class="proto-testimonials-section" id="protoTestimonials">
+      <div class="proto-container">
+
+        <header class="proto-testimonials-header">
+          <div class="proto-testimonials-header-text">
+            <span class="proto-testimonials-kicker">KATILIMCILARIN DENEYİMİ</span>
+            <h2 class="proto-testimonials-title">Nilüfer’le çalışanlardan</h2>
+            <p class="proto-testimonials-desc">Nilüfer Ormanlı’nın önceki bireysel çalışmalarına ve eğitimlerine katılan kişilerin kendi sözleriyle deneyimleri.</p>
+          </div>
+
+          <!-- Deliberate Top-Right Nav Arrows -->
+          <div class="proto-nav-btn-group">
+            <button type="button" class="proto-btn-circle-nav" id="protoBtnPrev" aria-label="Önceki yorum">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12.5 15L7.5 10L12.5 5"/>
+              </svg>
+            </button>
+            <button type="button" class="proto-btn-circle-nav" id="protoBtnNext" aria-label="Sonraki yorum">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7.5 5L12.5 10L7.5 15"/>
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <!-- Carousel Track with Superpower Active Reading Focus -->
+        <div class="proto-carousel-viewport" id="protoTestimonialsViewport" tabindex="0">
+          <div class="proto-carousel-track" id="protoTestiTrack">
+            
+            <!-- Card 1: Aslınur -->
+            <article class="proto-testi-card is-active" data-idx="0">
+              <div class="proto-testi-media">
+                <img src="assets/testimonials/aslinur.webp" alt="İçsel çalışma ve not alma anı editoryal fotoğrafı" />
+              </div>
+              <div class="proto-testi-content">
+                <blockquote class="proto-testi-quote">
+                  “Sesin bedene ilmek ilmek örülü olduğunu… gösterdi. Her görüşme sonrası bedenimin bir parçası çiçeğe duruyor ve sesim çiçeğin etrafında arı gibi vızıldamaya başlıyordu.”
+                </blockquote>
+                <div class="proto-testi-footer">
+                  <span class="proto-testi-author">Aslınur</span>
+                  <span class="proto-testi-role">Bireysel çalışma katılımcısı</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Özge -->
+            <article class="proto-testi-card is-inactive" data-idx="1">
+              <div class="proto-testi-media">
+                <img src="assets/testimonials/ozge.webp" alt="Açık havada derin ve sakin bir nefes anı editoryal fotoğrafı" />
+              </div>
+              <div class="proto-testi-content">
+                <blockquote class="proto-testi-quote">
+                  “Ses eğitimi diye başladığım eğitim sırasında önce bedende yarattığım sıkışıklıkları fark ettim, ve günlük hayatımda bu daralmaları başka nerelerde yaşadığıma bir ayna görevi yapmaya başladı… Yine gündelik hayatımda, işimde netlikler kazanmaya başladım.”
+                </blockquote>
+                <div class="proto-testi-footer">
+                  <span class="proto-testi-author">Özge</span>
+                  <span class="proto-testi-role">Ses eğitimi katılımcısı</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Ceren -->
+            <article class="proto-testi-card is-inactive" data-idx="2">
+              <div class="proto-testi-media">
+                <img src="assets/testimonials/ceren.webp" alt="Çocuksu oyunbazlık ve doğada neşe editoryal fotoğrafı" />
+              </div>
+              <div class="proto-testi-content">
+                <blockquote class="proto-testi-quote">
+                  “Çocuksu oyunbazlığım ortaya çıktığında buna hem aynı şekilde karşılık verebilecek çocuksu bir ruh, hem de alanı ve olanı tutabilecek olgun bir ruha ihtiyaç duyarım; işte Nilüfer ikisini de taşıyan bir can.”
+                </blockquote>
+                <div class="proto-testi-footer">
+                  <span class="proto-testi-author">Ceren</span>
+                  <span class="proto-testi-role">Atölye ve pratik katılımcısı</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: Esma -->
+            <article class="proto-testi-card is-inactive" data-idx="3">
+              <div class="proto-testi-media">
+                <img src="assets/testimonials/esma.webp" alt="Ev ortamında sakin ve kendine ait bir alan editoryal fotoğrafı" />
+              </div>
+              <div class="proto-testi-content">
+                <blockquote class="proto-testi-quote">
+                  “Her yaptığımız ders, elimde kendime ait bir hediyeyle bitti.”
+                </blockquote>
+                <div class="proto-testi-footer">
+                  <span class="proto-testi-author">Esma</span>
+                  <span class="proto-testi-role">Ders çalışması katılımcısı</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5: Mükerrem -->
+            <article class="proto-testi-card is-inactive" data-idx="4">
+              <div class="proto-testi-media">
+                <img src="assets/testimonials/mukerrem.webp" alt="Güneş ışığında dingin ve bedenle barışık bir an editoryal fotoğrafı" />
+              </div>
+              <div class="proto-testi-content">
+                <blockquote class="proto-testi-quote">
+                  “Daha ilk gün bile kapınızdan çıkarken hafiflediğimi hissetmiştim. Bana kendimi sevmeyi, bedenimi sevmeyi hatırlattığınız […] için minnettarım.”
+                </blockquote>
+                <div class="proto-testi-footer">
+                  <span class="proto-testi-author">Mükerrem</span>
+                  <span class="proto-testi-role">Bireysel çalışma katılımcısı</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 6: Merve G. -->
+            <article class="proto-testi-card is-inactive" data-idx="5">
+              <div class="proto-testi-media">
+                <img src="assets/testimonials/merve-g.webp" alt="Samimi ve içten bir iletişim anı editoryal fotoğrafı" />
+              </div>
+              <div class="proto-testi-content">
+                <blockquote class="proto-testi-quote">
+                  “Dokuz aylık bir süreci birlikte geçirdiğim, bilgisine, tecrübesine güvendiğim, nefes terapisi, ses terapisi, farklı meditasyon teknikleri, nefesoloji ve adını bilmediğim farklı tekniklerle uzun ve çok da kolay olmayan zamanlarda bana şifa olan, çok şey öğrendiğim rehberliğine güvendiğim Nilüfer Ormanlı’nın sizlere de şifa olmasını umarım ve canıgönülden tavsiye ederim.”
+                </blockquote>
+                <div class="proto-testi-footer">
+                  <span class="proto-testi-author">Merve G.</span>
+                  <span class="proto-testi-role">Bireysel çalışma katılımcısı</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Carousel Footer: Progress Line, Live Autoplay Status & Counter -->
+        <footer class="proto-testimonials-footer">
+          <div class="proto-autoplay-indicator" onclick="protoToggleAutoplay()" style="cursor: pointer;" title="Tıklayarak otomatik ilerlemeyi duraklat veya başlat">
+            <span class="proto-autoplay-pulse" id="protoAutoplayPulse"></span>
+            <span id="protoAutoplayStatusText">Otomatik Oynatma Aktif (Duraklatmak için üzerine gel)</span>
+          </div>
+
+          <div class="proto-progress-nav-group">
+            <div class="proto-progress-track">
+              <div class="proto-progress-bar" id="protoProgressBar"></div>
+            </div>
+            <span class="proto-counter" id="protoTestiCounter">01 / 06</span>
+          </div>
+        </footer>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         3. MODALS SHOWCASE OVERVIEW (CURATORIAL VELLUM ARCHITECTURE)
+         ══════════════════════════════════════════════════════════════════ -->
+    <section class="proto-modal-showcase-section" id="protoModals">
+      <div class="proto-container">
+        
+        <div class="proto-section-kicker-bar">
+          <span class="proto-section-num">Bölüm 03 · Modallar Tasarım Dili</span>
+          <span class="proto-height-indicator-pill">Aydınger / Buzlu Cam · Açık &amp; Koyu Tema</span>
+        </div>
+
+        <h2 class="proto-practical-title">Küratöryel Modal Yüzeyleri</h2>
+        <p style="color: var(--proto-ink-secondary); max-width: 720px; line-height: 1.6; margin-bottom: 24px;">
+          Sayfanın üzerinde hafif bir aydınger / buzlu cam katmanı ve onun üzerinde küratöryel biçimde yerleştirilmiş bilgi yüzeyleri. Gereksiz kart ve çerçeveler azaltıldı; tipografik okuma ergonomisi ve güvenilirlik önceliklendirildi.
+        </p>
+
+        <div class="proto-modal-cards-grid">
+          
+          <div class="proto-modal-preview-box">
+            <div>
+              <h3>Programa Katıl (Checkout)</h3>
+              <p>Minimal radyo seçim kartları, güvenli hairline input alanları, sadeleştirilmiş onay kutusu ve şeffaf simülasyon rozeti.</p>
+            </div>
+            <div class="proto-modal-btn-group">
+              <button type="button" class="proto-btn-modal" onclick="protoOpenModal('protoCheckoutModal', 'light')">Açık Tema</button>
+              <button type="button" class="proto-btn-modal proto-btn-modal--dark" onclick="protoOpenModal('protoCheckoutModal', 'dark')">Koyu Tema</button>
+            </div>
+          </div>
+
+          <div class="proto-modal-preview-box">
+            <div>
+              <h3>Yasal Belgeler Merkezi</h3>
+              <p>Çizgisel sekmeler, 680px optimal editoryal okuma sütunu, 1.75 satır yüksekliği ve sakinleştirilmiş aday taslak bildirimi.</p>
+            </div>
+            <div class="proto-modal-btn-group">
+              <button type="button" class="proto-btn-modal" onclick="protoOpenModal('protoLegalModal', 'light')">Açık Tema</button>
+              <button type="button" class="proto-btn-modal proto-btn-modal--dark" onclick="protoOpenModal('protoLegalModal', 'dark')">Koyu Tema</button>
+            </div>
+          </div>
+
+          <div class="proto-modal-preview-box">
+            <div>
+              <h3>Sık Sorulan Sorular (SSS)</h3>
+              <p>Zarif hairline açılır sorular, tek kaynaklı yanıtlar ve ferah negatif alan dengesi.</p>
+            </div>
+            <div class="proto-modal-btn-group">
+              <button type="button" class="proto-btn-modal" onclick="protoOpenModal('protoFaqModal', 'light')">Açık Tema</button>
+              <button type="button" class="proto-btn-modal proto-btn-modal--dark" onclick="protoOpenModal('protoFaqModal', 'dark')">Koyu Tema</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       INTERACTIVE DIALOG 1: CHECKOUT MODAL
+       ══════════════════════════════════════════════════════════════════ -->
+  <div id="protoCheckoutModal" class="proto-dialog-overlay" data-theme="light" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="proto-dialog-backdrop"></div>
+    <div class="proto-dialog-sheet">
+      
+      <div class="proto-dialog-header">
+        <div class="proto-dialog-header-info">
+          <span class="proto-dialog-kicker">Evdeki Ses · Kayıt</span>
+          <h2 class="proto-dialog-title">Programa Katıl</h2>
+        </div>
+        <button type="button" class="proto-dialog-close-btn" aria-label="Kapat">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="1.75" fill="none">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="proto-dialog-body">
+        <div class="proto-checkout-col">
+          
+          <div class="proto-checkout-summary-box">
+            <strong style="display:block; margin-bottom: 4px; font-size: 0.9375rem;">Program Özeti: Evdeki Ses</strong>
+            <span style="font-size: 0.875rem; opacity: 0.8; display: block; line-height: 1.5;">6 haftalık canlı çevrimiçi grup programı · 11 Kasım 2026, Çarşamba (19.30–21.30 TSİ) · Erişim: 15 Ocak 2027</span>
+          </div>
+
+          <span class="proto-input-label" style="display:block; margin-bottom: 8px;">Ödeme Seçeneği:</span>
+          <div class="proto-plan-grid">
+            <div class="proto-plan-card is-selected">
+              <input type="radio" name="protoPlan" value="pesin" checked style="display:none;" />
+              <strong style="font-size: 1rem;">Peşin Ödeme</strong>
+              <span style="font-size: 1.125rem; font-weight: 500;">15.500 TL</span>
+              <span style="font-size: 0.75rem; opacity: 0.65;">Tek çekim · Tüm vergiler dahil</span>
+            </div>
+            <div class="proto-plan-card">
+              <input type="radio" name="protoPlan" value="taksit" style="display:none;" />
+              <strong style="font-size: 1rem;">2 Taksit</strong>
+              <span style="font-size: 1.125rem; font-weight: 500;">2 × 8.500 TL</span>
+              <span style="font-size: 0.75rem; opacity: 0.65;">Toplam 17.000 TL · 30 gün arayla</span>
+            </div>
+          </div>
+
+          <form onsubmit="event.preventDefault(); alert('Bu bir prototip simülasyonudur. Gerçek ödeme tahsilatı yapılmaz.');">
+            <div class="proto-legal-draft-pill" style="width: 100%; box-sizing: border-box; margin-bottom: 20px;">
+              <span>ⓘ</span>
+              <span>Yerel Önizleme: Bu ekran bir tasarım simülasyonudur; gerçek ödeme tahsilatı yapılmaz.</span>
+            </div>
+
+            <div class="proto-checkout-grid">
+              <div class="proto-input-group">
+                <label class="proto-input-label">Ad Soyad *</label>
+                <input type="text" class="proto-input-field" placeholder="Adınız Soyadınız" required />
+              </div>
+              <div class="proto-input-group">
+                <label class="proto-input-label">E-posta Adresi *</label>
+                <input type="email" class="proto-input-field" placeholder="ornek@alanadi.com" required />
+              </div>
+            </div>
+
+            <div style="margin-bottom: 24px; font-size: 0.8125rem; line-height: 1.6; opacity: 0.85;">
+              <label style="display: flex; gap: 10px; cursor: pointer;">
+                <input type="checkbox" required style="margin-top: 3px;" />
+                <span>Önizleme için sözleşme kabulü adımını işaretliyorum. (<a class="proto-inline-link" onclick="protoOpenModal('protoLegalModal', 'light')">Ön Bilgilendirme Metni</a>, <a class="proto-inline-link" onclick="protoOpenModal('protoLegalModal', 'light')">Mesafeli Satış Sözleşmesi</a> ve <a class="proto-inline-link" onclick="protoOpenModal('protoLegalModal', 'light')">Katılım Koşulları</a>) *</span>
+              </label>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--proto-hairline);">
+              <span style="font-size: 0.75rem; opacity: 0.6;">Satıcı: Nilüfer Ormanlı Studio LLC</span>
+              <button type="submit" class="proto-btn-cta" style="padding: 12px 24px; font-size: 0.8125rem;">
+                Önizlemeyi Tamamla →
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       INTERACTIVE DIALOG 2: LEGAL READER MODAL
+       ══════════════════════════════════════════════════════════════════ -->
+  <div id="protoLegalModal" class="proto-dialog-overlay" data-theme="light" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="proto-dialog-backdrop"></div>
+    <div class="proto-dialog-sheet">
+      
+      <div class="proto-dialog-header">
+        <div class="proto-dialog-header-info">
+          <span class="proto-dialog-kicker">Evdeki Ses · Hukuki Belgeler</span>
+          <h2 class="proto-dialog-title">Yasal Metinler Merkezi</h2>
+        </div>
+        <button type="button" class="proto-dialog-close-btn" aria-label="Kapat">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="1.75" fill="none">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="proto-dialog-body" id="protoLegalBody">
+        <div class="proto-legal-reading-col">
+          
+          <nav class="proto-legal-tabs" aria-label="Hukuki Sekmeler">
+            <button type="button" class="proto-legal-tab-btn active" data-doc="on-bilgi">Ön Bilgilendirme</button>
+            <button type="button" class="proto-legal-tab-btn" data-doc="mesafeli">Mesafeli Satış</button>
+            <button type="button" class="proto-legal-tab-btn" data-doc="kosullar">Katılım Koşulları</button>
+            <button type="button" class="proto-legal-tab-btn" data-doc="kvkk">Gizlilik &amp; KVKK</button>
+            <button type="button" class="proto-legal-tab-btn" data-doc="cerez">Çerez Politikası</button>
+          </nav>
+
+          <div class="proto-legal-draft-pill">
+            <span>●</span>
+            <span>Önizleme Metni · Aday Çalışma Taslağı</span>
+          </div>
+
+          <!-- View 1: Ön Bilgilendirme -->
+          <div class="proto-legal-view proto-legal-body-text" data-doc="on-bilgi">
+            <h3 class="proto-legal-doc-title">Ön Bilgilendirme Metni</h3>
+            <div class="proto-legal-doc-meta">Satıcı: Nilüfer Ormanlı Studio LLC · Tarih: 26 Ekim 2026 · Sürüm: v1 Aday Taslak</div>
+            <p><strong>1. Satıcı:</strong> Nilüfer Ormanlı Studio LLC · 131 Continental Dr, Suite 305, Newark, DE 19713, ABD · hello@niluferormanli.studio</p>
+            <p><strong>2. Program Takvimi:</strong> Başlangıç 11 Kasım 2026, Çarşamba. Canlı buluşmalar 11, 18, 25 Kasım ve 2, 9, 16 Aralık 2026, 19.30–21.30 TSİ. Son kayıt: 10 Kasım 2026, 23.59 TSİ. Platform ve materyal erişimi 15 Ocak 2027 saat 23.59’a kadar sürer.</p>
+            <p><strong>3. Katılım Koşulları:</strong> 18 yaşını doldurmuş yetişkinlere yöneliktir. Buluşmalarda kamera ve mikrofonla aktif katılım beklenir (ihtiyaç halinde geçici kapatılabilir). Canlı oturumlar kaydedilmez; kaçırılan oturum telafisi yoktur.</p>
+            <p><strong>4. Sınırlar:</strong> Evdeki Ses bir yaratıcı grup çalışmasıdır; psikoterapi veya tıbbi tedavi niteliği taşımaz; belirli bir sonuç garanti edilmez.</p>
+            <p><strong>5. Bedel ve Cayma Hakkı:</strong> 15.500 TL peşin / 2 taksit: 2 × 8.500 TL (aday önizleme tutarları). 6502 sayılı Kanun ve Mesafeli Sözleşmeler Yönetmeliği uyarınca 14 günlük yasal cayma hakkı saklıdır. Canlı oturumların başlaması öncesinde yapılan cayma bildirimlerinde ödenen bedel mevzuata uygun olarak iade edilir.</p>
+          </div>
+
+          <!-- View 2: Mesafeli Satış -->
+          <div class="proto-legal-view proto-legal-body-text" data-doc="mesafeli" style="display:none;">
+            <h3 class="proto-legal-doc-title">Mesafeli Satış Sözleşmesi</h3>
+            <div class="proto-legal-doc-meta">Satıcı: Nilüfer Ormanlı Studio LLC · Sipariş anında onaylanır (Aday Taslak)</div>
+            <p><strong>Taraflar:</strong> Satıcı Nilüfer Ormanlı Studio LLC ile web sitesi üzerinden satın alma yapan Katılımcı arasındadır.</p>
+            <p><strong>Konu:</strong> 6 haftalık Evdeki Ses canlı çevrimiçi programı ve bağlantılı dijital materyallerin satış ve ifası.</p>
+            <p><strong>Takvim ve İfa:</strong> Program 11 Kasım 2026’da başlar, 16 Aralık’ta tamamlanır. Kayıtlı materyallere erişim 15 Ocak 2027 saat 23.59’da biter.</p>
+            <p><strong>Kayıt Yasağı:</strong> Canlı buluşmalar Satıcı tarafından kaydedilmez; katılımcıların da oturumlarda ses, video veya ekran kaydı alması kesinlikle yasaktır.</p>
+            <p><strong>Cayma ve İade:</strong> 14 günlük yasal cayma hakkı saklıdır. Program başlangıç tarihi öncesinde yapılan cayma bildirimlerinde ödenen bedel kesintisiz iade edilir.</p>
+          </div>
+
+          <!-- View 3: Katılım Koşulları -->
+          <div class="proto-legal-view proto-legal-body-text" data-doc="kosullar" style="display:none;">
+            <h3 class="proto-legal-doc-title">Program Katılım Koşulları</h3>
+            <div class="proto-legal-doc-meta">Pedagojik Çerçeve ve Grup Etiği</div>
+            <p><strong>Yaş Sınırı:</strong> Yalnızca 18 yaşını doldurmuş yetişkinler katılabilir.</p>
+            <p><strong>Aktif Katılım:</strong> Kamera ve mikrofonla katılım esastır. Katılımcı hiçbir deneyimi paylaşmaya zorlanmaz; dilediğinde kamerasını geçici olarak kapatabilir.</p>
+            <p><strong>Terapi/Tedavi Olmama:</strong> Program sanatsal ve yaratıcı bir çalışmadır; psikoterapi veya tıbbi kriz desteği değildir. Nilüfer ses veya bedenden teşhis çıkarmaz.</p>
+            <p><strong>Grup Mahremiyeti:</strong> Diğer katılımcıların paylaşımları ve işleri grup dışına taşınamaz.</p>
+          </div>
+
+          <!-- View 4: KVKK -->
+          <div class="proto-legal-view proto-legal-body-text" data-doc="kvkk" style="display:none;">
+            <h3 class="proto-legal-doc-title">Gizlilik Politikası ve KVKK Aydınlatma Metni</h3>
+            <div class="proto-legal-doc-meta">Veri Sorumlusu: Nilüfer Ormanlı Studio LLC</div>
+            <p><strong>Veri İşleme ve Altyapı:</strong> Kimlik, iletişim ve fatura verileri sözleşmenin kurulması ve yasal yükümlülükler çerçevesinde işlenir.</p>
+            <p><strong>Canlı Oturumlar:</strong> Mahremiyeti korumak amacıyla canlı Zoom buluşmaları kaydedilmez.</p>
+            <p><strong>AI Asistan:</strong> Asistan ile yapılan konuşmalar varsayılan olarak Nilüfer’e açılmaz; sohbet geçmişi üyelik altyapısı yeteneklerine göre yönetilir.</p>
+          </div>
+
+          <!-- View 5: Çerez -->
+          <div class="proto-legal-view proto-legal-body-text" data-doc="cerez" style="display:none;">
+            <h3 class="proto-legal-doc-title">Çerez Politikası</h3>
+            <div class="proto-legal-doc-meta">Oturum ve Tercih Yönetimi</div>
+            <p><strong>Kullanılan Çerezler:</strong> Sitemizde oturum ve form tercihleri için zorunlu ve işlevsel kayıtlar tutulur; şu an aktif bir üçüncü taraf izleyici çerez bulunmamaktadır.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       INTERACTIVE DIALOG 3: FAQ MODAL
+       ══════════════════════════════════════════════════════════════════ -->
+  <div id="protoFaqModal" class="proto-dialog-overlay" data-theme="light" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="proto-dialog-backdrop"></div>
+    <div class="proto-dialog-sheet">
+      
+      <div class="proto-dialog-header">
+        <div class="proto-dialog-header-info">
+          <span class="proto-dialog-kicker">Evdeki Ses · Destek</span>
+          <h2 class="proto-dialog-title">Sık Sorulan Sorular</h2>
+        </div>
+        <button type="button" class="proto-dialog-close-btn" aria-label="Kapat">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="1.75" fill="none">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="proto-dialog-body">
+        <div class="proto-legal-reading-col">
+          
+          <details class="proto-accordion-item">
+            <summary class="proto-accordion-summary">
+              <span>Canlı buluşmalardan birini kaçırırsam ne olur?</span>
+              <svg class="proto-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                <line x1="8" y1="2" x2="8" y2="14"></line>
+                <line x1="2" y1="8" x2="14" y2="8"></line>
+              </svg>
+            </summary>
+            <div class="proto-accordion-body">
+              <p>Canlı buluşmalar kaydedilmez. Kaçırdığın bir buluşmanın kaydını izleme veya bireysel telafi imkânı sunulmaz. Önceden hazırlanmış eğitim içerikleri bundan ayrıdır.</p>
+            </div>
+          </details>
+
+          <details class="proto-accordion-item">
+            <summary class="proto-accordion-summary">
+              <span>Ne üzerinde çalışacağımı henüz bilmiyorsam katılabilir miyim?</span>
+              <svg class="proto-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                <line x1="8" y1="2" x2="8" y2="14"></line>
+                <line x1="2" y1="8" x2="14" y2="8"></line>
+              </svg>
+            </summary>
+            <div class="proto-accordion-body">
+              <p>Evet. İlk hafta, seni tekrar tekrar çağıran izlerin arasından hangisinin şimdi çalışılmak istediğine bakıyoruz. Altı hafta boyunca takip edeceğin şeyi orada seçiyorsun.</p>
+            </div>
+          </details>
+
+          <details class="proto-accordion-item">
+            <summary class="proto-accordion-summary">
+              <span>Sesimi kullanma konusunda deneyimli olmam gerekiyor mu?</span>
+              <svg class="proto-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                <line x1="8" y1="2" x2="8" y2="14"></line>
+                <line x1="2" y1="8" x2="14" y2="8"></line>
+              </svg>
+            </summary>
+            <div class="proto-accordion-body">
+              <p>Hayır. Burada sesle çalışmak şarkı söylemek ya da “iyi bir sese” sahip olmak anlamına gelmiyor. Önemli olan iyi söylemek değil, duymak.</p>
+            </div>
+          </details>
+
+          <details class="proto-accordion-item">
+            <summary class="proto-accordion-summary">
+              <span>Evdeki Ses bir terapi veya psikolojik destek midir?</span>
+              <svg class="proto-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                <line x1="8" y1="2" x2="8" y2="14"></line>
+                <line x1="2" y1="8" x2="14" y2="8"></line>
+              </svg>
+            </summary>
+            <div class="proto-accordion-body">
+              <p>Evdeki Ses yaratıcı ve deneyimsel bir grup çalışmasıdır; psikoterapi, tıbbi tedavi veya kriz desteği değildir. Belirli bir kişisel dönüşüm ya da sonuç garanti edilmez.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="art-direction-prototype.js?v=20261028"></script>
+</body>
+</html>

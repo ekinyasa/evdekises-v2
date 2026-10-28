@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evdeki Ses — Küratöryel Tasarım Revizyonu (Aday A)</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  
+  <!-- Production Design Tokens & Base -->
+  <link rel="stylesheet" href="styles.css?v=20261028" />
+  <!-- Refinement A Architecture -->
+  <link rel="stylesheet" href="refinement-a.css?v=20261028" />
+</head>
+<body class="refinement-page">
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       PRODUCTION NAVBAR (STATE 2: TRANSLUCENT LIGHT GLASS PILL)
+       ══════════════════════════════════════════════════════════════════ -->
+  <header class="site-header is-scrolled is-on-light" id="siteHeader">
+    <div class="header-pill">
+      <!-- 1. Identity Wordmark -->
+      <a href="#deneyimler" class="header-identity" aria-label="Nilüfer Ormanlı">
+        <span class="header-logo-text">NİLÜFER ORMANLI</span>
+      </a>
+
+      <!-- 2. Navigation Links -->
+      <nav class="header-nav" aria-label="Ana Gezinti">
+        <a href="#deneyimler" class="nav-link">Deneyimler</a>
+        <a href="#karar" class="nav-link">Pratik Bilgiler</a>
+      </nav>
+
+      <!-- 3. Right Action CTA -->
+      <div class="header-action">
+        <a href="#karar" class="btn-header-cta">
+          <span>Evdeki Ses’e Katıl</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="header-spacer" aria-hidden="true"></div>
+
+  <main>
+    <!-- ══════════════════════════════════════════════════════════════════
+         SECTION 2: TESTIMONIALS (SUPERPOWER CURATORIAL STAGE)
+         ══════════════════════════════════════════════════════════════════ -->
+    <section class="refine-testimonials-section" id="deneyimler" aria-labelledby="testiTitle">
+      <div class="refine-container">
+
+        <header class="refine-testi-header">
+          <div class="refine-testi-header-text">
+            <span class="refine-testi-kicker">KATILIMCILARIN DENEYİMİ</span>
+            <h2 id="testiTitle" class="refine-testi-title">Nilüfer’le çalışanlardan</h2>
+            <p class="refine-testi-desc">Nilüfer Ormanlı’nın önceki bireysel çalışmalarına ve eğitimlerine katılan kişilerin kendi sözleriyle deneyimleri.</p>
+          </div>
+
+          <div class="refine-nav-controls" aria-label="Gezinti Butonları">
+            <button type="button" class="refine-btn-circle-nav" id="btnNavPrev" aria-label="Önceki yorum">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12.5 15L7.5 10L12.5 5"/>
+              </svg>
+            </button>
+            <button type="button" class="refine-btn-circle-nav" id="btnNavNext" aria-label="Sonraki yorum">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7.5 5L12.5 10L7.5 15"/>
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <div class="refine-carousel-stage">
+          <div class="refine-carousel-viewport" id="carouselViewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Katılımcı Deneyimleri">
+            <div class="refine-carousel-track" id="carouselTrack">
+              
+              <!-- Card 1: Aslınur -->
+              <article class="refine-testi-card" data-idx="0" aria-roledescription="slide" aria-label="1 / 6: Aslınur">
+                <div class="refine-testi-media">
+                  <img src="assets/testimonials/aslinur.webp" alt="İçsel çalışma ve not alma anı editoryal fotoğrafı" class="refine-testi-img refine-testi-img--aslinur" loading="eager" />
+                </div>
+                <div class="refine-testi-content">
+                  <div class="refine-testi-quote-wrap">
+                    <blockquote class="refine-testi-quote">
+                      “Sesin bedene ilmek ilmek örülü olduğunu… gösterdi. Her görüşme sonrası bedenimin bir parçası çiçeğe duruyor ve sesim çiçeğin etrafında arı gibi vızıldamaya başlıyordu.”
+                    </blockquote>
+                  </div>
+                  <div class="refine-testi-footer">
+                    <span class="refine-testi-author">Aslınur</span>
+                    <span class="refine-testi-role">Bireysel çalışma katılımcısı</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 2: Özge -->
+              <article class="refine-testi-card" data-idx="1" aria-roledescription="slide" aria-label="2 / 6: Özge">
+                <div class="refine-testi-media">
+                  <img src="assets/testimonials/ozge.webp" alt="Açık havada derin ve sakin bir nefes anı editoryal fotoğrafı" class="refine-testi-img refine-testi-img--ozge" loading="eager" />
+                </div>
+                <div class="refine-testi-content">
+                  <div class="refine-testi-quote-wrap">
+                    <blockquote class="refine-testi-quote">
+                      “Ses eğitimi diye başladığım eğitim sırasında önce bedende yarattığım sıkışıklıkları fark ettim, ve günlük hayatımda bu daralmaları başka nerelerde yaşadığıma bir ayna görevi yapmaya başladı… Yine gündelik hayatımda, işimde netlikler kazanmaya başladım.”
+                    </blockquote>
+                  </div>
+                  <div class="refine-testi-footer">
+                    <span class="refine-testi-author">Özge</span>
+                    <span class="refine-testi-role">Ses eğitimi katılımcısı</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 3: Ceren -->
+              <article class="refine-testi-card" data-idx="2" aria-roledescription="slide" aria-label="3 / 6: Ceren">
+                <div class="refine-testi-media">
+                  <img src="assets/testimonials/ceren.webp" alt="Çocuksu oyunbazlık ve doğada neşe editoryal fotoğrafı" class="refine-testi-img refine-testi-img--ceren" loading="eager" />
+                </div>
+                <div class="refine-testi-content">
+                  <div class="refine-testi-quote-wrap">
+                    <blockquote class="refine-testi-quote">
+                      “Çocuksu oyunbazlığım ortaya çıktığında buna hem aynı şekilde karşılık verebilecek çocuksu bir ruh, hem de alanı ve olanı tutabilecek olgun bir ruha ihtiyaç duyarım; işte Nilüfer ikisini de taşıyan bir can.”
+                    </blockquote>
+                  </div>
+                  <div class="refine-testi-footer">
+                    <span class="refine-testi-author">Ceren</span>
+                    <span class="refine-testi-role">Atölye ve pratik katılımcısı</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 4: Esma -->
+              <article class="refine-testi-card" data-idx="3" aria-roledescription="slide" aria-label="4 / 6: Esma">
+                <div class="refine-testi-media">
+                  <img src="assets/testimonials/esma.webp" alt="Ev ortamında sakin ve kendine ait bir alan editoryal fotoğrafı" class="refine-testi-img refine-testi-img--esma" loading="eager" />
+                </div>
+                <div class="refine-testi-content">
+                  <div class="refine-testi-quote-wrap">
+                    <blockquote class="refine-testi-quote">
+                      “Her yaptığımız ders, elimde kendime ait bir hediyeyle bitti.”
+                    </blockquote>
+                  </div>
+                  <div class="refine-testi-footer">
+                    <span class="refine-testi-author">Esma</span>
+                    <span class="refine-testi-role">Ders çalışması katılımcısı</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 5: Mükerrem -->
+              <article class="refine-testi-card" data-idx="4" aria-roledescription="slide" aria-label="5 / 6: Mükerrem">
+                <div class="refine-testi-media">
+                  <img src="assets/testimonials/mukerrem.webp" alt="Güneş ışığında dingin ve bedenle barışık bir an editoryal fotoğrafı" class="refine-testi-img refine-testi-img--mukerrem" loading="eager" />
+                </div>
+                <div class="refine-testi-content">
+                  <div class="refine-testi-quote-wrap">
+                    <blockquote class="refine-testi-quote">
+                      “Daha ilk gün bile kapınızdan çıkarken hafiflediğimi hissetmiştim. Bana kendimi sevmeyi, bedenimi sevmeyi hatırlattığınız […] için minnettarım.”
+                    </blockquote>
+                  </div>
+                  <div class="refine-testi-footer">
+                    <span class="refine-testi-author">Mükerrem</span>
+                    <span class="refine-testi-role">Bireysel çalışma katılımcısı</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 6: Merve G. -->
+              <article class="refine-testi-card" data-idx="5" aria-roledescription="slide" aria-label="6 / 6: Merve G.">
+                <div class="refine-testi-media">
+                  <img src="assets/testimonials/merve-g.webp" alt="Samimi ve içten bir iletişim anı editoryal fotoğrafı" class="refine-testi-img refine-testi-img--merve-g" loading="eager" />
+                </div>
+                <div class="refine-testi-content">
+                  <div class="refine-testi-quote-wrap">
+                    <blockquote class="refine-testi-quote">
+                      “Dokuz aylık bir süreci birlikte geçirdiğim, bilgisine, tecrübesine güvendiğim, nefes terapisi, ses terapisi, farklı meditasyon teknikleri, nefesoloji ve adını bilmediğim farklı tekniklerle uzun ve çok da kolay olmayan zamanlarda bana şifa olan, çok şey öğrendiğim rehberliğine güvendiğim Nilüfer Ormanlı’nın sizlere de şifa olmasını umarım ve canıgönülden tavsiye ederim.”
+                    </blockquote>
+                  </div>
+                  <div class="refine-testi-footer">
+                    <span class="refine-testi-author">Merve G.</span>
+                    <span class="refine-testi-role">Bireysel çalışma katılımcısı</span>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </div>
+
+        <footer class="refine-testi-footer-bar">
+          <p class="refine-testi-editorial-note">Alıntılar Nilüfer Ormanlı’nın önceki bireysel çalışmalarına ve eğitimlerine aittir; temsili editoryal görsellerle sunulmuştur.</p>
+          <div class="refine-progress-group">
+            <div class="refine-progress-track">
+              <div class="refine-progress-bar" id="progressBar"></div>
+            </div>
+            <span class="refine-testi-counter" id="testiCounter">01 / 06</span>
+          </div>
+        </footer>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════════
+         SECTION 1: PRATİK BİLGİLER (COMPOSITION A: TITLE LEFT ABOVE PHOTO)
+         ══════════════════════════════════════════════════════════════════ -->
+    <section class="refine-practical-section" id="karar" aria-labelledby="practicalTitle">
+      <div class="refine-container">
+        
+        <div class="refine-practical-grid-a">
+
+          <!-- Left Column: Title Left + Anchored Controlled Photo -->
+          <div class="refine-practical-left-col">
+            <div class="refine-practical-header-block">
+              <h2 id="practicalTitle" class="refine-practical-title">Pratik Bilgiler</h2>
+              <p class="refine-practical-sub">Kayıt takvimi, katılım koşulları ve program detayları.</p>
+            </div>
+
+            <div class="refine-practical-photo-frame">
+              <img src="assets/practical-photo.webp" alt="Evdeki Ses pratik çalışma anı editoryal fotoğrafı" class="refine-practical-photo" loading="lazy" />
+            </div>
+            <p class="refine-photo-caption">Evdeki Ses pratik çalışma anı</p>
+          </div>
+
+          <!-- Right Column: Information Hierarchy -->
+          <div class="refine-practical-right-col">
+            
+            <!-- A. Tabular Schedule Summary -->
+            <dl class="refine-meta-list">
+              <div class="refine-meta-row">
+                <dt class="refine-meta-dt">Başlangıç</dt>
+                <dd class="refine-meta-dd">11 Kasım 2026, Çarşamba · 6 hafta</dd>
+              </div>
+              <div class="refine-meta-row">
+                <dt class="refine-meta-dt">Canlı buluşmalar</dt>
+                <dd class="refine-meta-dd">Her çarşamba, 19.30–21.30 (Türkiye saati)</dd>
+              </div>
+              <div class="refine-meta-row">
+                <dt class="refine-meta-dt">Buluşma tarihleri</dt>
+                <dd class="refine-meta-dd">11, 18, 25 Kasım ve 2, 9, 16 Aralık 2026</dd>
+              </div>
+              <div class="refine-meta-row">
+                <dt class="refine-meta-dt">Kontenjan</dt>
+                <dd class="refine-meta-dd">En fazla 10 kişi</dd>
+              </div>
+              <div class="refine-meta-row">
+                <dt class="refine-meta-dt">Son kayıt</dt>
+                <dd class="refine-meta-dd">10 Kasım 2026, 23.59 (TSİ) <span class="refine-meta-note">(Kontenjan dolarsa erken kapanır)</span></dd>
+              </div>
+              <div class="refine-meta-row">
+                <dt class="refine-meta-dt">Erişim süresi</dt>
+                <dd class="refine-meta-dd">15 Ocak 2027 saat 23.59’a kadar</dd>
+              </div>
+            </dl>
+
+            <!-- B. Pricing & Value Summary -->
+            <div class="refine-price-block">
+              <div class="refine-price-headline">
+                <span class="refine-price-amount">15.500 TL</span>
+                <span class="refine-price-type">peşin</span>
+                <span class="refine-price-divider">·</span>
+                <span class="refine-price-installment">2 taksit: 2 × 8.500 TL</span>
+              </div>
+              <p class="refine-value-summary">6 hafta boyunca canlı buluşmalar, günlük ve haftalık rehberli çalışmalar, kendi malzemen üzerinde çalışma, partner desteği ve Evdeki Ses asistanıyla birlikte ilerliyorsun.</p>
+              <p class="refine-refund-note">İptal, cayma ve iade koşullarını satın alma öncesinde <a href="legal/on-bilgilendirme.html" target="_blank">Ön Bilgilendirme Metni</a>’nde ve <a href="legal/mesafeli-satis.html" target="_blank">Mesafeli Satış/Hizmet Sözleşmesi</a>’nde bulabilirsin. Uygulanabilir zorunlu tüketici hakları saklıdır. Soruların için: <a href="mailto:hello@niluferormanli.studio">hello@niluferormanli.studio</a>.</p>
+            </div>
+
+            <!-- C. Participation Conditions (Accordion) -->
+            <div class="refine-conditions-wrap">
+              <span class="refine-conditions-kicker">Önemli Katılım Koşulları</span>
+
+              <!-- 01 -->
+              <details class="refine-accordion-item">
+                <summary class="refine-accordion-summary">
+                  <div class="refine-summary-left">
+                    <span class="refine-summary-idx">01</span>
+                    <span class="refine-summary-title"><strong>Aktif katılım ve kamera:</strong> Etkileşimli ve canlı</span>
+                  </div>
+                  <svg class="refine-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                    <line x1="8" y1="2" x2="8" y2="14"></line>
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                  </svg>
+                </summary>
+                <div class="refine-accordion-body">
+                  <p>Evdeki Ses, yalnızca izlemeye dayalı bir eğitim değil; ses, beden ve ifadeyi birlikte araştırdığımız canlı bir grup çalışmasıdır. Buluşmalarda kamera ve mikrofonla katılım beklenir (ihtiyaç halinde geçici kapatılabilir).</p>
+                </div>
+              </details>
+
+              <!-- 02 -->
+              <details class="refine-accordion-item">
+                <summary class="refine-accordion-summary">
+                  <div class="refine-summary-left">
+                    <span class="refine-summary-idx">02</span>
+                    <span class="refine-summary-title"><strong>18 yaş koşulu:</strong> Yalnızca yetişkinlere açık</span>
+                  </div>
+                  <svg class="refine-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                    <line x1="8" y1="2" x2="8" y2="14"></line>
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                  </svg>
+                </summary>
+                <div class="refine-accordion-body">
+                  <p>Evdeki Ses yalnızca 18 yaşını doldurmuş yetişkinlere açıktır. Programın kapsamı ve uzmanlık alanımız 18 yaş altındakilerin katılımına uygun değildir.</p>
+                </div>
+              </details>
+
+              <!-- 03 -->
+              <details class="refine-accordion-item">
+                <summary class="refine-accordion-summary">
+                  <div class="refine-summary-left">
+                    <span class="refine-summary-idx">03</span>
+                    <span class="refine-summary-title"><strong>Canlı kayıt ve telafi:</strong> Oturumlar kaydedilmez</span>
+                  </div>
+                  <svg class="refine-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                    <line x1="8" y1="2" x2="8" y2="14"></line>
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                  </svg>
+                </summary>
+                <div class="refine-accordion-body">
+                  <p>Canlı buluşmalar kaydedilmez. Kaçırdığın bir buluşmanın kaydını izleme veya bireysel telafi imkânı sunulmaz. Önceden hazırlanmış eğitim içerikleri bundan ayrıdır.</p>
+                </div>
+              </details>
+
+              <!-- 04 -->
+              <details class="refine-accordion-item">
+                <summary class="refine-accordion-summary">
+                  <div class="refine-summary-left">
+                    <span class="refine-summary-idx">04</span>
+                    <span class="refine-summary-title"><strong>Hizmet sınırı:</strong> Terapi veya tıbbi tedavi değildir</span>
+                  </div>
+                  <svg class="refine-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                    <line x1="8" y1="2" x2="8" y2="14"></line>
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                  </svg>
+                </summary>
+                <div class="refine-accordion-body">
+                  <p>Evdeki Ses yaratıcı ve deneyimsel bir grup çalışmasıdır; psikoterapi, tıbbi tedavi veya kriz desteği değildir. Belirli bir kişisel dönüşüm ya da sonuç garanti edilmez.</p>
+                </div>
+              </details>
+
+              <!-- 05 -->
+              <details class="refine-accordion-item">
+                <summary class="refine-accordion-summary">
+                  <div class="refine-summary-left">
+                    <span class="refine-summary-idx">05</span>
+                    <span class="refine-summary-title"><strong>Erişim süresi ve platform açılışı:</strong> Detaylar</span>
+                  </div>
+                  <svg class="refine-accordion-icon" viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round">
+                    <line x1="8" y1="2" x2="8" y2="14"></line>
+                    <line x1="2" y1="8" x2="14" y2="8"></line>
+                  </svg>
+                </summary>
+                <div class="refine-accordion-body">
+                  <p>Program 11 Kasım 2026’da başlar. Üyelik alanı, program materyalleri ve isteğe bağlı yapay zekâ asistanı bu tarihten önce açılmaz. Program alanına erişim 15 Ocak 2027 saat 23.59’da (Türkiye saati) sona erer.</p>
+                </div>
+              </details>
+            </div>
+
+            <!-- D. CTA Button -->
+            <div class="refine-cta-wrap">
+              <a href="#karar" class="refine-btn-cta">
+                <span>EVDEKİ SES’E KATIL</span>
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="refinement-a.js?v=20261028"></script>
+</body>
+</html>
