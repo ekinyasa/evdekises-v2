@@ -260,11 +260,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setupBoundarySwipe(programInner, programPrev, programNext);
   }
 
-  // Smooth scroll for internal anchor links (excluding FAQ modal triggers and pending destinations)
+  // Smooth scroll for internal anchor links (excluding FAQ and Checkout modal triggers and pending destinations)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
-      if (targetId === '#' || targetId === '' || this.hasAttribute('data-open-faq') || this.hasAttribute('data-pending')) return;
+      if (targetId === '#' || targetId === '' || this.hasAttribute('data-open-faq') || this.hasAttribute('data-open-checkout') || this.hasAttribute('data-pending')) return;
 
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
@@ -345,9 +345,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const faqModal = document.getElementById('faqModal');
   let lastFocusedTrigger = null;
 
+  const getActiveSectionTheme = () => {
+    const sections = document.querySelectorAll('section[data-slide-theme]');
+    const centerY = window.innerHeight / 2;
+    for (const sec of sections) {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= centerY && rect.bottom >= centerY) {
+        return sec.getAttribute('data-slide-theme') || 'dark';
+      }
+    }
+    const header = document.getElementById('siteHeader');
+    if (header && header.classList.contains('is-on-light')) return 'light';
+    return 'dark';
+  };
+
   const openFaqModal = (targetFaqId) => {
     if (!faqModal) return;
     lastFocusedTrigger = document.activeElement;
+    faqModal.setAttribute('data-modal-theme', getActiveSectionTheme());
     faqModal.classList.add('is-open');
     faqModal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
@@ -964,6 +979,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       previousActiveElement = document.activeElement;
+      checkoutModal.setAttribute('data-modal-theme', getActiveSectionTheme());
       checkoutModal.classList.add('is-open');
       checkoutModal.setAttribute('aria-hidden', 'false');
       updateModalScrollLock();
@@ -1189,6 +1205,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       activateTab(docKey);
+      legalModal.setAttribute('data-modal-theme', getActiveSectionTheme());
       legalModal.classList.add('is-open');
       legalModal.setAttribute('aria-hidden', 'false');
       updateModalScrollLock();
@@ -1269,6 +1286,7 @@ document.addEventListener('DOMContentLoaded', () => {
         closeMobileNav({ restoreScroll: false });
       }
 
+      cookieModal.setAttribute('data-modal-theme', getActiveSectionTheme());
       cookieModal.classList.add('is-open');
       cookieModal.setAttribute('aria-hidden', 'false');
       updateModalScrollLock();
